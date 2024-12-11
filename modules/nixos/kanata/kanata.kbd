@@ -1,0 +1,189 @@
+(defsrc
+  tab  q    w    e    r    t     y    u    i    o    p    [
+   caps a    s    d    f    g     h    j    k    l    ;    '
+     lsft  z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl
+)
+;; key names in
+;; https://github.com/jtroo/kanata/blob/main/src/keys/mod.rs
+
+
+(defalias
+
+  qwe (layer-switch qwerty)
+  col (layer-switch colemak)
+
+  nav (tap-hold-release 150 250
+    (layer-switch navigation)
+    (layer-while-held navigation))
+
+  ml2 lmet
+  bsw bspc
+
+  ;; experiment with mod forks on the tap action here
+  ;; eg super-mr1
+  mr1 (tap-hold-release 150 250
+    (layer-switch colemak)
+    (layer-while-held mouse))
+
+  ;; find a better use for this
+  ;; hard to use yet technically thumb reachable
+  mr2 XX
+
+  ;; spacebar makes symbols more comfortable
+  spa (tap-hold-release 150 250 spc (layer-while-held symbols))
+  rts (tap-hold-release 150 250 ret (layer-while-held symbols))
+
+  ;; home row mods for colemak
+  ;; double shift for caps
+  m_a (tap-hold-release 150 250 a lmet)
+  a_r (tap-hold-release 150 250 r lalt)
+  c_s (tap-hold-release 150 250 s lctl)
+  s_t (fork
+    (tap-hold-release 150 250 t lsft)
+    (tap-hold 300 300 t caps)
+    (rsft))
+  s_n (fork
+    (tap-hold-release 150 250 n rsft)
+    (tap-hold 300 300 n caps)
+    (lsft))
+  c_e (tap-hold-release 150 250 e rctl)
+  a_i (tap-hold-release 150 250 i lalt)
+  m_o (tap-hold-release 150 250 o rmet)
+
+  qQ (tap-hold 100 400 q M-q)
+  wW (tap-hold 150 250 w esc)
+)
+
+
+(deflayer colemak
+  tab  @qQ  @wW  f    p    b     j    l    u    y    ;    S--
+   XX   @m_a @a_r @c_s @s_t g     m    @s_n @c_e @a_i @m_o '
+     @nav  x    c    d    v    z    k    h    ,    .    /    rsft
+  lctl @ml2 @bsw           @spa           @mr1 @mr2
+)
+
+
+;; add g with oneshot colemak for going in vim
+(deflayer navigation
+  _    @qQ  esc  pp   XX   XX    XX   pgup up   pgdn XX   _
+   XX   lmet lalt lctl lsft XX    f9   left down rght tab  _
+     @nav  XX   C-c  del  C-v  C-z  XX   home menu end  XX   rsft
+  _    @ml2 bspc           @rts           @mr1 @mr2
+)
+
+
+#|
+
+%    &    +    $    @      ^    1    2    4    8
+!    :    -    =    /      *    '    ([   )]   XX
+~    |    #    _    \      .    `    {<   }>   XX
+
+|#
+
+(defchords symbol-chords 150
+  ;; ( ex co da s=  sq pl pr )
+  ( ex                    ) (macro S-1)
+  (    co                 ) (macro S-;)
+  (       da              ) -
+  (          s=           ) =
+  (              sq       ) '
+  (                 pl    ) S-9
+  (                    pr ) S-0
+  (                 bl    ) S-[
+  (                    br ) S-]
+  (       plu             ) S-=
+
+  ;; coding chords
+  (          s=  sq       ) (macro S-') ;; "
+  (    co da              ) (macro S-; S-;) ;; ::
+  (       da           pr ) (macro - S-.) ;; ->
+  (       da s=        pr ) (macro = S-.) ;; =>
+  (       da s=           ) (macro = =) ;; ==
+  ( ex       s=           ) (macro S-1 =) ;; !=
+  (      plu s=           ) (macro + = ) ;; +=
+  (                 pl pr ) (macro S-9 S-0) ;; ()
+  (          s=     pl pr ) (macro [ ]) ;; []
+  (          s=     pl    ) (macro [) ;; [
+  (          s=        pr ) (macro ]) ;; ]
+  (          s=     bl    ) (macro S-,) ;; <
+  (          s=        br ) (macro S-.) ;; >
+
+  ;; numbers
+  ;; binary numchords
+  ( da 2 ) (tap-hold 100 400 Digit0 f1) ;; maybe
+  ( 1       ) (tap-hold 100 400 Digit1 f1)
+  (   2     ) (tap-hold 100 400 Digit2 f2)
+  ( 1 2     ) (tap-hold 100 400 Digit3 f3)
+  (     4   ) (tap-hold 100 400 Digit4 f4)
+  ( 1   4   ) (tap-hold 100 400 Digit5 f5)
+  (   2 4   ) (tap-hold 100 400 Digit6 f6)
+  ( 1 2 4   ) (tap-hold 100 400 Digit7 f7)
+  (       8 ) (tap-hold 100 400 Digit8 f8)
+  ( 1     8 ) (tap-hold 100 400 Digit9 f9)
+  (   2   8 ) (tap-hold 100 400 Digit0 f10)
+  ( 1 2   8 ) f11
+  (     4 8 ) (tap-hold 100 400 XX f12)
+  ( 1   4 8 ) XX
+  (   2 4 8 ) XX
+  ( 1 2 4 8 ) XX
+)
+
+(defalias
+  ex (chord symbol-chords ex)
+  co (chord symbol-chords co)
+  da (chord symbol-chords da)
+  s= (chord symbol-chords s=)
+
+  sq (chord symbol-chords sq)
+  pl (chord symbol-chords pl)
+  pr (chord symbol-chords pr)
+
+  bl (chord symbol-chords bl)
+  br (chord symbol-chords br)
+
+  n1 (chord symbol-chords 1)
+  n2 (chord symbol-chords 2)
+  n4 (chord symbol-chords 4)
+  n8 (chord symbol-chords 8)
+
+  plu (chord symbol-chords plu)
+)
+
+
+(deflayer symbols
+  XX   S-5  S-7  @plu S-4  S-2   S-6  @n1  @n2  @n4  @n8  [
+   XX   @ex  @co  @da  @s=  /     S-8  @sq  @pl  @pr  XX   '
+     S-`   S-\  S-3  S--  \    spc  .    `    @bl  @br  XX   rsft
+  XX   XX   bspc           spc            XX   @mr2
+)
+
+
+(defalias
+  scr nop0
+
+  ma↑ (fork (movemouse-accel-up 2 500 1 4) (mwheel-up 50 120) (nop0))
+  ma← (fork (movemouse-accel-left 2 500 1 4) (mwheel-left 50 120) (nop0))
+  ma↓ (fork (movemouse-accel-down 2 500 1 4) (mwheel-down 50 120) (nop0))
+  ma→ (fork (movemouse-accel-right 2 500 1 4) (mwheel-right 50 120) (nop0))
+
+  vbu (fork volu (unshift brup) (lsft rsft))
+  vbd (tap-hold 250 250 (fork vold (unshift brdn) (lsft rsft)) lctl)
+)
+
+(deflayer mouse
+  lrld XX   XX   @vbu XX   XX    XX   XX   @ma↑ XX   XX   _
+   XX   lmet lalt @vbd lsft mrgt  XX   @ma← @ma↓ @ma→ XX   _
+     XX    XX   XX   @scr XX   XX   XX   prev pp   next prnt _
+  @qwe XX   mrgt           mlft           XX   XX
+)
+
+(defalias
+  ctb (fork tab (layer-switch colemak) (ralt))
+)
+(deflayer qwerty
+  @ctb q    w    e    r    t     y    u    i    o    p    [
+   caps a    s    d    f    g     h    j    k    l    ;    '
+     lsft  z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl
+)
