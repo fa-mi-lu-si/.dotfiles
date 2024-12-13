@@ -32,7 +32,6 @@
       "ctrl+shift+t" = "launch --type=tab";
       "ctrl+shift+n" = "launch --cwd=current";
       "ctrl+shift+w" = "close_tab";
-      "ctrl+shift+r" = "start_resizing_window";
       "ctrl+shift+f5" = "load_config_file";
 
       "ctrl+shift+c" = "copy_to_clipboard";
@@ -55,10 +54,11 @@
       "ctrl+super+up" = "neighboring_window up";
       "ctrl+super+down" = "neighboring_window down";
 
-      "ctrl+super+shift+left" = "move_window left";
-      "ctrl+super+shift+right" = "move_window right";
-      "ctrl+super+shift+up" = "move_window up";
-      "ctrl+super+shift+down" = "move_window down";
+      # I don't think I need this now that I have modal
+      # "ctrl+super+shift+left" = "move_window left";
+      # "ctrl+super+shift+right" = "move_window right";
+      # "ctrl+super+shift+up" = "move_window up";
+      # "ctrl+super+shift+down" = "move_window down";
 
       "ctrl+super+pgdn" = "next_tab";
       "ctrl+super+pgup" = "previous_tab";
@@ -75,5 +75,28 @@
       "ctrl+super+shift+tab" = "swap_with_window";
       "ctrl+super+tab" = "focus_visible_window";
     };
+
+    extraConfig = ''
+    map --new-mode resize ctrl+shift+r
+
+    map --mode resize up neighboring_window up
+    map --mode resize left neighboring_window left
+    map --mode resize right neighboring_window right
+    map --mode resize down neighboring_window down
+    
+    map --mode resize shift+up move_window up
+    map --mode resize shift+left move_window left
+    map --mode resize shift+right move_window right
+    map --mode resize shift+down move_window down
+    
+    map --mode resize alt+up kitten relative_resize.py up
+    map --mode resize alt+left kitten relative_resize.py left
+    map --mode resize alt+right kitten relative_resize.py right
+    map --mode resize alt+down kitten relative_resize.py down
+
+	map --mode resize esc pop_keyboard_mode
+    '';
   };
+
+  home.file.".config/kitty/relative_resize.py".source = ./relative_resize.py;
 }
