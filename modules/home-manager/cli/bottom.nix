@@ -11,10 +11,10 @@
         color = "default";
         battery = true;
         show_table_scroll_position = false;
-        tree = true;
+        tree = false;
       };
 
-      # custom layout
+      # Custom layout
       row = [
         {
           child = [

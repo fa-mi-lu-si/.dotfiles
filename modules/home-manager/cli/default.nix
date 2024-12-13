@@ -25,8 +25,10 @@
   };
   programs.yazi = {
     enable = true;
-    plugins = {}; # get some packages from github
-    # check the other home-manager options
+    plugins = {}; # TODO: get some packages from github
+    # TODO: keymap and settings
+    keymap = {};
+    settings = {};
   };
 
   programs.tealdeer = {
@@ -43,13 +45,13 @@
     fd
 
     termusic
-    handlr-regex # alternative to xdg-open
-    cyme # list usb devices
-    bluetuith # bluetooth connection managern
-    ouch # compression helper
+    handlr-regex
+    cyme
+    bluetuith
+    ouch
     gambit-chess
 
-    alejandra # nix formatter
+    alejandra
   ];
 
   programs.nh = {

@@ -8,14 +8,13 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
 
-    ../../modules/nixos/hyprland.nix # import hyprland or newm
-    ../../modules/nixos/desktop.nix # add all common desktop stuff
-    ../../modules/nixos/stylix.nix # add all stylix stuff
-    ../../modules/nixos/kanata # import kanata
+    ../../modules/nixos/hyprland.nix
+    ../../modules/nixos/desktop.nix
+    ../../modules/nixos/stylix.nix
+    ../../modules/nixos/kanata
   ];
 
   # Bootloader.
@@ -31,20 +30,21 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   hardware.bluetooth.enable = true;
-  # enable the A2DP Sink
+  # enable the A2DP audio Sink
   hardware.bluetooth.settings = {
     General = {
       Enable = "Source,Sink,Media,Socket";
     };
   };
 
-  # make removable storage work
+  # Make removable storage work
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Something the audio server needs
   security.rtkit.enable = true;
 
   # laptop stuff
@@ -80,6 +80,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  # TODO: set users.mutableUsers to false
   users.users.samy = {
     isNormalUser = true;
     description = "samy";

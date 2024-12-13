@@ -18,10 +18,9 @@
     jack.enable = true;
   };
 
-  # packages
   environment.systemPackages = with pkgs; [
-    brightnessctl # brightness
+    brightnessctl
   ];
 
-  programs.firefox.enable = true; # move to home manager
+  programs.firefox.enable = true; # TODO: move to home manager
 }

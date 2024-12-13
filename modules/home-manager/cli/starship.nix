@@ -39,6 +39,7 @@
       fill.symbol = " ";
       line_break.disabled = false;
       directory = {
+        # TODO: shorten long paths
         truncation_length = 0;
         format = "[$path]($style)[$read_only]($read_only_style) ";
         style = "bold cyan";
@@ -81,6 +82,7 @@
       };
       git_state.format = "\([$state( $progress_current/$progress_total)]($style)\) ";
 
+      # TODO: add other languages, lua, arduino, cpp
       python = {
         symbol = " ";
         format = "[$symbol$virtualenv]($style)";
@@ -116,7 +118,7 @@
           format = "[ $output]($style) ";
           style = "yellow bold";
           command = ''
-          git log --pretty=format:'%cr' -1
+            git log --pretty=format:'%cr' -1
           '';
           when = "git rev-parse --is-inside-work-tree 2> /dev/null";
           directories = [".git"];

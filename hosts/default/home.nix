@@ -11,6 +11,7 @@
     ../../modules/home-manager/kitty
     ../../modules/home-manager/syncthing.nix
     ../../modules/home-manager/hyprland # newm or hyprland
+    ../../modules/home-manager/eww
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -26,6 +27,7 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  # TODO: move this somewhere else, couple to its nixOS firewall
   services.kdeconnect = {
     enable = true;
     indicator = true; # enable the indicator service

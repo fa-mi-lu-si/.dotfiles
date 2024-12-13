@@ -42,7 +42,7 @@
         # Execute Programs
         "$mod, B, exec, firefox"
         "$mod, T, exec, kitty"
-        "$mod, E, exec, nautilus"
+        "$mod, F, exec, nautilus"
         "$mod, C, exec, code"
         "$mod, O, exec, obsidian"
         "$mod, space, exec, anyrun"

@@ -24,8 +24,9 @@ let abbreviations = {
     m: 'micro'
     s: 'sudo'
     ho: 'handlr open'
-    c: 'codium'
+    c: 'code'
     cl: 'clear'
+    g: 'git'
 }
 
 $env.config.filesize.metric = true

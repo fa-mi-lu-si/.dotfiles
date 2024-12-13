@@ -9,14 +9,14 @@
     configFile.source = ./config.nu;
     envFile.source = ./env.nu;
 
+    # TODO:
     # temporary fix till home manager can set these automatically
     environmentVariables = {
       DIRENV_LOG_FORMAT = "";
       FLAKE = "/home/samy/.dotfiles";
     };
-    
   };
-  
+
   programs.yazi.enableNushellIntegration = true;
   programs.starship.enableNushellIntegration = true;
   programs.zoxide.enableNushellIntegration = true;
