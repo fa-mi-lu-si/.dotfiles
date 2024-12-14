@@ -10,10 +10,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     polarity = "dark";
 
-    image = pkgs.fetchurl {
-      url = "https://images6.alphacoders.com/126/1268195.png";
-      sha256 = "3f639d1e0e4d64631d0dc4409e2faa45dba77650261dd33300f7e7682ed7ff1a";
-    };
+    image = config.lib.stylix.pixel "base00";
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";

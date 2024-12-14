@@ -68,7 +68,7 @@
       git_status = {
         format = "[($conflicted$untracked$modified$staged$renamed$deleted)($ahead_behind$stashed)]($style)";
         ahead = "⇡$count ";
-        behind = "[⇣ $count](red)";
+        behind = "[⇣$count](red)";
         conflicted = "🏳";
         deleted = "󰗨 $count ";
         diverged = "⇕⇡$ahead_count [⇣$behind_count](red) ";
@@ -97,7 +97,7 @@
 
       env_var.YAZI_LEVEL = {
         description = "Display for yazi shell";
-        format = "in [󰇥]($style)";
+        format = "in [󰇥 ]($style)";
         style = "yellow bold";
       };
 

@@ -52,13 +52,12 @@
   m_o (tap-hold-release 150 250 o rmet)
 
   qQ (tap-hold 100 400 q M-q)
-  wW (tap-hold 150 250 w esc)
 )
 
 
 (deflayer colemak
-  tab  @qQ  @wW  f    p    b     j    l    u    y    ;    S--
-   XX   @m_a @a_r @c_s @s_t g     m    @s_n @c_e @a_i @m_o '
+  tab  @qQ  w    f    p    b     j    l    u    y    ;    S--
+   esc  @m_a @a_r @c_s @s_t g     m    @s_n @c_e @a_i @m_o '
      @nav  x    c    d    v    z    k    h    ,    .    /    rsft
   lctl @ml2 @bsw           @spa           @mr1 @mr2
 )
@@ -66,8 +65,8 @@
 
 ;; add g with oneshot colemak for going in vim
 (deflayer navigation
-  _    @qQ  esc  pp   XX   XX    XX   pgup up   pgdn XX   _
-   XX   lmet lalt lctl lsft XX    f9   left down rght tab  _
+  _    @qQ  prev pp   next   XX    XX   pgup up   pgdn XX   _
+   esc  lmet lalt lctl lsft XX    f9   left down rght tab  _
      @nav  XX   C-c  del  C-v  C-z  XX   home menu end  XX   rsft
   _    @ml2 bspc           @rts           @mr1 @mr2
 )
@@ -172,9 +171,9 @@
 )
 
 (deflayer mouse
-  lrld XX   XX   @vbu XX   XX    XX   XX   @ma↑ XX   XX   _
+  lrld XX   XX   @vbu prnt XX    XX   XX   @ma↑ XX   XX   _
    XX   lmet lalt @vbd lsft mrgt  XX   @ma← @ma↓ @ma→ XX   _
-     XX    XX   XX   @scr XX   XX   XX   prev pp   next prnt _
+     XX    XX   XX   @scr XX   XX   XX   XX   XX    XX  XX  _
   @qwe XX   mrgt           mlft           XX   XX
 )
 

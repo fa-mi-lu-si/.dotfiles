@@ -8,6 +8,7 @@
     ../../modules/home-manager/cli
     ../../modules/home-manager/desktop
     ../../modules/home-manager/vscode
+    ../../modules/home-manager/helix
     ../../modules/home-manager/kitty
     ../../modules/home-manager/syncthing.nix
     ../../modules/home-manager/hyprland # newm or hyprland
