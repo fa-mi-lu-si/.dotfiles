@@ -12,8 +12,8 @@
       C-w = ":buffer-close";
       C-c = ":clipboard-yank";
       C-v = ":clipboard-paste-replace";
-      C-pageup = ":buffer-next";
-      C-pagedown = ":buffer-previous";
+      C-pageup = ":buffer-previous";
+      C-pagedown = ":buffer-next";
       space.space = "file_picker";
       space.q = ":quit";
       g.o = "symbol_picker";
@@ -25,8 +25,8 @@
       C-w = ":buffer-close";
       C-c = ":clipboard-yank";
       C-v = ":clipboard-paste-replace";
-      C-pageup = ":buffer-next";
-      C-pagedown = ":buffer-previous";
+      C-pageup = ":buffer-previous";
+      C-pagedown = ":buffer-next";
     };
   };
 }

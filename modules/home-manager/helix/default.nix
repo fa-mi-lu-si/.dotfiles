@@ -23,11 +23,6 @@
           normal = "block";
           select = "underline";
         };
-
-        whitespace.characters = {
-          newline = "↴";
-          tab = "⇥";
-        };
       };
     };
   };
