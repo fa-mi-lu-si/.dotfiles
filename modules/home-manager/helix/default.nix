@@ -4,6 +4,9 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./languages.nix
+  ];
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -26,8 +29,5 @@
         };
       };
     };
-    extraPackages = with pkgs; [
-      markdown-oxide
-    ];
   };
 }
