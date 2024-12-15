@@ -9,7 +9,7 @@
     settings = {
       shell = "nu";
       # shell_integration = "enabled";
-      editor = "micro";
+      editor = "hx";
       clipboard_control = "read-clipboard read-primary write-clipboard write-primary";
 
       active_tab_font_style = "bold";
@@ -94,7 +94,7 @@
     map --mode resize alt+right kitten relative_resize.py right
     map --mode resize alt+down kitten relative_resize.py down
 
-	map --mode resize esc pop_keyboard_mode
+	  map --mode resize esc pop_keyboard_mode
     '';
   };
 

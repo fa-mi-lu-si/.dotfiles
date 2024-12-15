@@ -21,7 +21,6 @@ def frontmatter [] {
 # https://github.com/nushell/nushell/issues/5597
 
 let abbreviations = {
-    m: 'micro'
     s: 'sudo'
     ho: 'handlr open'
     c: 'code'

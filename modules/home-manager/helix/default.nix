@@ -6,12 +6,13 @@
 }: {
   programs.helix = {
     enable = true;
-    defaultEditor = false;
+    defaultEditor = true;
     settings = {
       editor = {
         line-number = "relative";
         indent-guides.render = false;
         mouse = true;
+        bufferline = "multiple";
 
         cursor-shape = {
           insert = "bar";

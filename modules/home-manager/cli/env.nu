@@ -1,14 +1,18 @@
 match ($env | default $env.TERM TERM_PROGRAM | get TERM_PROGRAM) {
   WezTerm => {
-    $env.EDITOR = "micro"
-    $env.VISUAL = "micro"
+    $env.EDITOR = "hx"
+    $env.VISUAL = "hx"
+  }
+  xterm-kitty => {
+    $env.EDITOR = "hx"
+    $env.VISUAL = "hx"
   }
   vscode => {
-    $env.EDITOR = "codium"
-    $env.VISUAL = "codium"
+    $env.EDITOR = "code -r"
+    $env.VISUAL = "code -r"
   }
   _ => {
-    $env.EDITOR = "micro"
-    $env.VISUAL = "micro"
+    $env.EDITOR = "hx"
+    $env.VISUAL = "hx"
   }
 }
