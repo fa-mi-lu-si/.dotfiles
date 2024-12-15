@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./languages.nix
+    ./keymap.nix
   ];
   programs.helix = {
     enable = true;
