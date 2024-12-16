@@ -50,8 +50,6 @@
     bluetuith
     ouch
     gambit-chess
-
-    alejandra
   ];
 
   programs.nh = {

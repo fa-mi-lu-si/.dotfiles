@@ -108,7 +108,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     micro # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
-    nixd # nix language server
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];

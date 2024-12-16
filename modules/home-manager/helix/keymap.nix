@@ -11,7 +11,7 @@
       C-t = ":new";
       C-w = ":buffer-close";
       C-c = ":clipboard-yank";
-      C-v = ":clipboard-paste-replace";
+      C-v = ":clipboard-paste-before";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
       space.space = "file_picker";
@@ -24,7 +24,7 @@
       C-t = ":new";
       C-w = ":buffer-close";
       C-c = ":clipboard-yank";
-      C-v = ":clipboard-paste-replace";
+      C-v = ":clipboard-paste-before";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
     };

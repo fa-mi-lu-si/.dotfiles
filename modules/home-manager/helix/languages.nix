@@ -5,7 +5,9 @@
   ...
 }: {
   programs.helix.languages = {
-    grammar = [];
+    grammar = [
+    ];
+
     language = [
       {
         name = "nix";
@@ -19,6 +21,7 @@
         comment-token = "#";
       }
     ];
+
     language-server = {
       nixd = {
         command = lib.getExe pkgs.nixd;
