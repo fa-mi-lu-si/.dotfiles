@@ -44,6 +44,18 @@ $env.config.shell_integration = {
 # todo custom bpython command
 # temporarily sets the editor environment variable (depending on terminal or ide)
 
+# TODO: more robust handling of edge cases
+let argc_completer = {|args|
+    argc --argc-compgen nushell "" ...$args
+        | split row "\n"
+        | each { |line| $line | split column "\t" value description }
+        | flatten 
+}
+
+# TODO: don't rely on imperative install, or wait for argc-completions to be packaged
+$env.ARGC_COMPLETIONS_ROOT = '/home/samy/Projects/argc-completions'
+$env.ARGC_COMPLETIONS_PATH = ($env.ARGC_COMPLETIONS_ROOT + '/completions/linux:' + $env.ARGC_COMPLETIONS_ROOT + '/completions')
+$env.PATH = ($env.ARGC_COMPLETIONS_ROOT + '/bin:' + $env.PATH)
 
 let fish_completer = {|spans|
   fish --command $'complete "--do-complete=($spans | str join " ")"'
@@ -120,13 +132,13 @@ let external_completer = {|spans|
   }
 
   match $spans.0 {
-    nu => $fish_completer
+    # nu => $fish_completer
     # fish completes commits and branch names in a nicer way
-    git => $fish_completer
+    # git => $fish_completer
     # use zoxide completions for zoxide commands
     __zoxide_z | __zoxide_zi => $zoxide_completer
     # fish completer by default
-    _ => $fish_completer
+    _ => $argc_completer
   } | do $in $spans
 }
 
@@ -138,11 +150,11 @@ $env.config.completions = {
 
 # write a new external completer
 
-  # external: {
-  #   enable: true
-  #   max_results: 100
-  #   completer: $external_completer
-  # }
+  external: {
+    enable: true
+    max_results: 100
+    completer: $external_completer
+  }
 }
 
 $env.config.keybindings = [
