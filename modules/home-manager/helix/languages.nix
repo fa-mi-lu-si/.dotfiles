@@ -35,5 +35,6 @@
   # packages for default language servers
   programs.helix.extraPackages = with pkgs; [
     markdown-oxide
+    lua-language-server
   ];
 }
