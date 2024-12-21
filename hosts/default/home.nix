@@ -13,6 +13,7 @@
     ../../modules/home-manager/syncthing.nix
     ../../modules/home-manager/hyprland # newm or hyprland
     ../../modules/home-manager/eww
+    ../../modules/home-manager/stylix.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

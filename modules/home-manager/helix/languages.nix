@@ -32,9 +32,8 @@
     };
   };
 
-  # packages for default language servers
+  # project specific language servers should be in devshells
   programs.helix.extraPackages = with pkgs; [
     markdown-oxide
-    lua-language-server
   ];
 }

@@ -16,7 +16,6 @@ def frontmatter [] {
   } $in
 }
 
-# find out how to alias builtins propperly
 # Abbreviations
 # https://github.com/nushell/nushell/issues/5597
 
@@ -26,6 +25,10 @@ let abbreviations = {
     c: 'code'
     cl: 'clear'
     g: 'git'
+    ga: 'git add'
+    gc: 'git commit'
+    gs: 'git status'
+    gd: 'git diff'
 }
 
 $env.config.filesize.metric = true
@@ -41,8 +44,6 @@ $env.config.shell_integration = {
   reset_application_mode: true
 }
 
-# todo custom bpython command
-# temporarily sets the editor environment variable (depending on terminal or ide)
 
 # TODO: more robust handling of edge cases
 let argc_completer = {|args|
@@ -147,8 +148,6 @@ $env.config.completions = {
   quick: true
   partial: true
   algorithm: "prefix"
-
-# write a new external completer
 
   external: {
     enable: true

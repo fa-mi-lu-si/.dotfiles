@@ -24,13 +24,17 @@
         "$username"
         "$hostname"
         "$character"
+        "$battery"
       ];
       right_format = "$sudo$jobs";
-      battery.display = {
-        threshold = 30;
-        discharging_symbol = "󰂃 ";
-        charging_symbol = "󰂄 ";
-      };
+      # TODO: make this work
+      battery.display = [
+        {
+          threshold = 30;
+          discharging_symbol = "󰂃 ";
+          charging_symbol = "󰂄 ";
+        }
+      ];
       sudo = {
         disabled = false;
         format = "[$symbol]($style)";
