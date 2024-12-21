@@ -1,0 +1,44 @@
+(defpoll hour :interval "1s" "date +%H")
+(defpoll min  :interval "1s" "date +%M")
+(defpoll sec  :interval "1s" "date +%S")
+
+(defwidget bar [screen]
+  (centerbox :orientation "v"
+    (box :class "segment-top"
+         :valign "start"
+      (top :screen screen))
+    (box :valign "center"
+         :class "middle"
+      (middle :screen screen))
+    (box :valign "end"
+         :class "segment-bottom"
+      (bottom :screen screen))))
+
+(defwidget top [screen] "h")
+
+(defwidget middle [screen] (time))
+(defwidget time []
+  (box
+    :orientation "v"
+    :class "time"
+    hour min)
+)
+
+(defwidget bottom [screen]
+  (box
+    :orientation "v"
+    (systray
+      :orientation "v"
+      :icon-size 16
+      :prepend-new true)
+    ;; TODO: find out how to use json access
+    (box EWW_BATTERY.BAT1.capacity)))
+
+(defwindow sidebar
+  :monitor 0
+  :stacking 'fg'
+  :geometry (geometry :x 0 :y 0 :width "40px" :height "100%" :anchor "center left")
+  :reserve (struts :distance "40px" :side "left")
+  :exclusive true
+  (bar :screen 1)
+)
