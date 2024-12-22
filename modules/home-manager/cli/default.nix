@@ -9,6 +9,7 @@
     ./bottom.nix
     ./starship.nix
     ./git.nix
+    ./yazi.nix
   ];
 
   programs.direnv = {
@@ -22,13 +23,6 @@
     options = [
       "--cmd cd"
     ];
-  };
-  programs.yazi = {
-    enable = true;
-    plugins = {}; # TODO: get some packages from github
-    # TODO: keymap and settings
-    keymap = {};
-    settings = {};
   };
 
   programs.tealdeer = {
