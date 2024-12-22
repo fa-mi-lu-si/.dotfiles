@@ -7,6 +7,7 @@
   programs.helix.settings.keys = {
     # TODO: share some bindings between modes to avoid repetitions
     normal = {
+      C-e = "command_palette";
       C-s = ":write";
       C-t = ":new";
       C-w = ":buffer-close";
@@ -31,6 +32,7 @@
     };
 
     select = {
+      C-e = "command_palette";
       C-s = ":write";
       C-t = ":new";
       C-w = ":buffer-close";

@@ -10,13 +10,7 @@
       owner = "yazi-rs";
       repo = "plugins";
       rev = "7afba3a73cdd69f346408b77ea5aac26fe09e551";
-    };
-
-    # https://github.com/boydaihungst/simple-mtpfs.yazi
-    simple-mtpfs = pkgs.fetchFromGitHub {
-      owner = "boydaihungst";
-      repo = "simple-mtpfs.yazi";
-      rev = "4941d8f211b620bff3b11d17add6c2f5ccd3781e";
+      hash = "sha256-w9dSXW0NpgMOTnBlL/tzlNSCyRpZNT4XIcWZW5NlIUQ=";
     };
 
     # https://github.com/Rolv-Apneseth/starship.yazi
@@ -24,6 +18,7 @@
       owner = "Rolv-Apneseth";
       repo = "starship.yazi";
       rev = "247f49da1c408235202848c0897289ed51b69343";
+      hash = "sha256-0J6hxcdDX9b63adVlNVWysRR5htwAtP5WhIJ2AK2+Gs=";
     };
   };
 in {
@@ -39,10 +34,54 @@ in {
       #lua
       ''
         require("starship"):setup()
+        require("git"):setup()
+        THEME.git = THEME.git or {}
+        THEME.git.deleted = ui.Style():fg("red"):bold()
+        THEME.git.modified_sign = " "
+        THEME.git.added_sign = "+ "
+        THEME.git.untracked_sign = " "
+        THEME.git.deleted_sign = "󰗨 "
       '';
 
-    # TODO: keymap and settings
-    keymap = {};
-    settings = {};
+    keymap = {
+      manager.prepend_keymap = [
+        {
+          on = "!";
+          run = ["shell nu --block"]; # TODO: make the selection variables export
+          desc = "open shell here";
+        }
+        {
+          on = "<C-c>";
+          run = "yank";
+        }
+        {
+          on = "<C-v>";
+          run = "paste";
+        }
+      ];
+      input.prepend_keymap = [
+        {
+          on = "<Esc>";
+          run = "close";
+          desc = "cancel input";
+        }
+      ];
+    };
+    settings = {
+      plugin = {
+        prepend_fetchers = [
+          {
+            id = "git";
+            name = "*";
+            run = "git";
+          }
+          {
+            id = "git";
+            name = "*/";
+            run = "git";
+          }
+        ];
+      };
+    };
   };
 }

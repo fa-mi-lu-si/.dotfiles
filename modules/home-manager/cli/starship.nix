@@ -9,11 +9,11 @@
     enable = true;
     settings = {
       format = lib.concatStrings [
+        "\${env_var.YAZI_LEVEL}"
         "$directory"
         "$python"
         "$rust"
         "$nix_shell"
-        "\${env_var.YAZI_LEVEL}"
         "$fill"
         "\${custom.git_host}"
         "$git_branch$git_commit"
@@ -101,7 +101,7 @@
 
       env_var.YAZI_LEVEL = {
         description = "Display for yazi shell";
-        format = "in [󰇥 ]($style)";
+        format = "[󰇥 ]($style)";
         style = "yellow bold";
       };
 

@@ -10,7 +10,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     polarity = "dark";
 
-    image = config.lib.stylix.pixel "base00";
+    image = ./wallpaper.webp;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
