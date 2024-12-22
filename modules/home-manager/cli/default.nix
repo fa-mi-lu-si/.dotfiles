@@ -38,6 +38,8 @@
     ripgrep
     fd
 
+    wl-clipboard
+    clipse
     termusic
     handlr-regex
     cyme

@@ -4,15 +4,6 @@
   pkgs,
   ...
 }: {
-  # set the desktop portal
-
-  home.packages = with pkgs; [
-    # add hyprland specific deps
-    # use pkgs.name in binds instead
-    wl-clipboard
-    clipse # manage config with home manager
-  ];
-
   services.hyprpaper = {
     enable = true;
   };
@@ -30,6 +21,7 @@
         resize_on_border = false;
       };
       decoration.rounding = 10;
+      decoration.shadow.enabled = false;
 
       exec-once = [
         "clipse -listen"
@@ -51,17 +43,21 @@
         "$mod ALT , Q, exit"
 
         # Move around
+        "ALT, TAB, cycleNext"
         "$mod, left, moveFocus, l"
         "$mod, right, moveFocus, r"
         "$mod, up, moveFocus, u"
         "$mod, down, moveFocus, d"
+        "$mod SHIFT, left, moveWindow, l"
+        "$mod SHIFT, right, moveWindow, r"
+        "$mod SHIFT, up, moveWindow, u"
+        "$mod SHIFT, down, moveWindow, d"
         "$mod, page_up, workspace, -1"
         "$mod, page_down, workspace, +1"
         "$mod SHIFT, page_up, movetoworkspace, -1"
         "$mod SHIFT, page_down, movetoworkspace, +1"
 
         # Brightness Volume Media Control
-        # make this pipewire native wireplumber
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
