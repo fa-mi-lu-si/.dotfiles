@@ -14,7 +14,7 @@
          :class "segment-bottom"
       (bottom :screen screen))))
 
-(defwidget top [screen] "h")
+(defwidget top [screen] (box "="))
 
 (defwidget middle [screen] (time))
 (defwidget time []
@@ -24,6 +24,11 @@
     hour min)
 )
 
+(defwidget battery []
+  (button
+    :onclick "kitty --class=float_term -o initial_window_width=400 -o initial_window_height=200 --detach btm -e --default_widget_type batt"
+    "${EWW_BATTERY.BAT1.capacity}%"))
+
 (defwidget bottom [screen]
   (box
     :orientation "v"
@@ -31,8 +36,8 @@
       :orientation "v"
       :icon-size 16
       :prepend-new true)
-    ;; TODO: find out how to use json access
-    (box EWW_BATTERY.BAT1.capacity)))
+    (battery)
+    ))
 
 (defwindow sidebar
   :monitor 0

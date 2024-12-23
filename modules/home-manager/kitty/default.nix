@@ -13,6 +13,7 @@
       clipboard_control = "read-clipboard read-primary write-clipboard write-primary";
 
       active_tab_font_style = "bold";
+      remember_window_size = false;
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
       tab_powerline_style = "slanted";

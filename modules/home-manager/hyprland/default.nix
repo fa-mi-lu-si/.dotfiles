@@ -38,12 +38,12 @@
         "$mod, C, exec, code"
         "$mod, O, exec, obsidian"
         "$mod, space, exec, anyrun"
-        "$mod, V, exec, kitty --class=clipse clipse"
+        "$mod, V, exec, kitty --class=float_term -o initial_window_width=450 -o initial_window_height=650 clipse"
         "$mod, Q, killactive"
         "$mod ALT , Q, exit"
 
         # Move around
-        "ALT, TAB, cycleNext"
+        "ALT, tab, cycleNext"
         "$mod, left, moveFocus, l"
         "$mod, right, moveFocus, r"
         "$mod, up, moveFocus, u"
@@ -91,9 +91,8 @@
         "suppressevent maximize, class:.*"
         "suppressevent minimize, class:.*"
 
-        # float the clipboard manager
-        "float, class:(clipse)"
-        "size 450 652, class:(clipse)"
+        # floating terminals
+        "float, class:(float_term)"
       ];
 
       animations = {
