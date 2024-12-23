@@ -24,6 +24,10 @@
     eartag
   ];
 
+  home.sessionVariables = {
+    SWWW_TRANSITION = "center";
+  };
+
   # gtk.iconTheme = {
   #   name = "Adwaita";
   #   package = pkgs.adwaita-icon-theme;

@@ -12,5 +12,9 @@
       dark = "Adwaita";
       light = "Adwaita";
     };
+
+    # use sww instead of hyprpaper
+    targets.hyprland.hyprpaper.enable = false;
+    targets.hyprpaper.enable = false;
   };
 }

@@ -37,6 +37,7 @@
     tree
     ripgrep
     fd
+    serie
 
     wl-clipboard
     clipse

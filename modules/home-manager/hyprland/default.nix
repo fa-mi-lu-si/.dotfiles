@@ -4,9 +4,11 @@
   pkgs,
   ...
 }: {
-  services.hyprpaper = {
-    enable = true;
-  };
+  home.packages = with pkgs; [
+    swww
+    hyprland-workspaces
+  ];
+  home.file.".config/wallpaper.webp".source = ./wallpaper.webp;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -25,6 +27,11 @@
 
       exec-once = [
         "clipse -listen"
+        "swww-daemon"
+      ];
+
+      exec = [
+        "swww img ~/.config/wallpaper.webp"
       ];
 
       monitor = ",preferred, auto, auto";
