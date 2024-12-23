@@ -1,6 +1,7 @@
 (defpoll hour :interval "1s" "date +%H")
 (defpoll min  :interval "1s" "date +%M")
 (defpoll sec  :interval "1s" "date +%S")
+(deflisten workspaces "hyprland-workspaces _")
 
 (defwidget bar [screen]
   (centerbox :orientation "v"
@@ -14,7 +15,17 @@
          :class "segment-bottom"
       (bottom :screen screen))))
 
-(defwidget top [screen] (box "="))
+(defwidget workspaceWidget [monitor]
+  (eventbox :onscroll "hyprctl dispatch workspace `echo {} | sed 's/up/+/\' | sed 's/down/-/'`1"
+    (box :class "workspaces"
+      :orientation "v"
+      (for i in {workspaces[monitor].workspaces}
+        (button
+          :onclick "hyprctl dispatch workspace ${i.id}"
+          :class "${i.class}"
+          "${i.active ? "#" : "-"}")))))
+
+(defwidget top [screen] (box (workspaceWidget :monitor 0)))
 
 (defwidget middle [screen] (time))
 (defwidget time []

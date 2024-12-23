@@ -9,12 +9,8 @@
     configFile.source = ./config.nu;
     envFile.source = ./env.nu;
 
-    # TODO:
-    # temporary fix till home manager can set these automatically
-    environmentVariables = {
-      DIRENV_LOG_FORMAT = "";
-      FLAKE = "/home/samy/.dotfiles";
-    };
+    # Get the environment variables from home manager
+    environmentVariables = config.home.sessionVariables;
   };
 
   programs.yazi.enableNushellIntegration = true;
