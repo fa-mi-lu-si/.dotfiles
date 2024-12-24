@@ -47,8 +47,13 @@ in {
       manager.prepend_keymap = [
         {
           on = "!";
-          run = ["shell nu --block"]; # TODO: make the selection variables export
+          run = ["shell --block nu"]; # TODO: make the selection variables export
           desc = "open shell here";
+        }
+        {
+          on = "<F9>";
+          run = "quit";
+          desc = "Quit the process";
         }
         {
           on = "<C-c>";
