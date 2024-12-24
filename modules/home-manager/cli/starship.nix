@@ -14,20 +14,27 @@
         "$python"
         "$rust"
         "$nix_shell"
+
         "$fill"
+
         "\${custom.git_host}"
         "$git_branch$git_commit"
         "$git_state$git_status"
         "\${custom.git_last_commit}"
         "$package"
+
         "$line_break"
+
         "$username"
         "$hostname"
         "$character"
+      ];
+      right_format = lib.concatStrings [
+        "$sudo"
+        "$jobs"
         "$battery"
       ];
-      right_format = "$sudo$jobs";
-      # TODO: make this work
+
       battery.display = [
         {
           threshold = 30;
@@ -43,14 +50,16 @@
       fill.symbol = " ";
       line_break.disabled = false;
       directory = {
-        # TODO: shorten long paths
-        truncation_length = 0;
+        truncation_length = 3;
+        truncation_symbol = "…/";
         format = "[$path]($style)[$read_only]($read_only_style) ";
         style = "bold cyan";
         before_repo_root_style = "bold cyan";
         repo_root_style = "bold cyan";
         repo_root_format = "[ $repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
         read_only = " ";
+
+        # fish_style_pwd_dir_length = 2; # not compatible with substitutions
 
         substitutions = {
           "~/Documents" = "󰈙 ";
