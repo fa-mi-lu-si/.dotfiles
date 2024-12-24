@@ -64,6 +64,7 @@
         substitutions = {
           "~/Documents" = "󰈙 ";
           "~/Downloads" = " ";
+          "~/Vault" = "󰠮 ";
           "~/Desktop" = "󰇄 ";
           "~/Music" = "󰝚 ";
           "~/Pictures" = " ";
