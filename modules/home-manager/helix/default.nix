@@ -20,8 +20,8 @@
 
         cursor-shape = {
           insert = "bar";
-          normal = "block";
-          select = "underline";
+          normal = "bar";
+          select = "bar";
         };
       };
     };

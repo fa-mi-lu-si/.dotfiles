@@ -10,13 +10,20 @@
       shell = "nu";
       # shell_integration = "enabled";
       editor = "hx";
+      cursor_trail = 5;
       clipboard_control = "read-clipboard read-primary write-clipboard write-primary";
 
       active_tab_font_style = "bold";
       remember_window_size = false;
       tab_bar_edge = "top";
-      tab_bar_style = "powerline";
+      tab_bar_style = "custom";
       tab_powerline_style = "slanted";
+      tab_bar_margin_width = 0.0;
+      tab_bar_margin_height = "0.0 0.0";
+      tab_bar_min_tabs = 2;
+      tab_separator = "";
+      tab_title_template = " {tab.active_exe}{bell_symbol}{activity_symbol} {f' {num_windows}' if num_windows > 1 else ''} ";
+      active_tab_title_template = " {f' ' if (layout_name == 'stack' and num_windows > 1) else ''}{title}{bell_symbol}{activity_symbol} ";
       window_padding_width = "5 10";
       draw_minimal_borders = false;
 
@@ -100,4 +107,5 @@
   };
 
   home.file.".config/kitty/relative_resize.py".source = ./relative_resize.py;
+  home.file.".config/kitty/tab_bar.py".source = ./tab_bar.py;
 }
