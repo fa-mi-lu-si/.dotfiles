@@ -20,7 +20,7 @@
         "\${custom.git_host}"
         "$git_branch$git_commit"
         "$git_state$git_status"
-        "\${custom.git_last_commit}"
+        # "\${custom.git_last_commit}"
         "$package"
 
         "$line_break"
@@ -107,6 +107,9 @@
       nix_shell = {
         symbol = " ";
         heuristic = false;
+        impure_msg = "~ ";
+        pure_msg = "󰡱 ";
+        format = "[$symbol$state]($style) ";
       };
 
       env_var.YAZI_LEVEL = {

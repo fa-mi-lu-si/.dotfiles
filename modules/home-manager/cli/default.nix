@@ -38,6 +38,7 @@
     ripgrep
     fd
     serie
+    gum
 
     wl-clipboard
     clipse
@@ -54,6 +55,7 @@
     flake = "/home/samy/.dotfiles";
     clean = {
       enable = true;
+      extraArgs = "--keep-since 7d --keep 3";
     };
   };
 }
