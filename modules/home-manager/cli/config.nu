@@ -139,7 +139,7 @@ let external_completer = {|spans|
     # git => $fish_completer
     # use zoxide completions for zoxide commands
     __zoxide_z | __zoxide_zi => $zoxide_completer
-    # fish completer by default
+    # argc_completer by default
     _ => $argc_completer
   } | do $in $spans
 }

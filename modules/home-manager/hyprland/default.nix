@@ -8,7 +8,6 @@
     swww
     hyprland-workspaces
   ];
-  home.file.".config/wallpaper.webp".source = ./wallpaper.webp;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -31,7 +30,7 @@
       ];
 
       exec = [
-        "swww img ~/.config/wallpaper.webp"
+        "swww restore" # TODO: make a systemd service for swww
       ];
 
       monitor = ",preferred, auto, auto";
@@ -80,8 +79,8 @@
         "$mod, G, togglefloating,"
         "$mod, U, fullscreen,"
 
-        "$mod, mouse_down, workspace, +1"
-        "$mod, mouse_up, workspace, -1"
+        "$mod, mouse_down, workspace, -1"
+        "$mod, mouse_up, workspace, +1"
       ];
 
       bindm = [

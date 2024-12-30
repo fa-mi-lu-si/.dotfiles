@@ -2,17 +2,19 @@
 (defpoll min  :interval "1s" "date +%M")
 (defpoll sec  :interval "1s" "date +%S")
 (deflisten workspaces "hyprland-workspaces _")
+; TODO find a way to make this a deflisten
+(defpoll battery :interval "1s" "./battery.nu")
 
 (defwidget bar [screen]
   (centerbox :orientation "v"
     (box :class "segment-top"
-         :valign "start"
+      :valign "start"
       (top :screen screen))
     (box :valign "center"
-         :class "middle"
+      :class "middle"
       (middle :screen screen))
     (box :valign "end"
-         :class "segment-bottom"
+      :class "segment-bottom"
       (bottom :screen screen))))
 
 (defwidget workspaceWidget [monitor]
@@ -23,7 +25,7 @@
         (button
           :onclick "hyprctl dispatch workspace ${i.id}"
           :class "${i.class}"
-          "${i.active ? "#" : "-"}")))))
+        "${i.active ? "#" : "-"}")))))
 
 (defwidget top [screen] (box (workspaceWidget :monitor 0)))
 
@@ -32,13 +34,13 @@
   (box
     :orientation "v"
     :class "time"
-    hour min)
+  hour min)
 )
 
 (defwidget battery []
-  (button
-    :onclick "kitty --class=float_term -o initial_window_width=400 -o initial_window_height=200 --detach btm -e --default_widget_type batt"
-    "${EWW_BATTERY.BAT1.capacity}%"))
+  (box :orientation "v"
+    "${battery.icon}"
+  "${battery.percentage}"))
 
 (defwidget bottom [screen]
   (box
@@ -46,15 +48,14 @@
     (systray
       :orientation "v"
       :icon-size 16
-      :prepend-new true)
+    :prepend-new true)
     (battery)
-    ))
+  ))
 
 (defwindow sidebar
   :monitor 0
   :stacking 'fg'
   :geometry (geometry :x 0 :y 0 :width "40px" :height "100%" :anchor "center left")
-  :reserve (struts :distance "40px" :side "left")
   :exclusive true
   (bar :screen 1)
 )
