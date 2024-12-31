@@ -63,7 +63,6 @@
 )
 
 
-;; TODO: add g with oneshot colemak for going in helix
 (deflayer navigation
   _    @qQ  prev pp   next   XX    XX   pgup up   pgdn XX   _
    esc  lmet lalt lctl lsft XX    f9   left down rght tab  _

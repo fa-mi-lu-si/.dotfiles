@@ -32,11 +32,7 @@
     };
   };
 
-  # TODO: choose between skim and fzf
   programs.fzf = {
-    enable = true;
-  };
-  programs.skim = {
     enable = true;
   };
 
@@ -50,7 +46,6 @@
 
     wl-clipboard
     clipse
-    termusic
     handlr-regex
     cyme
     bluetuith

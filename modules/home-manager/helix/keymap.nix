@@ -5,7 +5,6 @@
   ...
 }: {
   programs.helix.settings.keys = {
-    # TODO: share some bindings between modes to avoid repetitions
     normal = {
       C-e = "command_palette";
       C-s = ":write";

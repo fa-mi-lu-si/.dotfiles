@@ -47,7 +47,7 @@ in {
       manager.prepend_keymap = [
         {
           on = "!";
-          run = ["shell --block nu"]; # TODO: make the selection variables export
+          run = ["shell --block nu"];
           desc = "open shell here";
         }
         {
