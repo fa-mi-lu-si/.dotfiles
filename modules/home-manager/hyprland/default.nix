@@ -15,7 +15,6 @@
 
     settings = {
       misc.disable_hyprland_logo = true;
-      misc.vfr = true;
       misc.disable_splash_rendering = true;
       general = {
         border_size = 2;
@@ -23,6 +22,7 @@
       };
       decoration.rounding = 10;
       decoration.shadow.enabled = false;
+      decoration.blur.enabled = false;
 
       exec-once = [
         "clipse -listen"
@@ -110,13 +110,10 @@
         preserve_split = true;
       };
 
-      master = {
-        new_status = "master";
-      };
-
       input.touchpad.natural_scroll = true;
       input.sensitivity = 0.2;
       gestures.workspace_swipe = true;
+      cursor.inactive_timeout = 30;
     };
   };
 }

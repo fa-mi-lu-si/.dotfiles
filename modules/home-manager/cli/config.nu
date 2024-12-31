@@ -22,7 +22,7 @@ def frontmatter [] {
 let abbreviations = {
     s: 'sudo'
     ho: 'handlr open'
-    c: 'code'
+    hf: 'hx ...(fzf -m | lines)'
     cl: 'clear'
     g: 'git'
     ga: 'git add'
@@ -59,12 +59,12 @@ $env.ARGC_COMPLETIONS_ROOT = '/home/samy/Projects/argc-completions'
 $env.ARGC_COMPLETIONS_PATH = ($env.ARGC_COMPLETIONS_ROOT + '/completions/linux:' + $env.ARGC_COMPLETIONS_ROOT + '/completions')
 $env.PATH = ($env.ARGC_COMPLETIONS_ROOT + '/bin:' + $env.PATH)
 
-let fish_completer = {|spans|
-  fish --command $'complete "--do-complete=($spans | str join " ")"'
-  | $"value(char tab)description(char newline)" + $in
-  | from tsv --flexible --no-infer
-  | each {|x| {value: $x.value, description: $"(ansi i)($x.description)(ansi reset)"}}
-}
+# let fish_completer = {|spans|
+#   fish --command $'complete "--do-complete=($spans | str join " ")"'
+#   | $"value(char tab)description(char newline)" + $in
+#   | from tsv --flexible --no-infer
+#   | each {|x| {value: $x.value, description: $"(ansi i)($x.description)(ansi reset)"}}
+# }
 
 let zoxide_completer = {|context|
   # Context includes the command as well. There are issues if there is a space in the command name, but I think most people use `z`.
@@ -245,51 +245,7 @@ $env.config.menus = [
   }
 ]
 
-# Keybindings per terminal
-
-match ($env | default $env.TERM TERM_PROGRAM | get TERM_PROGRAM) {
-  WezTerm => {
-    $env.config.keybindings ++= [
-      {
-        name: new_tab
-        modifier: control
-        keycode: char_t
-        mode: emacs
-        event: {
-          send: executehostcommand
-          cmd: "^wezterm cli spawn"
-        }
-      }
-      {
-        name: next_tab
-        modifier: control
-        keycode: PageDown
-        mode: emacs
-        event: {
-          send: executehostcommand
-          cmd: "^wezterm cli activate-tab --tab-relative 1"
-        }
-      }
-      {
-        name: prev_tab
-        modifier: control
-        keycode: PageUp
-        mode: emacs
-        event: {
-          send: executehostcommand
-          cmd: "^wezterm cli activate-tab --tab-relative -1"
-        }
-      }
-    ]
-  }
-  vscode => {
-  }
-  _ => {
-  }
-}
-
 # Transient prompt for starship
-
 $env.TRANSIENT_PROMPT_COMMAND = {||
   (
     starship module
@@ -299,12 +255,3 @@ $env.TRANSIENT_PROMPT_COMMAND = {||
     character
   )
 }
-# $env.TRANSIENT_PROMPT_COMMAND_RIGHT = {||
-#   (
-#     starship module
-#     --cmd-duration $env.CMD_DURATION_MS
-#     $"--status=($env.LAST_EXIT_CODE)"
-#     --terminal-width (term size).columns
-#     cmd_duration
-#   )
-# }
