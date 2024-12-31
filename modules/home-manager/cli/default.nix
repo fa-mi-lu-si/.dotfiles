@@ -32,6 +32,14 @@
     };
   };
 
+  # TODO: choose between skim and fzf
+  programs.fzf = {
+    enable = true;
+  };
+  programs.skim = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     bottom
     tree
