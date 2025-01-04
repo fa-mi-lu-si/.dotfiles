@@ -15,7 +15,6 @@
     nautilus
     obsidian
 
-    mpv
     celluloid
     amberol
 
@@ -23,6 +22,14 @@
     iagno
     eartag
   ];
+
+  programs.mpv = {
+    enable = true;
+    scripts = with pkgs.mpvScripts; [
+      mpris
+      sponsorblock
+    ];
+  };
 
   home.sessionVariables = {
     SWWW_TRANSITION = "center";
