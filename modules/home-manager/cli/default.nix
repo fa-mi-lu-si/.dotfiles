@@ -34,12 +34,22 @@
 
   programs.fzf = {
     enable = true;
+    defaultOptions = [
+      "--walker=file,follow"
+    ];
+  };
+
+  programs.ripgrep = {
+    enable = true;
+    arguments = [
+      "--smart-case"
+      "--hyperlink-format=default"
+    ];
   };
 
   home.packages = with pkgs; [
     bottom
     tree
-    ripgrep
     fd
     serie
     gum
