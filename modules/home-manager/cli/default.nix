@@ -39,6 +39,10 @@
     ];
   };
 
+  programs.atuin = {
+    enable = true;
+  };
+
   programs.ripgrep = {
     enable = true;
     arguments = [
