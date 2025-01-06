@@ -16,13 +16,17 @@
     settings = {
       misc.disable_hyprland_logo = true;
       misc.disable_splash_rendering = true;
+
       general = {
         border_size = 2;
         resize_on_border = false;
       };
-      decoration.rounding = 10;
-      decoration.shadow.enabled = false;
-      decoration.blur.enabled = false;
+
+      decoration = {
+        rounding = 10;
+        shadow.enabled = false;
+        blur.enabled = false;
+      };
 
       exec-once = [
         "clipse -listen"
@@ -30,7 +34,7 @@
       ];
 
       exec = [
-        "swww restore" # TODO: make a systemd service for swww
+        "swww restore"
       ];
 
       monitor = ",preferred, auto, auto";
