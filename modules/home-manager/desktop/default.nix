@@ -11,6 +11,8 @@
   home.packages = with pkgs; [
     dunst
     libnotify
+    scrcpy
+    inputs.zen-browser.packages."${system}".default
 
     nautilus
     obsidian
