@@ -48,6 +48,10 @@
     settings = {
       style = "compact";
     };
+    flags = [
+      "--disable-ctrl-r"
+      "--disable-up-arrow"
+    ];
   };
 
   programs.ripgrep = {
