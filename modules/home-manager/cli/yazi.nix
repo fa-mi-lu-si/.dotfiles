@@ -29,6 +29,11 @@ in {
       starship = plugins.starship;
       git = "${plugins.yazi}/git.yazi";
     };
+    theme = {
+      manager = {
+        border_symbol = " ";
+      };
+    };
 
     initLua =
       #lua
