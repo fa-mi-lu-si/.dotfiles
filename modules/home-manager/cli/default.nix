@@ -39,8 +39,15 @@
     ];
   };
 
+  programs.fd = {
+    enable = true;
+  };
+
   programs.atuin = {
     enable = true;
+    settings = {
+      style = "compact";
+    };
   };
 
   programs.ripgrep = {
@@ -52,9 +59,7 @@
   };
 
   home.packages = with pkgs; [
-    bottom
     tree
-    fd
     serie
     gum
 
