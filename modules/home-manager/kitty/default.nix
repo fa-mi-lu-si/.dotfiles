@@ -106,7 +106,7 @@
   home.file.".config/kitty/open-actions.conf".text = ''
     protocol file
     mime inode/directory
-    action send_text all cd $FILE_PATH\r
+    action send_text all cd "$FILE_PATH"\r
 
     protocol file
     mime video/*
