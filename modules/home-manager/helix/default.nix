@@ -18,6 +18,12 @@
         mouse = true;
         bufferline = "multiple";
 
+        end-of-line-diagnostics = "hint";
+        inline-diagnostics = {
+          cursor-line = "error";
+          other-lines = "error";
+        };
+
         cursor-shape = {
           insert = "bar";
           normal = "bar";
