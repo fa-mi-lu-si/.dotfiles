@@ -51,7 +51,7 @@ in {
         THEME.git = THEME.git or {}
 
         THEME.git.modified_sign = " "
-        THEME.git.modified = ui.Style():fg("yellow")
+        THEME.git.modified = ui.Style():fg("gray")
 
         THEME.git.added_sign = "+ "
         THEME.git.added = ui.Style():fg("green")
@@ -59,8 +59,14 @@ in {
         THEME.git.untracked_sign = " "
         THEME.git.untracked = ui.Style():fg("red"):bold()
 
-        THEME.git.deleted_sign = "󰗨 "
+        THEME.git.ignored_sign = " "
+        THEME.git.ignored = ui.Style():fg("darkgray"):bold()
+
+        THEME.git.deleted_sign = " "
         THEME.git.deleted = ui.Style():fg("red"):bold()
+
+        THEME.git.updated_sign = " "
+        THEME.git.updated = ui.Style():fg("green"):bold()
 
         require("git"):setup()
       '';
@@ -84,6 +90,22 @@ in {
         {
           on = "<C-v>";
           run = "paste";
+        }
+        {
+          on = "<C-t>";
+          run = "tab_create --current";
+        }
+        {
+          on = "<C-w>";
+          run = "close";
+        }
+        {
+          on = "<C-PageUp>";
+          run = "tab_switch -1 --relative";
+        }
+        {
+          on = "<C-PageDown>";
+          run = "tab_switch 1 --relative";
         }
       ];
       input.prepend_keymap = [
