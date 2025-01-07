@@ -42,7 +42,7 @@
       "$mod" = "SUPER";
       bind = [
         # Execute Programs
-        "$mod, B, exec, firefox"
+        "$mod, B, exec, zen"
         "$mod, T, exec, kitty"
         "$mod, F, exec, nautilus"
         "$mod, C, exec, code"
