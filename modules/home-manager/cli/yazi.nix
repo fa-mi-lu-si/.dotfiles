@@ -5,15 +5,12 @@
   ...
 }: let
   plugins = {
-    # TODO: make rev HEAD to point to latest commit
-    # then fix the hash on failed rebuild :(
-
     # https://github.com/yazi-rs/plugins/
     yazi = pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "7afba3a73cdd69f346408b77ea5aac26fe09e551";
-      hash = "sha256-w9dSXW0NpgMOTnBlL/tzlNSCyRpZNT4XIcWZW5NlIUQ=";
+      rev = "600614a9dc59a12a63721738498c5541c7923873";
+      hash = "sha256-mQkivPt9tOXom78jgvSwveF/8SD8M2XCXxGY8oijl+o=";
     };
 
     # https://github.com/Rolv-Apneseth/starship.yazi
@@ -50,13 +47,22 @@ in {
       #lua
       ''
         require("starship"):setup()
-        require("git"):setup()
+
         THEME.git = THEME.git or {}
-        THEME.git.deleted = ui.Style():fg("red"):bold()
+
         THEME.git.modified_sign = " "
+        THEME.git.modified = ui.Style():fg("yellow")
+
         THEME.git.added_sign = "+ "
+        THEME.git.added = ui.Style():fg("green")
+
         THEME.git.untracked_sign = " "
+        THEME.git.untracked = ui.Style():fg("red"):bold()
+
         THEME.git.deleted_sign = "󰗨 "
+        THEME.git.deleted = ui.Style():fg("red"):bold()
+
+        require("git"):setup()
       '';
 
     keymap = {
