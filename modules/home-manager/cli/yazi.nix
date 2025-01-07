@@ -5,6 +5,9 @@
   ...
 }: let
   plugins = {
+    # TODO: make rev HEAD to point to latest commit
+    # then fix the hash on failed rebuild :(
+
     # https://github.com/yazi-rs/plugins/
     yazi = pkgs.fetchFromGitHub {
       owner = "yazi-rs";
@@ -20,14 +23,22 @@
       rev = "247f49da1c408235202848c0897289ed51b69343";
       hash = "sha256-0J6hxcdDX9b63adVlNVWysRR5htwAtP5WhIJ2AK2+Gs=";
     };
+    # https://github.com/grappas/wl-clipboard.yazi
+    wl-clipboard = pkgs.fetchFromGitHub {
+      owner = "grappas";
+      repo = "wl-clipboard.yazi";
+      rev = "c4edc4f6adf088521f11d0acf2b70610c31924f0";
+      hash = "sha256-jlZgN93HjfK+7H27Ifk7fs0jJaIdnOyY1wKxHz1wX2c=";
+    };
   };
 in {
   programs.yazi = {
     enable = true;
 
     plugins = {
-      starship = plugins.starship;
+      # starship = plugins.starship;
       git = "${plugins.yazi}/git.yazi";
+      wl-clipboard = plugins.wl-clipboard;
     };
     theme = {
       manager = {
@@ -62,7 +73,7 @@ in {
         }
         {
           on = "<C-c>";
-          run = "yank";
+          run = ["plugin wl-clipboard" "yank"];
         }
         {
           on = "<C-v>";
