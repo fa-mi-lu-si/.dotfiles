@@ -1,9 +1,4 @@
-{
-  inputs,
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   services.syncthing = {
     enable = true;
     overrideDevices = true;

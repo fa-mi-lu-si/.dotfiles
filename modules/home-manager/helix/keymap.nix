@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.helix.settings.keys = {
     normal = {
       C-e = "command_palette";

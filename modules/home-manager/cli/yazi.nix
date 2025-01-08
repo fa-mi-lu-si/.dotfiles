@@ -1,9 +1,4 @@
-{
-  inputs,
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   plugins = {
     # https://github.com/yazi-rs/plugins/
     yazi = pkgs.fetchFromGitHub {

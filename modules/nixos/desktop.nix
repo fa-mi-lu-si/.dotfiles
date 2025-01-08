@@ -1,7 +1,7 @@
 {
   pkgs,
-  inputs,
-  config,
+  # inputs,
+  # config,
   ...
 }: {
   # boot.plymouth.enable = true; # splash screen

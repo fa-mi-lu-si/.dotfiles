@@ -2,8 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
-  pkgs,
+  # pkgs,
   inputs,
   ...
 }: {
@@ -86,8 +85,8 @@
     isNormalUser = true;
     description = "samy";
     extraGroups = ["networkmanager" "wheel" "video" "audio" "sound" "dialout"];
-    packages = with pkgs; [
-    ];
+    # packages = with pkgs; [
+    # ];
   };
 
   home-manager = {
@@ -107,8 +106,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  ];
+  # environment.systemPackages = with pkgs; [
+  # ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
