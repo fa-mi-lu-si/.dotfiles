@@ -12,8 +12,8 @@
     starship = pkgs.fetchFromGitHub {
       owner = "Rolv-Apneseth";
       repo = "starship.yazi";
-      rev = "247f49da1c408235202848c0897289ed51b69343";
-      hash = "sha256-0J6hxcdDX9b63adVlNVWysRR5htwAtP5WhIJ2AK2+Gs=";
+      rev = "4053c8c486f9cfd60f1f42fa5d80e97caef41eb1";
+      hash = "sha256-KTN3gf3VFGlBxgsQFMa/fdhoovapXo0X65IJjXcl98A=";
     };
     # https://github.com/grappas/wl-clipboard.yazi
     wl-clipboard = pkgs.fetchFromGitHub {
@@ -28,7 +28,7 @@ in {
     enable = true;
 
     plugins = {
-      # starship = plugins.starship;
+      starship = plugins.starship;
       git = "${plugins.yazi}/git.yazi";
       wl-clipboard = plugins.wl-clipboard;
     };
