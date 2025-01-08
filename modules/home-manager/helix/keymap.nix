@@ -6,7 +6,7 @@
       C-t = ":new";
       C-w = ":buffer-close";
       C-c = ":clipboard-yank";
-      C-v = ":clipboard-paste-before";
+      C-v = ":clipboard-paste-after";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
       space.space = "file_picker";
@@ -20,7 +20,7 @@
       C-t = ":new";
       C-w = ":buffer-close";
       C-c = ":clipboard-yank";
-      C-v = ":clipboard-paste-before";
+      C-v = ":clipboard-paste-after";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
     };
@@ -31,7 +31,7 @@
       C-t = ":new";
       C-w = ":buffer-close";
       C-c = ":clipboard-yank";
-      C-v = ":clipboard-paste-before";
+      C-v = ":clipboard-paste-after";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
       space.space = "file_picker";
