@@ -1,6 +1,10 @@
 {...}: {
   services.syncthing = {
     enable = true;
+    user = "samy";
+    group = "users";
+    dataDir = "/home/samy";
+    openDefaultPorts = true;
     overrideDevices = true;
     overrideFolders = true;
 
@@ -22,4 +26,5 @@
       };
     };
   };
+  systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true"; # Don't create default ~/Sync folder
 }

@@ -13,6 +13,7 @@
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/nix-ld.nix
+    ../../modules/nixos/syncthing.nix
     ../../modules/nixos/stylix.nix
     ../../modules/nixos/kanata
   ];
