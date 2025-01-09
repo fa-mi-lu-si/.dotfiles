@@ -20,16 +20,19 @@ def frontmatter [] {
 # https://github.com/nushell/nushell/issues/5597
 
 let abbreviations = {
-    s: 'sudo'
-    ho: 'handlr open'
-    hf: 'hx ...(fzf -m | lines)'
-    cl: 'clear'
-    g: 'git'
-    ga: 'git add'
-    gc: 'git commit'
-    gcm: 'git commit -m ""'
-    gs: 'git status'
-    gd: 'git diff'
+    's': 'sudo'
+    'ho': 'handlr open'
+    'hf': 'hx ...(fzf -m | lines)'
+    'cl': 'clear'
+    'g': 'git'
+    'ga': 'git add'
+    'ga.': 'git add .'
+    'gc': 'git commit'
+    'gcm': 'git commit -m ""'
+    'gcam': 'git commit -a -m ""'
+    'gs': 'git status'
+    'gd': 'git diff'
+    'mp': 'mpremote'
 }
 
 $env.config.filesize.metric = true
