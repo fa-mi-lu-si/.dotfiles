@@ -24,8 +24,10 @@
     language-server = {
       nixd = {
         command = lib.getExe pkgs.nixd;
-        config.nixd = {
+        config.nixd = rec {
           formatting.command = ["${lib.getExe pkgs.alejandra}"];
+          options.nixos.expr = "(builtins.getFlake \"/home/samy/.dotfiles\").nixosConfigurations.samy-nixos.options";
+          options.home-manager.expr = options.nixos.expr + ".home-manager.users.type.getSubOptions []";
         };
       };
     };
