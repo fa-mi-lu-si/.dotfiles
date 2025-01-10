@@ -36,6 +36,10 @@ in {
       manager = {
         border_symbol = " ";
       };
+      status = {
+        separator_open = "";
+        separator_close = "";
+      };
     };
 
     initLua =
