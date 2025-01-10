@@ -3,10 +3,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./anyrun.nix
-  ];
-
   home.packages = with pkgs; [
     dunst
     libnotify
@@ -18,6 +14,7 @@
 
     celluloid
     amberol
+    walker
 
     foliate
     iagno
