@@ -14,7 +14,6 @@
       tab_bar_margin_width = 0.0;
       tab_bar_margin_height = "0.0 0.0";
       tab_bar_min_tabs = 2;
-      tab_separator = "";
       tab_title_template = " {tab.active_exe}{bell_symbol}{activity_symbol} {f' {num_windows}' if num_windows > 1 else ''} ";
       active_tab_title_template = " {f' ' if (layout_name == 'stack' and num_windows > 1) else ''}{title}{bell_symbol}{activity_symbol} ";
       window_padding_width = "5 10";
@@ -117,7 +116,7 @@
 
     protocol file
     mime text/html
-    action open_url $FILE_PATH
+    action launch --type=background zen $FILE_PATH
 
     protocol file
     mime text/*

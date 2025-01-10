@@ -31,8 +31,9 @@ UNPLUGGED_ICONS = {
 
 # icons for common activities
 TERMINAL_ICON = "  "
-YAZI_ICON = "  "
+FOLDER_ICON = "  "
 TEXT_ICON = " 󰦨 "
+GRAPH_ICON = "  "
 REFRESH_TIME = 1
 
 def _get_active_process_name_cell() -> dict:
@@ -63,9 +64,11 @@ def _get_active_process_name_cell() -> dict:
     cell["text"] = long_process_name.rsplit("/", 1)[-1]
 
     if cell["text"] == "yazi":
-        cell["icon"] = YAZI_ICON
+        cell["icon"] = FOLDER_ICON
     elif cell["text"] == "hx":
         cell["icon"] = TEXT_ICON
+    elif cell["text"] == "btm":
+        cell["icon"] = GRAPH_ICON
 
     return cell
 
