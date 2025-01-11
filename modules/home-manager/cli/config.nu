@@ -30,7 +30,7 @@ let abbreviations = {
     'gc': 'git commit'
     'gcm': 'git commit -m ""'
     'gcam': 'git commit -a -m ""'
-    'gs': 'git status'
+    'gs': 'git status -s'
     'gd': 'git diff'
     'mp': 'mpremote'
 }

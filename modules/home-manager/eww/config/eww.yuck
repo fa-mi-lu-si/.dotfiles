@@ -2,8 +2,6 @@
 (defpoll min  :interval "1s" "date +%M")
 (defpoll sec  :interval "1s" "date +%S")
 (deflisten workspaces "hyprland-workspaces _")
-; TODO find a way to make this a deflisten
-(defpoll battery :interval "1s" "./battery.nu")
 
 (defwidget bar [screen]
   (centerbox :orientation "v"
@@ -39,8 +37,23 @@
 
 (defwidget battery []
   (box :orientation "v"
-    "${battery.icon}"
-  "${battery.percentage}"))
+    :tooltip "${EWW_BATTERY.BAT1.capacity}%"
+    {
+      EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
+      EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
+      EWW_BATTERY.BAT1.capacity <= 10 ? "󰂃" :
+      EWW_BATTERY.BAT1.capacity <= 20 ? "󰁻" :
+      EWW_BATTERY.BAT1.capacity <= 30 ? "󰁼" :
+      EWW_BATTERY.BAT1.capacity <= 40 ? "󰁽" :
+      EWW_BATTERY.BAT1.capacity <= 50 ? "󰁾" :
+      EWW_BATTERY.BAT1.capacity <= 60 ? "󰁿" :
+      EWW_BATTERY.BAT1.capacity <= 70 ? "󰂀" :
+      EWW_BATTERY.BAT1.capacity <= 80 ? "󰂁" :
+      EWW_BATTERY.BAT1.capacity <= 90 ? "󰂂" :
+      EWW_BATTERY.BAT1.capacity <= 100 ? "󱟢" :
+      ""
+    }
+  ))
 
 (defwidget bottom [screen]
   (box
