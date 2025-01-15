@@ -36,13 +36,16 @@
           charging_symbol = "󰂄 ";
         }
       ];
+
       sudo = {
         disabled = false;
         format = "[$symbol]($style)";
         symbol = "󱑷 ";
       };
+
       fill.symbol = " ";
       line_break.disabled = false;
+
       directory = {
         truncation_length = 3;
         truncation_symbol = "…/";
@@ -51,7 +54,7 @@
         before_repo_root_style = "bold cyan";
         repo_root_style = "bold cyan";
         repo_root_format = "[ $repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
-        read_only = " ";
+        read_only = "  ";
 
         # fish_style_pwd_dir_length = 2; # not compatible with substitutions
 
@@ -78,14 +81,14 @@
         ahead = "⇡$count ";
         behind = "[⇣$count](red)";
         conflicted = "🏳";
-        deleted = "󰗨 $count ";
+        deleted = "[󰗨 $count](red)";
         diverged = "⇕⇡$ahead_count [⇣$behind_count](red) ";
-        modified = " $count ";
+        modified = "[ $count](red)";
         renamed = "󰾵 ";
         staged = "[++$count](green) ";
         stashed = " $count ";
-        untracked = "[ $count](sapphire) ";
-        style = "red";
+        untracked = "[ $count](bold red) ";
+        style = "";
         up_to_date = "";
       };
       git_state.format = "\([$state( $progress_current/$progress_total)]($style)\) ";
@@ -93,10 +96,10 @@
       # TODO: add other languages, lua, arduino, cpp
       python = {
         symbol = " ";
-        format = "[$symbol$virtualenv]($style)";
+        format = "[$symbol$virtualenv]($style) ";
       };
       rust = {
-        format = "via [$symbol]($style)";
+        format = "via [$symbol]($style) ";
       };
       nix_shell = {
         symbol = " ";

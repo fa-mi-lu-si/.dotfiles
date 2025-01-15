@@ -12,7 +12,6 @@
       space.space = "file_picker";
       space.q = ":quit";
       space.w.d = [":vsplit" "goto_definition"];
-      g.o = "symbol_picker";
     };
 
     insert = {
@@ -37,7 +36,6 @@
       space.space = "file_picker";
       space.q = ":quit";
       space.w.d = [":vsplit" "goto_definition"];
-      g.o = "symbol_picker";
     };
   };
 }
