@@ -46,7 +46,7 @@
         "$mod, F, exec, nautilus"
         "$mod, C, exec, code"
         "$mod, O, exec, obsidian"
-        "$mod, space, exec, walker"
+        "$mod, space, exec, fuzzel"
         "$mod, V, exec, kitty --class=float_term -o initial_window_width=450 -o initial_window_height=650 clipse"
         "$mod, Q, killactive"
         "$mod ALT , Q, exit"

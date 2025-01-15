@@ -10,11 +10,11 @@
     inputs.zen-browser.packages."${system}".default
 
     nautilus
+    loupe
     obsidian
 
     celluloid
     amberol
-    walker
 
     foliate
     iagno
@@ -27,6 +27,16 @@
       mpris
       sponsorblock
     ];
+  };
+
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      main = {
+        terminal = "kitty";
+        layer = "top";
+      };
+    };
   };
 
   home.sessionVariables = {
