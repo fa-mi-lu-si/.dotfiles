@@ -10,7 +10,6 @@
     ../../modules/home-manager/vscode
     ../../modules/home-manager/helix
     ../../modules/home-manager/kitty
-    ../../modules/home-manager/ghostty
     ../../modules/home-manager/hyprland # newm or hyprland
     ../../modules/home-manager/eww
     ../../modules/home-manager/stylix.nix
