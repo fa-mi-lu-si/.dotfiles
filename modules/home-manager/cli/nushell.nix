@@ -3,6 +3,13 @@
     enable = true;
     configFile.source = ./config.nu;
     envFile.source = ./env.nu;
+    shellAliases = {
+      l = "eza";
+      ll = "eza -l";
+      la = "eza -a";
+      lt = "eza --tree";
+      lla = "eza -la";
+    };
 
     # Get the environment variables from home manager
     environmentVariables = config.home.sessionVariables;

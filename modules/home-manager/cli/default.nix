@@ -62,6 +62,18 @@
     ];
   };
 
+  programs.eza = {
+    enable = true;
+    colors = "auto";
+    icons = "auto";
+    extraOptions = [
+      "--hyperlink"
+      "--git-ignore"
+    ];
+    # dont replace the default ls
+    enableNushellIntegration = false;
+  };
+
   home.packages = with pkgs; [
     tree
     serie
