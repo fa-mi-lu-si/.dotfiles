@@ -3,6 +3,9 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./spicetify.nix
+  ];
   home.packages = with pkgs; [
     dunst
     libnotify
