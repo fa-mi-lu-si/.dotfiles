@@ -25,13 +25,13 @@
 
     # original https://github.com/sharklasers996/eza-preview.yazi
     # fork https://github.com/ahkohd/eza-preview.yazi
-    # currently using the fork waiting for changes to be merged
-    eza-preview = pkgs.fetchFromGitHub {
-      owner = "ahkohd";
-      repo = "eza-preview.yazi";
-      rev = "5ef05bcee141291566276e62cc16e265a387dca4";
-      hash = "sha256-L7i+uL2kAx3AUr5EAzRrduoV2m4+/tE1gCfbTOSuAc4=";
-    };
+    # Currently using my own fork of ahkohd's to work on some changes
+    # eza-preview = pkgs.fetchFromGitHub {
+    #   owner = "ahkohd";
+    #   repo = "eza-preview.yazi";
+    #   rev = "5ef05bcee141291566276e62cc16e265a387dca4";
+    #   hash = "sha256-L7i+uL2kAx3AUr5EAzRrduoV2m4+/tE1gCfbTOSuAc4=";
+    # };
   };
 in {
   programs.yazi = {
@@ -41,7 +41,7 @@ in {
       starship = plugins.starship;
       git = "${plugins.yazi}/git.yazi";
       wl-clipboard = plugins.wl-clipboard;
-      eza-preview = plugins.eza-preview;
+      # eza-preview = plugins.eza-preview;
     };
     theme = {
       manager = {

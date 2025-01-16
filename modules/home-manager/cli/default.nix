@@ -49,7 +49,6 @@
       style = "compact";
     };
     flags = [
-      "--disable-ctrl-r"
       "--disable-up-arrow"
     ];
   };
