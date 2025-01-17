@@ -9,7 +9,7 @@
       C-v = ":clipboard-paste-after";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
-      space.space = "file_picker";
+      space.space = "goto_word";
       space.q = ":quit";
       space.w.d = [":vsplit" "goto_definition"];
     };
@@ -33,7 +33,7 @@
       C-v = ":clipboard-paste-after";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
-      space.space = "file_picker";
+      space.space = "goto_word";
       space.q = ":quit";
       space.w.d = [":vsplit" "goto_definition"];
     };
