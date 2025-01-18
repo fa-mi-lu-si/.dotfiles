@@ -105,9 +105,19 @@ in {
           desc = "Toggle tree follow symlinks";
         }
         {
-          on = "!";
-          run = ["shell --block nu"];
-          desc = "open shell here";
+          on = ["g" "v"];
+          run = "cd ~/Vault";
+          desc = "Goto Vault";
+        }
+        {
+          on = ["g" "."];
+          run = "cd ~/.dotfiles";
+          desc = "Goto dotfiles";
+        }
+        {
+          on = ["g" "p"];
+          run = "cd ~/Projects";
+          desc = "Goto Projects";
         }
         {
           on = "<F9>";

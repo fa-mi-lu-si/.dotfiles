@@ -1,6 +1,11 @@
 (defpoll hour :interval "1s" "date +%H")
 (defpoll min  :interval "1s" "date +%M")
 (defpoll sec  :interval "1s" "date +%S")
+; TODO: support for multiple players
+(deflisten title "playerctl metadata title --follow")
+(deflisten artist "playerctl metadata artist --follow")
+(deflisten status "playerctl status --follow")
+
 (deflisten workspaces "hyprland-workspaces _")
 
 (defwidget bar [screen]
@@ -50,7 +55,7 @@
       EWW_BATTERY.BAT1.capacity <= 70 ? "󰂀" :
       EWW_BATTERY.BAT1.capacity <= 80 ? "󰂁" :
       EWW_BATTERY.BAT1.capacity <= 90 ? "󰂂" :
-      EWW_BATTERY.BAT1.capacity <= 100 ? "󱟢" :
+      EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
       ""
     }
   ))
@@ -62,6 +67,17 @@
       :orientation "v"
       :icon-size 16
     :prepend-new true)
+    (box
+      :orientation "v"
+      :tooltip "${title} - ${artist}"
+      (button
+        :onclick "playerctl play-pause"
+        {
+        status == "Playing" ? "":
+        status == "Paused" ? "":
+        status == "Stopped" ? "":
+        "0"
+      }))
     (battery)
   ))
 
