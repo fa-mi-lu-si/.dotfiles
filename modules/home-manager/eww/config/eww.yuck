@@ -28,7 +28,7 @@
         (button
           :onclick "hyprctl dispatch workspace ${i.id}"
           :class "${i.class}"
-        "${i.active ? "#" : "-"}")))))
+        "${i.active ? "  " : "  "}")))))
 
 (defwidget top [screen] (box (workspaceWidget :monitor 0)))
 
@@ -42,7 +42,6 @@
 
 (defwidget battery []
   (box :orientation "v"
-    :tooltip "${EWW_BATTERY.BAT1.capacity}%"
     {
       EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
       EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
@@ -58,6 +57,7 @@
       EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
       ""
     }
+    {EWW_BATTERY.BAT1.capacity}
   ))
 
 (defwidget bottom [screen]
