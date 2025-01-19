@@ -58,9 +58,9 @@ let argc_completer = {|args|
 }
 
 # TODO: don't rely on imperative install, or wait for argc-completions to be packaged
-# $env.ARGC_COMPLETIONS_ROOT = '/home/samy/Projects/argc-completions'
-# $env.ARGC_COMPLETIONS_PATH = ($env.ARGC_COMPLETIONS_ROOT + '/completions/linux:' + $env.ARGC_COMPLETIONS_ROOT + '/completions')
-# $env.PATH = ($env.ARGC_COMPLETIONS_ROOT + '/bin:' + $env.PATH)
+$env.ARGC_COMPLETIONS_ROOT = '/home/samy/Projects/argc-completions'
+$env.ARGC_COMPLETIONS_PATH = ($env.ARGC_COMPLETIONS_ROOT + '/completions/linux:' + $env.ARGC_COMPLETIONS_ROOT + '/completions')
+$env.PATH ++= [($env.ARGC_COMPLETIONS_ROOT + '/bin')]
 
 # let fish_completer = {|spans|
 #   fish --command $'complete "--do-complete=($spans | str join " ")"'
@@ -153,11 +153,11 @@ $env.config.completions = {
   partial: true
   algorithm: "prefix"
 
-  # external: {
-  #   enable: true
-  #   max_results: 100
-  #   completer: $external_completer
-  # }
+  external: {
+    enable: true
+    max_results: 100
+    completer: $external_completer
+  }
 }
 
 $env.config.keybindings = [
