@@ -2,7 +2,8 @@
   programs.helix.settings.keys = {
     normal = {
       esc = ["collapse_selection" "keep_primary_selection"];
-      W = "@miw";
+      A-W = "@miW";
+      A-w = "@miw";
       C-e = "command_palette";
       C-s = ":write";
       C-t = ":new";

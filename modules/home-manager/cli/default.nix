@@ -74,7 +74,6 @@
   };
 
   home.packages = with pkgs; [
-    tree
     serie
     gum
 
@@ -84,7 +83,6 @@
     cyme
     bluetuith
     ouch
-    gambit-chess
   ];
 
   programs.nh = {
