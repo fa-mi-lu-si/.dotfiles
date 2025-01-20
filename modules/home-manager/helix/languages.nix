@@ -19,6 +19,15 @@
         file-types = ["nix"];
         comment-token = "#";
       }
+
+      {
+        name = "markdown";
+        auto-format = true;
+        formatter = {
+          command = "dprint";
+          args = ["fmt" "--stdin" "md"];
+        };
+      }
     ];
 
     language-server = {
@@ -36,5 +45,7 @@
   # project specific language servers should be in devshells
   programs.helix.extraPackages = with pkgs; [
     markdown-oxide
+    dprint
+    dprint-plugins.dprint-plugin-markdown
   ];
 }
