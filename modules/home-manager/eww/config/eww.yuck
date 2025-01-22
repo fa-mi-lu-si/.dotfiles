@@ -60,6 +60,19 @@
     {EWW_BATTERY.BAT1.capacity}
   ))
 
+(defwidget player []
+  (box
+    :orientation "v"
+    :tooltip "${title} - ${artist}"
+    (button
+      :onclick "playerctl play-pause"
+      {
+        status == "Playing" ? "":
+        status == "Paused" ? "":
+        status == "Stopped" ? "":
+        "0"
+      })))
+
 (defwidget bottom [screen]
   (box
     :orientation "v"
@@ -67,24 +80,14 @@
       :orientation "v"
       :icon-size 16
     :prepend-new true)
-    (box
-      :orientation "v"
-      :tooltip "${title} - ${artist}"
-      (button
-        :onclick "playerctl play-pause"
-        {
-        status == "Playing" ? "":
-        status == "Paused" ? "":
-        status == "Stopped" ? "":
-        "0"
-      }))
+    (player)
     (battery)
   ))
 
 (defwindow sidebar
   :monitor 0
   :stacking 'fg'
-  :geometry (geometry :x 0 :y 0 :width "40px" :height "100%" :anchor "center left")
+  :geometry (geometry :x 0 :y 0 :height "100%" :anchor "center left")
   :exclusive true
   (bar :screen 1)
 )

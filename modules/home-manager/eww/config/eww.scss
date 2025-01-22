@@ -1,3 +1,33 @@
 window {
   font-family: monospace;
 }
+
+// Fix the colours here
+// Probably by generating a colours.scss
+// with stylix then importing
+.volume-metric {
+  /* background-color: #1d2021; */
+  /* color: #ebdbb2; */
+  padding: 0;
+
+  .volume-top > scale {
+    margin-bottom: 5px;
+  }
+
+  slider {
+    all: unset;
+  }
+
+  scale trough highlight {
+    all: unset;
+    //background-color: #8ec07c;
+    background-color: #665c54;
+    border-bottom-right-radius: 5px;
+  }
+  scale trough {
+    all: unset;
+    background-color: #1d2021;
+    min-width: 10px;
+    min-height: 2px;
+  }
+}
