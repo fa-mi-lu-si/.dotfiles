@@ -11,6 +11,7 @@
     inputs.home-manager.nixosModules.default
 
     ../../modules/nixos/hyprland.nix
+    ../../modules/nixos/wezterm.nix
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/nix-ld.nix
     ../../modules/nixos/syncthing.nix

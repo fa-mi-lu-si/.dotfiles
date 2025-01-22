@@ -10,6 +10,7 @@
     # };
     hyprland.url = "github:hyprwm/Hyprland";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    wezterm.url = "github:wez/wezterm?dir=nix";
     stylix.url = "github:danth/stylix";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
