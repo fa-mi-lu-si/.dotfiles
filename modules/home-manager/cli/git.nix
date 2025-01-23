@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.git = {
     enable = true;
     userName = "Oluwaseun Samuel Familusi";
@@ -6,5 +6,20 @@
     difftastic = {
       enable = true;
     };
+  };
+
+  programs.gh = {
+    enable = true;
+    settings = {
+      prompt = "enabled";
+    };
+    extensions = with pkgs; [
+      gh-eco
+      gh-markdown-preview
+    ];
+  };
+
+  programs.gh-dash = {
+    enable = true;
   };
 }
