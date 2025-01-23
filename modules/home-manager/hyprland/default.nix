@@ -43,6 +43,7 @@
         # Execute Programs
         "$mod, B, exec, zen"
         "$mod, T, exec, kitty"
+        "$mod SHIFT, T, exec, wezterm"
         "$mod, F, exec, nautilus"
         "$mod, C, exec, code"
         "$mod, O, exec, obsidian"

@@ -27,6 +27,7 @@ let abbreviations = {
     'g': 'git'
     'ga': 'git add'
     'ga.': 'git add .'
+    'gaa': 'git add -A'
     'gc': 'git commit'
     'gcm': 'git commit -m ""'
     'gcam': 'git commit -a -m ""'
