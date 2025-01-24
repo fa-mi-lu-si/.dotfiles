@@ -75,7 +75,7 @@
 
 %    &    +    $    @      ^    1    2    4    8
 !    :    -    =    /      *    '    ([   )]   XX
-~    |    #    _    \      .    `    {<   }>   XX
+XX   |    #    _    \      .    `~   {<   }>   XX
 
 |#
 
@@ -91,8 +91,10 @@
   (                 bl    ) S-[
   (                    br ) S-]
   (       plu             ) S-=
+  (              bt       ) `
 
   ;; coding chords
+  (          s=  bt       ) (macro S-`) ;; ~
   (          s=  sq       ) (macro S-') ;; "
   (    co da              ) (macro S-; S-;) ;; ::
   (       da           pr ) (macro - S-.) ;; ->
@@ -109,7 +111,7 @@
 
   ;; numbers
   ;; binary numchords
-  ( da 2 ) (tap-hold 100 400 Digit0 f1) ;; maybe
+  ( plu 2 ) (tap-hold 100 400 Digit0 f1) ;; maybe
   ( 1       ) (tap-hold 100 400 Digit1 f1)
   (   2     ) (tap-hold 100 400 Digit2 f2)
   ( 1 2     ) (tap-hold 100 400 Digit3 f3)
@@ -145,6 +147,7 @@
   n4 (chord symbol-chords 4)
   n8 (chord symbol-chords 8)
 
+  bt (chord symbol-chords bt)
   plu (chord symbol-chords plu)
 )
 
@@ -152,7 +155,7 @@
 (deflayer symbols
   XX   S-5  S-7  @plu S-4  S-2   S-6  @n1  @n2  @n4  @n8  [
    XX   @ex  @co  @da  @s=  /     S-8  @sq  @pl  @pr  XX   '
-     S-`   S-\  S-3  S--  \    spc  .    `    @bl  @br  XX   rsft
+     XX    S-\  S-3  S--  \    spc  .    @bt  @bl  @br  XX   rsft
   XX   XX   bspc           spc            XX   @mr2
 )
 
