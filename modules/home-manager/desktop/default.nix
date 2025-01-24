@@ -15,6 +15,7 @@
     nautilus
     loupe
     obsidian
+    vesktop
 
     celluloid
     amberol
