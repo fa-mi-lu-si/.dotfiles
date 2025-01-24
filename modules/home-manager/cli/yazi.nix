@@ -23,17 +23,19 @@
       hash = "sha256-jlZgN93HjfK+7H27Ifk7fs0jJaIdnOyY1wKxHz1wX2c=";
     };
 
-    # original https://github.com/sharklasers996/eza-preview.yazi
-    # fork https://github.com/ahkohd/eza-preview.yazi
-    # Currently using my own fork of ahkohd's to work on some changes
-    # eza-preview = pkgs.fetchFromGitHub {
-    #   owner = "ahkohd";
-    #   repo = "eza-preview.yazi";
-    #   rev = "5ef05bcee141291566276e62cc16e265a387dca4";
-    #   hash = "sha256-L7i+uL2kAx3AUr5EAzRrduoV2m4+/tE1gCfbTOSuAc4=";
-    # };
+    # https://github.com/kirasok/epub-preview.yazi
+    epub-preview = pkgs.fetchFromGitHub {
+      owner = "kirasok";
+      repo = "epub-preview.yazi";
+      rev = "77a76b8dc36c52b8713bd3745456d096732be7bd";
+      hash = "sha256-Ig0sUamVUmveOm0EuCBE2hzk53LdDVjUg7Ij0CnnDmE=";
+    };
   };
 in {
+  home.packages = with pkgs; [
+    epub-thumbnailer
+  ];
+
   programs.yazi = {
     enable = true;
 
@@ -41,7 +43,7 @@ in {
       starship = plugins.starship;
       git = "${plugins.yazi}/git.yazi";
       wl-clipboard = plugins.wl-clipboard;
-      # eza-preview = plugins.eza-preview;
+      epub-preview = plugins.epub-preview;
     };
     theme = {
       manager = {
@@ -57,7 +59,6 @@ in {
       #lua
       ''
         require("starship"):setup()
-        require("eza-preview"):setup({})
 
         THEME.git = THEME.git or {}
 
@@ -84,26 +85,6 @@ in {
 
     keymap = {
       manager.prepend_keymap = [
-        {
-          on = ["e" "e"];
-          run = "plugin eza-preview";
-          desc = "Toggle tree/list dir preview";
-        }
-        {
-          on = ["e" "+"];
-          run = "plugin eza-preview --args='--inc-level'";
-          desc = "Increment tree level";
-        }
-        {
-          on = ["e" "-"];
-          run = "plugin eza-preview --args='--dec-level'";
-          desc = "Decrement tree level";
-        }
-        {
-          on = ["e" "s"];
-          run = "plugin eza-preview --args='--toggle-follow-symlinks'";
-          desc = "Toggle tree follow symlinks";
-        }
         {
           on = ["g" "v"];
           run = "cd ~/Vault";
@@ -161,8 +142,8 @@ in {
       plugin = {
         prepend_previewers = [
           {
-            name = "*/";
-            run = "eza-preview";
+            mime = "application/epub+zip";
+            run = "epub-preview";
           }
         ];
         prepend_fetchers = [
