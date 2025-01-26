@@ -4,8 +4,6 @@
      lsft  z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rctl
 )
-;; key names in
-;; https://github.com/jtroo/kanata/blob/main/src/keys/mod.rs
 
 
 (defalias
@@ -48,7 +46,7 @@
     (tap-hold 300 300 n caps)
     (lsft))
   c_e (tap-hold-release 150 250 e rctl)
-  a_i (tap-hold-release 150 250 i lalt)
+  a_i (tap-hold-release 150 250 i ralt)
   m_o (tap-hold-release 150 250 o rmet)
 
   qQ (tap-hold 100 400 q M-q)
@@ -64,7 +62,7 @@
 
 
 (deflayer navigation
-  _    @qQ  prev pp   next   XX    XX   pgup up   pgdn XX   _
+  _    @qQ  prev pp   next XX    XX   pgup up   pgdn XX   _
    esc  lmet lalt lctl lsft XX    f9   left down rght tab  _
      @nav  XX   C-c  del  C-v  C-z  XX   home menu end  XX   rsft
   _    @ml2 bspc           @rts           @mr1 @mr2
@@ -74,44 +72,47 @@
 #|
 
 %    &    +    $    @      ^    1    2    4    8
-!    :    -    =    /      *    '    ([   )]   XX
-XX   |    #    _    \      .    `~   {<   }>   XX
+!    :    -    =    /      *    '"   ([<  )]>  ?
+XX   |    #    _    \      .    `~   {    }    XX
 
 |#
 
 (defchords symbol-chords 150
-  ;; ( ex co da s=  sq pl pr )
-  ( ex                    ) (macro S-1)
-  (    co                 ) (macro S-;)
-  (       da              ) -
-  (          s=           ) =
-  (              sq       ) '
-  (                 pl    ) S-9
-  (                    pr ) S-0
-  (                 bl    ) S-[
-  (                    br ) S-]
-  (       plu             ) S-=
-  (              bt       ) `
+  ;; ( ex co da eq  sq pl pr qu )
+  ( ex                       ) (macro S-1)
+  (    co                    ) (macro S-;)
+  (       da                 ) -
+  (          eq              ) =
+  (              sq          ) '
+  (                 pl       ) S-9
+  (                    pr    ) S-0
+  (                       qu ) S-/
+  (       plu                ) S-=
+  (              bt          ) `
 
   ;; coding chords
-  (          s=  bt       ) (macro S-`) ;; ~
-  (          s=  sq       ) (macro S-') ;; "
-  (    co da              ) (macro S-; S-;) ;; ::
-  (       da           pr ) (macro - S-.) ;; ->
-  (       da s=        pr ) (macro = S-.) ;; =>
-  (       da s=           ) (macro = =) ;; ==
-  ( ex       s=           ) (macro S-1 =) ;; !=
-  (      plu s=           ) (macro + = ) ;; +=
-  (                 pl pr ) (macro S-9 S-0) ;; ()
-  (          s=     pl pr ) (macro [ ]) ;; []
-  (          s=     pl    ) (macro [) ;; [
-  (          s=        pr ) (macro ]) ;; ]
-  (          s=     bl    ) (macro S-,) ;; <
-  (          s=        br ) (macro S-.) ;; >
+  (          eq  bt          ) (macro S-`)     ;; ~
+  (          eq  sq          ) (macro S-')     ;; "
+  (    co da                 ) (macro S-; S-;) ;; ::
+  (       da eq              ) (macro = =)     ;; ==
+  ( ex       eq              ) (macro S-1 =)   ;; !=
+  (      plu eq              ) (macro + =)     ;; +=
+  
+  (                 pl pr    ) (macro S-9 S-0) ;; ()
+  (          eq     pl pr    ) (macro [ ])     ;; []
+  (          eq     pl       ) (macro [)       ;; [
+  (          eq        pr    ) (macro ])       ;; ]
+  (    co           pl       ) (macro S-,)     ;; <
+  (    co              pr    ) (macro S-.)     ;; >
+  (    co    eq     pl       ) (macro S-, =)   ;; <=
+  (    co    eq        pr    ) (macro S-. =)   ;; >=
+
+  (    co da           pr    ) (macro - S-.)   ;; ->
+  (    co da eq        pr    ) (macro = S-.)   ;; =>
 
   ;; numbers
   ;; binary numchords
-  ( plu 2 ) (tap-hold 100 400 Digit0 f1) ;; maybe
+  ( plu   2 ) (tap-hold 100 400 Digit0 f1) ;; 0 (maybe)
   ( 1       ) (tap-hold 100 400 Digit1 f1)
   (   2     ) (tap-hold 100 400 Digit2 f2)
   ( 1 2     ) (tap-hold 100 400 Digit3 f3)
@@ -133,14 +134,15 @@ XX   |    #    _    \      .    `~   {<   }>   XX
   ex (chord symbol-chords ex)
   co (chord symbol-chords co)
   da (chord symbol-chords da)
-  s= (chord symbol-chords s=)
+  eq (chord symbol-chords eq)
 
   sq (chord symbol-chords sq)
   pl (chord symbol-chords pl)
   pr (chord symbol-chords pr)
+  qu (chord symbol-chords qu)
 
-  bl (chord symbol-chords bl)
-  br (chord symbol-chords br)
+  bl S-[
+  br S-]
 
   n1 (chord symbol-chords 1)
   n2 (chord symbol-chords 2)
@@ -154,7 +156,7 @@ XX   |    #    _    \      .    `~   {<   }>   XX
 
 (deflayer symbols
   XX   S-5  S-7  @plu S-4  S-2   S-6  @n1  @n2  @n4  @n8  [
-   XX   @ex  @co  @da  @s=  /     S-8  @sq  @pl  @pr  XX   '
+   XX   @ex  @co  @da  @eq  /     S-8  @sq  @pl  @pr  @qu  '
      XX    S-\  S-3  S--  \    spc  .    @bt  @bl  @br  XX   rsft
   XX   XX   bspc           spc            XX   @mr2
 )
@@ -175,7 +177,7 @@ XX   |    #    _    \      .    `~   {<   }>   XX
 (deflayer mouse
   lrld XX   XX   @vbu prnt XX    XX   XX   @ma↑ XX   XX   _
    XX   lmet lalt @vbd lsft mrgt  XX   @ma← @ma↓ @ma→ XX   _
-     XX    XX   XX   @scr XX   XX   XX   XX   XX    XX  XX  _
+     XX    XX   XX   @scr XX   XX   XX   XX   XX   XX   XX   _
   @qwe XX   mrgt           mlft           XX   XX
 )
 
