@@ -30,10 +30,20 @@
       rev = "77a76b8dc36c52b8713bd3745456d096732be7bd";
       hash = "sha256-Ig0sUamVUmveOm0EuCBE2hzk53LdDVjUg7Ij0CnnDmE=";
     };
+
+    # https://github.com/Sonico98/exifaudio.yazi
+    exifaudio = pkgs.fetchFromGitHub {
+      owner = "Sonico98";
+      repo = "exifaudio.yazi";
+      rev = "d7946141c87a23dcc6fb3b2730a287faf3154593";
+      hash = "sha256-nXBxPG6PVi5vstvVMn8dtnelfCa329CTIOCdXruOxT4=";
+    };
   };
 in {
   home.packages = with pkgs; [
     epub-thumbnailer
+    exiftool
+    mediainfo
   ];
 
   programs.yazi = {
@@ -44,6 +54,7 @@ in {
       git = "${plugins.yazi}/git.yazi";
       wl-clipboard = plugins.wl-clipboard;
       epub-preview = plugins.epub-preview;
+      exifaudio = plugins.exifaudio;
     };
     theme = {
       manager = {
@@ -141,6 +152,10 @@ in {
     settings = {
       plugin = {
         prepend_previewers = [
+          {
+            mime = "audio/*";
+            run = "exifaudio";
+          }
           {
             mime = "application/epub+zip";
             run = "epub-preview";

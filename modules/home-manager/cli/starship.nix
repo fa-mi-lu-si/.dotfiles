@@ -49,8 +49,8 @@
       line_break.disabled = false;
 
       directory = {
-        truncation_length = 3;
-        truncation_symbol = "…/";
+        truncation_length = 2;
+        # truncation_symbol = "…/";
         format = "[$path]($style)[$read_only]($read_only_style) ";
         style = "bold cyan";
         before_repo_root_style = "bold cyan";
@@ -58,20 +58,20 @@
         repo_root_format = "[ $repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
         read_only = "  ";
 
-        # fish_style_pwd_dir_length = 2; # not compatible with substitutions
+        fish_style_pwd_dir_length = 2; # not compatible with substitutions
 
-        substitutions = {
-          "~/Documents" = "󰈙 ";
-          "~/Downloads" = " ";
-          "~/Vault" = "󰠮 ";
-          "~/Desktop" = "󰇄 ";
-          "~/Music" = "󰝚 ";
-          "~/Pictures" = " ";
-          "~/Projects" = " ";
-          "~/Videos" = " ";
-          "~/.config" = ".󰒓 ";
-          "~/.dotfiles" = ". ";
-        };
+        # substitutions = {
+        #   "~/Documents" = "󰈙 ";
+        #   "~/Downloads" = " ";
+        #   "~/Vault" = "󰠮 ";
+        #   "~/Desktop" = "󰇄 ";
+        #   "~/Music" = "󰝚 ";
+        #   "~/Pictures" = " ";
+        #   "~/Projects" = " ";
+        #   "~/Videos" = " ";
+        #   "~/.config" = ".󰒓 ";
+        #   "~/.dotfiles" = ". ";
+        # };
       };
 
       git_branch = {
