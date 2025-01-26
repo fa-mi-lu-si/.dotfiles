@@ -32,6 +32,7 @@ config.disable_default_key_bindings = true
 config.keys = {
   { key = 'T',          mods = 'CTRL|SHIFT',       action = act.SpawnTab 'CurrentPaneDomain' },
   { key = 'W',          mods = 'CTRL|SHIFT',       action = act.CloseCurrentTab { confirm = true } },
+  { key = 'w',          mods = 'CTRL|SUPER',       action = act.CloseCurrentPane { confirm = true } },
   { key = 'R',          mods = 'CTRL|SHIFT',       action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false, }, },
 
   { key = 'PageDown',   mods = 'CTRL|SUPER',       action = act.ActivateTabRelative(1), },
@@ -80,7 +81,6 @@ config.keys = {
   { key = 'u',          mods = 'CTRL|SUPER',       action = act.TogglePaneZoomState },
   { key = 'F5',         mods = 'CTRL|SHIFT',       action = act.ReloadConfiguration },
   { key = 'Space',      mods = 'CTRL|SHIFT',       action = act.QuickSelect },
-  { key = '.', mods = 'SUPER', action = wezterm.action.Nop },
 }
 
 config.key_tables = {

@@ -34,6 +34,7 @@
       "ctrl+shift+t" = "launch --type=tab";
       "ctrl+shift+n" = "launch --cwd=current";
       "ctrl+shift+w" = "close_tab";
+      "ctrl+super+w" = "close_window_with_confirmation ignore-shell";
       "ctrl+shift+f5" = "load_config_file";
       "ctrl+shift+u" = "kitten unicode_input";
       "ctrl+shift+f1" = "show_kitty_doc overview";
