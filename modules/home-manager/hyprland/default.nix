@@ -30,10 +30,12 @@
       exec-once = [
         "clipse -listen"
         "swww-daemon"
+        "eww daemon"
       ];
 
       exec = [
         "swww restore"
+        "eww open sidebar"
       ];
 
       monitor = ",preferred, auto, auto";
