@@ -95,6 +95,7 @@
       };
       git_state.format = "\([$state( $progress_current/$progress_total)]($style)\) ";
 
+      # TODO: maybe an indicator for microcontrollers and debug probe connection during embedded
       python = {
         symbol = " ";
         format = "[$symbol$virtualenv]($style) ";

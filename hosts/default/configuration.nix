@@ -14,6 +14,7 @@
     ../../modules/nixos/wezterm.nix
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/nix-ld.nix
+    ../../modules/nixos/probe-rs
     ../../modules/nixos/syncthing.nix
     ../../modules/nixos/stylix.nix
     ../../modules/nixos/kanata
