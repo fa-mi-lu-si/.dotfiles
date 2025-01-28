@@ -13,11 +13,11 @@
 
         "$fill"
 
+        "$package"
         "\${custom.git_host}"
         "$git_branch$git_commit"
         "$git_state$git_status"
         # "\${custom.git_last_commit}"
-        "$package"
 
         "$line_break"
 
@@ -62,6 +62,7 @@
 
         # substitutions = {
         #   "~/Documents" = "󰈙 ";
+        #   "~/Books" = " ";
         #   "~/Downloads" = " ";
         #   "~/Vault" = "󰠮 ";
         #   "~/Desktop" = "󰇄 ";
@@ -72,6 +73,10 @@
         #   "~/.config" = ".󰒓 ";
         #   "~/.dotfiles" = ". ";
         # };
+      };
+
+      package = {
+        format = "[$symbol$version]($style) ";
       };
 
       git_branch = {

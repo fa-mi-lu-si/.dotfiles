@@ -175,5 +175,19 @@ in {
         ];
       };
     };
+    theme = {
+      icon = {
+        prepend_dirs = [
+          {
+            name = "Books";
+            text = "";
+          }
+          {
+            name = "Projects";
+            text = "";
+          }
+        ];
+      };
+    };
   };
 }
