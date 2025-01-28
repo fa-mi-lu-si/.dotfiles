@@ -4,10 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # newm = {
-    #     url = "github:EpsilonKu/newm-atha";
-    #     inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    newm-next.url = "github:newm-next/newm-next";
     hyprland.url = "github:hyprwm/Hyprland";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     wezterm.url = "github:wez/wezterm?dir=nix";
