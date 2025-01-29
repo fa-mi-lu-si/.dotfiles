@@ -77,6 +77,7 @@
 
       package = {
         format = "[$symbol$version]($style) ";
+        style = "yellow";
       };
 
       git_branch = {
