@@ -34,6 +34,8 @@ let abbreviations = {
     'gs': 'git status -s'
     'gd': 'git diff'
     'mp': 'mpremote'
+    'cr': 'cargo run'
+    'nr': 'nix run nixpkgs#'
 }
 
 $env.config.filesize.metric = true
@@ -48,6 +50,8 @@ $env.config.shell_integration = {
   osc633: true
   reset_application_mode: true
 }
+$env.config.rm.always_trash = true
+# $env.config.cursor_shape.emacs = 'line'
 
 
 # TODO: more robust handling of edge cases
