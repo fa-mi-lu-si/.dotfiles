@@ -3,7 +3,9 @@
   inputs,
   ...
 }: {
-  environment.systemPackages = [inputs.newm-next.packages.${pkgs.stdenv.hostPlatform.system}.newm-next];
+  environment.systemPackages = [
+    inputs.newm-next.packages.${pkgs.stdenv.hostPlatform.system}.newm-next
+  ];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

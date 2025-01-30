@@ -88,7 +88,7 @@
   users.users.samy = {
     isNormalUser = true;
     description = "samy";
-    extraGroups = ["networkmanager" "wheel" "video" "audio" "sound" "dialout"];
+    extraGroups = ["networkmanager" "wheel" "video" "audio" "sound" "dialout" "input"];
     # packages = with pkgs; [
     # ];
   };
