@@ -50,8 +50,8 @@ config.keys = {
   { key = 'UpArrow',    mods = 'SUPER|CTRL|SHIFT', action = act.SplitPane { direction = 'Up' } },
   { key = 'DownArrow',  mods = 'SUPER|CTRL|SHIFT', action = act.SplitPane { direction = 'Down' } },
 
-  { key = 'UpArrow', mods = 'ALT|CTRL|SHIFT', action = act.ScrollToPrompt(-1) },
-  { key = 'DownArrow', mods = 'ALT|CTRL|SHIFT', action = act.ScrollToPrompt(1) },
+  { key = 'UpArrow',    mods = 'ALT|CTRL|SHIFT',   action = act.ScrollToPrompt(-1) },
+  { key = 'DownArrow',  mods = 'ALT|CTRL|SHIFT',   action = act.ScrollToPrompt(1) },
 
   { key = 'F11',        mods = 'CTRL|SHIFT',       action = act.ToggleFullScreen },
 

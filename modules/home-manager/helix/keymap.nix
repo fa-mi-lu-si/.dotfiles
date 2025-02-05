@@ -1,7 +1,9 @@
 {...}: {
+  programs.helix.settings.editor.jump-label-alphabet = "tnseriaodhfuwy";
   programs.helix.settings.keys = {
     normal = {
       esc = ["collapse_selection" "keep_primary_selection"];
+      A-r = ":reload";
       A-W = "@miW";
       A-w = "@miw";
       C-e = "command_palette";
@@ -18,6 +20,8 @@
     };
 
     insert = {
+      A-r = ":reload";
+      C-e = "command_palette";
       C-s = ":write";
       C-t = ":new";
       C-w = ":buffer-close";
@@ -28,6 +32,7 @@
     };
 
     select = {
+      A-r = ":reload";
       C-e = "command_palette";
       C-s = ":write";
       C-t = ":new";

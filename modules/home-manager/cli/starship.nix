@@ -13,7 +13,8 @@
 
         "$fill"
 
-        "$package"
+        # "$package"
+
         "\${custom.git_host}"
         "$git_branch$git_commit"
         "$git_state$git_status"
@@ -25,6 +26,7 @@
         "$hostname"
         "$character"
       ];
+
       right_format = lib.concatStrings [
         "$sudo"
         "$jobs"
