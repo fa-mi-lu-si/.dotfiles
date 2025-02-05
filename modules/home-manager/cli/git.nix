@@ -6,6 +6,7 @@
     difftastic = {
       enable = true;
     };
+    extraConfig = {init.defaultBranch = "main";};
   };
 
   programs.gh = {
