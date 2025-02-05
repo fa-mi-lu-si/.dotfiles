@@ -5,6 +5,7 @@ import os
 import pwd
 import time
 import logging
+from subprocess import run
 
 from newm.layout import Layout
 from newm.helper import BacklightManager, WobRunner, PaCtl
@@ -26,13 +27,6 @@ pywm = {
     'encourage_csd': False
 }
 
-# focus = {
-#     'enabled': True,
-#     'color': '#8AA6A2',
-#     'witdh': 2,
-#     'distance': 4
-# }
-
 background = {
     'path': os.path.expanduser("~/.config/background"),
     'anim': True
@@ -46,13 +40,25 @@ outputs = [
 backlight_manager = BacklightManager(anim_time=1.)
 
 def on_startup():
+    os.system("eww daemon")
     os.system("systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     os.system("hash dbus-update-activation-environment 2>/dev/null && \
         dbus-update-activation-environment --systemd DISPLAY \
         WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
+def on_reconfigure():
+    os.system("notify-send newm \"Reloaded config\" &")
+
 def synchronous_update() -> None:
     backlight_manager.update()
+
+def super_menu(layout) -> None:
+    eww_state = run("eww state",capture_output=True,shell=True).stdout.decode()
+    if eww_state == "\n":
+        os.system(f"eww open sidebar &")
+    else:
+        os.system(f"eww close sidebar &")
+    layout.toggle_overview()
 
 def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
     return [
@@ -63,8 +69,8 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         
         ("L-semicolon", lambda: layout.move_in_stack(1)),
         
-        ("L-Prior", lambda: layout.basic_scale(1)),
-        ("L-Next", lambda: layout.basic_scale(-1)),
+        # ("L-Prior", lambda: layout.basic_scale(1)),
+        # ("L-Next", lambda: layout.basic_scale(-1)),
 
         ("L-S-Left", lambda: layout.move_focused_view(-1, 0)),
         ("L-S-Down", lambda: layout.move_focused_view(0, 1)),
@@ -81,6 +87,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-c", lambda: os.system("code &")),
         ("L-f", lambda: os.system("nautilus &")),
         ("L-b", lambda: os.system("zen &")),
+        ("L-o", lambda: os.system("obsidian &")),
         ("L-space", lambda: os.system("fuzzel &")),
 
         ("L-q", lambda: layout.close_focused_view()),
@@ -90,8 +97,10 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-C", lambda: layout.update_config()),
 
         ("L-u", lambda: layout.toggle_fullscreen()),
+        ("L-g", lambda: layout.toggle_focused_view_floating()),
 
-        ("L-", lambda: layout.toggle_overview()),
+        ("L-", lambda: super_menu(layout)),
+        # ("L-", lambda: layout.toggle_overview()),
 
 
         ("XF86AudioRaiseVolume", lambda: os.system("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ &")),
@@ -100,13 +109,22 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("XF86AudioPlay", lambda: os.system("playerctl play-pause &")),
         ("XF86AudioPause", lambda: os.system("playerctl play-pause &")),
         ("XF86AudioNext", lambda: os.system("playerctl next &")),
-        ("XF86MonBrightnessUp", lambda: backlight_manager.set(backlight_manager.get() + 0.025)),
-        ("XF86MonBrightnessDown", lambda: backlight_manager.set(backlight_manager.get() - 0.025)),
+        ("XF86MonBrightnessUp", lambda: backlight_manager.set(backlight_manager.get() + 0.01)),
+        ("XF86MonBrightnessDown", lambda: backlight_manager.set(backlight_manager.get() - 0.01)),
     ]
 
-# energy = {
-#     'idle_callback': backlight_manager.callback
-# }
+energy = {
+    # 'idle_callback': backlight_manager.callback
+    'idle_times': []
+}
+
+lock_on_wakeup = False
+
+panels = {
+    'launcher': {
+        'cmd': "kitty"
+    }
+}
 
 gestures = {
     'c': {
