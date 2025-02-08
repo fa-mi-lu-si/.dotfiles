@@ -65,7 +65,7 @@ def _get_active_process_name_cell() -> dict:
 
     if cell["text"] == "yazi":
         cell["icon"] = FOLDER_ICON
-    elif cell["text"] == "hx":
+    elif cell["text"] in ["hx", "less", "man"]:
         cell["icon"] = TEXT_ICON
     elif cell["text"] == "btm":
         cell["icon"] = GRAPH_ICON

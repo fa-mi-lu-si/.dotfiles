@@ -1,6 +1,6 @@
 (defsrc
   tab  q    w    e    r    t     y    u    i    o    p    [
-   caps a    s    d    f    g     h    j    k    l    ;    '
+   caps a    s    d    f    g     h    j    k    l    scln '
      lsft  z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rctl
 )
@@ -54,7 +54,7 @@
 
 
 (deflayer colemak
-  tab  @qQ  w    f    p    b     j    l    u    y    ;    S--
+  tab  @qQ  w    f    p    b     j    l    u    y    scln S--
    esc  @m_a @a_r @c_s @s_t g     m    @s_n @c_e @a_i @m_o '
      @nav  x    c    d    v    z    k    h    ,    .    /    rsft
   lctl @ml2 @bsw           @spa           @mr1 @mr2
@@ -80,7 +80,7 @@ XX   |    #    _    \      .    `~   {    }    XX
 (defchords symbol-chords 150
   ;; ( ex co da eq  sq pl pr qu )
   ( ex                       ) (macro S-1)
-  (    co                    ) (macro S-;)
+  (    co                    ) (macro S-scln)
   (       da                 ) -
   (          eq              ) =
   (              sq          ) '
@@ -93,7 +93,7 @@ XX   |    #    _    \      .    `~   {    }    XX
   ;; coding chords
   (          eq  bt          ) (macro S-`)     ;; ~
   (          eq  sq          ) (macro S-')     ;; "
-  (    co da                 ) (macro S-; S-;) ;; ::
+  (    co da                 ) (macro S-scln S-scln) ;; ::
   (       da eq              ) (macro = =)     ;; ==
   ( ex       eq              ) (macro S-1 =)   ;; !=
   (      plu eq              ) (macro + =)     ;; +=
@@ -186,7 +186,7 @@ XX   |    #    _    \      .    `~   {    }    XX
 )
 (deflayer qwerty
   @ctb q    w    e    r    t     y    u    i    o    p    [
-   caps a    s    d    f    g     h    j    k    l    ;    '
+   caps a    s    d    f    g     h    j    k    l    scln '
      lsft  z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rctl
 )

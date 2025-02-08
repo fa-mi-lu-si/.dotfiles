@@ -1,5 +1,7 @@
 {
   inputs,
+  config,
+  lib,
   pkgs,
   ...
 }: {
@@ -21,7 +23,6 @@
     amberol
 
     foliate
-    iagno
     eartag
   ];
 
@@ -39,6 +40,9 @@
       main = {
         terminal = "kitty";
         layer = "top";
+      };
+      border = {
+        width = 2;
       };
     };
   };

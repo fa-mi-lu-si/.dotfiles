@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
 
+    ../../modules/nixos/nix.nix
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/newm-next.nix
     ../../modules/nixos/wezterm.nix
