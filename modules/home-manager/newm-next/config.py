@@ -123,7 +123,11 @@ lock_on_wakeup = False
 panels = {
     'launcher': {
         'cmd': "kitty"
-    }
+    },
+    # 'bar': {
+    #     'cmd': 'eww open sidebar',
+    #     'visible_normal': False
+    # }
 }
 
 gestures = {

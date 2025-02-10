@@ -14,6 +14,7 @@
     ../../modules/home-manager/kitty
     ../../modules/home-manager/hyprland
     ../../modules/home-manager/newm-next
+    ../../modules/home-manager/niri
     ../../modules/home-manager/eww
     ../../modules/home-manager/stylix.nix
   ];

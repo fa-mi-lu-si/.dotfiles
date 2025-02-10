@@ -13,6 +13,7 @@
     ../../modules/nixos/nix.nix
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/newm-next.nix
+    ../../modules/nixos/niri.nix
     ../../modules/nixos/wezterm.nix
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/nix-ld.nix

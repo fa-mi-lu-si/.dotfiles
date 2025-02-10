@@ -6,6 +6,8 @@
 
     newm-next.url = "github:newm-next/newm-next";
     hyprland.url = "github:hyprwm/Hyprland";
+    niri.url = "github:sodiboo/niri-flake";
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     wezterm.url = "github:wez/wezterm?dir=nix";
     stylix.url = "github:danth/stylix";
