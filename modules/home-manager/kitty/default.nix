@@ -18,6 +18,7 @@
       active_tab_title_template = " {f' ' if (layout_name == 'stack' and num_windows > 1) else ''}{title}{bell_symbol}{activity_symbol} ";
       window_padding_width = "5 10";
       remember_window_size = false;
+      hide_window_decorations = true;
 
       enabled_layouts = "tall, splits:split_axis=auto, fat, grid, horizontal, vertical, stack";
 
