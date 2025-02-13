@@ -91,7 +91,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-space", lambda: os.system("fuzzel &")),
 
         ("L-q", lambda: layout.close_focused_view()),
-        ("L-A-q", lambda: layout.terminate()),
+        ("L-C-q", lambda: layout.terminate()),
 
         # ("L-p", lambda: layout.ensure_locked(dim=True)),
         ("L-C", lambda: layout.update_config()),
