@@ -36,7 +36,6 @@
           {proportion = 2.0 / 3.0;}
           {proportion = 1.0 / 1.0;}
         ];
-        default-column-width = {proportion = 1.0 / 2.0;};
       };
 
       spawn-at-startup = [
@@ -44,6 +43,12 @@
         # https://github.com/YaLTeR/niri/wiki/Xwayland
         {
           command = ["swww-daemon"];
+        }
+        {
+          command = ["eww" "daemon"];
+        }
+        {
+          command = ["eww" "open" "sidebar"];
         }
         {
           command = ["clipse" "-listen"];
@@ -65,7 +70,7 @@
         "Mod+R".action = switch-preset-column-width;
         "Mod+M".action = maximize-column;
         "Mod+U".action = fullscreen-window;
-        "Mod+Ctrl+Q".action = quit;
+        "Mod+Shift+Q".action = quit;
 
         "Mod+Left".action = focus-column-left;
         "Mod+Right".action = focus-column-right;
@@ -75,6 +80,10 @@
         "Mod+Shift+Right".action = move-column-right;
         "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
         "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
+        "Mod+Home".action = focus-column-first;
+        "Mod+End".action = focus-column-last;
+        "Mod+Shift+Home".action = move-column-to-first;
+        "Mod+Shift+End".action = move-column-to-last;
 
         "Mod+Page_Up".action = focus-workspace-up;
         "Mod+Page_Down".action = focus-workspace-down;

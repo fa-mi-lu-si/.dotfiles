@@ -69,8 +69,8 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         
         ("L-semicolon", lambda: layout.move_in_stack(1)),
         
-        # ("L-Prior", lambda: layout.basic_scale(1)),
-        # ("L-Next", lambda: layout.basic_scale(-1)),
+        ("L-minus", lambda: layout.basic_scale(1)),
+        ("L-equal", lambda: layout.basic_scale(-1)),
 
         ("L-S-Left", lambda: layout.move_focused_view(-1, 0)),
         ("L-S-Down", lambda: layout.move_focused_view(0, 1)),
@@ -91,7 +91,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-space", lambda: os.system("fuzzel &")),
 
         ("L-q", lambda: layout.close_focused_view()),
-        ("L-C-q", lambda: layout.terminate()),
+        ("L-A-q", lambda: layout.terminate()),
 
         # ("L-p", lambda: layout.ensure_locked(dim=True)),
         ("L-C", lambda: layout.update_config()),

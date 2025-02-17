@@ -52,7 +52,7 @@
         "$mod, space, exec, fuzzel"
         "$mod, V, exec, kitty --class=float_term -o initial_window_width=450 -o initial_window_height=650 clipse"
         "$mod, Q, killactive"
-        "$mod CTRL , Q, exit"
+        "$mod SHIFT , Q, exit"
 
         # Move around
         "ALT, tab, cycleNext"
