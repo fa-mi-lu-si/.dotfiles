@@ -33,18 +33,11 @@
   rts (tap-hold-release 150 250 ret (layer-while-held symbols))
 
   ;; home row mods for colemak
-  ;; double shift for caps
   m_a (tap-hold-release 150 250 a lmet)
   a_r (tap-hold-release 150 250 r lalt)
   c_s (tap-hold-release 150 250 s lctl)
-  s_t (fork
-    (tap-hold-release 150 250 t lsft)
-    (tap-hold 300 300 t caps)
-    (rsft))
-  s_n (fork
-    (tap-hold-release 150 250 n rsft)
-    (tap-hold 300 300 n caps)
-    (lsft))
+  s_t (tap-hold-release 150 250 t lsft)
+  s_n (tap-hold-release 150 250 n rsft)
   c_e (tap-hold-release 150 250 e rctl)
   a_i (tap-hold-release 150 250 i ralt)
   m_o (tap-hold-release 150 250 o rmet)
@@ -78,6 +71,7 @@ XX   |    #    _    \      .    `~   {    }    XX
 |#
 
 (defchords symbol-chords 150
+  ;; home row keys
   ;; ( ex co da eq  sq pl pr qu )
   ( ex                       ) (macro S-1)
   (    co                    ) (macro S-scln)
@@ -87,13 +81,17 @@ XX   |    #    _    \      .    `~   {    }    XX
   (                 pl       ) S-9
   (                    pr    ) S-0
   (                       qu ) S-/
+  ;; some other keys
   (       plu                ) S-=
   (              bt          ) `
+  (    am                   ) S-7
 
   ;; coding chords
   (          eq  bt          ) (macro S-`)     ;; ~
-  (          eq  sq          ) (macro S-')     ;; "
+  (              sq pl       ) (macro S-')     ;; "
   (    co da                 ) (macro S-scln S-scln) ;; ::
+  (    am        sq          ) (macro S-7 ') ;; &'
+  (    am        sq pl       ) (macro S-7 m u t) ;; &mut
   (       da eq              ) (macro = =)     ;; ==
   ( ex       eq              ) (macro S-1 =)   ;; !=
   (      plu eq              ) (macro + =)     ;; +=
@@ -110,9 +108,11 @@ XX   |    #    _    \      .    `~   {    }    XX
   (    co da           pr    ) (macro - S-.)   ;; ->
   (    co da eq        pr    ) (macro = S-.)   ;; =>
 
+  (          eq  sq          ) (macro caps)    ;; caps
+
   ;; numbers
   ;; binary numchords
-  ( plu   2 ) (tap-hold 100 400 Digit0 f1) ;; 0 (maybe)
+  ( plu   2 ) (tap-hold 100 400 Digit0 f1)
   ( 1       ) (tap-hold 100 400 Digit1 f1)
   (   2     ) (tap-hold 100 400 Digit2 f2)
   ( 1 2     ) (tap-hold 100 400 Digit3 f3)
@@ -151,11 +151,12 @@ XX   |    #    _    \      .    `~   {    }    XX
 
   bt (chord symbol-chords bt)
   plu (chord symbol-chords plu)
+  am (chord symbol-chords am)
 )
 
 
 (deflayer symbols
-  XX   S-5  S-7  @plu S-4  S-2   S-6  @n1  @n2  @n4  @n8  [
+  XX   S-5  @am  @plu S-4  S-2   S-6  @n1  @n2  @n4  @n8  [
    XX   @ex  @co  @da  @eq  /     S-8  @sq  @pl  @pr  @qu  '
      XX    S-\  S-3  S--  \    spc  .    @bt  @bl  @br  XX   rsft
   XX   XX   bspc           spc            XX   @mr2
