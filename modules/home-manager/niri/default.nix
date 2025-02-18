@@ -80,15 +80,15 @@
         "Mod+Shift+Right".action = move-column-right;
         "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
         "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
-        "Mod+Home".action = focus-column-first;
-        "Mod+End".action = focus-column-last;
-        "Mod+Shift+Home".action = move-column-to-first;
-        "Mod+Shift+End".action = move-column-to-last;
+        # "Mod+Home".action = focus-column-first;
+        # "Mod+End".action = focus-column-last;
+        # "Mod+Shift+Home".action = move-column-to-first;
+        # "Mod+Shift+End".action = move-column-to-last;
 
-        "Mod+Page_Up".action = focus-workspace-up;
-        "Mod+Page_Down".action = focus-workspace-down;
-        "Mod+Shift+Page_Up".action = move-window-to-workspace-up;
-        "Mod+Shift+Page_Down".action = move-window-to-workspace-down;
+        # "Mod+Page_Up".action = focus-workspace-up;
+        # "Mod+Page_Down".action = focus-workspace-down;
+        # "Mod+Shift+Page_Up".action = move-window-to-workspace-up;
+        # "Mod+Shift+Page_Down".action = move-window-to-workspace-down;
 
         "Mod+Shift+TouchpadScrollDown".action = sh "brightnessctl s +1%";
         "Mod+Shift+TouchpadScrollUp".action = sh "brightnessctl s 1%-";
