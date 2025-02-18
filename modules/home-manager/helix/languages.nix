@@ -19,6 +19,11 @@
         file-types = ["nix"];
         comment-token = "#";
       }
+      {
+        name = "markdown";
+        # auto continue markdown lists
+        comment-tokens = ["-" "+" "*" "1." ">" "- [ ]"];
+      }
     ];
 
     language-server = {

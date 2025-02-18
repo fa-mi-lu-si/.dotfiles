@@ -5,8 +5,8 @@
     envFile.source = ./env.nu;
     shellAliases = {
       l = "eza";
-      ll = "eza -l";
-      la = "eza -a";
+      ll = "ls -l";
+      la = "ls -a";
       lt = "eza --tree";
       lla = "eza -la";
     };
