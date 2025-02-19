@@ -8,6 +8,9 @@
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
   ];
+  home.packages = with pkgs; [
+    xwayland-satellite
+  ];
   programs.niri = {
     enable = true;
     package = pkgs.niri;
@@ -39,8 +42,6 @@
       };
 
       spawn-at-startup = [
-        # TODO: add xwayland-satellite support
-        # https://github.com/YaLTeR/niri/wiki/Xwayland
         {
           command = ["swww-daemon"];
         }
@@ -53,7 +54,14 @@
         {
           command = ["clipse" "-listen"];
         }
+        {
+          command = ["xwayland-satellite"];
+        }
       ];
+
+      environment = {
+        DISPLAY = ":0";
+      };
 
       binds = with config.lib.niri.actions; let
         sh = spawn "sh" "-c";
