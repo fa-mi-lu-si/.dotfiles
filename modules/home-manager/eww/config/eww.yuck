@@ -37,7 +37,7 @@
     :orientation "v"
     (for i in {jq(niri-workspaces, ".=sort_by(.id)")}
       (button
-        :onclick "notify-send niri '${i.id} ${monitor}'"
+        :onclick "niri msg action focus-workspace ${i.id}"
         ; :class "${i.class}"
         "${i.is_focused ? "  " : "  "}"))))
 
@@ -83,7 +83,7 @@
         status == "Playing" ? "":
         status == "Paused" ? "":
         status == "Stopped" ? "":
-        "0"
+        "󰝛"
       })))
 
 (defwidget bottom [screen]
