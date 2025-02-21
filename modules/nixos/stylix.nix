@@ -24,7 +24,7 @@
       "base0C" = "#8AA6A2";
       "base0D" = "#8DA3B9";
       "base0E" = "#A988B0";
-      "base0F" = "#cc6633";
+      "base0F" = "#C0784D";
     };
     polarity = "dark";
 
