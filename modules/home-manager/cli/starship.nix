@@ -14,7 +14,6 @@
         "$fill"
 
         # "$package"
-
         "\${custom.git_host}"
         "$git_branch$git_commit"
         "$git_state$git_status"
@@ -30,6 +29,8 @@
       right_format = lib.concatStrings [
         "$sudo"
         "$jobs"
+        "\${custom.mpremote}"
+        "\${custom.probe-rs}"
         "$battery"
       ];
 
@@ -45,6 +46,12 @@
         disabled = false;
         format = "[$symbol]($style)";
         symbol = "󱑷 ";
+      };
+
+      hostname = {
+        ssh_symbol = "󰣀 ";
+        format = "[$ssh_symbol$hostname]($style)";
+        style = "yellow";
       };
 
       fill.symbol = " ";
@@ -103,7 +110,6 @@
       };
       git_state.format = "\([$state( $progress_current/$progress_total)]($style)\) ";
 
-      # TODO: maybe an indicator for microcontrollers and debug probe connection during embedded
       python = {
         symbol = " ";
         format = "[$symbol$virtualenv]($style) ";
@@ -129,6 +135,43 @@
         impure_msg = "~";
         pure_msg = "󰡱";
         format = "[$symbol$state]($style) ";
+      };
+
+      custom.mpremote = {
+        description = "Connected Micropython Device";
+        shell = ["sh" "--norc" "--noprofile"];
+        format = "[$output]($style)";
+        style = "";
+        when = "mpremote --version";
+        command = ''
+          GREEN="\033[0;32m"
+          RED="\033[0;31m"
+          NC="\033[0m" # No Color
+          if [ "$(mpremote connect list 2>/dev/null | grep -c "MicroPython")" -gt 0 ]; then
+              echo -e "$GREEN  $NC" # Green connected symbol
+          else
+              echo -e "$RED  $NC" # Red disconnected symbol
+          fi
+        '';
+      };
+
+      custom.probe-rs = {
+        description = "Connected Debug probe";
+        shell = ["sh" "--norc" "--noprofile"];
+        format = "[$output]($style)";
+        style = "";
+        when = "probe-rs --version";
+        command = ''
+          # ANSI color codes
+          GREEN="\033[0;32m"
+          RED="\033[0;31m"
+          NC="\033[0m" # No Color
+          if [[ $(probe-rs list) =~ \[0\]:\ (.+)\ --\  ]]; then
+              echo -e "$GREEN  $NC"
+          else
+              echo -e "$RED  $NC"
+          fi
+        '';
       };
 
       env_var.YAZI_LEVEL = {
@@ -162,8 +205,10 @@
           echo "$GIT_REMOTE_SYMBOL"
           IFS=""
         '';
-        when = "git rev-parse --is-inside-work-tree 2> /dev/null";
-        directories = [".git"];
+        # when = "git rev-parse --is-inside-work-tree 2> /dev/null";
+        require_repo = true;
+        when = true;
+        # directories = [".git"];
       };
 
       custom.git_last_commit = {
@@ -174,8 +219,10 @@
         command = ''
           git log --pretty=format:'%cr' -1
         '';
-        when = "git rev-parse --is-inside-work-tree 2> /dev/null";
-        directories = [".git"];
+        # when = "git rev-parse --is-inside-work-tree 2> /dev/null";
+        require_repo = true;
+        when = true;
+        # directories = [".git"];
       };
     };
   };
