@@ -20,7 +20,7 @@
       remember_window_size = false;
       hide_window_decorations = true;
 
-      enabled_layouts = "tall, splits:split_axis=auto, fat, grid, horizontal, vertical, stack";
+      enabled_layouts = "splits:split_axis=auto, tall, fat, grid, horizontal, vertical, stack";
 
       cursor_trail = 5;
       cursor_shape = "beam";
@@ -33,6 +33,7 @@
     };
     keybindings = {
       "ctrl+shift+t" = "launch --type=tab";
+      "ctrl+super+t" = "launch --type=os-window --cwd=current";
       "ctrl+shift+n" = "launch --cwd=current";
       "ctrl+shift+w" = "close_tab";
       "ctrl+super+w" = "close_window_with_confirmation ignore-shell";

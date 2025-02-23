@@ -23,6 +23,7 @@ let abbreviations = {
     's': 'sudo'
     'ho': 'handlr open'
     'hf': 'hx ...(fzf -m | lines)'
+    'fh': 'hx ...(fzf -m | lines)'
     'cl': 'clear'
     'g': 'git'
     'ga': 'git add'
