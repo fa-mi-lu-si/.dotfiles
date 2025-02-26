@@ -29,6 +29,16 @@
           };
           clip-to-geometry = true;
         }
+
+        {
+          matches = [
+            {
+              title = "^Picture-in-Picture$";
+            }
+          ];
+          # add the default window dimensions
+          open-floating = true;
+        }
       ];
       layout = {
         border.width = 2;
@@ -78,6 +88,8 @@
         "Mod+R".action = switch-preset-column-width;
         "Mod+M".action = maximize-column;
         "Mod+U".action = fullscreen-window;
+        "Mod+Shift+G".action = toggle-window-floating;
+        "Mod+G".action = switch-focus-between-floating-and-tiling;
         "Mod+Shift+Q".action = quit;
 
         "Mod+Left".action = focus-column-left;
