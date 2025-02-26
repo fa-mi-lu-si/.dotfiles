@@ -37,7 +37,7 @@
     :orientation "v"
     (for i in {jq(niri-workspaces, ".=sort_by(.id)")}
       (button
-        :onclick "niri msg action focus-workspace ${i.id}"
+        :onclick "niri msg action focus-workspace ${i.idx}"
         ; :class "${i.class}"
         "${i.is_focused ? "  " : "  "}"))))
 
