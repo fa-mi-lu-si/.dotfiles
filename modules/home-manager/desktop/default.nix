@@ -7,6 +7,7 @@
     ./spicetify.nix
   ];
   home.packages = with pkgs; [
+    swww
     libnotify
     scrcpy
     inputs.zen-browser.packages."${system}".default

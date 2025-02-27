@@ -112,7 +112,7 @@ XX   |    #    _    \      .    `~   {    }    XX
 
   ;; numbers
   ;; binary numchords
-  ( plu   2 ) (tap-hold 100 400 Digit0 f1)
+  ( plu   2 ) (tap-hold 100 400 Digit0 XX)
   ( 1       ) (tap-hold 100 400 Digit1 f1)
   (   2     ) (tap-hold 100 400 Digit2 f2)
   ( 1 2     ) (tap-hold 100 400 Digit3 f3)
