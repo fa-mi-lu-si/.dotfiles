@@ -39,7 +39,7 @@ let abbreviations = {
     'nr': 'nix run nixpkgs#'
 }
 
-$env.config.filesize.metric = true
+$env.config.filesize.unit = 'metric'
 $env.config.show_banner = false
 $env.config.use_kitty_protocol = true
 $env.config.shell_integration = {
@@ -63,6 +63,7 @@ let argc_completer = {|args|
         | flatten 
 }
 
+# TODO: just switch to carapace to remove the need for this nonsense
 # TODO: don't rely on imperative install, or wait for argc-completions to be packaged
 $env.ARGC_COMPLETIONS_ROOT = '/home/samy/Projects/argc-completions'
 $env.ARGC_COMPLETIONS_PATH = ($env.ARGC_COMPLETIONS_ROOT + '/completions/linux:' + $env.ARGC_COMPLETIONS_ROOT + '/completions')

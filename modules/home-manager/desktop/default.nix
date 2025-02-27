@@ -21,7 +21,6 @@
     amberol
 
     foliate
-    eartag
   ];
 
   services.dunst = {
