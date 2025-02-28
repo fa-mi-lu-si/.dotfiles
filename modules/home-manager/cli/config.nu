@@ -39,8 +39,9 @@ let abbreviations = {
     'nr': 'nix run nixpkgs#'
 }
 
-$env.config.filesize.unit = 'metric'
 $env.config.show_banner = false
+$env.config.filesize.unit = 'metric'
+$env.config.history.file_format = "sqlite"
 $env.config.use_kitty_protocol = true
 $env.config.shell_integration = {
   osc2: true
@@ -52,7 +53,6 @@ $env.config.shell_integration = {
   reset_application_mode: true
 }
 $env.config.rm.always_trash = true
-# $env.config.cursor_shape.emacs = 'line'
 
 
 # TODO: more robust handling of edge cases
@@ -256,6 +256,7 @@ $env.config.menus = [
 ]
 
 # Transient prompt for starship
+# TODO: make it show success or failure, no need for starship here
 $env.TRANSIENT_PROMPT_COMMAND = {||
   (
     starship module
