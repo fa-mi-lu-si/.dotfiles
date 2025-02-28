@@ -1,10 +1,15 @@
-{...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ./languages.nix
     ./keymap.nix
   ];
   programs.helix = {
     enable = true;
+    package = inputs.helix.packages."${pkgs.system}".default;
     defaultEditor = true;
     settings = {
       editor = {
