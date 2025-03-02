@@ -17,6 +17,7 @@
     settings = {
       hotkey-overlay.skip-at-startup = true;
       input.focus-follows-mouse.enable = true;
+      input.touchpad.accel-speed = 0.2;
 
       prefer-no-csd = true;
       window-rules = [
@@ -76,8 +77,8 @@
       binds = with config.lib.niri.actions; let
         sh = spawn "sh" "-c";
       in {
-        "Mod+T".action = spawn "kitty";
-        "Mod+Shift+T".action = spawn "wezterm";
+        "Mod+T".action = spawn "wezterm";
+        "Mod+Shift+T".action = spawn "kitty";
         "Mod+F".action = spawn "nautilus";
         "Mod+B".action = spawn "zen";
         "Mod+C".action = spawn "code";
@@ -85,12 +86,14 @@
         "Mod+Space".action = spawn "fuzzel";
 
         "Mod+Q".action = close-window;
+        "Mod+Shift+Q".action = quit;
+        "Mod+Home".action = consume-window-into-column;
+        "Mod+End".action = expel-window-from-column;
         "Mod+R".action = switch-preset-column-width;
         "Mod+M".action = maximize-column;
         "Mod+U".action = fullscreen-window;
-        "Mod+Shift+G".action = toggle-window-floating;
-        "Mod+G".action = switch-focus-between-floating-and-tiling;
-        "Mod+Shift+Q".action = quit;
+        "Mod+G".action = toggle-window-floating;
+        "Alt+Tab".action = switch-focus-between-floating-and-tiling;
 
         "Mod+Left".action = focus-column-left;
         "Mod+Right".action = focus-column-right;
@@ -100,15 +103,6 @@
         "Mod+Shift+Right".action = move-column-right;
         "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
         "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
-        # "Mod+Home".action = focus-column-first;
-        # "Mod+End".action = focus-column-last;
-        # "Mod+Shift+Home".action = move-column-to-first;
-        # "Mod+Shift+End".action = move-column-to-last;
-
-        # "Mod+Page_Up".action = focus-workspace-up;
-        # "Mod+Page_Down".action = focus-workspace-down;
-        # "Mod+Shift+Page_Up".action = move-window-to-workspace-up;
-        # "Mod+Shift+Page_Down".action = move-window-to-workspace-down;
 
         "Mod+Shift+TouchpadScrollDown".action = sh "brightnessctl s +1%";
         "Mod+Shift+TouchpadScrollUp".action = sh "brightnessctl s 1%-";
