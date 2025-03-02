@@ -14,8 +14,13 @@
       C-v = ":clipboard-paste-after";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
-      space.A-g = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})";
-      space.space = "goto_word";
+      G = {
+        # Git menu
+        b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})";
+        r = ":reset-diff-change";
+        f = "changed_file_picker";
+      };
+      "'" = "goto_word";
       space.q = ":quit";
       space.w.d = [":vsplit" "goto_definition"];
     };
