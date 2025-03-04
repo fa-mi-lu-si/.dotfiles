@@ -21,12 +21,15 @@
 
       prefer-no-csd = true;
       window-rules = [
+        # Rounded Corners
         {
-          geometry-corner-radius = {
-            top-left = 10.0;
-            top-right = 10.0;
-            bottom-left = 10.0;
-            bottom-right = 10.0;
+          geometry-corner-radius = let
+            r = 10.0;
+          in {
+            top-left = r;
+            top-right = r;
+            bottom-left = r;
+            bottom-right = r;
           };
           clip-to-geometry = true;
         }

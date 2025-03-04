@@ -35,7 +35,7 @@
 (defwidget niri-workspace-widget [monitor]
   (box :class "workspaces"
     :orientation "v"
-    (for i in {jq(niri-workspaces, ".=sort_by(.id)")}
+    (for i in {jq(niri-workspaces, ".=sort_by(.idx)")}
       (button
         :onclick "niri msg action focus-workspace ${i.idx}"
         ; :class "${i.class}"
