@@ -53,9 +53,24 @@
   lctl @ml2 @bsw           @spa           @mr1 @mr2
 )
 
+(defchords nav-chords 150
+  (vd py vu) prnt
+  (   py   ) MediaPlayPause
+  (   py vu) MediaTrackNext
+  (vd py   ) MediaTrackPrevious
+  (      vu) VolumeUp
+  (vd      ) VolumeDown
+  (vd    vu) VolumeMute
+)
+
+(defalias
+  py (chord nav-chords py)
+  vu (chord nav-chords vu)
+  vd (chord nav-chords vd)
+)
 
 (deflayer navigation
-  _    @qQ  prev pp   next XX    XX   pgup up   pgdn XX   _
+  _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn XX   _
    esc  lmet lalt lctl lsft XX    f9   left down rght tab  _
      @nav  XX   C-c  del  C-v  C-z  XX   home menu end  XX   rsft
   _    @ml2 bspc           @rts           @mr1 @mr2
@@ -164,20 +179,16 @@ XX   |    #    _    \      .    `~   {    }    XX
 
 
 (defalias
-  scr nop0
-
+  scr nop0 ;; scrolling key
   ma↑ (fork (movemouse-accel-up 2 500 1 4) (mwheel-up 50 120) (nop0))
   ma← (fork (movemouse-accel-left 2 500 1 4) (mwheel-left 50 120) (nop0))
   ma↓ (fork (movemouse-accel-down 2 500 1 4) (mwheel-down 50 120) (nop0))
   ma→ (fork (movemouse-accel-right 2 500 1 4) (mwheel-right 50 120) (nop0))
-
-  vbu (fork volu (unshift brup) (lsft rsft))
-  vbd (tap-hold 250 250 (fork vold (unshift brdn) (lsft rsft)) lctl)
 )
 
 (deflayer mouse
-  lrld XX   XX   @vbu prnt XX    XX   XX   @ma↑ XX   XX   _
-   XX   lmet lalt @vbd lsft mrgt  XX   @ma← @ma↓ @ma→ XX   _
+  lrld XX   XX   XX   XX   XX    XX   XX   @ma↑ XX   XX   _
+   XX   lmet lalt lctl lsft mrgt  XX   @ma← @ma↓ @ma→ XX   _
      XX    XX   XX   @scr XX   XX   XX   XX   XX   XX   XX   _
   @qwe XX   mrgt           mlft           XX   XX
 )
