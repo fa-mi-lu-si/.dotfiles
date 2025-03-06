@@ -14,6 +14,8 @@
     # Get the environment variables from home manager
     environmentVariables = config.home.sessionVariables;
   };
+  programs.carapace.enable = true;
+  programs.carapace.enableNushellIntegration = true;
 
   programs.yazi.enableNushellIntegration = true;
   programs.starship.enableNushellIntegration = true;
