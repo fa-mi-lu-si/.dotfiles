@@ -8,6 +8,7 @@
 
   # media control
   services.playerctld.enable = true;
+  hardware.graphics.enable = true;
 
   # sound
   services.pipewire = {

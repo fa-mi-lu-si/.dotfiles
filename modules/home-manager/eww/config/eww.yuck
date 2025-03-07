@@ -6,8 +6,6 @@
 (deflisten artist "playerctl metadata artist --follow")
 (deflisten status "playerctl status --follow")
 
-(defvar compositor "")
-(deflisten hyprland-workspaces "hyprland-workspaces _")
 (deflisten niri-workspaces "./scripts/niri-workspaces.sh")
 
 (defwidget bar [screen]
@@ -19,16 +17,6 @@
     (box :valign "end"
       (bottom :screen screen))))
 
-(defwidget hyprland-workspace-widget [monitor]
-  (eventbox :onscroll "hyprctl dispatch workspace `echo {} | sed 's/up/+/\' | sed 's/down/-/'`1"
-    (box :class "workspaces"
-      :orientation "v"
-      (for i in {hyprland-workspaces[monitor].workspaces}
-        (button
-          :onclick "hyprctl dispatch workspace ${i.id}"
-          :class "${i.class}"
-        "${i.active ? "  " : "  "}")))))
-
 (defwidget niri-workspace-widget [monitor]
   (box :class "workspaces"
     :orientation "v"
@@ -38,8 +26,6 @@
         :onclick "niri msg action focus-workspace ${i.idx}"
         "${i.is_focused ? "  " : "  "}"))))
 
-; TODO: set the compositor using `eww update` in wm startup
-; use appropriate workspace widget, or just stop using hyprland
 (defwidget top [screen] (box (niri-workspace-widget :monitor 0)))
 
 (defwidget middle [screen] (time))

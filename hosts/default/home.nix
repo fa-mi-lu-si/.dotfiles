@@ -12,7 +12,6 @@
     ../../modules/home-manager/vscode
     ../../modules/home-manager/helix
     ../../modules/home-manager/kitty
-    ../../modules/home-manager/hyprland
     ../../modules/home-manager/newm-next
     ../../modules/home-manager/niri
     ../../modules/home-manager/eww
