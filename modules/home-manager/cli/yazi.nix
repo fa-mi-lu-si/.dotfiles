@@ -61,8 +61,14 @@ in {
         border_symbol = " ";
       };
       status = {
-        separator_open = "";
-        separator_close = "";
+        sep_left = {
+          open = "";
+          close = "";
+        };
+        sep_right = {
+          open = "";
+          close = "";
+        };
       };
     };
 
