@@ -188,7 +188,7 @@ XX   |    #    _    \      .    `~   {    }    XX
 
 (deflayer mouse
   lrld XX   XX   XX   XX   XX    XX   XX   @ma↑ XX   XX   _
-   XX   lmet lalt lctl lsft mrgt  XX   @ma← @ma↓ @ma→ XX   _
+   XX   lmet lalt lctl lsft mmid  XX   @ma← @ma↓ @ma→ XX   _
      XX    XX   XX   @scr XX   XX   XX   XX   XX   XX   XX   _
   @qwe XX   mrgt           mlft           XX   XX
 )

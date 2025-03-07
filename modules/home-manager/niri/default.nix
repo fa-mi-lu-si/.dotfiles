@@ -86,6 +86,7 @@
         "Mod+B".action = spawn "zen";
         "Mod+C".action = spawn "code";
         "Mod+O".action = spawn "obsidian";
+        "Mod+Shift+O".action = sh "wezterm start --cwd ~/Vault hx ."; # Quick note
         "Mod+Space".action = spawn "fuzzel";
 
         "Mod+Q".action = close-window;
@@ -112,6 +113,7 @@
         "Mod+TouchpadScrollDown".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+";
         "Mod+TouchpadScrollUp".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-";
 
+        "Print".action = screenshot;
         "XF86AudioRaiseVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
         "XF86AudioLowerVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
         "XF86AudioMute".action = sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";

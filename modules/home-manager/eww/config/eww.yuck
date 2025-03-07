@@ -12,14 +12,11 @@
 
 (defwidget bar [screen]
   (centerbox :orientation "v"
-    (box :class "segment-top"
-      :valign "start"
+    (box :valign "start"
       (top :screen screen))
     (box :valign "center"
-      :class "middle"
       (middle :screen screen))
     (box :valign "end"
-      :class "segment-bottom"
       (bottom :screen screen))))
 
 (defwidget hyprland-workspace-widget [monitor]
@@ -35,10 +32,10 @@
 (defwidget niri-workspace-widget [monitor]
   (box :class "workspaces"
     :orientation "v"
+    ; TODO: make this monitor specific, with a jq filter
     (for i in {jq(niri-workspaces, ".=sort_by(.idx)")}
       (button
         :onclick "niri msg action focus-workspace ${i.idx}"
-        ; :class "${i.class}"
         "${i.is_focused ? "  " : "  "}"))))
 
 ; TODO: set the compositor using `eww update` in wm startup
@@ -55,6 +52,7 @@
 
 (defwidget battery []
   (box :orientation "v"
+    ; use for loop to support different battery names
     {
       EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
       EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
@@ -98,7 +96,7 @@
   ))
 
 (defwindow sidebar
-  :monitor 0
+  :monitor "eDP-1"
   :stacking 'fg'
   :geometry (geometry :x 0 :y 0 :height "100%" :anchor "center left")
   :exclusive true
