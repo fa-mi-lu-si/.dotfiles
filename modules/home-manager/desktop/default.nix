@@ -49,7 +49,7 @@
   };
 
   home.sessionVariables = {
-    SWWW_TRANSITION = "center";
+    SWWW_TRANSITION = "left";
   };
 
   # gtk.iconTheme = {
