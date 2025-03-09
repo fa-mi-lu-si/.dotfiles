@@ -108,11 +108,6 @@
         "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
         "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
 
-        "Mod+Shift+TouchpadScrollDown".action = sh "brightnessctl s +1%";
-        "Mod+Shift+TouchpadScrollUp".action = sh "brightnessctl s 1%-";
-        "Mod+TouchpadScrollDown".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+";
-        "Mod+TouchpadScrollUp".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-";
-
         "Print".action = screenshot;
         "XF86AudioRaiseVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
         "XF86AudioLowerVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";

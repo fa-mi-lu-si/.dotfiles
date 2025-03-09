@@ -52,14 +52,6 @@ def on_reconfigure():
 def synchronous_update() -> None:
     backlight_manager.update()
 
-def super_menu(layout) -> None:
-    eww_state = run("eww state",capture_output=True,shell=True).stdout.decode()
-    if eww_state == "\n":
-        os.system(f"eww open sidebar &")
-    else:
-        os.system(f"eww close sidebar &")
-    layout.toggle_overview()
-
 def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
     return [
         ("L-Left", lambda: layout.move(-1, 0)),
@@ -67,10 +59,12 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-Up", lambda: layout.move(0, -1)),
         ("L-Right", lambda: layout.move(1, 0)),
         
-        ("L-semicolon", lambda: layout.move_in_stack(1)),
+        ("A-Tab", lambda: layout.move_in_stack(1)),
         
         ("L-minus", lambda: layout.basic_scale(1)),
         ("L-equal", lambda: layout.basic_scale(-1)),
+        ("L-S-minus", lambda: layout.basic_scale(1)),
+        ("L-S-equal", lambda: layout.basic_scale(-1)),
 
         ("L-S-Left", lambda: layout.move_focused_view(-1, 0)),
         ("L-S-Down", lambda: layout.move_focused_view(0, 1)),
@@ -82,16 +76,17 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-A-Up", lambda: layout.resize_focused_view(0, -1)),
         ("L-A-Right", lambda: layout.resize_focused_view(1, 0)),
 
-        ("L-t", lambda: os.system("kitty &")),
-        ("L-T", lambda: os.system("wezterm &")),
+        ("L-S-t", lambda: os.system("kitty &")),
+        ("L-t", lambda: os.system("wezterm &")),
         ("L-c", lambda: os.system("code &")),
         ("L-f", lambda: os.system("nautilus &")),
         ("L-b", lambda: os.system("zen &")),
         ("L-o", lambda: os.system("obsidian &")),
+        ("L-S-o", lambda: os.system("wezterm start --cwd ~/Vault hx .")),
         ("L-space", lambda: os.system("fuzzel &")),
 
         ("L-q", lambda: layout.close_focused_view()),
-        ("L-Q", lambda: layout.terminate()),
+        ("L-S-q", lambda: layout.terminate()),
 
         # ("L-p", lambda: layout.ensure_locked(dim=True)),
         ("L-C", lambda: layout.update_config()),
@@ -99,9 +94,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-u", lambda: layout.toggle_fullscreen()),
         ("L-g", lambda: layout.toggle_focused_view_floating()),
 
-        ("L-", lambda: super_menu(layout)),
-        # ("L-", lambda: layout.toggle_overview()),
-
+        ("L-", lambda: layout.toggle_overview()),
 
         ("XF86AudioRaiseVolume", lambda: os.system("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ &")),
         ("XF86AudioLowerVolume", lambda: os.system("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%- &")),
