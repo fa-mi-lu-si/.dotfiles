@@ -7,6 +7,9 @@
 (deflisten status "playerctl status --follow")
 
 (deflisten niri-workspaces "./scripts/niri-workspaces.sh")
+(deflisten network
+  :initial "{\"name\": \"\", \"icon\": \"󰲛\"}"
+  "./scripts/network.sh")
 
 (defwidget bar [screen]
   (centerbox :orientation "v"
@@ -34,6 +37,11 @@
     :orientation "v"
     :class "time"
   hour min)
+)
+
+(defwidget network_icon []
+  (box :orientation "v"
+  {network.icon})
 )
 
 (defwidget battery []
@@ -79,6 +87,7 @@
     :prepend-new true)
     (player)
     (battery)
+    (network_icon)
   ))
 
 (defwindow sidebar

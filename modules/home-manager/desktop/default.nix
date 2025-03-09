@@ -50,6 +50,7 @@
 
   home.sessionVariables = {
     SWWW_TRANSITION = "left";
+    SWWW_TRANSITION_DURATION = "1";
   };
 
   # gtk.iconTheme = {
