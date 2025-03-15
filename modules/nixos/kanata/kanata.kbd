@@ -9,24 +9,21 @@
 (defalias
 
   qwe (layer-switch qwerty)
-  col (layer-switch colemak)
 
   nav (tap-hold-release 150 250
     (layer-switch navigation)
-    (layer-while-held navigation))
+    (multi (layer-while-held navigation) nop0))
 
   ml2 lmet
-  bsw bspc
 
   ;; experiment with mod forks on the tap action here
-  ;; eg super-mr1
-  mr1 (tap-hold-release 150 250
-    (layer-switch colemak)
-    (layer-while-held mouse))
-
-  ;; find a better use for this
-  ;; hard to use yet technically thumb reachable
-  mr2 XX
+  ;; eg super-col
+  col (fork
+    (tap-hold-release 150 250
+      (layer-switch colemak)
+      (layer-while-held mouse))
+    bspc
+    (nop0))
 
   ;; spacebar makes symbols more comfortable
   spa (tap-hold-release 150 250 spc (layer-while-held symbols))
@@ -49,8 +46,8 @@
 (deflayer colemak
   tab  @qQ  w    f    p    b     j    l    u    y    scln S--
    esc  @m_a @a_r @c_s @s_t g     m    @s_n @c_e @a_i @m_o '
-     @nav  x    c    d    v    z    k    h    ,    .    /    rsft
-  lctl @ml2 @bsw           @spa           @mr1 @mr2
+     XX    x    c    d    v    z    k    h    ,    .    /    rsft
+  lctl @ml2 @nav           @spa           @col XX
 )
 
 (defchords nav-chords 150
@@ -72,8 +69,8 @@
 (deflayer navigation
   _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn XX   _
    esc  lmet lalt lctl lsft XX    f9   left down rght tab  _
-     @nav  XX   C-c  del  C-v  C-z  XX   home menu end  XX   rsft
-  _    @ml2 bspc           @rts           @mr1 @mr2
+     XX    XX   C-c  del   C-v  C-z  XX   home menu end  XX   rsft
+  _    @ml2 @nav           @rts           @col XX
 )
 
 
@@ -174,7 +171,7 @@ XX   |    #    _    \      .    `~   {    }    XX
   XX   S-5  @am  @plu S-4  S-2   S-6  @n1  @n2  @n4  @n8  [
    XX   @ex  @co  @da  @eq  /     S-8  @sq  @pl  @pr  @qu  '
      XX    S-\  S-3  S--  \    spc  .    @bt  @bl  @br  XX   rsft
-  XX   XX   bspc           spc            XX   @mr2
+  XX   XX   bspc           spc            XX   XX
 )
 
 
