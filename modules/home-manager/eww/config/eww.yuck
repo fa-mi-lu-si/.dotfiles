@@ -40,7 +40,9 @@
 )
 
 (defwidget network_icon []
-  (box :orientation "v"
+  (box
+  :orientation "v"
+  :visible {network.name != ""}
   {network.icon})
 )
 
@@ -51,14 +53,14 @@
       EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
       EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
       EWW_BATTERY.BAT1.capacity <= 10 ? "󰂃" :
-      EWW_BATTERY.BAT1.capacity <= 20 ? "󰁻" :
-      EWW_BATTERY.BAT1.capacity <= 30 ? "󰁼" :
-      EWW_BATTERY.BAT1.capacity <= 40 ? "󰁽" :
-      EWW_BATTERY.BAT1.capacity <= 50 ? "󰁾" :
-      EWW_BATTERY.BAT1.capacity <= 60 ? "󰁿" :
-      EWW_BATTERY.BAT1.capacity <= 70 ? "󰂀" :
-      EWW_BATTERY.BAT1.capacity <= 80 ? "󰂁" :
-      EWW_BATTERY.BAT1.capacity <= 90 ? "󰂂" :
+      EWW_BATTERY.BAT1.capacity <= 20 ? "󰂃" :
+      EWW_BATTERY.BAT1.capacity <= 30 ? "󰁻" :
+      EWW_BATTERY.BAT1.capacity <= 40 ? "󰁼" :
+      EWW_BATTERY.BAT1.capacity <= 50 ? "󰁽" :
+      EWW_BATTERY.BAT1.capacity <= 60 ? "󰁾" :
+      EWW_BATTERY.BAT1.capacity <= 70 ? "󰁿" :
+      EWW_BATTERY.BAT1.capacity <= 80 ? "󰂀" :
+      EWW_BATTERY.BAT1.capacity <= 90 ? "󰂁" :
       EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
       ""
     }
@@ -69,6 +71,7 @@
   (box
     :orientation "v"
     :tooltip "${title} - ${artist}"
+    :visible {status != ""}
     (button
       :onclick "playerctl play-pause"
       {
