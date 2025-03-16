@@ -29,8 +29,6 @@
       right_format = lib.concatStrings [
         "$sudo"
         "$jobs"
-        "\${custom.mpremote}"
-        "\${custom.probe-rs}"
         "$battery"
       ];
 
