@@ -16,7 +16,6 @@
     package = pkgs.niri;
     settings = {
       hotkey-overlay.skip-at-startup = true;
-      input.focus-follows-mouse.enable = true;
       input.touchpad.accel-speed = 0.2;
 
       prefer-no-csd = true;

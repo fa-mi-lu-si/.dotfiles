@@ -39,7 +39,7 @@
     enable = true;
     settings = {
       main = {
-        terminal = "kitty";
+        terminal = "wezterm -e ";
         layer = "top";
       };
       border = {
