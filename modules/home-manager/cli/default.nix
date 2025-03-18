@@ -43,6 +43,10 @@
     enable = true;
   };
 
+  programs.bat = {
+    enable = true;
+  };
+
   programs.atuin = {
     enable = true;
     settings = {
@@ -74,8 +78,8 @@
   };
 
   home.packages = with pkgs; [
+    presenterm
     serie
-    gum
 
     wl-clipboard
     clipse
