@@ -90,10 +90,11 @@
 
         "Mod+Q".action = close-window;
         "Mod+Shift+Q".action = quit;
-        "Mod+Home".action = consume-window-into-column;
-        "Mod+End".action = expel-window-from-column;
+        "Mod+Shift+Home".action = consume-or-expel-window-left;
+        "Mod+Shift+End".action = consume-or-expel-window-right;
         "Mod+R".action = switch-preset-column-width;
         "Mod+M".action = maximize-column;
+        "Mod+Shift+M".action = set-window-height "100%";
         "Mod+U".action = fullscreen-window;
         "Mod+G".action = toggle-window-floating;
         "Alt+Tab".action = switch-focus-between-floating-and-tiling;
