@@ -102,6 +102,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("XF86AudioPlay", lambda: os.system("playerctl play-pause &")),
         ("XF86AudioPause", lambda: os.system("playerctl play-pause &")),
         ("XF86AudioNext", lambda: os.system("playerctl next &")),
+        ("XF86AudioPrev", lambda: os.system("playerctl previous &")),
         ("XF86MonBrightnessUp", lambda: backlight_manager.set(backlight_manager.get() + 0.01)),
         ("XF86MonBrightnessDown", lambda: backlight_manager.set(backlight_manager.get() - 0.01)),
     ]
