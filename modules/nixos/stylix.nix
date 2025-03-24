@@ -36,8 +36,8 @@
 
     fonts = with pkgs; {
       monospace = {
-        package = nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = nerd-fonts._0xproto;
+        name = "0xProto Nerd Font";
       };
       sansSerif = {
         package = dejavu_fonts;
