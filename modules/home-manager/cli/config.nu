@@ -1,4 +1,4 @@
-# Please refactor this file to move sections into separate files
+# TODO: Please refactor this file to move sections into separate files
 
 def frontmatter [] {
   # Parse markdown into a record
@@ -130,9 +130,6 @@ $env.config.menus = [
       description_text: yellow
     }
     source: { |buffer, position|
-      # TODO
-      # make this work in pipelines or wherever a command is expected
-      # match against a substring
       let matches = $abbreviations | columns | where $it == $buffer
       if ($matches | is-empty) {
         { value: $buffer }
@@ -143,14 +140,9 @@ $env.config.menus = [
   }
 ]
 
-# Transient prompt for starship
-# TODO: make it show success or failure, no need for starship here
 $env.TRANSIENT_PROMPT_COMMAND = {||
-  (
-    starship module
-    --cmd-duration $env.CMD_DURATION_MS
-    $"--status=($env.LAST_EXIT_CODE)"
-    --terminal-width (term size).columns
-    character
-  )
+  match $env.LAST_EXIT_CODE {
+    0 => $"(ansi green)❯(ansi reset) ",
+    _ => $"(ansi red)❯(ansi reset) "
+  }
 }

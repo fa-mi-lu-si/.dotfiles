@@ -9,6 +9,8 @@
       la = "ls -a";
       lt = "eza --tree";
       lla = "eza -la";
+      bg = "batgrep";
+      man = "batman";
     };
 
     # Get the environment variables from home manager

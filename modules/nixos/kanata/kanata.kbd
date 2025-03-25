@@ -10,7 +10,7 @@
 
   qwe (layer-switch qwerty)
 
-  nav (tap-hold-release 150 250
+  nav (tap-hold-press 150 250
     (layer-switch navigation)
     (multi (layer-while-held navigation) nop0))
 
@@ -22,7 +22,7 @@
     (tap-hold-release 150 250
       (layer-switch colemak)
       (layer-while-held mouse))
-    bspc
+    esc
     (nop0))
 
   ;; spacebar makes symbols more comfortable
@@ -69,7 +69,7 @@
 (deflayer navigation
   _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn XX   _
    esc  lmet lalt lctl lsft XX    f9   left down rght tab  _
-     XX    XX   C-c  del   C-v  C-z  XX   home menu end  XX   rsft
+     XX    XX   XX   del   XX   XX   XX   home menu end  XX   rsft
   _    @ml2 @nav           @rts           @col XX
 )
 
