@@ -51,16 +51,6 @@
     ];
   };
 
-  programs.atuin = {
-    enable = true;
-    settings = {
-      style = "compact";
-    };
-    flags = [
-      "--disable-up-arrow"
-    ];
-  };
-
   programs.ripgrep = {
     enable = true;
     arguments = [
