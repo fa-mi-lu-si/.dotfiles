@@ -76,9 +76,9 @@
 
 #|
 
-%    &    +    $    @      ^    1    2    4    8
+%    &    +    `    \      .    1    2    4    8
 !    :    -    =    /      *    '"   ([<  )]>  ?
-XX   |    #    _    \      .    `~   {    }    XX
+XX   |    #    _    @      ^    $~   {    }    XX
 
 |#
 
@@ -95,11 +95,11 @@ XX   |    #    _    \      .    `~   {    }    XX
   (                       qu ) S-/
   ;; some other keys
   (       plu                ) S-=
-  (              bt          ) `
-  (    am                   ) S-7
+  (          bt              ) `
+  (    am                    ) S-7
 
   ;; coding chords
-  (          eq  bt          ) (macro S-`)     ;; ~
+  (      plu bt              ) (macro S-`)     ;; ~
   (              sq pl       ) (macro S-')     ;; "
   (    co da                 ) (macro S-scln S-scln) ;; ::
   (    am        sq          ) (macro S-7 ') ;; &'
@@ -161,6 +161,7 @@ XX   |    #    _    \      .    `~   {    }    XX
   n4 (chord symbol-chords 4)
   n8 (chord symbol-chords 8)
 
+  ds S-4
   bt (chord symbol-chords bt)
   plu (chord symbol-chords plu)
   am (chord symbol-chords am)
@@ -168,9 +169,9 @@ XX   |    #    _    \      .    `~   {    }    XX
 
 
 (deflayer symbols
-  XX   S-5  @am  @plu S-4  S-2   S-6  @n1  @n2  @n4  @n8  [
+  XX   S-5  @am  @plu @bt  \   .  @n1  @n2  @n4  @n8  [
    XX   @ex  @co  @da  @eq  /     S-8  @sq  @pl  @pr  @qu  '
-     XX    S-\  S-3  S--  \    spc  .    @bt  @bl  @br  XX   rsft
+     XX    S-\  S-3  S--  S-2    spc  S-6    @ds  @bl  @br  XX   rsft
   XX   XX   bspc           spc            XX   XX
 )
 
