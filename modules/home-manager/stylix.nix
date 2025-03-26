@@ -7,6 +7,5 @@
       dark = "Adwaita";
       light = "Adwaita";
     };
-    targets.vscode.profileNames = ["default"];
   };
 }

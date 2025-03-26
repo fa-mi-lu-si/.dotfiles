@@ -30,9 +30,11 @@
 
     image = config.lib.stylix.pixel "base00";
 
-    cursor.package = pkgs.bibata-cursors;
-    cursor.name = "Bibata-Modern-Ice";
-    cursor.size = 24;
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
+    };
 
     fonts = with pkgs; {
       monospace = {

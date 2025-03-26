@@ -41,8 +41,11 @@
           ];
           # add the default window dimensions
           open-floating = true;
+          open-focused = false;
+          default-column-width = {proportion = 0.15;};
         }
       ];
+
       layout = {
         border.width = 2;
         always-center-single-column = true;
@@ -92,12 +95,17 @@
         "Mod+Shift+Q".action = quit;
         "Mod+Shift+Home".action = consume-or-expel-window-left;
         "Mod+Shift+End".action = consume-or-expel-window-right;
+        "Mod+U".action = fullscreen-window;
+        "Mod+G".action = toggle-window-floating;
+        "Mod+Shift+G".action = switch-focus-between-floating-and-tiling;
+        "Alt+Tab".action = switch-focus-between-floating-and-tiling;
         "Mod+R".action = switch-preset-column-width;
         "Mod+M".action = maximize-column;
         "Mod+Shift+M".action = set-window-height "100%";
-        "Mod+U".action = fullscreen-window;
-        "Mod+G".action = toggle-window-floating;
-        "Alt+Tab".action = switch-focus-between-floating-and-tiling;
+        "Mod+Minus".action = set-column-width "-10%";
+        "Mod+Equal".action = set-column-width "+10%";
+        "Mod+Shift+Minus".action = set-window-height "-10%";
+        "Mod+Shift+Equal".action = set-window-height "+10%";
 
         "Mod+Left".action = focus-column-left;
         "Mod+Right".action = focus-column-right;
