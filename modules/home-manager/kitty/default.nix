@@ -75,31 +75,11 @@
 
     extraConfig = ''
       map --new-mode resize ctrl+shift+r
-      map --mode resize r layout_action rotate
-      map --mode resize l next_layout
 
-      map --mode resize s goto_layout splits
-      map --mode resize g goto_layout grid
-      map --mode resize u goto_layout stack
-      map --mode resize h goto_layout fat
-      map --mode resize v goto_layout tall
-      map --mode resize shift+h goto_layout horizontal
-      map --mode resize shift+v goto_layout vertical
-
-      map --mode resize up neighboring_window up
-      map --mode resize left neighboring_window left
-      map --mode resize right neighboring_window right
-      map --mode resize down neighboring_window down
-
-      map --mode resize shift+up move_window up
-      map --mode resize shift+left move_window left
-      map --mode resize shift+right move_window right
-      map --mode resize shift+down move_window down
-
-      map --mode resize alt+up kitten relative_resize.py up
-      map --mode resize alt+left kitten relative_resize.py left
-      map --mode resize alt+right kitten relative_resize.py right
-      map --mode resize alt+down kitten relative_resize.py down
+      map --mode resize up kitten relative_resize.py up
+      map --mode resize left kitten relative_resize.py left
+      map --mode resize right kitten relative_resize.py right
+      map --mode resize down kitten relative_resize.py down
 
       map --mode resize esc pop_keyboard_mode
     '';

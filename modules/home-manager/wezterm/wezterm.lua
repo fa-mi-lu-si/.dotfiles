@@ -24,6 +24,7 @@ config.warn_about_missing_glyphs = false
 -- }
 config.audible_bell = "SystemBeep"
 
+-- colemak dh
 config.quick_select_alphabet = "tnseriaoq;wyfupl"
 
 config.disable_default_key_bindings = true
