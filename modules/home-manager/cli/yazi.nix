@@ -4,8 +4,8 @@
     yazi = pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "5186af7984aa8cb0550358aefe751201d7a6b5a8";
-      hash = "sha256-Cw5iMljJJkxOzAGjWGIlCa7gnItvBln60laFMf6PSPM=";
+      rev = "273019910c1111a388dd20e057606016f4bd0d17";
+      hash = "sha256-80mR86UWgD11XuzpVNn56fmGRkvj0af2cFaZkU8M31I=";
     };
 
     # https://github.com/Rolv-Apneseth/starship.yazi
@@ -35,8 +35,8 @@
     exifaudio = pkgs.fetchFromGitHub {
       owner = "Sonico98";
       repo = "exifaudio.yazi";
-      rev = "4379fcfa2dbe0b81fde2dd67b9ac2e0e48331419";
-      hash = "sha256-CIimJU4KaKyaKBuiBvcRJUJqTG8pkGyytT6bPf/x8j8=";
+      rev = "7ff714155f538b6460fdc8e911a9240674ad9b89";
+      hash = "sha256-qRUAKlrYWV0qzI3SAQUYhnL3QR+0yiRc+0XbN/MyufI=";
     };
   };
 in {
@@ -77,25 +77,25 @@ in {
       ''
         require("starship"):setup()
 
-        THEME.git = THEME.git or {}
+        th.git = th.git or {}
 
-        THEME.git.modified_sign = " "
-        THEME.git.modified = ui.Style():fg("gray")
+        th.git.modified_sign = " "
+        th.git.modified = ui.Style():fg("gray")
 
-        THEME.git.added_sign = "+ "
-        THEME.git.added = ui.Style():fg("green")
+        th.git.added_sign = "+ "
+        th.git.added = ui.Style():fg("green")
 
-        THEME.git.untracked_sign = " "
-        THEME.git.untracked = ui.Style():fg("red"):bold()
+        th.git.untracked_sign = " "
+        th.git.untracked = ui.Style():fg("red"):bold()
 
-        THEME.git.ignored_sign = " "
-        THEME.git.ignored = ui.Style():fg("darkgray"):bold()
+        th.git.ignored_sign = " "
+        th.git.ignored = ui.Style():fg("darkgray"):bold()
 
-        THEME.git.deleted_sign = " "
-        THEME.git.deleted = ui.Style():fg("red"):bold()
+        th.git.deleted_sign = " "
+        th.git.deleted = ui.Style():fg("red"):bold()
 
-        THEME.git.updated_sign = " "
-        THEME.git.updated = ui.Style():fg("green"):bold()
+        th.git.updated_sign = " "
+        th.git.updated = ui.Style():fg("green"):bold()
 
         require("git"):setup()
       '';
