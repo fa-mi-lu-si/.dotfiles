@@ -59,7 +59,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-Up", lambda: layout.move(0, -1)),
         ("L-Right", lambda: layout.move(1, 0)),
         
-        ("A-Tab", lambda: layout.move_in_stack(1)),
+        ("L-Tab", lambda: layout.move_in_stack(1)),
         
         ("L-minus", lambda: layout.basic_scale(1)),
         ("L-equal", lambda: layout.basic_scale(-1)),

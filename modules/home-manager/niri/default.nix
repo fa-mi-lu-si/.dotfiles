@@ -97,7 +97,7 @@
         "Mod+U".action = fullscreen-window;
         "Mod+G".action = toggle-window-floating;
         "Mod+Shift+G".action = switch-focus-between-floating-and-tiling;
-        "Alt+Tab".action = switch-focus-between-floating-and-tiling;
+        "Mod+Tab".action = switch-focus-between-floating-and-tiling;
         "Mod+R".action = switch-preset-column-width;
         "Mod+M".action = maximize-column;
         "Mod+Shift+M".action = set-window-height "100%";

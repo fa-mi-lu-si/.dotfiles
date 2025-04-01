@@ -30,14 +30,14 @@
   rts (tap-hold-release 150 250 ret (layer-while-held symbols))
 
   ;; home row mods for colemak
-  m_a (tap-hold-release 150 250 a lmet)
-  a_r (tap-hold-release 150 250 r lalt)
+  a_a (tap-hold-release 150 250 a lalt)
+  m_r (tap-hold-release 150 250 r lmet)
   c_s (tap-hold-release 150 250 s lctl)
   s_t (tap-hold-release 150 250 t lsft)
   s_n (tap-hold-release 150 250 n rsft)
   c_e (tap-hold-release 150 250 e rctl)
-  a_i (tap-hold-release 150 250 i ralt)
-  m_o (tap-hold-release 150 250 o rmet)
+  m_i (tap-hold-release 150 250 i rmet)
+  a_o (tap-hold-release 150 250 o ralt)
 
   qQ (tap-hold 100 400 q M-q)
 )
@@ -45,7 +45,7 @@
 
 (deflayer colemak
   tab  @qQ  w    f    p    b     j    l    u    y    scln S--
-   esc  @m_a @a_r @c_s @s_t g     m    @s_n @c_e @a_i @m_o '
+   esc  @a_a @m_r @c_s @s_t g     m    @s_n @c_e @m_i @a_o '
      XX    x    c    d    v    z    k    h    ,    .    /    rsft
   lctl @ml2 @nav           @spa           @col XX
 )
@@ -68,8 +68,8 @@
 
 (deflayer navigation
   _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn XX   _
-   esc  lmet lalt lctl lsft XX    f9   left down rght tab  _
-     XX    XX   XX   del   XX   XX   XX   home menu end  XX   rsft
+   esc  lalt lmet lctl lsft XX    f9   left down rght tab  _
+     XX    XX   XX   del  XX   XX   XX   home menu end  XX   rsft
   _    @ml2 @nav           @rts           @col XX
 )
 
@@ -169,9 +169,9 @@ XX   |    #    _    @      ^    $~   {    }    XX
 
 
 (deflayer symbols
-  XX   S-5  @am  @plu @bt  \   .  @n1  @n2  @n4  @n8  [
+  XX   S-5  @am  @plu @bt  \     .    @n1  @n2  @n4  @n8  [
    XX   @ex  @co  @da  @eq  /     S-8  @sq  @pl  @pr  @qu  '
-     XX    S-\  S-3  S--  S-2    spc  S-6    @ds  @bl  @br  XX   rsft
+     XX    S-\  S-3  S--  S-2  spc  S-6  @ds  @bl  @br  XX   rsft
   XX   XX   bspc           spc            XX   XX
 )
 
@@ -186,7 +186,7 @@ XX   |    #    _    @      ^    $~   {    }    XX
 
 (deflayer mouse
   lrld XX   XX   XX   XX   XX    XX   XX   @ma↑ XX   XX   _
-   XX   lmet lalt lctl lsft mmid  XX   @ma← @ma↓ @ma→ XX   _
+   XX   lalt lmet lctl lsft mmid  XX   @ma← @ma↓ @ma→ XX   _
      XX    XX   XX   @scr XX   XX   XX   XX   XX   XX   XX   _
   @qwe XX   mrgt           mlft           XX   XX
 )
