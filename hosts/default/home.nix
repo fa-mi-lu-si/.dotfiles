@@ -7,6 +7,7 @@
   imports = [
     ../../modules/home-manager/cli
     ../../modules/home-manager/desktop
+    ../../modules/home-manager/desktop/brave.nix
     ../../modules/home-manager/wezterm
     ../../modules/home-manager/libreoffice
     ../../modules/home-manager/vscode
