@@ -34,15 +34,24 @@
         }
 
         {
-          matches = [
-            {
-              title = "^Picture-in-Picture$";
-            }
-          ];
+          matches = [{title = "^Picture-in-Picture$";}];
           # add the default window dimensions
           open-floating = true;
           open-focused = false;
           default-column-width = {proportion = 0.15;};
+          default-floating-position = {
+            relative-to = "bottom-left";
+            x = 10;
+            y = 10;
+          };
+        }
+
+        {
+          matches = [
+            {app-id = "^org.wezfurlong.wezterm$";}
+            {app-id = "^kitty$";}
+          ];
+          default-column-width.proportion = 0.5;
         }
       ];
 
