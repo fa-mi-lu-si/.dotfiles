@@ -23,7 +23,7 @@
         # Rounded Corners
         {
           geometry-corner-radius = let
-            r = 10.0;
+            r = 8.0;
           in {
             top-left = r;
             top-right = r;
@@ -48,6 +48,7 @@
 
       layout = {
         border.width = 2;
+        gaps = 16;
         always-center-single-column = true;
         preset-column-widths = [
           {proportion = 1.0 / 3.0;}

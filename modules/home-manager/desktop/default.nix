@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }: {
   imports = [
@@ -22,6 +23,23 @@
 
     foliate
   ];
+
+  # Stylix theme for foliate
+  home.file.".config/com.github.johnfactotum.Foliate/themes/stylix.json".text = with config.lib.stylix.colors.withHashtag; ''
+    {
+      "label": "Stylix",
+      "light": {
+        "fg": "${base05}",
+        "bg": "${base00}",
+        "link": "${base04}"
+      },
+      "dark": {
+        "fg": "${base05}",
+        "bg": "${base00}",
+        "link": "${base04}"
+      }
+    }
+  '';
 
   services.dunst = {
     enable = true;
@@ -62,4 +80,8 @@
   services.mpris-proxy.enable = true;
 
   programs.zathura.enable = true;
+
+  xdg.userDirs = {
+    enable = true;
+  };
 }
