@@ -1,0 +1,13 @@
+(defpoll hour :interval "1s" "date +%H")
+(defpoll min  :interval "1s" "date +%M")
+(defpoll sec  :interval "1s" "date +%S")
+
+; TODO: support for multiple players
+(deflisten title "playerctl metadata title --follow")
+(deflisten artist "playerctl metadata artist --follow")
+(deflisten status "playerctl status --follow")
+
+(deflisten niri-workspaces "./scripts/niri-workspaces.sh")
+(deflisten network
+  :initial "{\"name\": \"\", \"icon\": \"󰲛\"}"
+  "./scripts/network.sh")
