@@ -9,7 +9,6 @@
     ../../modules/home-manager/desktop
     ../../modules/home-manager/desktop/brave.nix
     ../../modules/home-manager/wezterm
-    ../../modules/home-manager/libreoffice
     ../../modules/home-manager/vscode
     ../../modules/home-manager/helix
     ../../modules/home-manager/kitty

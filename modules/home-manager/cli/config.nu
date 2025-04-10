@@ -1,5 +1,3 @@
-# TODO: Please refactor this file to move sections into separate files
-
 def frontmatter [] {
   # Parse markdown into a record
   lines
