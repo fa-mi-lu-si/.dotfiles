@@ -98,7 +98,7 @@
         "Mod+C".action = spawn "code";
         "Mod+O".action = spawn "obsidian";
         "Mod+Shift+O".action = sh "wezterm start --cwd ~/Vault hx ."; # Quick note
-        "Mod+Space".action = spawn "fuzzel";
+        "Mod+Space".action = spawn "anyrun";
 
         "Mod+Q".action = close-window;
         "Mod+Shift+Q".action = quit;

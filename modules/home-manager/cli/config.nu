@@ -22,6 +22,7 @@ let abbreviations = {
     'ho': 'handlr open'
     'hf': 'hx ...(fzf -m | lines)'
     'fh': 'hx ...(fzf -m | lines)'
+    'h.': 'hx .'
     'cl': 'clear'
     'g': 'git'
     'gp': 'git push'
