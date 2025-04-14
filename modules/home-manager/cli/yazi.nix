@@ -4,16 +4,16 @@
     yazi = pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "273019910c1111a388dd20e057606016f4bd0d17";
-      hash = "sha256-80mR86UWgD11XuzpVNn56fmGRkvj0af2cFaZkU8M31I=";
+      rev = "b12a9ab085a8c2fe2b921e1547ee667b714185f9";
+      hash = "sha256-LWN0riaUazQl3llTNNUMktG+7GLAHaG/IxNj1gFhDRE=";
     };
 
     # https://github.com/Rolv-Apneseth/starship.yazi
     starship = pkgs.fetchFromGitHub {
       owner = "Rolv-Apneseth";
       repo = "starship.yazi";
-      rev = "6c639b474aabb17f5fecce18a4c97bf90b016512";
-      hash = "sha256-bhLUziCDnF4QDCyysRn7Az35RAy8ibZIVUzoPgyEO1A=";
+      rev = "c0707544f1d526f704dab2da15f379ec90d613c2";
+      hash = "sha256-H8j+9jcdcpPFXVO/XQZL3zq1l5f/WiOm4YUxAMduSRs=";
     };
     # https://github.com/grappas/wl-clipboard.yazi
     wl-clipboard = pkgs.fetchFromGitHub {
