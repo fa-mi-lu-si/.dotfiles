@@ -6,7 +6,32 @@
     difftastic = {
       enable = true;
     };
-    extraConfig = {init.defaultBranch = "main";};
+    extraConfig = {
+      init.defaultBranch = "main";
+
+      help.autocorrect = "prompt";
+
+      column.ui = "auto";
+
+      branch.sort = "-committerdate";
+      tag.sort = "version:refname";
+
+      # diff = {
+      #   algorithm = "histogram";
+      #   colorMoved = "plain";
+      #   mnemonicPrefix = true;
+      #   renames = true;
+      # };
+
+      push.autoSetupRemote = true;
+      push.followTags = true;
+
+      fetch.prune = true;
+      fetch.pruneTags = true;
+      fetch.all = true;
+
+      commit.verbose = true;
+    };
   };
 
   programs.gh = {
