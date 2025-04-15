@@ -4,8 +4,6 @@
     normal = {
       esc = ["collapse_selection" "keep_primary_selection"];
       A-r = ":toggle-option soft-wrap.enable";
-      A-W = "@miW";
-      A-w = "@miw";
       C-e = "command_palette";
       C-s = ":write";
       C-t = ":new";
