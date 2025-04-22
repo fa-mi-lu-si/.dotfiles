@@ -57,7 +57,7 @@
 
       layout = {
         border.width = 2;
-        gaps = 16;
+        gaps = 8;
         always-center-single-column = true;
         preset-column-widths = [
           {proportion = 1.0 / 3.0;}

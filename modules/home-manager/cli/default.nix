@@ -83,6 +83,14 @@
     ouch
   ];
 
+  programs.btop = {
+    enable = true;
+  };
+
+  programs.fastfetch = {
+    enable = true;
+  };
+
   programs.nh = {
     enable = true;
     flake = "/home/samy/.dotfiles";
