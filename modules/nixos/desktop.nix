@@ -32,4 +32,8 @@
       default = ["org.wezfurlong.wezterm.desktop"];
     };
   };
+
+  fonts = {
+    enableDefaultPackages = true;
+  };
 }
