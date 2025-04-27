@@ -31,6 +31,8 @@
       fetch.all = true;
 
       commit.verbose = true;
+
+      interactive.singlekey = true;
     };
   };
 
