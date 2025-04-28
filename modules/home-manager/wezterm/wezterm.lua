@@ -15,6 +15,7 @@ config.show_tab_index_in_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false
 config.default_cursor_style = 'BlinkingBar'
 config.warn_about_missing_glyphs = false
+config.check_for_updates = false
 
 -- config.visual_bell = {
 --   fade_in_function = 'EaseIn',
