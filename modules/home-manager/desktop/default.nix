@@ -16,7 +16,6 @@
     nautilus
     loupe
     obsidian
-    vesktop
 
     celluloid
     amberol
@@ -42,6 +41,10 @@
   '';
 
   services.dunst = {
+    enable = true;
+  };
+
+  programs.vesktop = {
     enable = true;
   };
 
