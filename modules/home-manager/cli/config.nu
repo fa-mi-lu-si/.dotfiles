@@ -41,6 +41,7 @@ let abbreviations = {
     'gss': 'git status'
     'gd': 'git diff'
     'mp': 'mpremote'
+    'ard': 'arduino-cli'
     'cr': 'cargo run'
     'nr': 'nix run nixpkgs#'
 }
