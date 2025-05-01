@@ -49,6 +49,7 @@ let abbreviations = {
 $env.config.show_banner = false
 $env.config.filesize.unit = 'metric'
 $env.config.history.file_format = "sqlite"
+$env.config.history.isolation = true
 $env.config.use_kitty_protocol = true
 $env.config.shell_integration = {
   osc2: true
