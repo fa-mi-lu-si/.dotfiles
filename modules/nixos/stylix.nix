@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/decaf.yaml";
     polarity = "dark";
 
     image = config.lib.stylix.pixel "base00";
