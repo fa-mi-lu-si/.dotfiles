@@ -50,8 +50,15 @@
           matches = [
             {app-id = "^org.wezfurlong.wezterm$";}
             {app-id = "^kitty$";}
+            {app-id = "^org.gnome.Nautilus$";}
           ];
           default-column-width.proportion = 0.5;
+        }
+        {
+          matches = [
+            {app-id = "^io.bassi.Amberol$";}
+          ];
+          default-column-width.proportion = 1.0 / 3.0;
         }
       ];
 
