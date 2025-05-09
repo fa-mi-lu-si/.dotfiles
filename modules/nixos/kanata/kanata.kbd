@@ -10,7 +10,7 @@
 
   qwe (layer-switch qwerty)
 
-  nav (tap-hold-press 150 200
+  nav (tap-hold-press 150 250
     (layer-switch navigation)
     (multi (layer-while-held navigation) nop0))
 
@@ -19,28 +19,28 @@
   ;; experiment with mod forks on the tap action here
   ;; eg super-col
   col (fork
-    (tap-hold-release 150 200
+    (tap-hold-release 150 250
       (layer-switch colemak)
       (layer-while-held mouse))
     esc
     (nop0))
 
   ;; spacebar makes symbols more comfortable
-  spa (tap-hold-release 150 200 spc (layer-while-held symbols))
-  rts (tap-hold-release 150 200 ret (layer-while-held symbols))
+  spa (tap-hold-release 150 250 spc (layer-while-held symbols))
+  rts (tap-hold-release 150 250 ret (layer-while-held symbols))
 
   ;; home row mods for colemak
-  a_a (tap-hold-release 150 200 a lalt)
-  m_r (tap-hold-release 150 200 r lmet)
-  c_s (tap-hold-release 150 200 s lctl)
-  s_t (tap-hold-release 150 200 t lsft)
-  s_n (tap-hold-release 150 200 n rsft)
-  c_e (tap-hold-release 150 200 e rctl)
-  m_i (tap-hold-release 150 200 i rmet)
-  a_o (tap-hold-release 150 200 o ralt)
+  a_a (tap-hold-release 150 250 a lalt)
+  m_r (tap-hold-release 150 250 r lmet)
+  c_s (tap-hold-release 150 250 s lctl)
+  s_t (tap-hold-release 150 250 t lsft)
+  s_n (tap-hold-release 150 250 n rsft)
+  c_e (tap-hold-release 150 250 e rctl)
+  m_i (tap-hold-release 150 250 i rmet)
+  a_o (tap-hold-release 150 250 o ralt)
   
-  h_n (tap-hold-release 150 200 h (layer-while-held numbers))
-  hmn (tap-hold-release 150 200 home (layer-while-held numbers))
+  h_n (tap-hold-release 150 250 h (layer-while-held numbers))
+  hmn (tap-hold-release 150 250 home (layer-while-held numbers))
   qQ (tap-hold 100 400 q M-q)
 )
 
@@ -162,7 +162,7 @@ XX   |    #    _    @      ^    $    {    }    XX
   n8 (chord numchords 8)
   n0 Digit0
 
-  ds (tap-hold-release 150 200 S-4 (layer-while-held numbers))
+  ds (tap-hold-release 150 250 S-4 (layer-while-held numbers))
   bt (chord symbol-chords bt)
   plu (chord symbol-chords plu)
   am (chord symbol-chords am)
