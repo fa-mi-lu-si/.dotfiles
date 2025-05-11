@@ -71,6 +71,10 @@
           {proportion = 1.0 / 2.0;}
           {proportion = 2.0 / 3.0;}
         ];
+        struts = {
+          left = 8;
+          right = 8;
+        };
       };
 
       spawn-at-startup = [
