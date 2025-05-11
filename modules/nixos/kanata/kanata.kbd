@@ -40,7 +40,6 @@
   a_o (tap-hold-release 150 250 o ralt)
   
   h_n (tap-hold-release 150 250 h (layer-while-held numbers))
-  hmn (tap-hold-release 150 250 home (layer-while-held numbers))
   qQ (tap-hold 100 400 q M-q)
 )
 
@@ -71,7 +70,7 @@
 (deflayer navigation
   _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn XX   _
    esc  lalt lmet lctl lsft XX    f9   left down rght tab  _
-     XX    XX   XX   del  XX   XX   XX   @hmn menu end  XX   rsft
+     XX    XX   XX   del  XX   XX   XX   home menu end  XX   rsft
   _    @ml2 @nav           @rts           @col XX
 )
 
