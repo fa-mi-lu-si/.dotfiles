@@ -24,8 +24,6 @@
   ];
   services.printing.enable = true;
 
-  programs.firefox.enable = true; # TODO: move to home manager
-
   xdg.terminal-exec = {
     enable = true;
     settings = {
