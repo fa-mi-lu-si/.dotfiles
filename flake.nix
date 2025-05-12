@@ -8,7 +8,7 @@
     niri.url = "github:sodiboo/niri-flake";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    wezterm.url = "github:wez/wezterm?dir=nix";
+    wezterm.url = "github:wez/wezterm/1439661dc9a8b565a8d9d23aee27d43a9864f676?dir=nix";
     helix.url = "github:helix-editor/helix/master";
     stylix.url = "github:danth/stylix";
     spicetify-nix = {

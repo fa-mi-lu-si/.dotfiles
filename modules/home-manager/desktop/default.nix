@@ -24,23 +24,6 @@
     foliate
   ];
 
-  # Stylix theme for foliate
-  home.file.".config/com.github.johnfactotum.Foliate/themes/stylix.json".text = with config.lib.stylix.colors.withHashtag; ''
-    {
-      "label": "Stylix",
-      "light": {
-        "fg": "${base05}",
-        "bg": "${base00}",
-        "link": "${base04}"
-      },
-      "dark": {
-        "fg": "${base05}",
-        "bg": "${base00}",
-        "link": "${base04}"
-      }
-    }
-  '';
-
   # Stylix theming for obsidian, just copy the file into Style Settings
   home.file.".config/obsidian/style_settings.json".text = with config.lib.stylix.colors.withHashtag; ''
     {
