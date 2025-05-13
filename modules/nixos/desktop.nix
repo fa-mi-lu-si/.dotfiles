@@ -10,6 +10,8 @@
   services.playerctld.enable = true;
   hardware.graphics.enable = true;
 
+  services.blueman.enable = true;
+
   # sound
   services.pipewire = {
     enable = true;
@@ -21,6 +23,7 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
+    networkmanagerapplet
   ];
   services.printing.enable = true;
 

@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   config,
   ...
@@ -30,6 +29,9 @@
       "minimal-style@@ax1@@dark": "${base0D}"
     }
   '';
+
+  services.blueman-applet.enable = true;
+  services.network-manager-applet.enable = true;
 
   services.dunst = {
     enable = true;
