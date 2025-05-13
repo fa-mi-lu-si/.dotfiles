@@ -1,19 +1,12 @@
 {
-  inputs,
   pkgs,
   config,
   ...
 }: {
-  imports = [
-    inputs.niri.homeModules.niri
-    inputs.niri.homeModules.stylix
-  ];
   home.packages = with pkgs; [
     xwayland-satellite
   ];
   programs.niri = {
-    enable = true;
-    package = pkgs.niri;
     settings = {
       hotkey-overlay.skip-at-startup = true;
       input.touchpad.accel-speed = 0.2;

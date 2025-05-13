@@ -1,17 +1,7 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
-    # inputs.niri.nixosModules.niri
+    inputs.niri.nixosModules.niri
   ];
-  environment.systemPackages = [pkgs.xdg-utils];
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
-    ];
-  };
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
+  programs.niri.enable = true;
 }
