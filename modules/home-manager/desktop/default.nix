@@ -12,7 +12,6 @@
     swww
     libnotify
     scrcpy
-    inputs.zen-browser.packages."${system}".default
 
     nautilus
     loupe

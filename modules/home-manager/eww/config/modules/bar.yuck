@@ -14,7 +14,7 @@
     (for i in {jq(niri-workspaces, ".=sort_by(.idx)")}
       (button
         :onclick "niri msg action focus-workspace ${i.idx}"
-        "${i.is_focused ? "  " : "  "}"))))
+        "${i.is_focused ? "  " : "  "}"))))
 
 (defwidget top [screen] (box (niri-workspace-widget :monitor 0)))
 
