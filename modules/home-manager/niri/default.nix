@@ -77,7 +77,7 @@
         command = ["eww" "daemon"];
       }
       {
-        command = ["eww" "open" "sidebar"];
+        command = ["~/.config/eww/scripts/niri-overview-state.nu"];
       }
       {
         command = ["clipse" "-listen"];
@@ -102,7 +102,6 @@
       "Mod+O".action = spawn "obsidian";
       "Mod+Shift+O".action = sh "wezterm start --cwd ~/Vault hx ."; # Quick note
       "Mod+Space".action = spawn "anyrun";
-      "Mod+F9".action = sh "eww open sidebar --toggle";
 
       "Mod+Q".action = close-window;
       "Mod+Shift+Q".action = quit;
