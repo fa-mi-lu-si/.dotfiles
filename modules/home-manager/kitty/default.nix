@@ -84,6 +84,7 @@
       map --mode resize esc pop_keyboard_mode
     '';
   };
+  stylix.targets.kitty.variant256Colors = true;
 
   home.file.".config/kitty/relative_resize.py".source = ./relative_resize.py;
   home.file.".config/kitty/tab_bar.py".source = ./tab_bar.py;
