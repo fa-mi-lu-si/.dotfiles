@@ -18,8 +18,6 @@
 
     celluloid
     amberol
-
-    foliate
   ];
 
   # Stylix theming for obsidian, just copy the file into Style Settings
@@ -36,6 +34,8 @@
   services.dunst = {
     enable = true;
   };
+
+  programs.foliate.enable = true;
 
   programs.vesktop = {
     enable = true;
