@@ -17,6 +17,13 @@ config.default_cursor_style = 'BlinkingBar'
 config.warn_about_missing_glyphs = false
 config.check_for_updates = false
 
+config.window_padding = {
+  left = "24px",
+  right = "24px",
+  top = "24px",
+  bottom = "16px",
+}
+
 -- config.visual_bell = {
 --   fade_in_function = 'EaseIn',
 --   fade_in_duration_ms = 150,
