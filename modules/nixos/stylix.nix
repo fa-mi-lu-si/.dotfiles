@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/decaf.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-soft.yaml";
     polarity = "dark";
 
     image = config.lib.stylix.pixel "base00";
@@ -37,5 +37,4 @@
       };
     };
   };
-  stylix.targets.chromium.enable = false;
 }
