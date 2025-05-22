@@ -23,6 +23,7 @@
           bottom-right = r;
         };
         clip-to-geometry = true;
+        draw-border-with-background = false;
       }
 
       {

@@ -10,6 +10,7 @@
     ./starship.nix
     ./git.nix
     ./yazi.nix
+    ./rmpc.nix
   ];
 
   programs.direnv = {
