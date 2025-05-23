@@ -3,20 +3,18 @@
   programs.helix.settings.keys = {
     normal = {
       esc = ["collapse_selection" "keep_primary_selection"];
-      A-r = ":toggle-option soft-wrap.enable";
-      C-e = "command_palette";
       C-s = ":write";
       C-t = ":new";
       C-w = ":buffer-close";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
-      G = {
+      "'" = "goto_word";
+      space.g = {
         # Git menu
         b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})";
         r = ":reset-diff-change";
         f = "changed_file_picker";
       };
-      "'" = "goto_word";
       space.q = ":quit";
       space.w.d = [":vsplit" "goto_definition"];
       space.e = [
@@ -28,6 +26,7 @@
         ":set mouse false"
         ":set mouse true"
       ];
+      X = ["extend_line_up" "extend_to_line_bounds"];
     };
 
     insert = {

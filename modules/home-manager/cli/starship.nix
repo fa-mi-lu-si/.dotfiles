@@ -196,6 +196,8 @@
               GIT_REMOTE_SYMBOL=" "
           elif [[ "$GIT_REMOTE" =~ "git" ]]; then
               GIT_REMOTE_SYMBOL=" "
+          elif [[ "$GIT_REMOTE" =~ "codeberg" ]]; then
+              GIT_REMOTE_SYMBOL=" "
           else
               GIT_REMOTE_SYMBOL=" "
           fi
