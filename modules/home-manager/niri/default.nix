@@ -105,7 +105,7 @@
       "Mod+Space".action = spawn "anyrun";
 
       "Mod+Q".action = close-window;
-      "Mod+I".action = toggle-overview;
+      "Mod+F9".action = toggle-overview;
       "Mod+Shift+Q".action = quit;
       "Mod+Shift+Home".action = consume-or-expel-window-left;
       "Mod+Shift+End".action = consume-or-expel-window-right;
