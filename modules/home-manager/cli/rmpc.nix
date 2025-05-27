@@ -6,9 +6,5 @@
 
   programs.rmpc = {
     enable = true;
-    config =
-      #ron
-      ''
-      '';
   };
 }
