@@ -178,7 +178,7 @@ XX   |    #    _    @      ^    $    {    }    XX
   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
    XX   @n8  @n4  @n2  @n1  XX    XX   lsft lctl lmet lalt XX
      XX    XX   XX   @n0  XX   XX   XX   XX   XX   XX   XX   rsft
-  XX   XX   bspc           spc            XX   XX
+  @qwe XX   bspc           spc            XX   XX
 )
 
 (defalias
