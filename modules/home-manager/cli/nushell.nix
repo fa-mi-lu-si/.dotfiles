@@ -8,7 +8,7 @@
       ll = "ls -l";
       la = "ls -a";
       lt = "eza --tree";
-      lla = "eza -la";
+      lla = "ls -l -a";
       bg = "batgrep";
       man = "batman";
     };
