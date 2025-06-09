@@ -8,7 +8,7 @@
   ];
   programs.niri.settings = {
     hotkey-overlay.skip-at-startup = true;
-    input.touchpad.accel-speed = 0.2;
+    input.touchpad.accel-speed = 0.3;
 
     prefer-no-csd = true;
     window-rules = [
@@ -83,6 +83,7 @@
       {
         command = ["clipse" "-listen"];
       }
+      # TODO: make use of the new built in xwayland-satellite integration in niri
       {
         command = ["xwayland-satellite"];
       }
