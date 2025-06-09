@@ -4,16 +4,16 @@
     yazi = pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "b12a9ab085a8c2fe2b921e1547ee667b714185f9";
-      hash = "sha256-LWN0riaUazQl3llTNNUMktG+7GLAHaG/IxNj1gFhDRE=";
+      rev = "63f9650e522336e0010261dcd0ffb0bf114cf912";
+      hash = "sha256-ZCLJ6BjMAj64/zM606qxnmzl2la4dvO/F5QFicBEYfU=";
     };
 
     # https://github.com/Rolv-Apneseth/starship.yazi
     starship = pkgs.fetchFromGitHub {
       owner = "Rolv-Apneseth";
       repo = "starship.yazi";
-      rev = "c0707544f1d526f704dab2da15f379ec90d613c2";
-      hash = "sha256-H8j+9jcdcpPFXVO/XQZL3zq1l5f/WiOm4YUxAMduSRs=";
+      rev = "6a0f3f788971b155cbc7cec47f6f11aebbc148c9";
+      hash = "sha256-q1G0Y4JAuAv8+zckImzbRvozVn489qiYVGFQbdCxC98=";
     };
     # https://github.com/grappas/wl-clipboard.yazi
     wl-clipboard = pkgs.fetchFromGitHub {
@@ -35,8 +35,8 @@
     exifaudio = pkgs.fetchFromGitHub {
       owner = "Sonico98";
       repo = "exifaudio.yazi";
-      rev = "7ff714155f538b6460fdc8e911a9240674ad9b89";
-      hash = "sha256-qRUAKlrYWV0qzI3SAQUYhnL3QR+0yiRc+0XbN/MyufI=";
+      rev = "e766cd273246612fe71fc18d2126619a41273c32";
+      hash = "sha256-aniuY14pXcoaW6YkUwt7hTl9mWjl5HoOPhHkuY4ooAw=";
     };
   };
 in {
@@ -57,7 +57,7 @@ in {
       exifaudio = plugins.exifaudio;
     };
     theme = {
-      manager = {
+      mgr = {
         border_symbol = " ";
       };
       status = {
@@ -101,7 +101,7 @@ in {
       '';
 
     keymap = {
-      manager.prepend_keymap = [
+      mgr.prepend_keymap = [
         {
           on = ["g" "v"];
           run = "cd ~/Vault";
