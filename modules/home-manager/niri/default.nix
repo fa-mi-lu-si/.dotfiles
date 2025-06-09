@@ -78,7 +78,7 @@
         command = ["eww" "daemon"];
       }
       {
-        command = ["~/.config/eww/scripts/niri-overview-state.nu"];
+        command = ["~/.config/eww/scripts/niri-overview.sh"];
       }
       {
         command = ["clipse" "-listen"];
