@@ -85,6 +85,6 @@
   :monitor "eDP-1"
   :stacking 'fg'
   :geometry (geometry :x 0 :y 0 :height "100%" :anchor "center left")
-  :exclusive true
+  ; :exclusive true
   (bar :screen 1)
 )
