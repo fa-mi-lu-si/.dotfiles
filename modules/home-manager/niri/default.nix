@@ -64,6 +64,7 @@
         {proportion = 1.0 / 2.0;}
         {proportion = 2.0 / 3.0;}
       ];
+      shadow.enable = false;
       struts = {
         left = 8;
         right = 8;
