@@ -20,8 +20,8 @@
 
     fonts = with pkgs; {
       monospace = {
-        package = nerd-fonts._0xproto;
-        name = "0xProto Nerd Font";
+        package = nerd-fonts.recursive-mono;
+        name = "RecMonoSmCasual Nerd Font";
       };
       sansSerif = {
         package = dejavu_fonts;
