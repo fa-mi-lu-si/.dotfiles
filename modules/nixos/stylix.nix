@@ -13,8 +13,8 @@
     image = config.lib.stylix.pixel "base00";
 
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      package = pkgs.quintom-cursor-theme;
+      name = "Quintom_Snow";
       size = 20;
     };
 

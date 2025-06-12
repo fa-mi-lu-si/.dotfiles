@@ -11,6 +11,12 @@
     input.touchpad.accel-speed = 0.3;
 
     prefer-no-csd = true;
+    overview = {
+      zoom = 0.5;
+      backdrop-color = config.lib.stylix.colors.withHashtag.base00;
+      # TODO: wait for workspace shadow to be merged into the flake
+      # workspace-shadow.enable = false;
+    };
     window-rules = [
       # Rounded Corners
       {
@@ -96,14 +102,15 @@
 
     binds = with config.lib.niri.actions; let
       sh = spawn "sh" "-c";
+      nu = spawn "nu" "-c";
     in {
       "Mod+T".action = spawn "wezterm";
       "Mod+Shift+T".action = spawn "kitty";
       "Mod+F".action = spawn "nautilus";
       "Mod+B".action = spawn "zen";
       "Mod+C".action = spawn "code";
-      "Mod+O".action = spawn "obsidian";
-      "Mod+Shift+O".action = sh "wezterm start --cwd ~/Vault hx ."; # Quick note
+      "Mod+O".action = sh "wezterm start --cwd ~/Vault hx .";
+      "Mod+Shift+O".action = spawn "obsidian";
       "Mod+Space".action = spawn "anyrun";
 
       "Mod+Q".action = close-window;
@@ -113,7 +120,14 @@
       "Mod+Shift+End".action = consume-or-expel-window-right;
       "Mod+U".action = fullscreen-window;
       "Mod+G".action = toggle-window-floating;
-      "Mod+Shift+G".action = switch-focus-between-floating-and-tiling;
+      "Mod+Shift+G".action =
+        nu
+        # nu
+        ''
+          niri msg -j windows | from json
+          | where workspace_id == (niri msg -j workspaces | from json | where is_focused == true | first | get id)
+          | each {niri msg action toggle-window-floating --id $in.id}
+        '';
       "Mod+Tab".action = switch-focus-between-floating-and-tiling;
       "Mod+R".action = switch-preset-column-width;
       "Mod+M".action = maximize-column;
