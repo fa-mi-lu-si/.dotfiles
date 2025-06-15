@@ -1,11 +1,13 @@
-(defwidget bar [screen]
-  (centerbox :orientation "v"
+(defwidget bar []
+  (centerbox
+    :orientation "v"
+    :class "bar"
     (box :valign "start"
-      (top :screen screen))
+      (top))
     (box :valign "center"
-      (middle :screen screen))
+      (middle))
     (box :valign "end"
-      (bottom :screen screen))))
+      (bottom))))
 
 (defwidget niri-workspace-widget [monitor]
   (box :class "workspaces"
@@ -16,13 +18,13 @@
         :onclick "niri msg action focus-workspace ${i.idx}"
         "${i.is_focused ? "  " : "  "}"))))
 
-(defwidget top [screen] (box (niri-workspace-widget :monitor 0)))
+(defwidget top [] (box (niri-workspace-widget :monitor 0)))
 
-(defwidget middle [screen] (time))
+(defwidget middle [] (time))
 (defwidget time []
   (box
-    :orientation "v"
     :class "time"
+    :orientation "v"
   hour min)
 )
 
@@ -68,7 +70,7 @@
         "󰝛"
       })))
 
-(defwidget bottom [screen]
+(defwidget bottom []
   (box
     :orientation "v"
     :space-evenly false
@@ -84,7 +86,7 @@
 (defwindow sidebar
   :monitor "eDP-1"
   :stacking 'fg'
-  :geometry (geometry :x 0 :y 0 :height "100%" :anchor "center left")
+  :geometry (geometry :x 0 :y 0 :height "100%" :width "40px" :anchor "center left")
   ; :exclusive true
-  (bar :screen 1)
+  (bar)
 )

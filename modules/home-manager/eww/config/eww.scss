@@ -1,3 +1,28 @@
-window {
-  font-family: monospace;
+// Base16 colours
+// TODO: template these from stylix
+$bg-alt   : #32302F; // base00
+$bg       : #3C3836; // base01
+$sel      : #5A524C; // base02
+$invi     : #7C6F64; // base03
+$fg-alt   : #BDAE93; // base04
+$fg       : #DDC7A1; // base05
+$fg-light : #EBDBB2; // base06
+$bg-light : #FBF1C7; // base07
+$red      : #EA6962; // base08
+$orange   : #E78A4E; // base09
+$yellow   : #D8A657; // base0A
+$green    : #A9B665; // base0B
+$cyan     : #89B482; // base0C
+$blue     : #7DAEA3; // base0D
+$Purple   : #D3869B; // base0E
+$Brown    : #BD6F3E; // base0F
+
+* {
+  all: unset;
+  font-family: monospace
 }
+
+// Corner rounding
+$rounding: 8px;
+
+@import "./modules/bar.scss"
