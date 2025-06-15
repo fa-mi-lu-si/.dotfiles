@@ -12,6 +12,7 @@
 (defwidget niri-workspace-widget [monitor]
   (box :class "workspaces"
     :orientation "v"
+    :spacing 10
     ; TODO: make this monitor specific, with a jq filter
     (for i in {jq(niri-workspaces, ".=sort_by(.idx)")}
       (button
