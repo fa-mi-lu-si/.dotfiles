@@ -1,5 +1,7 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [swww];
+{...}: {
+  services.swww = {
+    enable = true;
+  };
 
   home.sessionVariables = {
     SWWW_TRANSITION = "left";
