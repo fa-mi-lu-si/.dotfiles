@@ -79,9 +79,6 @@
 
     spawn-at-startup = [
       {
-        command = ["swww-daemon"];
-      }
-      {
         command = ["eww" "daemon"];
       }
       {

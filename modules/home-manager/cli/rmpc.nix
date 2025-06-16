@@ -13,5 +13,6 @@
 
   programs.rmpc = {
     enable = true;
+    # TODO: bring in the config file and template the stylix colors
   };
 }
