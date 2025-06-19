@@ -38,6 +38,12 @@
 
   programs.foliate.enable = true;
 
+  services.kdeconnect = {
+    enable = true;
+    indicator = true; # enable the indicator service
+    package = pkgs.valent;
+  };
+
   programs.vesktop = {
     enable = true;
   };
