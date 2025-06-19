@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./spicetify.nix
     ./anyrun.nix
@@ -20,14 +16,6 @@
     celluloid
     amberol
   ];
-
-  # Stylix theming for obsidian, just copy the file into Style Settings
-  home.file.".config/obsidian/style_settings.json".text = with config.lib.stylix.colors.withHashtag; ''
-    {
-      "minimal-style@@base@@dark": "${base00}",
-      "minimal-style@@ax1@@dark": "${base0D}"
-    }
-  '';
 
   services.blueman-applet.enable = true;
   services.network-manager-applet.enable = true;
