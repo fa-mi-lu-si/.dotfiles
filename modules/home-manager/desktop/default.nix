@@ -48,6 +48,9 @@
   services.mpris-proxy.enable = true;
 
   programs.zathura.enable = true;
+  programs.swaylock = {
+    enable = true;
+  };
 
   xdg.userDirs = {
     enable = true;

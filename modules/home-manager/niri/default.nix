@@ -97,6 +97,10 @@
       DISPLAY = ":0";
     };
 
+    switch-events = {
+      lid-close.action.spawn = "swaylock";
+    };
+
     binds = with config.lib.niri.actions; let
       sh = spawn "sh" "-c";
       nu = spawn "nu" "-c";
@@ -111,6 +115,7 @@
       "Mod+Space".action = spawn "anyrun";
 
       "Mod+Q".action = close-window;
+      "Mod+L".action = spawn "swaylock";
       "Mod+F9".action = toggle-overview;
       "Mod+Shift+Q".action = quit;
       "Mod+Shift+Home".action = consume-or-expel-window-left;
