@@ -15,8 +15,7 @@
     overview = {
       zoom = 0.5;
       backdrop-color = config.lib.stylix.colors.withHashtag.base00;
-      # TODO: wait for workspace shadow to be merged into the flake
-      # workspace-shadow.enable = false;
+      workspace-shadow.enable = false;
     };
     window-rules = [
       # Rounded Corners
