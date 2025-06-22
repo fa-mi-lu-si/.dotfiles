@@ -9,6 +9,7 @@
   programs.niri.settings = {
     hotkey-overlay.skip-at-startup = true;
     input.touchpad.accel-speed = 0.3;
+    input.power-key-handling.enable = false;
 
     prefer-no-csd = true;
     overview = {
@@ -95,10 +96,6 @@
 
     environment = {
       DISPLAY = ":0";
-    };
-
-    switch-events = {
-      lid-close.action.spawn = "swaylock";
     };
 
     binds = with config.lib.niri.actions; let

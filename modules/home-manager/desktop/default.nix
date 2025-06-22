@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./spicetify.nix
     ./anyrun.nix
@@ -49,6 +53,19 @@
   programs.zathura.enable = true;
   programs.swaylock = {
     enable = true;
+  };
+  services.swayidle = {
+    enable = true;
+    events = [
+      {
+        event = "before-sleep";
+        command = "${lib.getExe pkgs.swaylock} -f";
+      }
+      {
+        event = "lock";
+        command = "${lib.getExe pkgs.swaylock} -f";
+      }
+    ];
   };
 
   xdg.userDirs = {
