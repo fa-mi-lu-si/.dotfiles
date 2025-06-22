@@ -28,7 +28,6 @@
 
   services.kdeconnect = {
     enable = true;
-    indicator = true; # enable the indicator service
     package = pkgs.valent;
   };
 
