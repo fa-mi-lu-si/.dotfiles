@@ -11,6 +11,7 @@
     inputs.home-manager.nixosModules.default
 
     ../../modules/nixos/nix.nix
+    ../../modules/nixos/kde-connect.nix
     ../../modules/nixos/newm-next.nix
     ../../modules/nixos/niri.nix
     ../../modules/nixos/swaylock.nix
@@ -130,17 +131,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # open ports for kde connect
-  networking.firewall = rec {
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

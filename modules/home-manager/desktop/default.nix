@@ -30,11 +30,6 @@
 
   programs.foliate.enable = true;
 
-  services.kdeconnect = {
-    enable = true;
-    package = pkgs.valent;
-  };
-
   programs.vesktop = {
     enable = true;
   };
