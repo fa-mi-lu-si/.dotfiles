@@ -16,6 +16,7 @@
     nautilus
     loupe
     obsidian
+    tuba
 
     celluloid
     amberol
