@@ -1037,17 +1037,16 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1750051300,
-        "narHash": "sha256-5ZKc3cZfaY4/IOf1nnoLjaHofh0dFsXlWoG9K0/rvC4=",
+        "lastModified": 1750649182,
+        "narHash": "sha256-beNAQ63SY8HxBsFdMGv/fdLzjQMYgifMh1DcmaIzMjo=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "84093f11c79c370d0219e231a0bc83076992feab",
+        "rev": "c0785a69fe3988b4ef44c74575f4a2f698f91f32",
         "type": "github"
       },
       "original": {
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "84093f11c79c370d0219e231a0bc83076992feab",
         "type": "github"
       }
     },
