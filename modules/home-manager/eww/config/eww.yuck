@@ -1,2 +1,3 @@
 (include "variables.yuck")
 (include "modules/bar.yuck")
+(include "modules/player.yuck")

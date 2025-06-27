@@ -57,13 +57,14 @@
     {EWW_BATTERY.BAT1.capacity}
   ))
 
-(defwidget player []
+(defwidget player-button []
   (box
     :orientation "v"
     :tooltip "${title} - ${artist}"
     :visible {status != ""}
     (button
-      :onclick "playerctl play-pause"
+      :onclick "eww -c ${EWW_CONFIG_DIR} open player"
+      ; :onclick "playerctl play-pause"
       {
         status == "Playing" ? "":
         status == "Paused" ? "":
@@ -79,7 +80,7 @@
       :orientation "v"
       :icon-size 16
     :prepend-new true)
-    (player)
+    (player-button)
     (battery)
     (network_icon)
   ))

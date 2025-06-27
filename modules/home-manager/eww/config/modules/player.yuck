@@ -1,0 +1,15 @@
+(defwidget player []
+  (box
+    (box
+    :orientation "v"
+    "${title}"
+    "${artist}"
+  )))
+
+(defwindow player
+  :monitor "eDP-1"
+  :stacking 'fg'
+  :geometry (geometry :x 60 :y 20 :height "150px" :width "300px" :anchor "bottom left")
+  ; :exclusive true
+  (player)
+)

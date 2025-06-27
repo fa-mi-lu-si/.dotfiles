@@ -18,6 +18,7 @@ niri msg -j event-stream | while IFS= read -r line; do
         ;;
       false)
         eww $config_arg close sidebar >/dev/null 2>&1
+        eww $config_arg close player >/dev/null 2>&1
         ;;
       *)
         # Do nothing for other cases
