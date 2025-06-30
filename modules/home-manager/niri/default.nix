@@ -15,7 +15,6 @@
     overview = {
       zoom = 0.5;
       backdrop-color = config.lib.stylix.colors.withHashtag.base00;
-      workspace-shadow.enable = false;
     };
     window-rules = [
       # Rounded Corners
