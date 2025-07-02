@@ -110,6 +110,8 @@
       "Mod+Space".action = spawn "anyrun";
 
       "Mod+Q".action = close-window;
+      "Mod+E".action = center-column;
+      "Mod+Shift+E".action = center-visible-columns;
       "Mod+L".action = spawn "swaylock";
       "Mod+F9".action = toggle-overview;
       "Mod+Shift+Q".action = quit;
