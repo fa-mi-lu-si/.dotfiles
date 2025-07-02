@@ -20,6 +20,7 @@
 
     celluloid
     amberol
+    euphonica
   ];
 
   services.blueman-applet.enable = true;
