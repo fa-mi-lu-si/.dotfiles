@@ -8,7 +8,7 @@
       C-w = ":buffer-close";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
-      "'" = "goto_word";
+      space.space = "goto_word";
       space.g = {
         # Git menu
         b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})";

@@ -86,9 +86,9 @@
   };
   stylix.targets.kitty.variant256Colors = true;
 
-  home.file.".config/kitty/relative_resize.py".source = ./relative_resize.py;
-  home.file.".config/kitty/tab_bar.py".source = ./tab_bar.py;
-  home.file.".config/kitty/open-actions.conf".text = ''
+  xdg.configFile."kitty/relative_resize.py".source = ./relative_resize.py;
+  xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
+  xdg.configFile."kitty/open-actions.conf".text = ''
     protocol file
     mime inode/directory
     action send_text all cd "$FILE_PATH"\r

@@ -1,6 +1,6 @@
 {
+  lib,
   pkgs,
-  config,
   ...
 }: {
   imports = [
@@ -16,18 +16,12 @@
     nautilus
     loupe
     obsidian
+    tuba
 
     celluloid
     amberol
+    euphonica
   ];
-
-  # Stylix theming for obsidian, just copy the file into Style Settings
-  home.file.".config/obsidian/style_settings.json".text = with config.lib.stylix.colors.withHashtag; ''
-    {
-      "minimal-style@@base@@dark": "${base00}",
-      "minimal-style@@ax1@@dark": "${base0D}"
-    }
-  '';
 
   services.blueman-applet.enable = true;
   services.network-manager-applet.enable = true;
@@ -37,12 +31,6 @@
   };
 
   programs.foliate.enable = true;
-
-  services.kdeconnect = {
-    enable = true;
-    indicator = true; # enable the indicator service
-    package = pkgs.valent;
-  };
 
   programs.vesktop = {
     enable = true;
@@ -60,6 +48,22 @@
   services.mpris-proxy.enable = true;
 
   programs.zathura.enable = true;
+  programs.swaylock = {
+    enable = true;
+  };
+  services.swayidle = {
+    enable = true;
+    events = [
+      {
+        event = "before-sleep";
+        command = "${lib.getExe pkgs.swaylock} -f";
+      }
+      {
+        event = "lock";
+        command = "${lib.getExe pkgs.swaylock} -f";
+      }
+    ];
+  };
 
   xdg.userDirs = {
     enable = true;

@@ -39,6 +39,7 @@ let abbreviations = {
     'gco': 'git checkout'
     'gs': 'git status -s'
     'gss': 'git status'
+    'gsw': 'git switch'
     'gd': 'git diff'
     'mp': 'mpremote'
     'ard': 'arduino-cli'

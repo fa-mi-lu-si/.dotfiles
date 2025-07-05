@@ -1,3 +1,3 @@
 {...}: {
-  home.file.".config/newm/config.py".source = ./config.py;
+  xdg.configFile."newm/config.py".source = ./config.py;
 }

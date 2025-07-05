@@ -9,13 +9,12 @@
   programs.niri.settings = {
     hotkey-overlay.skip-at-startup = true;
     input.touchpad.accel-speed = 0.3;
+    input.power-key-handling.enable = false;
 
     prefer-no-csd = true;
     overview = {
       zoom = 0.5;
       backdrop-color = config.lib.stylix.colors.withHashtag.base00;
-      # TODO: wait for workspace shadow to be merged into the flake
-      # workspace-shadow.enable = false;
     };
     window-rules = [
       # Rounded Corners
@@ -112,6 +111,9 @@
       "Mod+Space".action = spawn "anyrun";
 
       "Mod+Q".action = close-window;
+      "Mod+E".action = center-column;
+      "Mod+Shift+E".action = center-visible-columns;
+      "Mod+L".action = spawn "swaylock";
       "Mod+F9".action = toggle-overview;
       "Mod+Shift+Q".action = quit;
       "Mod+Shift+Home".action = consume-or-expel-window-left;
