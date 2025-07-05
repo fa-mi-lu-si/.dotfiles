@@ -81,8 +81,7 @@
         command = ["eww" "daemon"];
       }
       {
-        # TODO: use ${config.xdg.configHome}
-        command = ["~/.config/eww/scripts/niri-watcher.nu" "/home/samy/.config/eww"];
+        command = ["~/.config/eww/scripts/niri-watcher.nu" "${config.xdg.configHome}/eww"];
       }
       {
         command = ["clipse" "-listen"];
