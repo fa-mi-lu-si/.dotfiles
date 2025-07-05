@@ -46,6 +46,7 @@
 
       {
         matches = [
+          {app-id = "^com.mitchellh.ghostty$";}
           {app-id = "^org.wezfurlong.wezterm$";}
           {app-id = "^kitty$";}
           {app-id = "^org.gnome.Nautilus$";}
@@ -100,12 +101,12 @@
       sh = spawn "sh" "-c";
       nu = spawn "nu" "-c";
     in {
-      "Mod+T".action = spawn "wezterm";
-      "Mod+Shift+T".action = spawn "kitty";
+      "Mod+T".action = spawn "ghostty";
+      "Mod+Shift+T".action = spawn "wezterm";
       "Mod+F".action = spawn "nautilus";
       "Mod+B".action = spawn "zen";
       "Mod+C".action = spawn "code";
-      "Mod+O".action = sh "wezterm start --cwd ~/Vault hx .";
+      "Mod+O".action = sh "ghostty --working-directory='~/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
       "Mod+Space".action = spawn "anyrun";
 

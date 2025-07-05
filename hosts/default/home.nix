@@ -11,6 +11,7 @@
     ../../modules/home-manager/desktop/zen-browser.nix
     ../../modules/home-manager/desktop/onlyoffice.nix
     ../../modules/home-manager/wezterm
+    ../../modules/home-manager/ghostty
     ../../modules/home-manager/vscode
     ../../modules/home-manager/helix
     ../../modules/home-manager/kitty
