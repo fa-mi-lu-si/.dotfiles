@@ -135,43 +135,6 @@
         format = "[$symbol$state]($style) ";
       };
 
-      custom.mpremote = {
-        description = "Connected Micropython Device";
-        shell = ["sh" "--norc" "--noprofile"];
-        format = "[$output]($style)";
-        style = "";
-        when = "mpremote --version";
-        command = ''
-          GREEN="\033[0;32m"
-          RED="\033[0;31m"
-          NC="\033[0m" # No Color
-          if [ "$(mpremote connect list 2>/dev/null | grep -c "MicroPython")" -gt 0 ]; then
-              echo -e "$GREEN  $NC" # Green connected symbol
-          else
-              echo -e "$RED  $NC" # Red disconnected symbol
-          fi
-        '';
-      };
-
-      custom.probe-rs = {
-        description = "Connected Debug probe";
-        shell = ["sh" "--norc" "--noprofile"];
-        format = "[$output]($style)";
-        style = "";
-        when = "probe-rs --version";
-        command = ''
-          # ANSI color codes
-          GREEN="\033[0;32m"
-          RED="\033[0;31m"
-          NC="\033[0m" # No Color
-          if [[ $(probe-rs list) =~ \[0\]:\ (.+)\ --\  ]]; then
-              echo -e "$GREEN  $NC"
-          else
-              echo -e "$RED  $NC"
-          fi
-        '';
-      };
-
       env_var.YAZI_LEVEL = {
         description = "Display for yazi shell";
         format = "[󰇥 ]($style)";
