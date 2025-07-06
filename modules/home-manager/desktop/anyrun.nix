@@ -28,7 +28,7 @@
             desktop_actions: false,
             max_entries: 5,
             terminal: Some(Terminal(
-              command: "footclient",
+              command: "foot",
               args: "-e {}",
             )),
           )

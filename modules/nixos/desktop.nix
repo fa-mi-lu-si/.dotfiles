@@ -30,7 +30,7 @@
   xdg.terminal-exec = {
     enable = true;
     settings = {
-      default = ["footclient.desktop"];
+      default = ["foot.desktop"];
     };
   };
 
