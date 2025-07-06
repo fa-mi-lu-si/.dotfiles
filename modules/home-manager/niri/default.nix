@@ -49,6 +49,7 @@
           {app-id = "^com.mitchellh.ghostty$";}
           {app-id = "^org.wezfurlong.wezterm$";}
           {app-id = "^kitty$";}
+          {app-id = "^foot$";}
           {app-id = "^org.gnome.Nautilus$";}
         ];
         default-column-width.proportion = 0.5;
@@ -101,12 +102,12 @@
       sh = spawn "sh" "-c";
       nu = spawn "nu" "-c";
     in {
-      "Mod+T".action = spawn "ghostty";
-      "Mod+Shift+T".action = spawn "wezterm";
+      "Mod+T".action = spawn "foot";
+      "Mod+Shift+T".action = spawn "ghostty";
       "Mod+F".action = spawn "nautilus";
       "Mod+B".action = spawn "zen";
       "Mod+C".action = spawn "code";
-      "Mod+O".action = sh "ghostty --working-directory='~/Vault' -e hx .";
+      "Mod+O".action = sh "foot --working-directory='~/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
       "Mod+Space".action = spawn "anyrun";
 
