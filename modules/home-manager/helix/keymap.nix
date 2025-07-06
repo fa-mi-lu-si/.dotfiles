@@ -3,6 +3,7 @@
   programs.helix.settings.keys = {
     normal = {
       esc = ["collapse_selection" "keep_primary_selection"];
+      ret = "goto_word";
       C-s = ":write";
       C-t = ":new";
       C-w = ":buffer-close";
