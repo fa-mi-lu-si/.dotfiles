@@ -48,7 +48,6 @@
         matches = [
           {app-id = "^com.mitchellh.ghostty$";}
           {app-id = "^org.wezfurlong.wezterm$";}
-          {app-id = "^kitty$";}
           {app-id = "^footclient$";}
           {app-id = "^org.gnome.Nautilus$";}
         ];
