@@ -147,11 +147,27 @@
       "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
 
       "Print".action = screenshot;
-      "XF86AudioRaiseVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
-      "XF86AudioLowerVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
-      "XF86AudioMute".action = sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-      "XF86MonBrightnessUp".action = sh "brightnessctl s +1%";
-      "XF86MonBrightnessDown".action = sh "brightnessctl s 1%-";
+      "XF86AudioRaiseVolume" = {
+        action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
+        allow-when-locked = true;
+      };
+      "XF86AudioLowerVolume" = {
+        action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
+        allow-when-locked = true;
+      };
+      "XF86AudioMute" = {
+        action = sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        allow-when-locked = true;
+      };
+      "XF86MonBrightnessUp" = {
+        action = sh "brightnessctl s +1%";
+        allow-when-locked = true;
+      };
+      "XF86MonBrightnessDown" = {
+        action = sh "brightnessctl s 1%-";
+        allow-when-locked = true;
+      };
+
       "XF86AudioPause".action = sh "playerctl play-pause";
       "XF86AudioPlay".action = sh "playerctl play-pause";
       "XF86AudioNext".action = sh "playerctl next";
