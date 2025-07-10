@@ -28,7 +28,7 @@
             desktop_actions: false,
             max_entries: 5,
             terminal: Some(Terminal(
-              command: "foot",
+              command: "wezterm",
               args: "-e {}",
             )),
           )
