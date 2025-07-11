@@ -57,13 +57,9 @@ config.keys = {
   { key = 'UpArrow',    mods = 'SUPER|CTRL|SHIFT', action = act.SplitPane { direction = 'Up' } },
   { key = 'DownArrow',  mods = 'SUPER|CTRL|SHIFT', action = act.SplitPane { direction = 'Down' } },
 
-  { key = 'UpArrow',    mods = 'ALT|CTRL|SHIFT',   action = act.ScrollToPrompt(-1) },
-  { key = 'DownArrow',  mods = 'ALT|CTRL|SHIFT',   action = act.ScrollToPrompt(1) },
+  { key = 'UpArrow',    mods = 'CTRL|SHIFT',   action = act.ScrollToPrompt(-1) },
+  { key = 'DownArrow',  mods = 'CTRL|SHIFT',   action = act.ScrollToPrompt(1) },
 
-  { key = 'F11',        mods = 'CTRL|SHIFT',       action = act.ToggleFullScreen },
-
-  { key = 'Copy',       mods = 'NONE',             action = act.CopyTo 'Clipboard' },
-  { key = 'Paste',      mods = 'NONE',             action = act.PasteFrom 'Clipboard' },
   { key = 'C',          mods = 'CTRL|SHIFT',       action = act.CopyTo 'Clipboard' },
   { key = 'V',          mods = 'CTRL|SHIFT',       action = act.PasteFrom 'Clipboard' },
 
@@ -85,7 +81,7 @@ config.keys = {
   { key = 'I',          mods = 'CTRL|SHIFT',       action = act.ShowDebugOverlay },
   { key = 'E',          mods = 'CTRL|SHIFT',       action = act.ActivateCommandPalette },
   { key = 'X',          mods = 'CTRL|SHIFT',       action = act.ActivateCopyMode },
-  { key = 'u',          mods = 'CTRL|SUPER',       action = act.TogglePaneZoomState },
+  { key = 'Enter',      mods = 'CTRL|SUPER',       action = act.TogglePaneZoomState },
   { key = 'F5',         mods = 'CTRL|SHIFT',       action = act.ReloadConfiguration },
   { key = 'Space',      mods = 'CTRL|SHIFT',       action = act.QuickSelect },
 }
