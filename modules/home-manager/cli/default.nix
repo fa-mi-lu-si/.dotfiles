@@ -13,6 +13,10 @@
     ./rmpc.nix
   ];
 
+  programs.bash = {
+    enable = true;
+  };
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;

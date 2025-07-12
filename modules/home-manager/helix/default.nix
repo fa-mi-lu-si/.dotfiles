@@ -14,26 +14,7 @@
     settings = {
       editor = {
         line-number = "relative";
-        indent-guides.render = false;
-        mouse = true;
         bufferline = "multiple";
-        color-modes = true;
-        statusline = {
-          left = [
-            "mode"
-            "spinner"
-            "file-name"
-            "read-only-indicator"
-            "file-modification-indicator"
-          ];
-          right = [
-            "diagnostics"
-            "workspace-diagnostics"
-            "selections"
-            "register"
-            "file-encoding"
-          ];
-        };
 
         end-of-line-diagnostics = "hint";
         inline-diagnostics = {

@@ -46,8 +46,8 @@
 
       {
         matches = [
+          {app-id = "^com.mitchellh.ghostty$";}
           {app-id = "^org.wezfurlong.wezterm$";}
-          {app-id = "^kitty$";}
           {app-id = "^org.gnome.Nautilus$";}
         ];
         default-column-width.proportion = 0.5;
@@ -101,11 +101,11 @@
       nu = spawn "nu" "-c";
     in {
       "Mod+T".action = spawn "wezterm";
-      "Mod+Shift+T".action = spawn "kitty";
+      "Mod+Shift+T".action = spawn "ghostty";
       "Mod+F".action = spawn "nautilus";
       "Mod+B".action = spawn "zen";
       "Mod+C".action = spawn "code";
-      "Mod+O".action = sh "wezterm start --cwd ~/Vault hx .";
+      "Mod+O".action = sh "wezterm start --cwd='${config.home.homeDirectory}/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
       "Mod+Space".action = spawn "anyrun";
 
@@ -146,11 +146,27 @@
       "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
 
       "Print".action = screenshot;
-      "XF86AudioRaiseVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
-      "XF86AudioLowerVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
-      "XF86AudioMute".action = sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-      "XF86MonBrightnessUp".action = sh "brightnessctl s +1%";
-      "XF86MonBrightnessDown".action = sh "brightnessctl s 1%-";
+      "XF86AudioRaiseVolume" = {
+        action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
+        allow-when-locked = true;
+      };
+      "XF86AudioLowerVolume" = {
+        action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
+        allow-when-locked = true;
+      };
+      "XF86AudioMute" = {
+        action = sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        allow-when-locked = true;
+      };
+      "XF86MonBrightnessUp" = {
+        action = sh "brightnessctl s +1%";
+        allow-when-locked = true;
+      };
+      "XF86MonBrightnessDown" = {
+        action = sh "brightnessctl s 1%-";
+        allow-when-locked = true;
+      };
+
       "XF86AudioPause".action = sh "playerctl play-pause";
       "XF86AudioPlay".action = sh "playerctl play-pause";
       "XF86AudioNext".action = sh "playerctl next";

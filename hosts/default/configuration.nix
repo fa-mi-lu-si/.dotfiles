@@ -11,6 +11,7 @@
     inputs.home-manager.nixosModules.default
 
     ../../modules/nixos/nix.nix
+    ../../modules/nixos/sops.nix
     ../../modules/nixos/kde-connect.nix
     ../../modules/nixos/newm-next.nix
     ../../modules/nixos/niri.nix

@@ -1,14 +1,14 @@
 {...}: {
-  programs.helix.settings.editor.jump-label-alphabet = "tnseriaodhfuwy";
+  programs.helix.settings.editor.jump-label-alphabet = "setnriaodh";
   programs.helix.settings.keys = {
     normal = {
       esc = ["collapse_selection" "keep_primary_selection"];
+      ret = "goto_word";
       C-s = ":write";
       C-t = ":new";
       C-w = ":buffer-close";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
-      space.space = "goto_word";
       space.g = {
         # Git menu
         b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})";
@@ -30,8 +30,6 @@
     };
 
     insert = {
-      A-r = ":reload";
-      C-e = "command_palette";
       C-s = ":write";
       C-t = ":new";
       C-w = ":buffer-close";

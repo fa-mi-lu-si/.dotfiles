@@ -76,8 +76,8 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-A-Up", lambda: layout.resize_focused_view(0, -1)),
         ("L-A-Right", lambda: layout.resize_focused_view(1, 0)),
 
-        ("L-S-t", lambda: os.system("kitty &")),
-        ("L-t", lambda: os.system("wezterm &")),
+        ("L-S-t", lambda: os.system("ghostty &")),
+        ("L-t", lambda: os.system("footclient &")),
         ("L-c", lambda: os.system("code &")),
         ("L-f", lambda: os.system("nautilus &")),
         ("L-b", lambda: os.system("zen &")),
@@ -116,7 +116,7 @@ lock_on_wakeup = False
 
 panels = {
     'launcher': {
-        'cmd': "kitty"
+        'cmd': "footclient"
     },
     # 'bar': {
     #     'cmd': 'eww open sidebar',

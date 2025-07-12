@@ -1,19 +1,3 @@
-def frontmatter [] {
-  # Parse markdown into a record
-  lines
-  | split list '---'
-  | do { |lst|
-    let fm = $lst.0
-    | to text | from yaml
-    | into value
-    | into record
-    {
-      frontmatter: $fm
-      content: ($lst | skip 1 | to text | str trim)
-    }
-  } $in
-}
-
 # Abbreviations
 # https://github.com/nushell/nushell/issues/5597
 
@@ -52,6 +36,7 @@ $env.config.filesize.unit = 'metric'
 $env.config.history.file_format = "sqlite"
 $env.config.history.isolation = true
 $env.config.use_kitty_protocol = true
+$env.config.cursor_shape.emacs = "blink_line"
 $env.config.shell_integration = {
   osc2: true
   osc7: true
@@ -78,16 +63,6 @@ $env.config.keybindings = [
     keycode: char_h
     mode: emacs
     event: { edit: InsertString value: '--help'}
-  }
-  {
-    name: yazi
-    modifier: control
-    keycode: char_f
-    mode: emacs
-    event: {
-      send: executehostcommand
-      cmd: "yy"
-    }
   }
   {
     name: yazi_f9

@@ -11,6 +11,7 @@
 
   home.packages = with pkgs; [
     libnotify
+    wiremix
     scrcpy
 
     nautilus
