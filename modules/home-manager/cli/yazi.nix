@@ -4,16 +4,16 @@
     yazi = pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "63f9650e522336e0010261dcd0ffb0bf114cf912";
-      hash = "sha256-ZCLJ6BjMAj64/zM606qxnmzl2la4dvO/F5QFicBEYfU=";
+      rev = "b8860253fc44e500edeb7a09db648a829084facd";
+      hash = "sha256-29K8PmBoqAMcQhDIfOVnbJt2FU4BR6k23Es9CqyEloo=";
     };
 
     # https://github.com/Rolv-Apneseth/starship.yazi
     starship = pkgs.fetchFromGitHub {
       owner = "Rolv-Apneseth";
       repo = "starship.yazi";
-      rev = "6a0f3f788971b155cbc7cec47f6f11aebbc148c9";
-      hash = "sha256-q1G0Y4JAuAv8+zckImzbRvozVn489qiYVGFQbdCxC98=";
+      rev = "a63550b2f91f0553cc545fd8081a03810bc41bc0";
+      hash = "sha256-PYeR6fiWDbUMpJbTFSkM57FzmCbsB4W4IXXe25wLncg=";
     };
     # https://github.com/grappas/wl-clipboard.yazi
     wl-clipboard = pkgs.fetchFromGitHub {
@@ -27,8 +27,8 @@
     epub-preview = pkgs.fetchFromGitHub {
       owner = "kirasok";
       repo = "epub-preview.yazi";
-      rev = "521feb15502f0424027db77cdab635dba58e0617";
-      hash = "sha256-PUwHtd5KeXiieeomQYuazfagJUMlkbU9hb30EKH7Mp4=";
+      rev = "2e8079e4a7f6315de99a5b968ed5fda479f1f39c";
+      hash = "sha256-wHTR8frrFL3cUD8fvSTO+m/77wQ7auVjTZ1uCTB/UzU=";
     };
 
     # https://github.com/Sonico98/exifaudio.yazi
