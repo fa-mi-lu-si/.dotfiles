@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-soft.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/terracotta-dark.yaml";
     polarity = "dark";
 
     image = config.lib.stylix.pixel "base00";
