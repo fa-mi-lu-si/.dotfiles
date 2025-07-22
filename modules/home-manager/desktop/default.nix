@@ -5,7 +5,6 @@
 }: {
   imports = [
     ./spicetify.nix
-    ./anyrun.nix
     ./swww.nix
   ];
 
@@ -29,6 +28,15 @@
 
   services.dunst = {
     enable = true;
+  };
+
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      main = {
+        terminal = "wezterm -e";
+      };
+    };
   };
 
   programs.foliate.enable = true;

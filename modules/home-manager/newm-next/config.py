@@ -83,7 +83,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-b", lambda: os.system("zen &")),
         ("L-o", lambda: os.system("obsidian &")),
         ("L-S-o", lambda: os.system("wezterm start --cwd ~/Vault hx .")),
-        ("L-space", lambda: os.system("anyrun &")),
+        ("L-space", lambda: os.system("fuzzel &")),
 
         ("L-q", lambda: layout.close_focused_view()),
         ("L-S-q", lambda: layout.terminate()),

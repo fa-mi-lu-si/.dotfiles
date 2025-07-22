@@ -107,7 +107,7 @@
       "Mod+C".action = spawn "code";
       "Mod+O".action = sh "wezterm start --cwd='${config.home.homeDirectory}/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
-      "Mod+Space".action = spawn "anyrun";
+      "Mod+Space".action = spawn "fuzzel";
 
       "Mod+Q".action = close-window;
       "Mod+E".action = center-column;

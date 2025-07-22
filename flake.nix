@@ -21,7 +21,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    anyrun.url = "github:anyrun-org/anyrun";
 
     home-manager = {
       url = "github:nix-community/home-manager";
