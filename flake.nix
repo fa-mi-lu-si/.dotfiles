@@ -13,7 +13,6 @@
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     wezterm.url = "github:wez/wezterm?dir=nix";
-    helix.url = "github:helix-editor/helix/master";
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
