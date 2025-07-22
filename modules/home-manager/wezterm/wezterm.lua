@@ -9,6 +9,7 @@ end
 config.default_prog = { 'nu' }
 config.enable_kitty_keyboard = true
 
+config.term = "wezterm"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.show_tab_index_in_tab_bar = false
