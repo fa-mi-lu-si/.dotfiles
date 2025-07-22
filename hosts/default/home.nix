@@ -9,7 +9,7 @@
     ../../modules/home-manager/zen-browser
     ../../modules/home-manager/sops.nix
     ../../modules/home-manager/desktop
-    ../../modules/home-manager/desktop/brave.nix
+    ../../modules/home-manager/desktop/vivaldi.nix
     ../../modules/home-manager/desktop/onlyoffice.nix
     ../../modules/home-manager/wezterm
     ../../modules/home-manager/ghostty
