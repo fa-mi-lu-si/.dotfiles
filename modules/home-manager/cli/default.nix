@@ -10,7 +10,7 @@
     ./starship.nix
     ./git.nix
     ./yazi.nix
-    ./rmpc.nix
+    ./rmpc
   ];
 
   programs.bash = {
