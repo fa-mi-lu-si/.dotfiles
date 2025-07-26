@@ -28,6 +28,11 @@
 
   services.dunst = {
     enable = true;
+    settings = {
+      global = {
+        dmenu = "fuzzel -d";
+      };
+    };
   };
 
   programs.fuzzel = {
@@ -37,6 +42,11 @@
         terminal = "wezterm -e";
       };
     };
+  };
+
+  services.clipse = {
+    enable = true;
+    imageDisplay.type = "kitty";
   };
 
   programs.foliate.enable = true;

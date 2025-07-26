@@ -81,7 +81,6 @@
     serie
 
     wl-clipboard
-    clipse
     handlr-regex
     cyme
     bluetuith

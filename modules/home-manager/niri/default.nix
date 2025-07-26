@@ -83,9 +83,6 @@
       {
         command = ["~/.config/eww/scripts/niri-watcher.nu" "${config.xdg.configHome}/eww"];
       }
-      {
-        command = ["clipse" "-listen"];
-      }
       # TODO: make use of the new built in xwayland-satellite integration in niri
       {
         command = ["xwayland-satellite"];
