@@ -74,6 +74,16 @@
         left = 8;
         right = 8;
       };
+      tab-indicator = {
+        hide-when-single-tab = true;
+        place-within-column = true;
+        position = "left";
+        corner-radius = 20.0;
+        gap = -12.0;
+        gaps-between-tabs = 10.0;
+        width = 4.0;
+        length.total-proportion = 0.1;
+      };
     };
 
     spawn-at-startup = [
@@ -110,6 +120,7 @@
       "Mod+E".action = center-column;
       "Mod+Shift+E".action = center-visible-columns;
       "Mod+L".action = spawn "swaylock";
+      "Mod+A".action = toggle-column-tabbed-display;
       "Mod+F9".action = toggle-overview;
       "Mod+Shift+Q".action = quit;
       "Mod+Shift+Home".action = consume-or-expel-window-left;
