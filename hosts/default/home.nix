@@ -7,6 +7,7 @@
   imports = [
     ../../modules/home-manager/cli
     ../../modules/home-manager/zen-browser
+    ../../modules/home-manager/firefox
     ../../modules/home-manager/sops.nix
     ../../modules/home-manager/desktop
     ../../modules/home-manager/desktop/vivaldi.nix
