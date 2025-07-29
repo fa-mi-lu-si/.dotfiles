@@ -5,6 +5,9 @@
   ...
 }: {
   # boot.plymouth.enable = true; # splash screen
+  services.upower = {
+    enable = true;
+  };
 
   # media control
   services.playerctld.enable = true;
