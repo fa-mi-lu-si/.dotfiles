@@ -1,5 +1,6 @@
 (defwidget player []
   (box
+    ; TODO: album art preview
     (box
     :orientation "v"
     "${title}"
