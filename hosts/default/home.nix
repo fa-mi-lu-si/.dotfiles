@@ -5,20 +5,20 @@
   ...
 }: {
   imports = [
-    ../../modules/home-manager/cli
-    ../../modules/home-manager/zen-browser
-    ../../modules/home-manager/sops.nix
-    ../../modules/home-manager/desktop
-    ../../modules/home-manager/desktop/vivaldi.nix
-    ../../modules/home-manager/desktop/onlyoffice.nix
-    ../../modules/home-manager/wezterm
-    ../../modules/home-manager/ghostty
-    ../../modules/home-manager/vscode
-    ../../modules/home-manager/helix
-    ../../modules/home-manager/newm-next
-    ../../modules/home-manager/niri
-    ../../modules/home-manager/eww
-    ../../modules/home-manager/stylix.nix
+    ../../modules/hm/cli
+    ../../modules/hm/zen-browser
+    ../../modules/hm/sops.nix
+    ../../modules/hm/desktop
+    ../../modules/hm/desktop/vivaldi.nix
+    ../../modules/hm/desktop/onlyoffice.nix
+    ../../modules/hm/wezterm
+    ../../modules/hm/ghostty
+    ../../modules/hm/vscode
+    ../../modules/hm/helix
+    ../../modules/hm/newm-next
+    ../../modules/hm/niri
+    ../../modules/hm/eww
+    ../../modules/hm/stylix.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
