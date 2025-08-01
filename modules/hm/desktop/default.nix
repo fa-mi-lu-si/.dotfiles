@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./spicetify.nix
+    ./obsidian.nix
     ./swww.nix
   ];
 
@@ -15,7 +16,6 @@
 
     nautilus
     loupe
-    obsidian
     tuba
 
     celluloid
