@@ -17,11 +17,7 @@
           other-lines = "disable";
         };
 
-        cursor-shape = {
-          insert = "bar";
-          normal = "bar";
-          select = "bar";
-        };
+        cursor-shape.insert = "bar";
       };
     };
   };
