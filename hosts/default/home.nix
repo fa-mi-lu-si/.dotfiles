@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ../../modules/hm/xdg.nix
     ../../modules/hm/cli
     ../../modules/hm/zen-browser
     ../../modules/hm/sops.nix
