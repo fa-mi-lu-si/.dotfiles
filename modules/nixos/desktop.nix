@@ -30,13 +30,6 @@
   ];
   services.printing.enable = true;
 
-  xdg.terminal-exec = {
-    enable = true;
-    settings = {
-      default = ["org.wezfurlong.wezterm.desktop"];
-    };
-  };
-
   fonts = {
     enableDefaultPackages = true;
   };

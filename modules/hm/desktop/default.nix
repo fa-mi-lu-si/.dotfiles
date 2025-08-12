@@ -91,4 +91,11 @@
   xdg.userDirs = {
     enable = true;
   };
+
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = ["org.wezfurlong.wezterm.desktop"];
+    };
+  };
 }
