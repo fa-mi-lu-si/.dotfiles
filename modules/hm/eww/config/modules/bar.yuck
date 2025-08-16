@@ -60,11 +60,9 @@
 (defwidget player-button []
   (box
     :orientation "v"
-    :tooltip "${title} - ${artist}"
     :visible {status != ""}
     (button
-      :onclick "eww -c ${EWW_CONFIG_DIR} open player"
-      ; :onclick "playerctl play-pause"
+      :onclick "eww -c ${EWW_CONFIG_DIR} open player-window"
       {
         status == "Playing" ? "":
         status == "Paused" ? "":

@@ -1,16 +1,23 @@
-(defwidget player []
+(defwidget player-widget []
   (box
-    ; TODO: album art preview
+    :space-evenly "false"
+    (box
+      :class "cover-art"
+      :style { "background-image: url('" + (artUrl != "" ? artUrl : "${EWW_CONFIG_DIR}/assets/music-solid.png") + "');" }
+      :tooltip {artUrl}
+    )
     (box
     :orientation "v"
+    :class "song-info"
     "${title}"
     "${artist}"
-  )))
+    )
+  )
+)
 
-(defwindow player
+(defwindow player-window
   :monitor "eDP-1"
   :stacking 'fg'
-  :geometry (geometry :x 60 :y 20 :height "150px" :width "300px" :anchor "bottom left")
-  ; :exclusive true
-  (player)
+  :geometry (geometry :x 60 :y 20 :anchor "bottom left")
+  (player-widget)
 )

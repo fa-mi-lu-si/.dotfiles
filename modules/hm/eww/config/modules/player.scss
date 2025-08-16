@@ -1,4 +1,13 @@
-.player {
+.player-window {
   background-color: $bg;
   color: $fg
+}
+
+.cover-art {
+	background-size: cover;	
+	background-position: center;
+  background-color: mix($bg, $fg, 70%);
+	min-height: 160px;
+	min-width: 160px;
+	margin: 4px 4px;
 }
