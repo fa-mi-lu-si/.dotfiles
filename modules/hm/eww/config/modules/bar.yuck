@@ -63,12 +63,14 @@
     :visible {status != ""}
     (button
       :onclick "eww -c ${EWW_CONFIG_DIR} open player-window"
-      {
-        status == "Playing" ? "":
-        status == "Paused" ? "":
-        status == "Stopped" ? "":
-        "󰝛"
-      })))
+      "󰲸"
+      )
+    (button :onclick "playerctl play-pause" {
+      status == "Playing" ? "":
+      status == "Paused" ? "":
+      status == "Stopped" ? "":
+      "󰝛"})
+    ))
 
 (defwidget bottom []
   (box

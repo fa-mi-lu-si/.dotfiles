@@ -7,10 +7,21 @@
       :tooltip {artUrl}
     )
     (box
-    :orientation "v"
-    :class "song-info"
-    "${title}"
-    "${artist}"
+      :orientation "v"
+      :class "song-info"
+      "${title}"
+      "${artist}"
+      (box
+        :orientation "h"
+        :space-evenly "true"
+        (button :onclick "playerctl previous" "")
+        (button :onclick "playerctl play-pause" {
+          status == "Playing" ? "":
+          status == "Paused" ? "":
+          status == "Stopped" ? "":
+          "󰝛"})
+        (button :onclick "playerctl next" "")
+      )
     )
   )
 )
