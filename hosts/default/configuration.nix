@@ -16,7 +16,6 @@
     ../../modules/nixos/newm-next.nix
     ../../modules/nixos/niri.nix
     ../../modules/nixos/swaylock.nix
-    ../../modules/nixos/wezterm.nix
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/nix-ld.nix
     ../../modules/nixos/probe-rs

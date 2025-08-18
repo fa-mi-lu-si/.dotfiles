@@ -8,7 +8,7 @@
   ];
   programs.niri.settings = {
     hotkey-overlay.skip-at-startup = true;
-    input.touchpad.accel-speed = 0.3;
+    input.touchpad.accel-speed = 0.4;
     input.power-key-handling.enable = false;
 
     prefer-no-csd = true;

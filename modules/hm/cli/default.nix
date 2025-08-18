@@ -8,6 +8,7 @@
     ./nushell.nix
     ./bottom.nix
     ./starship.nix
+    ./fastfetch.nix
     ./git.nix
     ./yazi.nix
     ./rmpc
