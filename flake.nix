@@ -20,6 +20,10 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    potatofox = {
+      url = "git+https://codeberg.org/awwpotato/PotatoFox";
+      flake = false;
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
