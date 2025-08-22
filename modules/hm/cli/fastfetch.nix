@@ -5,7 +5,9 @@
       display = {separator = " - ";};
       logo = {
         padding = {right = 1;};
-        source = "none";
+        source = ./nix.png;
+        height = 8;
+        type = "kitty";
       };
       modules = [
         {
@@ -49,5 +51,8 @@
         }
       ];
     };
+  };
+  home.shellAliases = {
+    ff = "fastfetch";
   };
 }
