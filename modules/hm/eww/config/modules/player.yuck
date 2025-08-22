@@ -1,15 +1,34 @@
-(defwidget player []
+(defwidget player-widget []
   (box
+    :space-evenly "false"
     (box
-    :orientation "v"
-    "${title}"
-    "${artist}"
-  )))
+      :class "cover-art"
+      :style { "background-image: url('" + (artUrl != "" ? artUrl : "${EWW_CONFIG_DIR}/assets/music-solid.png") + "');" }
+      :tooltip {artUrl}
+    )
+    (box
+      :orientation "v"
+      :class "song-info"
+      "${title}"
+      "${artist}"
+      (box
+        :orientation "h"
+        :space-evenly "true"
+        (button :onclick "playerctl previous" "")
+        (button :onclick "playerctl play-pause" {
+          status == "Playing" ? "":
+          status == "Paused" ? "":
+          status == "Stopped" ? "":
+          "󰝛"})
+        (button :onclick "playerctl next" "")
+      )
+    )
+  )
+)
 
-(defwindow player
+(defwindow player-window
   :monitor "eDP-1"
   :stacking 'fg'
-  :geometry (geometry :x 60 :y 20 :height "150px" :width "300px" :anchor "bottom left")
-  ; :exclusive true
-  (player)
+  :geometry (geometry :x 60 :y 20 :anchor "bottom left")
+  (player-widget)
 )

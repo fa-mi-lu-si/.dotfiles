@@ -5,6 +5,7 @@
 ; TODO: support for multiple players
 (deflisten title "playerctl metadata title --follow")
 (deflisten artist "playerctl metadata artist --follow")
+(deflisten artUrl "playerctl metadata mpris:artUrl --follow")
 (deflisten status "playerctl status --follow")
 
 (deflisten niri-workspaces "./scripts/niri-workspaces.sh")
