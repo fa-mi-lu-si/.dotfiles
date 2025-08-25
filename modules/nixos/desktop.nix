@@ -7,6 +7,8 @@
   # boot.plymouth.enable = true; # splash screen
   services.upower = {
     enable = true;
+    criticalPowerAction = "Hibernate";
+    percentageLow = 30;
   };
 
   # media control

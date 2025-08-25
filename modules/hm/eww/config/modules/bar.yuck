@@ -60,22 +60,23 @@
 (defwidget player-button []
   (box
     :orientation "v"
-    :tooltip "${title} - ${artist}"
     :visible {status != ""}
     (button
-      :onclick "eww -c ${EWW_CONFIG_DIR} open player"
-      ; :onclick "playerctl play-pause"
-      {
-        status == "Playing" ? "":
-        status == "Paused" ? "":
-        status == "Stopped" ? "":
-        "󰝛"
-      })))
+      :onclick "eww -c ${EWW_CONFIG_DIR} open player-window"
+      "󰲸"
+      )
+    (button :onclick "playerctl play-pause" {
+      status == "Playing" ? "":
+      status == "Paused" ? "":
+      status == "Stopped" ? "":
+      "󰝛"})
+    ))
 
 (defwidget bottom []
   (box
     :orientation "v"
     :space-evenly false
+    ; TODO: collapsible systray
     (systray
       :orientation "v"
       :icon-size 16

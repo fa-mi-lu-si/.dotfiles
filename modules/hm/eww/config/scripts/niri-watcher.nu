@@ -6,9 +6,10 @@ def main [config_path] {
     let event = $in | from json
 
     # TODO: open the bar if the workspace is empty
+    # close the bar when a window is opened
 
     # Handle overview state changes
-    $event | get -i OverviewOpenedOrClosed.is_open
+    $event | get --optional OverviewOpenedOrClosed.is_open
     | match $in {
       true => {
         eww -c $config_path open sidebar
