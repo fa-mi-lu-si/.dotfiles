@@ -3,7 +3,7 @@
 in {
   programs.firefox = {
     enable = true;
-    profiles.${profile} = {
+    profiles."default" = {
       name = "samy";
       isDefault = true;
       settings = {
@@ -28,5 +28,5 @@ in {
     source = "${inputs.potatofox}/chrome";
     recursive = true;
   };
-  stylix.targets.firefox.profileNames = ["default"];
+  stylix.targets.firefox.profileNames = [profile];
 }
