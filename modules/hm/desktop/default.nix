@@ -35,16 +35,7 @@
     enable = true;
     settings = {
       global = {
-        dmenu = "fuzzel -d";
-      };
-    };
-  };
-
-  programs.fuzzel = {
-    enable = true;
-    settings = {
-      main = {
-        terminal = "wezterm -e";
+        dmenu = "anyrun --show-results-immediately true --plugins libstdin.so";
       };
     };
   };
