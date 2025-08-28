@@ -7,6 +7,7 @@
     ./spicetify.nix
     ./obsidian.nix
     ./swww.nix
+    ./anyrun.nix
   ];
 
   home.packages = with pkgs; [
@@ -48,9 +49,8 @@
     };
   };
 
-  services.clipse = {
+  services.cliphist = {
     enable = true;
-    imageDisplay.type = "kitty";
   };
 
   programs.foliate.enable = true;
