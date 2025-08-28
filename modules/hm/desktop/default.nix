@@ -7,6 +7,7 @@
     ./spicetify.nix
     ./obsidian.nix
     ./swww.nix
+    ./anyrun.nix
   ];
 
   home.packages = with pkgs; [
@@ -34,23 +35,13 @@
     enable = true;
     settings = {
       global = {
-        dmenu = "fuzzel -d";
+        dmenu = "anyrun --show-results-immediately true --plugins libstdin.so";
       };
     };
   };
 
-  programs.fuzzel = {
+  services.cliphist = {
     enable = true;
-    settings = {
-      main = {
-        terminal = "wezterm -e";
-      };
-    };
-  };
-
-  services.clipse = {
-    enable = true;
-    imageDisplay.type = "kitty";
   };
 
   programs.foliate.enable = true;
