@@ -4,18 +4,13 @@
   --uc-frame-color: BASE00; /*main color*/
   --toolbar-field-background-color: BASE01 !important; /*urlbar unfocused*/
   --toolbar-field-focus-background-color: BASE02 !important; /*urlbar focused*/
+
+  /* floating url bar variables, WARN: jank */
+  --uc-floating-margin: 8px;
+  --uc-content-margin: 6px;
+  --uc-content-margin-inline: calc(var(--uc-content-margin) * 2);
 }
 
-:has(#sidebar-box:not([hidden])) { /*enable padding with sidebar is on*/
-  browser { /* round corners of content section and its background*/
-    background: var(--uc-frame-color) !important;
-    border-radius: 10px;
-  }
-  .browserStack { /* add padding */
-    padding: 10px;
-    background: var(--uc-frame-color) !important;
-  }
-}
 #browser { /*browser frame color*/
   background: var(--uc-frame-color) !important;
 }
@@ -42,7 +37,6 @@
   left:       5px !important;
 }
 #unified-extensions-button { /*extension button*/
-  list-style-image: url("chrome://global/skin/icons/chevron.svg") !important;
   position: fixed !important;
   top:       5px  !important;
   left:     35px  !important;
@@ -81,12 +75,14 @@
 }
 
 /*Remove icons in urlbar and status in the left down angle*/
-#statuspanel,
-#star-button-box,
-#identity-box,
-#permission-icon-container,
-#tracking-protection-icon-container { 
-  display: none !important; 
+#urlbar:not([breakout-extend]){
+  #statuspanel,
+  #star-button-box,
+  #identity-box,
+  #permission-icon-container,
+  #tracking-protection-icon-container { 
+    display: none !important; 
+  }
 }
 
 /*Urlbar*/
@@ -98,7 +94,7 @@
     border:  none !important;
     outline: none !important;
   }
-  #urlbar {
+  #urlbar:not([breakout-extend]) {
     position: fixed !important;
     top:   40px !important;
     left:  8px !important;
@@ -107,3 +103,53 @@
     padding-left: 8px !important;
   }
 }
+
+/* floating url bar WARN: begin jank */
+#urlbar[breakout-extend] #urlbar-background {
+  --field: Field;
+  --urlbar-bg: var(--toolbar-field-focus-background-color);
+  @media (-moz-platform: linux) {
+    --urlbar-bg: var(--toolbar-field-focus-background-color, var(--field));
+  }
+  background-color: var(--urlbar-bg) !important;
+}
+
+#main-window:not([customizing]) {
+    --uc-urlbar-width: clamp(
+      min(
+        calc(
+          100vw - var(--uc-floating-margin) * 2 -
+            var(--uc-content-margin-inline)
+        ),
+        500px
+      ),
+      64vw,
+      800px
+    );
+
+    #urlbar,
+    #urlbar-container {
+      margin: auto !important;
+    }
+
+    #urlbar-container {
+      flex: 1;
+      max-width: 1000px;
+    }
+
+    #urlbar[breakout-extend] {
+      position: fixed !important;
+      width: var(--uc-urlbar-width) !important;
+      right: 0px !important;
+      left: 0px !important;
+
+      top: 20vh !important;
+      bottom: auto !important;
+
+      .urlbar-input,
+      #urlbar-input {
+        font-size: 16px !important;
+      }
+    }
+  }
+/* end jank */

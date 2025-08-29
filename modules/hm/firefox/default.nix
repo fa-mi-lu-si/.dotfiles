@@ -30,12 +30,12 @@
 
         # Enable cool bahavior
         "browser.urlbar.trim" = true; # Trim https!
+        "browser.urlbar.suggest.recentsearches" = false;
         "browser.startup.page" = 3; # Restore session
         "extensions.autoDisableScopes" = 0; # Auto-enable extesions
         "browser.tabs.loadBookmarksInTabs" = true; # Load bookmarks in newtabs
         "browser.search.openintab" = true; # Load search items in new tabs
       };
-      # TODO: better spacing and proportions, floating url bar
       userChrome = with config.lib.stylix.colors.withHashtag;
         builtins.replaceStrings
         ["BASE00" "BASE01" "BASE02"]
