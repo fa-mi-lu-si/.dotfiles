@@ -8,7 +8,7 @@
     config = {
       x.fraction = 0.5;
       y.fraction = 0.3;
-      width.fraction = 0.3;
+      width.fraction = 0.4;
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";
@@ -48,7 +48,7 @@
 
         * {
           all: unset;
-          font-family: ${config.stylix.fonts.monospace.name};
+          font-family: ${config.stylix.fonts.sansSerif.name};
         }
 
         #window {
@@ -58,7 +58,7 @@
         box#main {
           border-radius: 16px;
           background-color: @bg-color;
-          border: 0.5px solid @fg-color;
+          border: 2px solid @primary-color;
         }
 
         entry#entry {
@@ -66,9 +66,9 @@
           background: transparent;
           box-shadow: none;
           border: none;
-          border-radius: 16px;
-          padding: 16px 24px;
-          min-height: 40px;
+          border-radius: 8px;
+          padding: 8px 12px;
+          min-height: 32px;
           caret-color: @primary-color;
         }
 
@@ -110,10 +110,6 @@
           font-size: 1rem;
           color: @fg-color;
         }
-
-        label#plugin {
-          font-size: 16px;
-        }
       '';
 
     extraConfigFiles = {
@@ -135,6 +131,13 @@
           Config(
             prefix: "?",
             engines: [DuckDuckGo]
+          )
+        '';
+      "shell.ron".text =
+        #ron
+        ''
+          Config(
+            prefix: ":",
           )
         '';
     };
