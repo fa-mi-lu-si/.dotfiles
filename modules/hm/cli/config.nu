@@ -51,6 +51,16 @@ $env.config.rm.always_trash = true
 
 $env.config.keybindings = [
   {
+    name: resume
+    modifier: control
+    keycode: char_z
+    mode: emacs
+    event: {
+      send:executehostcommand
+      cmd:"job unfreeze"
+    }
+  }
+  {
     name: exit
     modifier: control
     keycode: char_w
