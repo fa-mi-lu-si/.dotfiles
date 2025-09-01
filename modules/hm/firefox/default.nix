@@ -51,7 +51,6 @@
         "browser.tabs.allow_transparent_browser" = true;
         "browser.uidensity" = 1;
       };
-      extensions.force = true;
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
         ublock-origin
         sidebery

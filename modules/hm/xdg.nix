@@ -11,9 +11,9 @@
     enable = true;
     defaultApplications = {
       # Web
-      "text/html" = ["zen-beta.desktop"];
-      "x-scheme-handler/http" = ["zen-beta.desktop"];
-      "x-scheme-handler/https" = ["zen-beta.desktop"];
+      "text/html" = ["librewolf.desktop"];
+      "x-scheme-handler/http" = ["librewolf.desktop"];
+      "x-scheme-handler/https" = ["librewolf.desktop"];
 
       # System
       "inode/directory" = ["org.gnome.Nautilus.desktop"];
