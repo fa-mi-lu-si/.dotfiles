@@ -1,5 +1,9 @@
-{config, ...}: {
-  programs.firefox = {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
+  programs.librewolf = {
     enable = true;
     profiles."default" = {
       name = "samy";
@@ -26,22 +30,42 @@
         "browser.vpn_promo.enabled" = false;
         "extensions.pocket.enabled" = false;
         "extensions.htmlaboutaddons.recommendations.enabled" = false;
-        "browser.tabs.allow_transparent_browser" = false;
 
         # Enable cool bahavior
         "browser.urlbar.trim" = true; # Trim https!
+        "browser.urlbar.trimHttps" = true;
+        "browser.urlbar.trimURLs" = true;
         "browser.urlbar.suggest.recentsearches" = false;
         "browser.startup.page" = 3; # Restore session
         "extensions.autoDisableScopes" = 0; # Auto-enable extesions
         "browser.tabs.loadBookmarksInTabs" = true; # Load bookmarks in newtabs
         "browser.search.openintab" = true; # Load search items in new tabs
+
+        "layout.css.has-selector.enabled" = true;
+        "browser.urlbar.suggest.calculator" = true;
+        "browser.urlbar.unitConversion.enabled" = true;
+        "browser.profiles.enabled" = true;
+        "widget.gtk.rounded-bottom-corners.enabled" = true;
+        "browser.compactmode.show" = true;
+        "widget.gtk.ignore-bogus-leave-notify" = 1;
+        "browser.tabs.allow_transparent_browser" = true;
+        "browser.uidensity" = 1;
       };
-      userChrome = with config.lib.stylix.colors.withHashtag;
-        builtins.replaceStrings
-        ["BASE00" "BASE01" "BASE02"]
-        [base00 base01 base02]
-        (builtins.readFile ./userChrome.css);
+      extensions.force = true;
+      extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+        ublock-origin
+        sidebery
+        sponsorblock
+        darkreader
+        vimium-c
+      ];
     };
   };
-  stylix.targets.firefox.profileNames = ["default"];
+
+  home.file.".librewolf/default/chrome" = {
+    source = "${inputs.potatofox}/chrome";
+    recursive = true;
+  };
+
+  stylix.targets.librewolf.profileNames = ["default"];
 }
