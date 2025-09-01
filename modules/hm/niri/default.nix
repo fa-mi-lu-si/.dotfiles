@@ -93,15 +93,7 @@
       {
         command = ["~/.config/eww/scripts/niri-watcher.nu" "${config.xdg.configHome}/eww"];
       }
-      # TODO: make use of the new built in xwayland-satellite integration in niri
-      {
-        command = ["xwayland-satellite"];
-      }
     ];
-
-    environment = {
-      DISPLAY = ":0";
-    };
 
     binds = with config.lib.niri.actions; let
       sh = spawn "sh" "-c";
