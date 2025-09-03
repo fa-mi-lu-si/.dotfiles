@@ -58,6 +58,8 @@
     ];
   };
 
+  # media control
+  services.playerctld.enable = true;
   # media buttons for bluetoth devices
   services.mpris-proxy.enable = true;
 

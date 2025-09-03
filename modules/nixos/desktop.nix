@@ -11,8 +11,6 @@
     percentageLow = 30;
   };
 
-  # media control
-  services.playerctld.enable = true;
   hardware.graphics.enable = true;
 
   services.blueman.enable = true;
