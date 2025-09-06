@@ -19,11 +19,20 @@ $Brown    : #f1ae97; // base0F
 
 * {
   all: unset;
-  font-family: monospace
 }
 
 // Corner rounding
 $rounding: 8px;
+
+
+window {
+  background: $bg;
+  color: $fg;
+
+  & > * {
+  }
+  font-family: "monospace";
+}
 
 @import "./modules/bar.scss"
 @import "./modules/player.scss"

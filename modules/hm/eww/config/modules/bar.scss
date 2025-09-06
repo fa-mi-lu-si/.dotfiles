@@ -1,7 +1,13 @@
 .bar {
-  background-color: $bg;
-  color: $fg
+  background-color: $bg-alt;
+  padding: 4px;
 }
 
 .workspaces {
+}
+
+.indicator {
+  background-color: $bg;
+  padding: 5px 2px;
+  margin: 4px;
 }

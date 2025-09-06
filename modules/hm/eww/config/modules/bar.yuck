@@ -10,37 +10,36 @@
       (bottom))))
 
 (defwidget niri-workspace-widget [monitor]
-  (box :class "workspaces"
+  (box
+    :class "indicator"
     :orientation "v"
     :spacing 10
     ; TODO: make this monitor specific, with a jq filter
     (for i in {jq(niri-workspaces, ".=sort_by(.idx)")}
       (button
         :onclick "niri msg action focus-workspace ${i.idx}"
-        "${i.is_focused ? "  " : "  "}"))))
+        {i.is_focused ? "◆" : "◇"}))))
 
-(defwidget top [] (box (niri-workspace-widget :monitor 0)))
-
-(defwidget middle [] (time))
 (defwidget time []
   (box
-    :class "time"
+    :class "indicator"
     :orientation "v"
-  hour min)
-)
+    hour
+    min))
 
 (defwidget network_icon []
   (box
-  :orientation "v"
-  :visible {network.name != ""}
-  {network.icon})
-)
+    :class "indicator"
+    :orientation "v"
+    :visible {network.name != ""}
+    {network.icon}))
 
 (defwidget battery []
-  (box :orientation "v"
+  (box
+    :class "indicator"
+    :orientation "v"
     ; use for loop to support different battery names
-    {
-      EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
+    { EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
       EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
       EWW_BATTERY.BAT1.capacity <= 10 ? "󰂃" :
       EWW_BATTERY.BAT1.capacity <= 20 ? "󰂃" :
@@ -52,44 +51,53 @@
       EWW_BATTERY.BAT1.capacity <= 80 ? "󰂀" :
       EWW_BATTERY.BAT1.capacity <= 90 ? "󰂁" :
       EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
-      ""
-    }
-    {EWW_BATTERY.BAT1.capacity}
-  ))
+      ""}
+    {EWW_BATTERY.BAT1.capacity}))
 
 (defwidget player-button []
   (box
+    :class "indicator"
     :orientation "v"
     :visible {status != ""}
     (button
-      :onclick "eww -c ${EWW_CONFIG_DIR} open player-window"
-      "󰲸"
-      )
-    (button :onclick "playerctl play-pause" {
-      status == "Playing" ? "":
-      status == "Paused" ? "":
-      status == "Stopped" ? "":
-      "󰝛"})
-    ))
+      :onclick "playerctl play-pause"
+      :onrightclick "eww -c ${EWW_CONFIG_DIR} open player-window"
+      (box
+        :orientation "v"
+        "󰲸"
+        {
+          status == "Playing" ? "":
+          status == "Paused" ? "":
+          status == "Stopped" ? "":
+          "󰝛"}))))
+
+(defwidget tray []
+  (box
+    :class "indicator"
+    (systray
+      :orientation "v"
+      :icon-size 16
+      :prepend-new true)))
+
+(defwidget top []
+  (box (niri-workspace-widget :monitor 0)))
+
+(defwidget middle []
+  (time))
 
 (defwidget bottom []
   (box
     :orientation "v"
     :space-evenly false
     ; TODO: collapsible systray
-    (systray
-      :orientation "v"
-      :icon-size 16
-    :prepend-new true)
+    (tray)
     (player-button)
     (battery)
-    (network_icon)
-  ))
+    (network_icon)))
 
 (defwindow sidebar
   :monitor "eDP-1"
   :stacking 'fg'
-  :geometry (geometry :x 0 :y 0 :height "100%" :width "40px" :anchor "center left")
+  :geometry (geometry :x 0 :y 0 :height "100%" :width "48px" :anchor "center left")
   ; :exclusive true
-  (bar)
-)
+  (bar))
