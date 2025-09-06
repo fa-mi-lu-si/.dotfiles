@@ -8,7 +8,7 @@
   ];
   programs.niri.settings = {
     hotkey-overlay.skip-at-startup = true;
-    input.touchpad.accel-speed = 0.3;
+    input.touchpad.accel-speed = 0.4;
     input.power-key-handling.enable = false;
 
     prefer-no-csd = true;
@@ -93,15 +93,7 @@
       {
         command = ["~/.config/eww/scripts/niri-watcher.nu" "${config.xdg.configHome}/eww"];
       }
-      # TODO: make use of the new built in xwayland-satellite integration in niri
-      {
-        command = ["xwayland-satellite"];
-      }
     ];
-
-    environment = {
-      DISPLAY = ":0";
-    };
 
     binds = with config.lib.niri.actions; let
       sh = spawn "sh" "-c";
@@ -110,11 +102,12 @@
       "Mod+T".action = spawn "wezterm";
       "Mod+Shift+T".action = spawn "ghostty";
       "Mod+F".action = spawn "nautilus";
-      "Mod+B".action = spawn "zen";
+      "Mod+B".action = spawn "librewolf";
       "Mod+C".action = spawn "code";
       "Mod+O".action = sh "wezterm start --cwd='${config.home.homeDirectory}/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
-      "Mod+Space".action = spawn "fuzzel";
+      "Mod+V".action = sh "cliphist list | anyrun --show-results-immediately true --plugins libstdin.so | cliphist decode | wl-copy";
+      "Mod+Space".action = spawn "anyrun";
 
       "Mod+Q".action = close-window;
       "Mod+E".action = center-column;

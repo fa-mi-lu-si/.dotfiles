@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   home.shell.enableNushellIntegration = true;
 
   programs.nushell = {
@@ -13,9 +13,6 @@
       bg = "batgrep";
       man = "batman";
     };
-
-    # Get the environment variables from home manager
-    environmentVariables = config.home.sessionVariables;
   };
   programs.carapace.enable = true;
   programs.carapace.enableNushellIntegration = true;

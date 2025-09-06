@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  # pkgs,
+  pkgs,
   inputs,
   ...
 }: {
@@ -16,7 +16,6 @@
     ../../modules/nixos/newm-next.nix
     ../../modules/nixos/niri.nix
     ../../modules/nixos/swaylock.nix
-    ../../modules/nixos/wezterm.nix
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/nix-ld.nix
     ../../modules/nixos/probe-rs
@@ -28,6 +27,9 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # use the latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.luks.devices."luks-0b6c3343-110b-4bf3-b393-a4589d300f07".device = "/dev/disk/by-uuid/0b6c3343-110b-4bf3-b393-a4589d300f07";
   networking.hostName = "samy-nixos"; # Define your hostname.

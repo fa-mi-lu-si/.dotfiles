@@ -7,10 +7,10 @@
   # boot.plymouth.enable = true; # splash screen
   services.upower = {
     enable = true;
+    criticalPowerAction = "Hibernate";
+    percentageLow = 30;
   };
 
-  # media control
-  services.playerctld.enable = true;
   hardware.graphics.enable = true;
 
   services.blueman.enable = true;
@@ -29,13 +29,6 @@
     networkmanagerapplet
   ];
   services.printing.enable = true;
-
-  xdg.terminal-exec = {
-    enable = true;
-    settings = {
-      default = ["org.wezfurlong.wezterm.desktop"];
-    };
-  };
 
   fonts = {
     enableDefaultPackages = true;

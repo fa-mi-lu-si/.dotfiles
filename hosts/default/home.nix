@@ -5,8 +5,10 @@
   ...
 }: {
   imports = [
+    ../../modules/hm/xdg.nix
     ../../modules/hm/cli
     ../../modules/hm/zen-browser
+    ../../modules/hm/firefox
     ../../modules/hm/sops.nix
     ../../modules/hm/desktop
     ../../modules/hm/desktop/vivaldi.nix

@@ -38,12 +38,21 @@
       rev = "e766cd273246612fe71fc18d2126619a41273c32";
       hash = "sha256-aniuY14pXcoaW6YkUwt7hTl9mWjl5HoOPhHkuY4ooAw=";
     };
+
+    # https://github.com/uhs-robert/recycle-bin.yazi
+    recycle-bin = pkgs.fetchFromGitHub {
+      owner = "uhs-robert";
+      repo = "recycle-bin.yazi";
+      rev = "3f36069567b4602f841f2377c5f182f9a2480dea";
+      hash = "sha256-f9L8ipErNwFKMqIKUa+1oPmPBk0oh5UCkJJa1tTiIv0=";
+    };
   };
 in {
   home.packages = with pkgs; [
     epub-thumbnailer
     exiftool
     mediainfo
+    trash-cli # TODO: switch to trashy and create aliases
   ];
 
   programs.yazi = {
@@ -55,6 +64,7 @@ in {
       wl-clipboard = plugins.wl-clipboard;
       epub-preview = plugins.epub-preview;
       exifaudio = plugins.exifaudio;
+      recycle-bin = plugins.recycle-bin;
     };
     theme = {
       mgr = {
@@ -76,6 +86,7 @@ in {
       #lua
       ''
         require("starship"):setup()
+        require("recycle-bin"):setup()
 
         th.git = th.git or {}
 
@@ -106,6 +117,36 @@ in {
           on = ["g" "v"];
           run = "cd ~/Vault";
           desc = "Goto Vault";
+        }
+        {
+          on = ["g" "t"];
+          run = "plugin recycle-bin open";
+          desc = "Goto Trash";
+        }
+        {
+          on = ["R" "o"];
+          run = "plugin recycle-bin open";
+          desc = "Goto Trash";
+        }
+        {
+          on = ["R" "e"];
+          run = "plugin recycle-bin empty";
+          desc = "Empty Trash";
+        }
+        {
+          on = ["R" "d"];
+          run = "plugin recycle-bin delete";
+          desc = "Delete from Trash";
+        }
+        {
+          on = ["R" "D"];
+          run = "plugin recycle-bin emptyDays";
+          desc = "Empty by days deleted";
+        }
+        {
+          on = ["R" "r"];
+          run = "plugin recycle-bin restore";
+          desc = "Restore from Trash";
         }
         {
           on = ["g" "."];
