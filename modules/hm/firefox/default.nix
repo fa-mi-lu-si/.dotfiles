@@ -57,6 +57,8 @@
         sponsorblock
         darkreader
         vimium-c
+        userchrome-toggle-extended
+        multi-account-containers
       ];
     };
   };
