@@ -8,6 +8,21 @@
 
 .indicator {
   background-color: $bg;
-  padding: 5px 2px;
   margin: 4px;
+
+  .indicator-icon {
+    padding: 5px 2px;
+  };
 }
+
+.indicator scale {
+  all: unset;
+  
+  trough {
+    min-height: 5px;
+
+    highlight {
+      background-color: $blue;
+    };
+  };
+};

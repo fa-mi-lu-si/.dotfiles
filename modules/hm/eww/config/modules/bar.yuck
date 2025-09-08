@@ -17,29 +17,37 @@
     ; TODO: make this monitor specific, with a jq filter
     (for i in {jq(niri-workspaces, ".=sort_by(.idx)")}
       (button
+        :class "indicator-icon"
         :onclick "niri msg action focus-workspace ${i.idx}"
         {i.is_focused ? "◆" : "◇"}))))
 
 (defwidget time []
   (box
     :class "indicator"
-    :orientation "v"
-    hour
-    min))
+    (box
+      :class "indicator-icon"
+      :orientation "v"
+      hour
+      min)))
 
 (defwidget network_icon []
   (box
     :class "indicator"
     :orientation "v"
     :visible {network.name != ""}
-    {network.icon}))
+    (box
+      :class "indicator-icon"
+      {network.icon})))
 
 (defwidget battery []
   (box
     :class "indicator"
-    :orientation "v"
     ; use for loop to support different battery names
-    { EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
+    (box
+      :class "indicator-icon"
+      :orientation "v"
+      {
+      EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
       EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
       EWW_BATTERY.BAT1.capacity <= 10 ? "󰂃" :
       EWW_BATTERY.BAT1.capacity <= 20 ? "󰂃" :
@@ -52,7 +60,7 @@
       EWW_BATTERY.BAT1.capacity <= 90 ? "󰂁" :
       EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
       ""}
-    {EWW_BATTERY.BAT1.capacity}))
+    {EWW_BATTERY.BAT1.capacity})))
 
 (defwidget player-button []
   (box
@@ -61,6 +69,7 @@
     :visible {status != ""}
     (button
       :onclick "playerctl play-pause"
+      :class "indicator-icon"
       :onrightclick "eww -c ${EWW_CONFIG_DIR} open player-window"
       (box
         :orientation "v"
@@ -75,9 +84,40 @@
   (box
     :class "indicator"
     (systray
+      :class "indicator-icon"
       :orientation "v"
       :icon-size 16
       :prepend-new true)))
+
+(defwidget vol []
+  (box
+    :class "indicator"
+    :orientation "v"
+    :space-evenly false
+    (scale
+      :value vol
+      :max 100
+      :min 0
+      :orientation "h"
+      :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%")
+    (button
+      :class "indicator-icon"
+      :onclick "wezterm -e wiremix"
+      {
+        vol == 0 || is_muted == "[MUTED]" ? "󰝟" :
+        vol <= 25 ? "󰕿" :
+        vol <= 50 ? "󰖀" :
+        vol <= 75 ? "󰕾" :
+        ""
+      })))
+
+(defwidget clip []
+  (box
+    :class "indicator"
+    (button
+      :class "indicator-icon"
+      :onclick "cliphist list | anyrun --show-results-immediately true --plugins libstdin.so | cliphist decode | wl-copy"
+      "")))
 
 (defwidget top []
   (box (niri-workspace-widget :monitor 0)))
@@ -89,9 +129,11 @@
   (box
     :orientation "v"
     :space-evenly false
+    (clip)
     ; TODO: collapsible systray
     (tray)
     (player-button)
+    (vol)
     (battery)
     (network_icon)))
 
