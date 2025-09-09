@@ -148,11 +148,11 @@
 
       "Print".action = screenshot;
       "XF86AudioRaiseVolume" = {
-        action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
+        action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
         allow-when-locked = true;
       };
       "XF86AudioLowerVolume" = {
-        action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
+        action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
         allow-when-locked = true;
       };
       "XF86AudioMute" = {
