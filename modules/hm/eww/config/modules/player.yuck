@@ -1,6 +1,7 @@
 (defwidget player-widget []
   (box
     :space-evenly "false"
+    ; TODO: use stack to support multiple players
     (box
       :class "cover-art"
       :style { "background-image: url('" + (artUrl != "" ? artUrl : "${EWW_CONFIG_DIR}/assets/music-solid.png") + "');" }

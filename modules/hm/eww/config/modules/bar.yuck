@@ -10,36 +10,43 @@
       (bottom))))
 
 (defwidget niri-workspace-widget [monitor]
-  (box :class "workspaces"
+  (box
+    :class "indicator"
     :orientation "v"
     :spacing 10
     ; TODO: make this monitor specific, with a jq filter
     (for i in {jq(niri-workspaces, ".=sort_by(.idx)")}
       (button
+        :class "indicator-icon"
         :onclick "niri msg action focus-workspace ${i.idx}"
-        "${i.is_focused ? "  " : "  "}"))))
+        {i.is_focused ? "◆" : "◇"}))))
 
-(defwidget top [] (box (niri-workspace-widget :monitor 0)))
-
-(defwidget middle [] (time))
 (defwidget time []
   (box
-    :class "time"
-    :orientation "v"
-  hour min)
-)
+    :class "indicator"
+    (box
+      :class "indicator-icon"
+      :orientation "v"
+      hour
+      min)))
 
 (defwidget network_icon []
   (box
-  :orientation "v"
-  :visible {network.name != ""}
-  {network.icon})
-)
+    :class "indicator"
+    :orientation "v"
+    :visible {network.name != ""}
+    (box
+      :class "indicator-icon"
+      {network.icon})))
 
 (defwidget battery []
-  (box :orientation "v"
+  (box
+    :class "indicator"
     ; use for loop to support different battery names
-    {
+    (box
+      :class "indicator-icon"
+      :orientation "v"
+      {
       EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
       EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
       EWW_BATTERY.BAT1.capacity <= 10 ? "󰂃" :
@@ -52,44 +59,87 @@
       EWW_BATTERY.BAT1.capacity <= 80 ? "󰂀" :
       EWW_BATTERY.BAT1.capacity <= 90 ? "󰂁" :
       EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
-      ""
-    }
-    {EWW_BATTERY.BAT1.capacity}
-  ))
+      ""}
+    {EWW_BATTERY.BAT1.capacity})))
 
 (defwidget player-button []
   (box
+    :class "indicator"
     :orientation "v"
     :visible {status != ""}
     (button
-      :onclick "eww -c ${EWW_CONFIG_DIR} open player-window"
-      "󰲸"
-      )
-    (button :onclick "playerctl play-pause" {
-      status == "Playing" ? "":
-      status == "Paused" ? "":
-      status == "Stopped" ? "":
-      "󰝛"})
-    ))
+      :onclick "playerctl play-pause"
+      :class "indicator-icon"
+      :onrightclick "eww -c ${EWW_CONFIG_DIR} open player-window"
+      (box
+        :orientation "v"
+        "󰲸"
+        {
+          status == "Playing" ? "":
+          status == "Paused" ? "":
+          status == "Stopped" ? "":
+          "󰝛"}))))
+
+(defwidget tray []
+  (box
+    :class "indicator"
+    (systray
+      :class "indicator-icon"
+      :orientation "v"
+      :icon-size 16
+      :prepend-new true)))
+
+(defwidget vol []
+  (box
+    :class "indicator"
+    :orientation "v"
+    :space-evenly false
+    (scale
+      :value vol
+      :max 100
+      :min 0
+      :orientation "h"
+      :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%")
+    (button
+      :class "indicator-icon"
+      :onclick "wezterm -e wiremix"
+      {
+        vol == 0 || is_muted == "[MUTED]" ? "󰝟" :
+        vol <= 25 ? "󰕿" :
+        vol <= 50 ? "󰖀" :
+        vol <= 75 ? "󰕾" :
+        ""
+      })))
+
+(defwidget clip []
+  (box
+    :class "indicator"
+    (button
+      :class "indicator-icon"
+      :onclick "cliphist list | anyrun --show-results-immediately true --plugins libstdin.so | cliphist decode | wl-copy"
+      "")))
+
+(defwidget top []
+  (box (niri-workspace-widget :monitor 0)))
+
+(defwidget middle []
+  (time))
 
 (defwidget bottom []
   (box
     :orientation "v"
     :space-evenly false
+    (clip)
     ; TODO: collapsible systray
-    (systray
-      :orientation "v"
-      :icon-size 16
-    :prepend-new true)
+    (tray)
     (player-button)
+    (vol)
     (battery)
-    (network_icon)
-  ))
+    (network_icon)))
 
 (defwindow sidebar
   :monitor "eDP-1"
   :stacking 'fg'
-  :geometry (geometry :x 0 :y 0 :height "100%" :width "40px" :anchor "center left")
+  :geometry (geometry :x 0 :y 0 :height "100%" :width "48px" :anchor "center left")
   ; :exclusive true
-  (bar)
-)
+  (bar))

@@ -1,7 +1,28 @@
 .bar {
-  background-color: $bg;
-  color: $fg
+  background-color: $bg-alt;
+  padding: 4px;
 }
 
 .workspaces {
 }
+
+.indicator {
+  background-color: $bg;
+  margin: 4px;
+
+  .indicator-icon {
+    padding: 5px 2px;
+  };
+}
+
+.indicator scale {
+  all: unset;
+  
+  trough {
+    min-height: 5px;
+
+    highlight {
+      background-color: $blue;
+    };
+  };
+};

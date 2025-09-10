@@ -14,16 +14,25 @@ $yellow   : #ffc37a; // base0A
 $green    : #b6c68a; // base0B
 $cyan     : #c0bcdb; // base0C
 $blue     : #b0a4c3; // base0D
-$Purple   : #d8a2b0; // base0E
-$Brown    : #f1ae97; // base0F
+$purple   : #d8a2b0; // base0E
+$brown    : #f1ae97; // base0F
 
 * {
   all: unset;
-  font-family: monospace
 }
 
 // Corner rounding
 $rounding: 8px;
+
+
+window {
+  background: $bg;
+  color: $fg;
+
+  & > * {
+  }
+  font-family: "monospace";
+}
 
 @import "./modules/bar.scss"
 @import "./modules/player.scss"
