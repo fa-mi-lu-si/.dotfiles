@@ -140,6 +140,13 @@
             prefix: ":",
           )
         '';
+      "symbols.ron".text =
+        #ron
+        ''
+          Config(
+            prefix: ".",
+          )
+        '';
     };
   };
 }
