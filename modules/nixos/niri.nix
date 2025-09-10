@@ -11,7 +11,4 @@
     enable = true;
     package = pkgs.niri-unstable;
   };
-
-  security.pam.services.greetd.enableGnomeKeyring = true;
-  programs.seahorse.enable = true;
 }

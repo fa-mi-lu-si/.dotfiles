@@ -15,6 +15,8 @@
 
   services.blueman.enable = true;
 
+  programs.seahorse.enable = true;
+
   # sound
   services.pipewire = {
     enable = true;
@@ -48,4 +50,5 @@
       };
     };
   };
+  security.pam.services.greetd.enableGnomeKeyring = true;
 }
