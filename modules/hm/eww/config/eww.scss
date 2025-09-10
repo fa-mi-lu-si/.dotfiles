@@ -1,21 +1,23 @@
-// Base16 colours
-// TODO: template these from stylix
-$bg-alt   : #241d1a; // base00
-$bg       : #362b27; // base01
-$sel      : #473933; // base02
-$invi     : #594740; // base03
-$fg-alt   : #a78e84; // base04
-$fg       : #b8a59d; // base05
-$fg-light : #cabbb5; // base06
-$bg-light : #dcd2ce; // base07
-$red      : #f6998f; // base08
-$orange   : #ffa888; // base09
-$yellow   : #ffc37a; // base0A
-$green    : #b6c68a; // base0B
-$cyan     : #c0bcdb; // base0C
-$blue     : #b0a4c3; // base0D
-$purple   : #d8a2b0; // base0E
-$brown    : #f1ae97; // base0F
+// Fallback colours for testing environment
+$bg-alt   : #181818; // base00
+$bg       : #282828; // base01
+$sel      : #383838; // base02
+$invi     : #585858; // base03
+$fg-alt   : #b8b8b8; // base04
+$fg       : #d8d8d8; // base05
+$fg-light : #e8e8e8; // base06
+$bg-light : #f8f8f8; // base07
+$red      : #ab4642; // base08
+$orange   : #dc9656; // base09
+$yellow   : #f7ca88; // base0A
+$green    : #a1b56c; // base0B
+$cyan     : #86c1b9; // base0C
+$blue     : #7cafc2; // base0D
+$Purple   : #ba8baf; // base0E
+$Brown    : #a16946; // base0F
+
+// get colors from stylix
+@import "./stylix.scss"
 
 * {
   all: unset;
