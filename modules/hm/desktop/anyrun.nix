@@ -28,7 +28,7 @@
         "${pkgs.anyrun}/lib/librink.so"
         "${pkgs.anyrun}/lib/libshell.so"
         "${pkgs.anyrun}/lib/libstdin.so"
-        "${pkgs.anyrun}/lib/libsymbols.so"
+        # "${pkgs.anyrun}/lib/libsymbols.so"
         # "${pkgs.anyrun}/lib/libtranslate.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"
       ];
@@ -56,7 +56,7 @@
         }
 
         box#main {
-          border-radius: 16px;
+          border-radius: 8px;
           background-color: @bg-color;
           border: 2px solid @primary-color;
         }
@@ -66,7 +66,7 @@
           background: transparent;
           box-shadow: none;
           border: none;
-          border-radius: 8px;
+          border-radius: 4px;
           padding: 8px 12px;
           min-height: 32px;
           caret-color: @primary-color;
@@ -138,13 +138,6 @@
         ''
           Config(
             prefix: ":",
-          )
-        '';
-      "symbols.ron".text =
-        #ron
-        ''
-          Config(
-            prefix: ".",
           )
         '';
     };
