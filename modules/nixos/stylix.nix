@@ -7,7 +7,24 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-soft.yaml";
+    base16Scheme = {
+      "base00" = "#151515";
+      "base01" = "#1B1B1B";
+      "base02" = "#242424";
+      "base03" = "#393939";
+      "base04" = "#BBBEC9";
+      "base05" = "#E8E3E3";
+      "base06" = "#DCDCDC";
+      "base07" = "#F0F0F0";
+      "base08" = "#f6998f";
+      "base09" = "#ffa888";
+      "base0A" = "#ffc37a";
+      "base0B" = "#b6c68a";
+      "base0C" = "#c0bcdb";
+      "base0D" = "#b0a4c3";
+      "base0E" = "#d8a2b0";
+      "base0F" = "#f1ae97";
+    };
     polarity = "dark";
 
     image = config.lib.stylix.pixel "base00";

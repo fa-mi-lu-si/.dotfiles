@@ -15,7 +15,14 @@
     overview = {
       zoom = 0.5;
       backdrop-color = config.lib.stylix.colors.withHashtag.base00;
+      workspace-shadow.enable = false;
     };
+    layer-rules = [
+      {
+        matches = [{namespace = "swww-daemon";}];
+        place-within-backdrop = true;
+      }
+    ];
     window-rules = [
       # Rounded Corners
       {
@@ -70,6 +77,7 @@
         {proportion = 2.0 / 3.0;}
       ];
       shadow.enable = false;
+      background-color = "transparent";
       struts = {
         left = 8;
         right = 8;
