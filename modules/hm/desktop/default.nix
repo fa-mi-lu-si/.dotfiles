@@ -22,6 +22,8 @@
     celluloid
     amberol
     euphonica
+
+    authenticator
   ];
 
   services.poweralertd = {
