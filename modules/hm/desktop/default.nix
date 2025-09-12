@@ -7,7 +7,7 @@
     ./spicetify.nix
     ./obsidian.nix
     ./swww.nix
-    ./anyrun.nix
+    ./vicinae.nix
   ];
 
   home.packages = with pkgs; [
@@ -26,6 +26,10 @@
     authenticator
   ];
 
+  programs.fuzzel = {
+    enable = true;
+  };
+
   services.poweralertd = {
     enable = true;
   };
@@ -37,7 +41,7 @@
     enable = true;
     settings = {
       global = {
-        dmenu = "anyrun --show-results-immediately true --plugins libstdin.so";
+        dmenu = "fuzzel -d";
       };
     };
   };

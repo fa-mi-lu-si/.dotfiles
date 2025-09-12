@@ -116,7 +116,7 @@
     :class "indicator"
     (button
       :class "indicator-icon"
-      :onclick "cliphist list | anyrun --show-results-immediately true --plugins libstdin.so | cliphist decode | wl-copy"
+      :onclick "cliphist list | fuzzel -d | cliphist decode | wl-copy"
       "")))
 
 (defwidget top []

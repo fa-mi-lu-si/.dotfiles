@@ -25,6 +25,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vicinae.url = "github:vicinaehq/vicinae/41aab60a1702ea10f37c58b74f1a24aaa20d2ba6";
 
     home-manager = {
       url = "github:nix-community/home-manager";

@@ -114,8 +114,8 @@
       "Mod+C".action = spawn "code";
       "Mod+O".action = sh "wezterm start --cwd='${config.home.homeDirectory}/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
-      "Mod+V".action = sh "cliphist list | anyrun --show-results-immediately true --plugins libstdin.so | cliphist decode | wl-copy";
-      "Mod+Space".action = spawn "anyrun";
+      "Mod+V".action = sh "cliphist list | fuzzel -d | cliphist decode | wl-copy";
+      "Mod+Space".action = spawn "vicinae";
 
       "Mod+Q".action = close-window;
       "Mod+E".action = center-column;
