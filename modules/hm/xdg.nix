@@ -15,6 +15,9 @@
       "x-scheme-handler/http" = ["librewolf.desktop"];
       "x-scheme-handler/https" = ["librewolf.desktop"];
 
+      # terminal
+      "x-scheme-handler/terminal" = ["org.wezfurlong.wezterm.desktop"];
+
       # System
       "inode/directory" = ["org.gnome.Nautilus.desktop"];
       "inode/mount-point" = ["org.gnome.Nautilus.desktop"];
