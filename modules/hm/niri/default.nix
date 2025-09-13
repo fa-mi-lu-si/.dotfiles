@@ -116,6 +116,7 @@
       "Mod+Shift+O".action = spawn "obsidian";
       "Mod+V".action = sh "cliphist list | fuzzel -d | cliphist decode | wl-copy";
       "Mod+Space".action = spawn "vicinae";
+      "Mod+slash".action = sh "vicinae vicinae://extensions/vicinae/file/search";
 
       "Mod+Q".action = close-window;
       "Mod+E".action = center-column;
