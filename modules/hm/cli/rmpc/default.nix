@@ -9,7 +9,7 @@
       }
     '';
   };
-  services.mpd-mpris.enable = true;
+  services.mpdris2.enable = true;
 
   programs.rmpc = {
     enable = true;
