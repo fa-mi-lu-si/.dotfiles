@@ -7,6 +7,9 @@
     xwayland-satellite
   ];
   programs.niri.settings = {
+    environment = {
+      SDL_VIDEODRIVER = "wayland";
+    };
     hotkey-overlay.skip-at-startup = true;
     input.touchpad.accel-speed = 0.4;
     input.power-key-handling.enable = false;
