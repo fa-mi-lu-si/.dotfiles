@@ -7,11 +7,11 @@
     auth include login
   '';
 
-  services.logind = {
-    lidSwitch = "suspend-then-hibernate";
-    lidSwitchDocked = "suspend";
-    lidSwitchExternalPower = "lock";
-    powerKey = "hibernate";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandleLidSwitchDocked = "suspend-then-hibernate";
+    HandleLidSwitchExternalPower = "lock";
+    HandlePowerKey = "hibernate";
   };
   systemd.sleep.extraConfig = "HibernateDelaySec=30m";
 }

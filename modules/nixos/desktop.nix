@@ -44,7 +44,7 @@
         user = "samy";
       };
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Welcome To NixOS' --asterisks --remember --remember-user-session --time -cmd niri-session";
+        command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome To NixOS' --asterisks --remember --remember-user-session --time -cmd niri-session";
         # DO NOT CHANGE THIS USER
         user = "greeter";
       };
