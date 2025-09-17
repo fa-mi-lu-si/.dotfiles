@@ -46,10 +46,6 @@
     };
   };
 
-  services.cliphist = {
-    enable = true;
-  };
-
   programs.foliate.enable = true;
 
   programs.vesktop = {

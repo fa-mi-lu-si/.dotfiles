@@ -116,7 +116,7 @@
     :class "indicator"
     (button
       :class "indicator-icon"
-      :onclick "cliphist list | fuzzel -d | cliphist decode | wl-copy"
+      :onclick "vicinae vicinae://extensions/vicinae/clipboard/history"
       "")))
 
 (defwidget top []
