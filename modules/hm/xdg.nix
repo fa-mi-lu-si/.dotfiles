@@ -1,12 +1,7 @@
-{pkgs, ...}: {
+{...}: {
   xdg.enable = true;
 
   xdg.mime.enable = true;
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gnome];
-  };
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
