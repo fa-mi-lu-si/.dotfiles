@@ -114,7 +114,6 @@
       "Mod+Shift+T".action = spawn "ghostty";
       "Mod+F".action = spawn "nautilus";
       "Mod+B".action = spawn "librewolf";
-      "Mod+C".action = spawn "code";
       "Mod+O".action = sh "wezterm start --cwd='${config.home.homeDirectory}/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
       "Mod+V".action = sh "vicinae vicinae://extensions/vicinae/clipboard/history";
