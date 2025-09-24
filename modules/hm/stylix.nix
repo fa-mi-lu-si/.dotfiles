@@ -1,11 +1,12 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [adwaita-icon-theme morewaita-icon-theme];
+
   stylix = {
     enable = true;
     iconTheme = {
       enable = true;
-      package = pkgs.adwaita-icon-theme;
-      dark = "Adwaita";
-      light = "Adwaita";
+      dark = "MoreWaita";
+      light = "MoreWaita";
     };
   };
 }
