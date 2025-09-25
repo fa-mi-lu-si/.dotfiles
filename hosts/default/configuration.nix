@@ -53,6 +53,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.powersave = true; # powersave on wifi
 
   # Something the audio server needs
   security.rtkit.enable = true;
