@@ -16,6 +16,14 @@
 
   ml2 lmet
 
+  mnm (tap-hold-release 150 250
+    menu
+    (layer-while-held numbers))
+
+  cnm (tap-hold-release 150 250
+    ,
+    (layer-while-held numbers))
+
   ;; experiment with mod forks on the tap action here
   ;; eg super-col
   col (fork
@@ -46,7 +54,7 @@
 (deflayer colemak
   tab  @qQ  w    f    p    b     j    l    u    y    scln S--
    esc  @a_a @m_r @c_s @s_t g     m    @s_n @c_e @m_i @a_o '
-     XX    x    c    d    v    z    k    h    ,    .    /    rsft
+     XX    x    c    d    v    z    k    h    @cnm .    /    rsft
   lctl @ml2 @nav           @spa           @col XX
 )
 
@@ -69,15 +77,15 @@
 (deflayer navigation
   _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn XX   _
    esc  lalt lmet lctl lsft XX    f9   left down rght tab  _
-     XX    XX   XX   del  XX   XX   XX   home menu end  XX   rsft
+     XX    XX   XX   del  XX   XX   spc  home @mnm end  XX   rsft
   _    @ml2 @nav           @rts           @col XX
 )
 
 
 #|
 
-%    &    +    `~   \      XX   <    [    ]    >
-!    :    -    =    /      *    '"   (    )    ?
+%    &    +~   `~   \      XX   <    [    ]    >
+!    :    -    =    /      *    '"   ("   )    ?
 XX   |    #    _    @      ^    $    {    }    XX
 
 |#
@@ -170,7 +178,7 @@ XX   |    #    _    @      ^    $    {    }    XX
 (deflayer symbols
   XX   S-5  @am  @plu @bt  \     XX   @al  @sl  @sr  @ar  [
    XX   @ex  @co  @da  @eq  /     S-8  @sq  @pl  @pr  @qu  '
-     XX    S-\  S-3  S--  S-2  spc  S-6  @ds  @bl  @br  XX   rsft
+     XX    S-\  S-3  S--  S-2  XX   S-6  @ds  @bl  @br  XX   rsft
   XX   XX   bspc           spc            XX   XX
 )
 
