@@ -102,7 +102,7 @@
       :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%")
     (button
       :class "indicator-icon"
-      :onclick "wezterm -e wiremix"
+      :onclick "ghostty -e wiremix"
       {
         vol == 0 || is_muted == "[MUTED]" ? "󰝟" :
         vol <= 25 ? "󰕿" :

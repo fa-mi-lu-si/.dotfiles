@@ -110,11 +110,11 @@
       sh = spawn "sh" "-c";
       nu = spawn "nu" "-c";
     in {
-      "Mod+T".action = spawn "wezterm";
-      "Mod+Shift+T".action = spawn "ghostty";
+      "Mod+T".action = spawn "ghostty";
+      "Mod+Shift+T".action = spawn "wezterm";
       "Mod+F".action = spawn "nautilus";
       "Mod+B".action = spawn "librewolf";
-      "Mod+O".action = sh "wezterm start --cwd='${config.home.homeDirectory}/Vault' -e hx .";
+      "Mod+O".action = sh "ghostty --working-directory='${config.home.homeDirectory}/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
       "Mod+V".action = sh "vicinae vicinae://extensions/vicinae/clipboard/history";
       "Mod+Space".action = spawn "vicinae";
