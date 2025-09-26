@@ -10,6 +10,7 @@
       window-padding-x = 18;
       window-padding-y = 18;
       keybind = [
+        "ctrl+shift+e=toggle_command_palette"
         "ctrl+super+enter=toggle_split_zoom"
         "ctrl+super+f9=toggle_tab_overview"
         "ctrl+shift+t=new_tab"
