@@ -5,8 +5,7 @@
     settings = {
       window-theme = "ghostty";
       command = "nu";
-      gtk-tabs-location = "hidden";
-      gtk-single-instance = true;
+      gtk-custom-css = "${./style.css}";
       window-padding-x = 18;
       window-padding-y = 18;
       keybind = [
