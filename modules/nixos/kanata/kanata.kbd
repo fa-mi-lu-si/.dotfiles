@@ -102,28 +102,31 @@ XX   |    #    _    @      ^    $    {    }    XX
   (                    pr    ) S-0
   (                       qu ) S-/
   ;; some other keys
+  (    am                    ) S-7
   (       plu                ) S-=
   (          bt              ) `
-  (    am                    ) S-7
+  (              ds          ) S-4
 
   ;; coding chords
-  (      plu bt              ) (macro S-`)     ;; ~
-  (              sq pl       ) (macro S-')     ;; "
+  (      plu bt              ) (macro S-`)           ;; ~
+  (              sq pl       ) (macro S-')           ;; "
   (    co da                 ) (macro S-scln S-scln) ;; ::
-  (    am        sq          ) (macro S-7 ') ;; &'
-  (    am        sq pl       ) (macro S-7 m u t) ;; &mut
-  (       da eq              ) (macro = =)     ;; ==
-  ( ex       eq              ) (macro S-1 =)   ;; !=
-  (      plu eq              ) (macro + =)     ;; +=
+  (    am        sq          ) (macro S-7 ')         ;; &'
+  (    am        sq pl       ) (macro S-7 m u t)     ;; &mut
+  (       da eq              ) (macro = =)           ;; ==
+  ( ex       eq              ) (macro S-1 =)         ;; !=
+  (      plu eq              ) (macro + =)           ;; +=
   
-  (                 pl pr    ) (macro S-9 S-0) ;; ()
-  (    co    eq     pl       ) (macro S-, =)   ;; <=
-  (    co    eq        pr    ) (macro S-. =)   ;; >=
+  (                 pl pr    ) (macro S-9 S-0)       ;; ()
+  (    co    eq     pl       ) (macro S-, =)         ;; <=
+  (    co    eq        pr    ) (macro S-. =)         ;; >=
 
-  (       da           pr    ) (macro - S-.)   ;; ->
-  (       da eq        pr    ) (macro = S-.)   ;; =>
-
-  (          eq  sq          ) (macro caps)    ;; caps
+  (       da           pr    ) (macro - S-.)         ;; ->
+  (       da eq        pr    ) (macro = S-.)         ;; =>
+  
+  (              ds pl       ) (unicode €)           ;; € 
+  (          eq     pl       ) (unicode €)           ;; €
+  (          eq  sq          ) (macro caps)          ;; caps
 )
 
 (defchords numchords 150
@@ -168,7 +171,7 @@ XX   |    #    _    @      ^    $    {    }    XX
   n8 (chord numchords 8)
   n0 Digit0
 
-  ds S-4
+  ds (chord symbol-chords ds)
   bt (chord symbol-chords bt)
   plu (chord symbol-chords plu)
   am (chord symbol-chords am)
