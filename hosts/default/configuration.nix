@@ -73,7 +73,7 @@
   services.thermald.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Africa/Harare";
+  time.timeZone = "Europe/Vilnius";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
