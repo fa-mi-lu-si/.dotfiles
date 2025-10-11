@@ -116,9 +116,9 @@
       "Mod+B".action = spawn "librewolf";
       "Mod+O".action = sh "ghostty --working-directory='${config.home.homeDirectory}/Vault' -e hx .";
       "Mod+Shift+O".action = spawn "obsidian";
-      "Mod+V".action = sh "vicinae vicinae://extensions/vicinae/clipboard/history";
-      "Mod+Space".action = spawn "vicinae";
-      "Mod+slash".action = sh "vicinae vicinae://extensions/vicinae/file/search";
+      "Mod+V".action = sh "vicinae deeplink vicinae://extensions/vicinae/clipboard/history";
+      "Mod+Space".action = sh "vicinae toggle";
+      "Mod+slash".action = sh "vicinae deeplink vicinae://extensions/vicinae/file/search";
 
       "Mod+Q".action = close-window;
       "Mod+E".action = center-column;

@@ -116,7 +116,7 @@
     :class "indicator"
     (button
       :class "indicator-icon"
-      :onclick "vicinae vicinae://extensions/vicinae/clipboard/history"
+      :onclick "vicinae deeplink vicinae://extensions/vicinae/clipboard/history"
       "")))
 
 (defwidget top []
