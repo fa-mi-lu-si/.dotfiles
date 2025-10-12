@@ -180,10 +180,22 @@
         allow-when-locked = true;
       };
 
-      "XF86AudioPause".action = sh "playerctl play-pause";
-      "XF86AudioPlay".action = sh "playerctl play-pause";
-      "XF86AudioNext".action = sh "playerctl next";
-      "XF86AudioPrev".action = sh "playerctl previous";
+      "XF86AudioPause" = {
+        action = sh "playerctl play-pause";
+        allow-when-locked = true;
+      };
+      "XF86AudioPlay" = {
+        action = sh "playerctl play-pause";
+        allow-when-locked = true;
+      };
+      "XF86AudioNext" = {
+        action = sh "playerctl next";
+        allow-when-locked = true;
+      };
+      "XF86AudioPrev" = {
+        action = sh "playerctl previous";
+        allow-when-locked = true;
+      };
     };
   };
 }
