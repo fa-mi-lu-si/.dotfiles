@@ -10,18 +10,18 @@
 
     settings = {
       devices = {
-        "phone" = {id = "Z3333AJ-D2F75MK-WL53VSO-BIZNTED-UF6636U-A736VZD-CMBR4IE-L22AAQ5";};
+        "samy-nix-hand" = {id = "TNZDXGR-BAXWRQG-36PTCRU-RGBYRQD-RPGL5FD-EA2IB2K-UNBRUOE-TYIYDQ5";};
       };
 
       folders = {
         "Vault" = {
           path = "~/Vault";
-          devices = ["phone"];
+          devices = ["samy-nix-hand"];
         };
 
         "Music" = {
           path = "~/Music";
-          devices = ["phone"];
+          devices = ["samy-nix-hand"];
         };
       };
     };
