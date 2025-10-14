@@ -23,6 +23,11 @@
           path = "~/Music";
           devices = ["samy-nix-hand"];
         };
+
+        "Books" = {
+          path = "~/Books";
+          devices = ["samy-nix-hand"];
+        };
       };
     };
   };
