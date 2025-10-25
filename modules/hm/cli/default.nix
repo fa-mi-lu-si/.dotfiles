@@ -11,6 +11,7 @@
     ./fastfetch.nix
     ./git.nix
     ./yazi.nix
+    ./comma.nix
     ./rmpc
   ];
 
