@@ -10,7 +10,6 @@
       la = "ls -a";
       lt = "eza --tree";
       lla = "ls -l -a";
-      bg = "batgrep";
       man = "batman";
     };
   };

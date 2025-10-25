@@ -158,7 +158,7 @@
       "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
       "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
 
-      "Print".action = screenshot;
+      "Print".action.screenshot = [];
       "XF86AudioRaiseVolume" = {
         action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
         allow-when-locked = true;
