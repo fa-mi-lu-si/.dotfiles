@@ -22,6 +22,7 @@
     ../../modules/nixos/syncthing.nix
     ../../modules/nixos/stylix.nix
     ../../modules/nixos/kanata
+    ../../modules/nixos/winapps
   ];
 
   # Bootloader.
@@ -95,7 +96,7 @@
   users.users.samy = {
     isNormalUser = true;
     description = "samy";
-    extraGroups = ["networkmanager" "wheel" "video" "audio" "sound" "dialout" "input"];
+    extraGroups = ["networkmanager" "wheel" "video" "audio" "sound" "dialout" "input" "libvirtd" "kvm"];
     # packages = with pkgs; [
     # ];
   };
