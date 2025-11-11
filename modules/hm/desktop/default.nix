@@ -13,7 +13,10 @@
   home.packages = with pkgs; [
     libnotify
     wiremix
+
+    # phone stuff
     scrcpy
+    android-tools
 
     nautilus
     loupe
