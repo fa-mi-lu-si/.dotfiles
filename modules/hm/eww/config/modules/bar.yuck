@@ -111,14 +111,6 @@
         ""
       })))
 
-(defwidget clip []
-  (box
-    :class "indicator"
-    (button
-      :class "indicator-icon"
-      :onclick "vicinae deeplink vicinae://extensions/vicinae/clipboard/history"
-      "")))
-
 (defwidget top []
   (box (niri-workspace-widget :monitor 0)))
 
@@ -129,7 +121,6 @@
   (box
     :orientation "v"
     :space-evenly false
-    (clip)
     ; TODO: collapsible systray
     (tray)
     (player-button)
