@@ -12,7 +12,7 @@
     ../../modules/hm/sops.nix
     ../../modules/hm/desktop
     ../../modules/hm/desktop/vivaldi.nix
-    ../../modules/hm/desktop/onlyoffice.nix
+    ../../modules/hm/desktop/libreoffice.nix
     ../../modules/hm/wezterm
     ../../modules/hm/ghostty
     ../../modules/hm/vscode
