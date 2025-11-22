@@ -30,7 +30,7 @@
       # Rounded Corners
       {
         geometry-corner-radius = let
-          r = 8.0;
+          r = 4.0;
         in {
           top-left = r;
           top-right = r;

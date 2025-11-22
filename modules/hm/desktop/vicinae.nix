@@ -10,21 +10,21 @@
   services.vicinae = {
     enable = true;
     autoStart = true;
-    # settings = {
-    #   closeOnFocusLoss = false;
-    #   faviconService = "twenty";
-    #   font = {size = 10.5;};
-    #   keybinding = "default";
-    #   keybinds = {};
-    #   popToRootOnClose = true;
-    #   rootSearch = {searchFiles = false;};
-    #   theme = {name = "stylix";};
-    #   window = {
-    #     csd = true;
-    #     opacity = 1.0;
-    #     rounding = 10;
-    #   };
-    # };
+    settings = {
+      closeOnFocusLoss = true;
+      faviconService = "twenty";
+      font = {size = 10.5;};
+      keybinding = "default";
+      keybinds = {};
+      popToRootOnClose = true;
+      rootSearch = {searchFiles = false;};
+      theme = {name = "stylix";};
+      window = {
+        csd = true;
+        opacity = 1;
+        rounding = 4;
+      };
+    };
   };
 
   # Stylix theming for vicinae
