@@ -1,12 +1,10 @@
 {pkgs, ...}: {
   programs.git = {
     enable = true;
-    userName = "Oluwaseun Samuel Familusi";
-    userEmail = "56502184+fa-mi-lu-si@users.noreply.github.com";
-    difftastic = {
-      enable = true;
-    };
-    extraConfig = {
+    settings = {
+      user.name = "Oluwaseun Samuel Familusi";
+      user.email = "56502184+fa-mi-lu-si@users.noreply.github.com";
+
       init.defaultBranch = "main";
 
       help.autocorrect = "prompt";
@@ -31,9 +29,13 @@
       fetch.all = true;
 
       commit.verbose = true;
-
       interactive.singlekey = true;
     };
+  };
+
+  programs.difftastic = {
+    enable = true;
+    git.enable = true;
   };
 
   programs.gh = {
