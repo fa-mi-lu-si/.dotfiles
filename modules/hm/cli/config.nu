@@ -29,6 +29,7 @@ let abbreviations = {
     'ard': 'arduino-cli'
     'cr': 'cargo run'
     'nr': 'nix run nixpkgs#'
+    'ns': 'nix shell nixpkgs#'
 }
 
 $env.config.show_banner = false
