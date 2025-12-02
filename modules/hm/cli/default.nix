@@ -13,6 +13,7 @@
     ./yazi.nix
     ./comma.nix
     ./rmpc
+    ./scripts
   ];
 
   programs.bash = {
