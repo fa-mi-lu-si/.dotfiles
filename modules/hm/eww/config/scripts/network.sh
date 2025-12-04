@@ -26,7 +26,7 @@ network() {
         NAME=""
         ICON="󰲛"
     fi
-    echo '{"name": "'"$NAME"'", "icon": "'"$ICON"'"}'
+    echo '{"name": "'"$NAME"'", "icon": "'"$ICON"'", "strength": "'"$STRENGTH"'"}'
 }
 
 network

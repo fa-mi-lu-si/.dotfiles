@@ -34,7 +34,13 @@
   (box
     :class "indicator"
     :orientation "v"
+    :space-evenly false
     :visible {network.name != ""}
+    (scale
+      :value {network.strength}
+      :max 100
+      :min 0
+      :orientation "h")
     (box
       :class "indicator-icon"
       {network.icon})))
@@ -42,7 +48,14 @@
 (defwidget battery []
   (box
     :class "indicator"
+    :orientation "v"
+    :space-evenly false
     ; use for loop to support different battery names
+    (scale
+      :value {EWW_BATTERY.BAT1.capacity}
+      :max 100
+      :min 0
+      :orientation "h")
     (box
       :class "indicator-icon"
       :orientation "v"
@@ -60,7 +73,7 @@
       EWW_BATTERY.BAT1.capacity <= 90 ? "󰂁" :
       EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
       ""}
-    {EWW_BATTERY.BAT1.capacity})))
+      {EWW_BATTERY.BAT1.capacity})))
 
 (defwidget player-button []
   (box
@@ -89,7 +102,7 @@
       :icon-size 16
       :prepend-new true)))
 
-(defwidget vol []
+(defwidget volume []
   (box
     :class "indicator"
     :orientation "v"
@@ -124,7 +137,7 @@
     ; TODO: collapsible systray
     (tray)
     (player-button)
-    (vol)
+    (volume)
     (battery)
     (network_icon)))
 

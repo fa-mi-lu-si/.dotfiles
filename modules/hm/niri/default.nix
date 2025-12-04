@@ -74,6 +74,7 @@
       border.width = 2;
       gaps = 8;
       always-center-single-column = true;
+      empty-workspace-above-first = true;
       preset-column-widths = [
         {proportion = 1.0 / 3.0;}
         {proportion = 1.0 / 2.0;}

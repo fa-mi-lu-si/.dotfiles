@@ -13,5 +13,5 @@
 
 (deflisten niri-workspaces "./scripts/niri-workspaces.sh")
 (deflisten network
-  :initial "{\"name\": \"\", \"icon\": \"󰲛\"}"
+  :initial "{\"name\": \"\", \"icon\": \"󰲛\", \"strength\": \"0\"}"
   "./scripts/network.sh")
