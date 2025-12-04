@@ -86,14 +86,13 @@
         right = 8;
       };
       tab-indicator = {
-        hide-when-single-tab = true;
         place-within-column = true;
         position = "left";
-        corner-radius = 20.0;
-        gap = -12.0;
-        gaps-between-tabs = 10.0;
+        corner-radius = 4.0;
+        gap = 4;
+        gaps-between-tabs = 4;
         width = 4.0;
-        length.total-proportion = 0.1;
+        length.total-proportion = 1.0;
       };
     };
 
