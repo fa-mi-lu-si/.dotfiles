@@ -131,16 +131,16 @@
       "Mod+Shift+Home".action = consume-or-expel-window-left;
       "Mod+Shift+End".action = consume-or-expel-window-right;
       "Mod+U".action = fullscreen-window;
-      "Mod+G".action = toggle-window-floating;
-      "Mod+Shift+G".action =
-        nu
-        # nu
-        ''
-          niri msg -j windows | from json
-          | where workspace_id == (niri msg -j workspaces | from json | where is_focused == true | first | get id)
-          | each {niri msg action toggle-window-floating --id $in.id}
-        '';
-      "Mod+Tab".action = switch-focus-between-floating-and-tiling;
+      # "Mod+Shift+G".action =
+      #   nu
+      #   # nu
+      #   ''
+      #     niri msg -j windows | from json
+      #     | where workspace_id == (niri msg -j workspaces | from json | where is_focused == true | first | get id)
+      #     | each {niri msg action toggle-window-floating --id $in.id}
+      #   '';
+      "Mod+Shift+Semicolon".action = toggle-window-floating;
+      "Mod+Semicolon".action = switch-focus-between-floating-and-tiling;
       "Mod+R".action = switch-preset-column-width;
       "Mod+M".action = maximize-column;
       "Mod+Shift+M".action = set-window-height "100%";
