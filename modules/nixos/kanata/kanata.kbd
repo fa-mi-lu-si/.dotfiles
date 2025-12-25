@@ -111,6 +111,7 @@ XX   |    #    _    @      ^    $    {    }    XX
   (      plu bt              ) (macro S-`)           ;; ~
   (              sq pl       ) (macro S-')           ;; "
   (    co da                 ) (macro S-scln S-scln) ;; ::
+  (    co    eq              ) (macro S-scln =)      ;; :=
   (    am        sq          ) (macro S-7 ')         ;; &'
   (    am        sq pl       ) (macro S-7 m u t)     ;; &mut
   (       da eq              ) (macro = =)           ;; ==
