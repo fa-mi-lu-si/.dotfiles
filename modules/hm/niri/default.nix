@@ -13,6 +13,13 @@
     hotkey-overlay.skip-at-startup = true;
     input.touchpad.accel-speed = 0.4;
     input.power-key-handling.enable = false;
+    input.focus-follows-mouse = {
+      enable = true;
+      max-scroll-amount = "75%";
+    };
+    input.warp-mouse-to-focus = {
+      enable = true;
+    };
 
     prefer-no-csd = true;
     overview = {
@@ -72,7 +79,7 @@
 
     layout = {
       border.width = 2;
-      gaps = 8;
+      gaps = 4;
       always-center-single-column = true;
       empty-workspace-above-first = true;
       preset-column-widths = [
@@ -83,8 +90,10 @@
       shadow.enable = false;
       background-color = "transparent";
       struts = {
-        left = 8;
-        right = 8;
+        left = 12;
+        right = 12;
+        top = 8;
+        bottom = 8;
       };
       tab-indicator = {
         place-within-column = true;
