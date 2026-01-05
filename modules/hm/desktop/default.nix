@@ -29,6 +29,13 @@
     authenticator
   ];
 
+  xdg.desktopEntries."wiremix" = {
+    name = "wiremix";
+    exec = "wiremix";
+    comment = "Simple TUI mixer for PipeWire";
+    terminal = true;
+  };
+
   programs.fuzzel = {
     enable = true;
   };
