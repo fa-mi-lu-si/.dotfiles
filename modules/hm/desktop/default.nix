@@ -8,6 +8,7 @@
     ./obsidian.nix
     ./swww.nix
     ./vicinae.nix
+    ./scrcpy.nix
   ];
 
   home.packages = with pkgs; [
@@ -15,7 +16,6 @@
     wiremix
 
     # phone stuff
-    scrcpy
     android-tools
 
     nautilus
