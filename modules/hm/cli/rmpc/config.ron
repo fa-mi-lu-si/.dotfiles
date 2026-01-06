@@ -12,10 +12,13 @@
     scrolloff: 0,
     wrap_navigation: false,
     enable_mouse: true,
+    enable_config_hot_reload: true,
     status_update_interval_ms: 1000,
+    rewind_to_start_sec: None,
     select_current_song_on_change: false,
+    ignore_leading_the: true,
+    browser_song_sort: [Disc, Track, Artist, Title],
     album_art: (
-        // method: Kitty,
         method: Auto,
         max_size_px: (width: 1200, height: 1200),
         disabled_protocols: ["http://", "https://"],
@@ -101,6 +104,7 @@
     ),
     search: (
         case_sensitive: false,
+        ignore_diacritics: true,
         mode: Contains,
         tags: [
             (value: "any",         label: "Any Tag"),
@@ -108,8 +112,6 @@
             (value: "album",       label: "Album"),
             (value: "albumartist", label: "Album Artist"),
             (value: "title",       label: "Title"),
-            (value: "filename",    label: "Filename"),
-            (value: "genre",       label: "Genre"),
         ],
     ),
     artists: (
@@ -140,10 +142,10 @@
             name: "Albums",
             pane: Pane(Albums),
         ),
-        // (
-        //     name: "Playlists",
-        //     pane: Pane(Playlists),
-        // ),
+        (
+            name: "Playlists",
+            pane: Pane(Playlists),
+        ),
         (
             name: "Search",
             pane: Pane(Search),
