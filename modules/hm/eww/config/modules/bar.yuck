@@ -11,15 +11,16 @@
 
 (defwidget niri-workspace-widget [monitor]
   (box
-    :class "indicator"
+    :class "workspaces"
     :orientation "v"
     :spacing 10
     ; TODO: make this monitor specific, with a jq filter
     (for i in {jq(niri-workspaces, ".=sort_by(.idx)")}
       (button
-        :class "indicator-icon"
+        :class {i.active_window_id == "null" ? "empty-workspace-icon" : "workspace-icon"}
         :onclick "niri msg action focus-workspace ${i.idx}"
-        {i.is_focused ? "◆" : "◇"}))))
+        {i.is_focused ? "◆" : "◇"}
+        ))))
 
 (defwidget time []
   (box
@@ -80,10 +81,10 @@
     :class "indicator"
     :orientation "v"
     :visible {status != ""}
-    (button
+    (eventbox
       :onclick "playerctl play-pause"
       :class "indicator-icon"
-      :onrightclick "eww -c ${EWW_CONFIG_DIR} open player-window"
+      :onhover "eww -c ${EWW_CONFIG_DIR} open player-window"
       (box
         :orientation "v"
         "󰲸"
@@ -93,14 +94,26 @@
           status == "Stopped" ? "":
           "󰝛"}))))
 
+(defvar show_tray false)
 (defwidget tray []
-  (box
-    :class "indicator"
-    (systray
-      :class "indicator-icon"
+  (eventbox
+    :orientation "v"
+    :onhover "eww update show_tray=true"
+    :onhoverlost "eww update show_tray=false"
+    (box
       :orientation "v"
-      :icon-size 16
-      :prepend-new true)))
+      :class "indicator"
+      :space-evenly false
+      ""
+      (revealer
+        :class "indicator-icon"
+        :transition "slidedown"
+        :duration "150ms"
+        :reveal show_tray
+        (systray
+          :orientation "v"
+          :icon-size 16
+          :prepend-new true)))))
 
 (defwidget volume []
   (box
@@ -134,7 +147,6 @@
   (box
     :orientation "v"
     :space-evenly false
-    ; TODO: collapsible systray
     (tray)
     (player-button)
     (volume)

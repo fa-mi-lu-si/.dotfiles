@@ -4,6 +4,14 @@
 }
 
 .workspaces {
+  background-color: $bg;
+  margin: 4px;
+  padding: 5px 2px;
+
+  .workspace-icon {
+  };
+  .empty-workspace-icon {
+  };
 }
 
 .indicator {
