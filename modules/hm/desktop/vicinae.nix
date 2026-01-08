@@ -5,7 +5,13 @@
 
   services.vicinae = {
     enable = true;
-    autoStart = true;
+    systemd = {
+      enable = true;
+      autoStart = true;
+      environment = {
+        USE_LAYER_SHELL = 1;
+      };
+    };
     settings = {
       closeOnFocusLoss = true;
       faviconService = "twenty";
