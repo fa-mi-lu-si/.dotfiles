@@ -67,6 +67,22 @@ in {
       recycle-bin = plugins.recycle-bin;
     };
     theme = {
+      indicator = {
+        padding = {
+          open = "█";
+          close = "█";
+        };
+      };
+      tabs = {
+        sep_inner = {
+          open = "";
+          close = "";
+        };
+        sep_outer = {
+          open = "";
+          close = "";
+        };
+      };
       mgr = {
         border_symbol = " ";
       };
