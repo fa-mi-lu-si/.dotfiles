@@ -127,7 +127,7 @@
       "Mod+Shift+O".action = spawn "obsidian";
       "Mod+V".action = sh "vicinae deeplink vicinae://extensions/vicinae/clipboard/history";
       "Mod+Space".action = sh "vicinae toggle";
-      "Mod+slash".action = sh "vicinae deeplink vicinae://extensions/vicinae/file/search";
+      "Mod+slash".action = sh "vicinae deeplink vicinae://extensions/vicinae/files/search";
 
       "Mod+Q".action = close-window;
       "Mod+E".action = center-column;
