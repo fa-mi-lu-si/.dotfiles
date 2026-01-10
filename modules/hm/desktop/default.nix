@@ -22,7 +22,6 @@
     loupe
     tuba
 
-    celluloid
     amberol
     euphonica
 

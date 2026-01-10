@@ -30,8 +30,8 @@
       "image/jpeg" = ["org.gnome.Loupe.desktop"];
       "image/gif" = ["org.gnome.Loupe.desktop"];
       "image/webp" = ["org.gnome.Loupe.desktop"];
-      "video/mpeg" = ["io.github.celluloid_player.Celluloid.desktop"];
-      "video/mp4" = ["io.github.celluloid_player.Celluloid.desktop"];
+      "video/mpeg" = ["mpv.desktop"];
+      "video/mp4" = ["mpv.desktop"];
       "audio/mp4" = ["io.bassi.Amberol.desktop"];
       "audio/mpeg" = ["io.bassi.Amberol.desktop"];
       "audio/ogg" = ["io.bassi.Amberol.desktop"];
