@@ -15,7 +15,7 @@
     input.power-key-handling.enable = false;
     input.focus-follows-mouse = {
       enable = true;
-      max-scroll-amount = "75%";
+      max-scroll-amount = "15%";
     };
     input.warp-mouse-to-focus = {
       enable = true;
