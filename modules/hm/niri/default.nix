@@ -3,9 +3,14 @@
   config,
   ...
 }: {
+  imports = [
+    ./niri-screen-time.nix
+  ];
+
   home.packages = with pkgs; [
     xwayland-satellite
   ];
+
   programs.niri.settings = {
     environment = {
       SDL_VIDEODRIVER = "wayland";
@@ -109,6 +114,9 @@
     spawn-at-startup = [
       {
         command = ["eww" "daemon"];
+      }
+      {
+        command = ["niri-screen-time" "-daemon"];
       }
       {
         command = ["~/.config/eww/scripts/niri-watcher.nu" "${config.xdg.configHome}/eww"];

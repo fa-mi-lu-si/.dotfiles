@@ -10,6 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
+    niri-screen-time.url = "github:probeldev/niri-screen-time";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
