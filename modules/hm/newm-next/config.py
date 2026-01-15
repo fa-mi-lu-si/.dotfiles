@@ -76,13 +76,13 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("L-A-Up", lambda: layout.resize_focused_view(0, -1)),
         ("L-A-Right", lambda: layout.resize_focused_view(1, 0)),
 
-        ("L-S-t", lambda: os.system("ghostty &")),
-        ("L-t", lambda: os.system("wezterm &")),
+        ("L-S-t", lambda: os.system("wezterm &")),
+        ("L-t", lambda: os.system("ghostty &")),
         ("L-c", lambda: os.system("code &")),
         ("L-f", lambda: os.system("nautilus &")),
-        ("L-b", lambda: os.system("zen &")),
+        ("L-b", lambda: os.system("librewolf &")),
         ("L-o", lambda: os.system("obsidian &")),
-        ("L-S-o", lambda: os.system("wezterm start --cwd ~/Vault hx .")),
+        ("L-S-o", lambda: os.system("ghostty --working-directory='~/Vault' -e hx . &")),
         ("L-space", lambda: os.system("vicinae toggle &")),
 
         ("L-q", lambda: layout.close_focused_view()),
@@ -118,10 +118,10 @@ panels = {
     'launcher': {
         'cmd': "wezterm"
     },
-    # 'bar': {
-    #     'cmd': 'eww open sidebar',
-    #     'visible_normal': False
-    # }
+    'bar': {
+        'cmd': 'eww open sidebar',
+        'visible_normal': False
+    }
 }
 
 gestures = {
