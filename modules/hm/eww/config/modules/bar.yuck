@@ -60,6 +60,7 @@
     (box
       :class "indicator-icon"
       :orientation "v"
+      :tooltip {EWW_BATTERY.BAT1.capacity}
       {
       EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
       EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
@@ -74,7 +75,7 @@
       EWW_BATTERY.BAT1.capacity <= 90 ? "󰂁" :
       EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
       ""}
-      {EWW_BATTERY.BAT1.capacity})))
+      )))
 
 (defwidget player-button []
   (box
