@@ -50,6 +50,11 @@
         "widget.gtk.ignore-bogus-leave-notify" = 1;
         "browser.tabs.allow_transparent_browser" = true;
         "browser.uidensity" = 1;
+
+        # potatofox tweaks
+        "uc.tweak.borderless" = true;
+        "uc.tweak.no-panel-hint" = true;
+        "uc.tweak.no-blur" = true;
       };
       extensions.force = true;
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
