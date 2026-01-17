@@ -116,6 +116,24 @@
           :icon-size 16
           :prepend-new true)))))
 
+(defwidget brightness []
+  (box
+    :class "indicator"
+    :orientation "v"
+    :space-evenly false
+    (scale
+      :value bri
+      :max 100
+      :min 0
+      :orientation "h"
+      :onchange "brightnessctl s -e {}%")
+    (eventbox
+      :onscroll "brightnessctl set $( [ '{}' = up ] && echo +1% || echo 1%- )"
+      (box
+        :class "indicator-icon"
+        ""))
+    ))
+
 (defwidget volume []
   (box
     :class "indicator"
@@ -127,16 +145,17 @@
       :min 0
       :orientation "h"
       :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%")
-    (button
-      :class "indicator-icon"
-      :onclick "ghostty -e wiremix"
-      {
+    (eventbox
+      :onclick "xdg-terminal-exec wiremix"
+      :onrightclick "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      :onscroll "wpctl set-volume @DEFAULT_AUDIO_SINK@ $([[ '{}' == up ]] && printf '0.01+' || printf '0.01-')"
+      (box :class "indicator-icon" {
         vol == 0 || is_muted == "[MUTED]" ? "󰝟" :
         vol <= 25 ? "󰕿" :
         vol <= 50 ? "󰖀" :
         vol <= 75 ? "󰕾" :
         ""
-      })))
+      }))))
 
 (defwidget top []
   (box (niri-workspace-widget :monitor 0)))
@@ -151,6 +170,7 @@
     (tray)
     (player-button)
     (volume)
+    (brightness)
     (battery)
     (network_icon)))
 

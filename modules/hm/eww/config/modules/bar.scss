@@ -21,16 +21,16 @@
   .indicator-icon {
     padding: 5px 2px;
   };
-}
 
-.indicator scale {
-  all: unset;
+  scale {
+    all: unset;
   
-  trough {
-    min-height: 5px;
+    trough {
+      min-height: 5px;
 
-    highlight {
-      background-color: $blue;
+      highlight {
+        background-color: $blue;
+      };
     };
   };
-};
+}

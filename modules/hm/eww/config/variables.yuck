@@ -3,6 +3,7 @@
 (defpoll sec  :interval "1s" "date +%S")
 
 
+(defpoll bri :interval "0.1s" "brightnessctl -m | cut -d, -f4 | tr -d '%'")
 (defpoll vol :interval "0.1s" "wpctl get-volume @DEFAULT_SINK@ | awk -F' ' '{ print $2 * 100 }'")
 (defpoll is_muted :interval "2s" "wpctl get-volume @DEFAULT_SINK@ | awk -F' ' '{ print $3 }'")
 ; TODO: support for multiple players
