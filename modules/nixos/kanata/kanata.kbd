@@ -59,24 +59,28 @@
 )
 
 (defchords nav-chords 150
-  (vd py vu) prnt
-  (   py   ) MediaPlayPause
-  (   py vu) MediaTrackNext
-  (vd py   ) MediaTrackPrevious
-  (      vu) VolumeUp
-  (vd      ) VolumeDown
-  (vd    vu) VolumeMute
+  (la         ) lalt
+  (   vd py vu) prnt
+  (      py   ) MediaPlayPause
+  (      py vu) MediaTrackNext
+  (   vd py   ) MediaTrackPrevious
+  (         vu) VolumeUp
+  (   vd      ) VolumeDown
+  (   vd    vu) VolumeMute
+  (la       vu) brup
+  (la vd      ) brdown
 )
 
 (defalias
   py (chord nav-chords py)
   vu (chord nav-chords vu)
   vd (chord nav-chords vd)
+  la (chord nav-chords la)
 )
 
 (deflayer navigation
   _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn scln   _
-   esc  lalt lmet lctl lsft XX    f9   left down rght tab  _
+   esc  @la   lmet lctl lsft XX    f9   left down rght tab  _
      XX    XX   XX   del  XX   XX   spc  home @mnm end  XX   rsft
   _    @ml2 @nav           @rts           @col XX
 )
