@@ -20,5 +20,11 @@
         title_list:
           - "YouTube"
         alias: "YouTube"
+      - app_ids:
+          - librewolf
+          - zen-beta
+        title_list:
+          - "Instagram"
+        alias: "Instagram"
     '';
 }
