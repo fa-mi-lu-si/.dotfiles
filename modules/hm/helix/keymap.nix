@@ -9,12 +9,6 @@
       C-w = ":buffer-close";
       C-pageup = ":buffer-previous";
       C-pagedown = ":buffer-next";
-      space.g = {
-        # Git menu
-        b = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})";
-        r = ":reset-diff-change";
-        f = "changed_file_picker";
-      };
       space.q = ":quit";
       space.w.d = [":vsplit" "goto_definition"];
       space.e = [
@@ -27,6 +21,7 @@
         ":set mouse true"
       ];
       X = ["extend_line_up" "extend_to_line_bounds"];
+      A-r = ":reload";
     };
 
     insert = {
