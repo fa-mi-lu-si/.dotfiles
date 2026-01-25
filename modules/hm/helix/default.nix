@@ -17,7 +17,11 @@
           other-lines = "disable";
         };
 
-        cursor-shape.insert = "bar";
+        cursor-shape = {
+          normal = "underline";
+          select = "underline";
+          insert = "bar";
+        };
       };
     };
   };
