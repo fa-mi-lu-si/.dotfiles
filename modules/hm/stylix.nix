@@ -3,7 +3,7 @@
 
   stylix = {
     enable = true;
-    iconTheme = {
+    icons = {
       enable = true;
       dark = "MoreWaita";
       light = "MoreWaita";
