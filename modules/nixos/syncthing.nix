@@ -17,6 +17,10 @@
         "Vault" = {
           path = "~/Vault";
           devices = ["samy-nix-hand"];
+          ignorePatterns = [
+            ".envrc"
+            ".direnv"
+          ];
         };
 
         "Music" = {

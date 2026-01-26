@@ -131,7 +131,7 @@
       "Mod+Shift+T".action = spawn "wezterm";
       "Mod+F".action = spawn "nautilus";
       "Mod+B".action = spawn "librewolf";
-      "Mod+O".action = sh "ghostty --working-directory='${config.home.homeDirectory}/Vault' -e hx .";
+      "Mod+O".action = sh "ghostty --working-directory='${config.home.homeDirectory}/Vault' -e direnv exec . hx .";
       "Mod+Shift+O".action = spawn "obsidian";
       "Mod+V".action = sh "vicinae deeplink vicinae://extensions/vicinae/clipboard/history";
       "Mod+Space".action = sh "vicinae toggle";
