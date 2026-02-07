@@ -13,16 +13,41 @@
       };
     };
     settings = {
-      closeOnFocusLoss = true;
-      faviconService = "twenty";
-      font = {size = 10.5;};
-      keybinding = "default";
-      keybinds = {};
-      popToRootOnClose = true;
-      rootSearch = {searchFiles = false;};
-      window = {
-        csd = true;
-        rounding = 4;
+      close_on_focus_loss = true;
+      favorites = [];
+      launcher_window = {
+        client_side_decorations = {enabled = true;};
+      };
+      pop_to_root_on_close = true;
+      providers = {
+        "@Gelei/store.vicinae.bluetooth" = {
+          entrypoints = {
+            devices = {alias = "bl";};
+          };
+        };
+        "@asubbotin/store.raycast.shell" = {
+          entrypoints = {
+            index = {alias = "sh";};
+          };
+        };
+        "@knoopx/store.vicinae.niri" = {
+          entrypoints = {
+            windows = {alias = "w";};
+          };
+        };
+        "@sovereign/store.vicinae.awww-switcher" = {
+          preferences = {
+            transitionDuration = "1";
+            transitionType = "left";
+            wallpaperPath = "/home/samy/Pictures/walls";
+          };
+        };
+      };
+      theme = {
+        dark = {
+          icon_theme = "MoreWaita";
+          name = "stylix";
+        };
       };
     };
   };
