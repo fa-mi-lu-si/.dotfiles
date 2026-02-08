@@ -26,5 +26,20 @@
         title_list:
           - "Instagram"
         alias: "Instagram"
+      - app_ids:
+          - librewolf
+          - zen-beta
+        title_list:
+          - "Outlook"
+          - "Gmail"
+          - "Inbox"
+        alias: "Emails"
+      - app_ids:
+          - obsidian
+          - ghostty
+        title_list:
+          - "Obsidian"
+          - "Vault"
+        alias: "Notes"
     '';
 }
