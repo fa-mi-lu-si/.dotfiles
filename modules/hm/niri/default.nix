@@ -129,7 +129,7 @@
     in {
       "Mod+T".action = spawn "ghostty";
       "Mod+Shift+T".action = spawn "wezterm";
-      "Mod+F".action = spawn "nautilus";
+      "Mod+E".action = spawn "nautilus";
       "Mod+B".action = spawn "librewolf";
       "Mod+O".action = sh "ghostty --title='Vault' --working-directory='${config.home.homeDirectory}/Vault' -e direnv exec . hx .";
       "Mod+Shift+O".action = spawn "obsidian";
@@ -138,8 +138,8 @@
       "Mod+slash".action = sh "vicinae deeplink vicinae://extensions/vicinae/files/search";
 
       "Mod+Q".action = close-window;
-      "Mod+E".action = center-column;
-      "Mod+Shift+E".action = center-visible-columns;
+      "Mod+C".action = center-column;
+      "Mod+Shift+C".action = center-visible-columns;
       "Mod+L".action = spawn "swaylock";
       "Mod+A".action = toggle-column-tabbed-display;
       "Mod+F9".action = toggle-overview;
@@ -147,7 +147,8 @@
       "Mod+Shift+Q".action = quit;
       "Mod+Shift+Home".action = consume-or-expel-window-left;
       "Mod+Shift+End".action = consume-or-expel-window-right;
-      "Mod+U".action = fullscreen-window;
+      "Mod+F".action = fullscreen-window;
+      "Mod+XF86AudioPlay".action = fullscreen-window;
       # "Mod+Shift+G".action =
       #   nu
       #   # nu

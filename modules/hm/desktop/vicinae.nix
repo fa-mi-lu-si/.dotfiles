@@ -19,6 +19,9 @@
         client_side_decorations = {enabled = true;};
       };
       pop_to_root_on_close = true;
+      keybinds = {
+        toggle-action-panel = "control+SPACE";
+      };
       providers = {
         "@Gelei/store.vicinae.bluetooth" = {
           entrypoints = {
