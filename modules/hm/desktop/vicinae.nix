@@ -35,6 +35,11 @@
             windows = {alias = "w";};
           };
         };
+        "@knoopx/store.vicinae.otp" = {
+          entrypoints = {
+            list-codes = {alias = "auth";};
+          };
+        };
         "@sovereign/store.vicinae.awww-switcher" = {
           preferences = {
             transitionDuration = "1";
