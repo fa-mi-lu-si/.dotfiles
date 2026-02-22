@@ -12,6 +12,7 @@
   ];
 
   programs.niri.settings = {
+    animations.slowdown = 0.7;
     environment = {
       SDL_VIDEODRIVER = "wayland";
     };
