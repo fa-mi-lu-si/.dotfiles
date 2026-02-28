@@ -66,11 +66,16 @@
         userchrome-toggle-extended
         multi-account-containers
       ];
+      userContent =
+        #css
+        ''
+          ${builtins.readFile "${inputs.potatofox}/chrome/userContent.css"}
+        '';
     };
   };
 
   home.file.".librewolf/default/chrome" = {
-    source = "${inputs.potatofox}/chrome";
+    source = builtins.filterSource (path: type: baseNameOf path != "userContent.css") "${inputs.potatofox}/chrome";
     recursive = true;
   };
 
