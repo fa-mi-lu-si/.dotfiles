@@ -18,7 +18,7 @@
       "minimal-style@@tx3@@dark": "${base04}",
       "minimal-style@@graph-line@@dark": "${base03}",
       "minimal-style@@graph-node@@dark": "${base04}",
-      "minimal-style@@ui1@@dark": "${base00}",
+      "minimal-style@@ui1@@dark": "${base01}",
 
       "minimal-style@@color-green@@dark": "${base0B}",
       "minimal-style@@color-yellow@@dark": "${base0A}",
