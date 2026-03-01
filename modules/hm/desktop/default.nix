@@ -43,14 +43,16 @@
     enable = true;
   };
 
-  services.dunst = {
-    enable = true;
-    settings = {
-      global = {
-        dmenu = "fuzzel -d";
-      };
-    };
-  };
+  # services.dunst = {
+  #   enable = true;
+  #   settings = {
+  #     global = {
+  #       dmenu = "fuzzel -d";
+  #     };
+  #   };
+  # };
+
+  services.mako.enable = true;
 
   programs.foliate.enable = true;
 
