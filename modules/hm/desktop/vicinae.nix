@@ -23,6 +23,14 @@
         toggle-action-panel = "control+SPACE";
       };
       providers = {
+        "applications" = {
+          "entrypoints" = {
+            "obsidian" = {
+              "enabled" = false;
+            };
+          };
+        };
+
         "@Gelei/store.vicinae.bluetooth" = {
           entrypoints = {
             devices = {alias = "bl";};
@@ -48,6 +56,31 @@
             transitionDuration = "1";
             transitionType = "left";
             wallpaperPath = "/home/samy/Pictures/walls";
+          };
+        };
+        "@marcjulian/store.raycast.obsidian" = {
+          preferences = {
+            configFileName = ".obsidian";
+            vaultPath = "/home/samy/Vault";
+          };
+          entrypoints = {
+            createNoteCommand = {
+              preferences = {
+                blankNote = false;
+                fillFormWithDefaults = false;
+                focusContentArea = false;
+                folderActions = "";
+                openOnCreate = true;
+                prefNoteContent = "";
+                prefNoteName = "Untitled";
+                prefPath = "";
+                prefTag = "";
+                tags = "";
+              };
+            };
+            randomNoteCommand = {
+              enabled = false;
+            };
           };
         };
       };
