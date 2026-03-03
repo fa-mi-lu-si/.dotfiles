@@ -50,6 +50,22 @@
             list-codes = {alias = "auth";};
           };
         };
+        "@dagimg-dot/store.vicinae.player-pilot" = {
+          "entrypoints" = {
+            "next-track" = {
+              "enabled" = false;
+            };
+            "pause-track" = {
+              "enabled" = false;
+            };
+            "previous-track" = {
+              "enabled" = false;
+            };
+            "resume-track" = {
+              "enabled" = false;
+            };
+          };
+        };
         "@sovereign/store.vicinae.awww-switcher" = {
           preferences = {
             transitionDuration = "1";
@@ -76,6 +92,9 @@
                 prefTag = "";
                 tags = "";
               };
+            };
+            openWorkspaceCommand = {
+              enabled = false;
             };
             randomNoteCommand = {
               enabled = false;
