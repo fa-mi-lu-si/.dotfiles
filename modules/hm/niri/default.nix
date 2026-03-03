@@ -150,14 +150,14 @@
       "Mod+Shift+End".action = consume-or-expel-window-right;
       "Mod+F".action = fullscreen-window;
       "Mod+XF86AudioPlay".action = fullscreen-window;
-      # "Mod+Shift+G".action =
-      #   nu
-      #   # nu
-      #   ''
-      #     niri msg -j windows | from json
-      #     | where workspace_id == (niri msg -j workspaces | from json | where is_focused == true | first | get id)
-      #     | each {niri msg action toggle-window-floating --id $in.id}
-      #   '';
+      "Mod+Ctrl+Semicolon".action =
+        nu
+        # nu
+        ''
+          niri msg -j windows | from json
+          | where workspace_id == (niri msg -j workspaces | from json | where is_focused == true | first | get id)
+          | each {niri msg action toggle-window-floating --id $in.id}
+        '';
       "Mod+Shift+Semicolon".action = toggle-window-floating;
       "Mod+Semicolon".action = switch-focus-between-floating-and-tiling;
       "Mod+R".action = switch-preset-column-width;
