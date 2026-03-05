@@ -35,10 +35,6 @@
     terminal = true;
   };
 
-  programs.fuzzel = {
-    enable = true;
-  };
-
   services.poweralertd = {
     enable = true;
   };
@@ -47,7 +43,7 @@
     enable = true;
     settings = {
       global = {
-        dmenu = "fuzzel -d";
+        dmenu = "vicinae dmenu";
       };
     };
   };
