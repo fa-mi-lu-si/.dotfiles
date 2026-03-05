@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [adwaita-icon-theme morewaita-icon-theme];
+  home.packages = with pkgs; [adwaita-icon-theme]; # morewaita requires adwaita installed
 
   stylix = {
     enable = true;
@@ -7,6 +7,7 @@
       enable = true;
       dark = "MoreWaita";
       light = "MoreWaita";
+      package = pkgs.morewaita-icon-theme;
     };
   };
 }
