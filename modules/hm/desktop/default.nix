@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./spicetify.nix
+    ./spicetify
     ./obsidian.nix
     ./swww.nix
     ./vicinae.nix

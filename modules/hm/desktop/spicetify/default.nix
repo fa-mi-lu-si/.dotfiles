@@ -16,8 +16,14 @@
       hidePodcasts
       # groupSession
       bookmark
-      keyboardShortcut
+      {
+        src = ./extensions;
+        name = "keyboardShortcut.js";
+        # edited some keybindings from
+        # https://github.com/spicetify/cli/blob/main/Extensions/keyboardShortcut.js
+      }
       shuffle # shuffle+ (special characters are sanitized out of extension names)
+      aiBandBlocker
     ];
     enabledCustomApps = with spicePkgs.apps; [
       newReleases
