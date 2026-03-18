@@ -82,7 +82,7 @@ $env.config.keybindings = [
     mode: emacs
     event: {
       send: executehostcommand
-      cmd: "yy"
+      cmd: "y"
     }
   }
   {

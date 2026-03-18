@@ -52,7 +52,7 @@ in {
     epub-thumbnailer
     exiftool
     mediainfo
-    trash-cli # TODO: switch to trashy and create aliases
+    trash-cli
   ];
 
   programs.yazi = {
