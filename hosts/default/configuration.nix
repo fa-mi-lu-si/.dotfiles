@@ -22,6 +22,7 @@
     ../../modules/nixos/syncthing.nix
     ../../modules/nixos/stylix.nix
     ../../modules/nixos/kanata
+    ../../modules/nixos/wine.nix
   ];
 
   # Bootloader.
