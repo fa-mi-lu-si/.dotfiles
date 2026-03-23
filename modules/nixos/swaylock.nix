@@ -13,5 +13,8 @@
     HandleLidSwitchExternalPower = "lock";
     HandlePowerKey = "hibernate";
   };
-  systemd.sleep.extraConfig = "HibernateDelaySec=30m";
+  # systemd.sleep.extraConfig = "HibernateDelaySec=30m";
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "30m";
+  };
 }
