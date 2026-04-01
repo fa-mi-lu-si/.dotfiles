@@ -1,5 +1,5 @@
 (defsrc
-  tab  q    w    e    r    t     y    u    i    o    p    [
+  tab  q    w    e    r    t     y    u    i    o    p    [  kp/
    caps a    s    d    f    g     h    j    k    l    scln '
      lsft  z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rctl
@@ -48,11 +48,13 @@
   a_o (tap-hold-release 150 250 o ralt)
   
   qQ (tap-hold 100 400 q M-q)
+
+  kpt M-NumpadDivide
 )
 
 
 (deflayer colemak
-  tab  @qQ  w    f    p    b     j    l    u    y    scln S--
+  tab  @qQ  w    f    p    b     j    l    u    y    scln S-- @kpt
    esc  @a_a @m_r @c_s @s_t g     m    @s_n @c_e @m_i @a_o '
      XX    x    c    d    v    z    k    h    @cnm .    /    rsft
   lctl @ml2 @nav           @spa           @col XX
@@ -79,7 +81,7 @@
 )
 
 (deflayer navigation
-  _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn scln   _
+  _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn scln   _ @kpt
    esc  @la   lmet lctl lsft XX    f9   left down rght tab  _
      XX    XX   XX   del  XX   XX   spc  home @mnm end  XX   rsft
   _    @ml2 @nav           @rts           @col XX
@@ -184,14 +186,14 @@ XX   |    #    _    @      ^    $    {    }    XX
 
 
 (deflayer symbols
-  XX   S-5  @am  @plu @bt  \     XX   @al  @sl  @sr  @ar  [
+  XX   S-5  @am  @plu @bt  \     XX   @al  @sl  @sr  @ar  [ @kpt
    XX   @ex  @co  @da  @eq  /     S-8  @sq  @pl  @pr  @qu  '
      XX    S-\  S-3  S--  S-2  XX   S-6  @ds  @bl  @br  XX   rsft
   XX   XX   bspc           spc            XX   XX
 )
 
 (deflayer numbers
-  XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX @kpt
    XX   @n8  @n4  @n2  @n1  XX    XX   lsft lctl lmet lalt XX
      XX    XX   XX   @n0  XX   XX   XX   XX   XX   XX   XX   rsft
   @qwe XX   bspc           spc            XX   XX
@@ -201,7 +203,7 @@ XX   |    #    _    @      ^    $    {    }    XX
   ctb (fork tab (layer-switch colemak) (ralt))
 )
 (deflayer qwerty
-  @ctb q    w    e    r    t     y    u    i    o    p    [
+  @ctb q    w    e    r    t     y    u    i    o    p    [ kp/
    caps a    s    d    f    g     h    j    k    l    scln '
      lsft  z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rctl

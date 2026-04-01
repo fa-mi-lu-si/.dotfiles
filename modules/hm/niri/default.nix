@@ -129,6 +129,7 @@
       nu = spawn "nu" "-c";
     in {
       "Mod+T".action = spawn "ghostty";
+      "Mod+KP_Divide".action = spawn "sh" "${config.xdg.configHome}/work.sh";
       "Mod+Shift+T".action = spawn "wezterm";
       "Mod+E".action = spawn "nautilus";
       "Mod+B".action = spawn "librewolf";
