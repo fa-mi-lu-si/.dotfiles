@@ -4,23 +4,23 @@
     yazi = pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "b8860253fc44e500edeb7a09db648a829084facd";
-      hash = "sha256-29K8PmBoqAMcQhDIfOVnbJt2FU4BR6k23Es9CqyEloo=";
+      rev = "e84f4fe5122b659544b4984e6b7daf14383dbe8f";
+      hash = "sha256-FVVUU9c3VQBvfjwBBilbBS8ygU4U97L2DwdT4s55OW0=";
     };
 
     # https://github.com/Rolv-Apneseth/starship.yazi
     starship = pkgs.fetchFromGitHub {
       owner = "Rolv-Apneseth";
       repo = "starship.yazi";
-      rev = "a63550b2f91f0553cc545fd8081a03810bc41bc0";
-      hash = "sha256-PYeR6fiWDbUMpJbTFSkM57FzmCbsB4W4IXXe25wLncg=";
+      rev = "a83710153ab5625a64ef98d55e6ddad480a3756f";
+      hash = "sha256-CPRVJVunBLwFLCoj+XfoIIwrrwHxqoElbskCXZgFraw=";
     };
     # https://github.com/grappas/wl-clipboard.yazi
     wl-clipboard = pkgs.fetchFromGitHub {
       owner = "grappas";
       repo = "wl-clipboard.yazi";
-      rev = "c4edc4f6adf088521f11d0acf2b70610c31924f0";
-      hash = "sha256-jlZgN93HjfK+7H27Ifk7fs0jJaIdnOyY1wKxHz1wX2c=";
+      rev = "e9a38e47d07549968019702bdafdc4ed07151b7d";
+      hash = "sha256-3PRQl4TvuOe5DwVi1gmtmfTOEVZWRayijIbnPgaR3L8=";
     };
 
     # https://github.com/kirasok/epub-preview.yazi
@@ -35,16 +35,16 @@
     exifaudio = pkgs.fetchFromGitHub {
       owner = "Sonico98";
       repo = "exifaudio.yazi";
-      rev = "e766cd273246612fe71fc18d2126619a41273c32";
-      hash = "sha256-aniuY14pXcoaW6YkUwt7hTl9mWjl5HoOPhHkuY4ooAw=";
+      rev = "4506f9d5032e714c0689be09d566dd877b9d464e";
+      hash = "sha256-RWCqWBpbmU3sh/A+LBJPXL/AY292blKb/zZXGvIA5/o=";
     };
 
     # https://github.com/uhs-robert/recycle-bin.yazi
     recycle-bin = pkgs.fetchFromGitHub {
       owner = "uhs-robert";
       repo = "recycle-bin.yazi";
-      rev = "3f36069567b4602f841f2377c5f182f9a2480dea";
-      hash = "sha256-f9L8ipErNwFKMqIKUa+1oPmPBk0oh5UCkJJa1tTiIv0=";
+      rev = "fa687116c46a784e664ef96619b32abf51f29b06";
+      hash = "sha256-lpxTGWA15szM5VJ+qvV2+GTg7HXiZaZfyWyjeNMsTSM=";
     };
   };
 in {
@@ -101,7 +101,19 @@ in {
     initLua =
       #lua
       ''
-        require("starship"):setup()
+        require("starship"):setup({
+            hide_flags = true,
+            flags_after_prompt = true,
+            -- Custom starship configuration file to use
+            -- config_file = "~/.config/starship_full.toml", -- Default: nil
+            show_right_prompt = false,
+            -- Whether to hide the count widget, in case you want only your right prompt to show up. Only has
+            -- an effect when `show_right_prompt = true`
+            hide_count = false,
+            -- Separator to place between the right prompt and the count widget. Use `count_separator = ""`
+            -- to have no space between the widgets.
+            count_separator = " ",
+        })
         require("recycle-bin"):setup()
 
         th.git = th.git or {}
