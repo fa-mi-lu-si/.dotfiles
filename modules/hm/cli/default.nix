@@ -79,7 +79,6 @@
   };
 
   home.packages = with pkgs; [
-    presenterm
     serie
 
     wl-clipboard
