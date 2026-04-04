@@ -83,7 +83,6 @@
     serie
 
     wl-clipboard
-    handlr-regex
     cyme
     bluetuith
     ouch
