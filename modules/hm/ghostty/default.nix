@@ -15,6 +15,7 @@
         "ctrl+super+enter=toggle_split_zoom"
         "ctrl+super+f9=toggle_tab_overview"
         "ctrl+shift+t=new_tab"
+        "ctrl+shift+f=start_search"
         "ctrl+shift+w=close_tab"
         "ctrl+super+w=close_surface"
 
