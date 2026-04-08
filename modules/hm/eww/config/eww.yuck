@@ -1,3 +1,5 @@
 (include "variables.yuck")
+(include "stylix.yuck")
 (include "modules/bar.yuck")
 (include "modules/player.yuck")
+(include "modules/test-window.yuck")

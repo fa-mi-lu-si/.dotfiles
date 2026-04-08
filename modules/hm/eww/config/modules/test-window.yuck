@@ -1,0 +1,34 @@
+(defwidget test-widget []
+  (box
+    :space-evenly "false"
+
+    ; (box
+    ;   :class "test-image"
+    ;   :style { "background-image: url('${EWW_CONFIG_DIR}/assets/battery-level-90-symbolic.svg');" }
+    ; )
+
+    ; (box
+    ;   :class "test-image"
+    ;   :style { "background-image: url('" + "${EWW_CONFIG_DIR}/assets/music-solid.png" + "');" }
+    ; )
+
+    (image
+      :class "test-image"
+      :path "${EWW_CONFIG_DIR}/assets/battery-level-90-symbolic.svg"
+    	:image-height 160
+      :fill-svg palette-fg
+    )
+
+    (box
+      "this is a test widget"
+    )
+  )
+)
+
+
+(defwindow test-window
+  :monitor "eDP-1"
+  :stacking 'fg'
+  :geometry (geometry :x 60 :y 20 :anchor "bottom right")
+  (test-widget)
+)
