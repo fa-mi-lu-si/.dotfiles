@@ -6,7 +6,7 @@
   imports = [
     ./spicetify
     ./obsidian.nix
-    ./swww.nix
+    ./awww.nix
     ./vicinae.nix
     ./scrcpy.nix
   ];
