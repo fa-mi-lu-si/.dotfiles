@@ -17,7 +17,6 @@
     ../../modules/hm/ghostty
     ../../modules/hm/vscode
     ../../modules/hm/helix
-    ../../modules/hm/newm-next
     ../../modules/hm/niri
     ../../modules/hm/eww
     ../../modules/hm/stylix.nix

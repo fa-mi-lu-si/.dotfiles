@@ -13,7 +13,6 @@
     ../../modules/nixos/nix.nix
     ../../modules/nixos/sops.nix
     ../../modules/nixos/kde-connect.nix
-    ../../modules/nixos/newm-next.nix
     ../../modules/nixos/niri.nix
     ../../modules/nixos/swaylock.nix
     ../../modules/nixos/desktop.nix
