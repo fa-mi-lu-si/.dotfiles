@@ -16,7 +16,11 @@
       close_on_focus_loss = true;
       favorites = [];
       launcher_window = {
-        client_side_decorations = {enabled = true;};
+        client_side_decorations = {
+          enabled = true;
+          shadow_size = 0;
+        };
+        compact_mode = {enabled = true;};
       };
       pop_to_root_on_close = true;
       keybinds = {
