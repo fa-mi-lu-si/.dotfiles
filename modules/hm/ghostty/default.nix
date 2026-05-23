@@ -10,6 +10,7 @@
       window-padding-y = 18;
       custom-shader = "${./cursor_smear.glsl}";
       custom-shader-animation = true;
+      focus-follows-mouse = true;
       keybind = [
         "ctrl+shift+e=toggle_command_palette"
         "ctrl+super+enter=toggle_split_zoom"
