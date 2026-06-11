@@ -24,6 +24,20 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+
+    wireplumber.extraConfig = {
+      "10-bluez" = {
+        "monitor.bluez.properties" = {
+          # Disable Bluetooth speaker mode.
+          # Keep only roles needed to use Bluetooth headsets.
+          "bluez5.roles" = [
+            "a2dp_source"
+            "bap_source"
+            "hfp_ag"
+          ];
+        };
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
