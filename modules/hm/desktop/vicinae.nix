@@ -20,7 +20,6 @@
           enabled = true;
           shadow_size = 0;
         };
-        compact_mode = {enabled = true;};
       };
       pop_to_root_on_close = true;
       keybinds = {
