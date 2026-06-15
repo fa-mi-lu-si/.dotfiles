@@ -19,9 +19,15 @@
   margin: 4px;
 
   .indicator-icon {
-    padding: 5px 2px;
+    padding: 5px 5px;
   };
 
+  image {
+  	background-size: cover;	
+  	background-position: center;
+    padding: 5px 5px;
+  };
+  
   scale {
     all: unset;
   

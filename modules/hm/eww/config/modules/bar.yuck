@@ -1,14 +1,3 @@
-(defwidget bar []
-  (centerbox
-    :orientation "v"
-    :class "bar"
-    (box :valign "start"
-      (top))
-    (box :valign "center"
-      (middle))
-    (box :valign "end"
-      (bottom))))
-
 (defwidget niri-workspace-widget [monitor]
   (box
     :class "workspaces"
@@ -36,15 +25,15 @@
     :class "indicator"
     :orientation "v"
     :space-evenly false
-    :visible {network.name != ""}
     (scale
       :value {network.strength}
       :max 100
       :min 0
       :orientation "h")
-    (box
-      :class "indicator-icon"
-      {network.icon})))
+    (image
+      :path "${EWW_CONFIG_DIR}/assets/${network.image}"
+      :fill-svg palette-fg)
+    ))
 
 (defwidget battery []
   (box
@@ -57,25 +46,28 @@
       :max 100
       :min 0
       :orientation "h")
-    (box
-      :class "indicator-icon"
-      :orientation "v"
+    (image
       :tooltip {EWW_BATTERY.BAT1.capacity}
-      {
-      EWW_BATTERY.BAT1.status == "Full" ? "󱟢" :
-      EWW_BATTERY.BAT1.status == "Charging" ? "󰚥" :
-      EWW_BATTERY.BAT1.capacity <= 10 ? "󰂃" :
-      EWW_BATTERY.BAT1.capacity <= 20 ? "󰂃" :
-      EWW_BATTERY.BAT1.capacity <= 30 ? "󰁻" :
-      EWW_BATTERY.BAT1.capacity <= 40 ? "󰁼" :
-      EWW_BATTERY.BAT1.capacity <= 50 ? "󰁽" :
-      EWW_BATTERY.BAT1.capacity <= 60 ? "󰁾" :
-      EWW_BATTERY.BAT1.capacity <= 70 ? "󰁿" :
-      EWW_BATTERY.BAT1.capacity <= 80 ? "󰂀" :
-      EWW_BATTERY.BAT1.capacity <= 90 ? "󰂁" :
-      EWW_BATTERY.BAT1.capacity <= 100 ? "󰂂" :
-      ""}
-      )))
+      :path "${EWW_CONFIG_DIR}/assets/${
+        EWW_BATTERY.BAT1.status == "Full" ? "battery-level-100-symbolic.svg" :
+        EWW_BATTERY.BAT1.status == "Charging" ? "battery-level-100-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 10 ? "battery-action-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 20 ? "battery-caution-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 30 ? "battery-caution-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 40 ? "battery-level-40-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 50 ? "battery-level-50-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 60 ? "battery-level-60-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 70 ? "battery-level-70-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 80 ? "battery-level-80-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 90 ? "battery-level-90-symbolic.svg" :
+        EWW_BATTERY.BAT1.capacity <= 100 ? "battery-level-100-symbolic.svg" :
+        "battery-missing-symbolic.svg"}"
+      :fill-svg {
+        EWW_BATTERY.BAT1.capacity <= 10 ? palette-red :
+        EWW_BATTERY.BAT1.capacity <= 20 ? palette-orange :
+        palette-fg
+      })
+  ))
 
 (defwidget player-button []
   (box
@@ -84,16 +76,20 @@
     :visible {status != ""}
     (eventbox
       :onclick "playerctl play-pause"
-      :class "indicator-icon"
       :onhover "eww -c ${EWW_CONFIG_DIR} open player-window"
       (box
         :orientation "v"
-        "󰲸"
-        {
-          status == "Playing" ? "":
-          status == "Paused" ? "":
-          status == "Stopped" ? "":
-          "󰝛"}))))
+        (image
+          :path "${EWW_CONFIG_DIR}/assets/playlist-symbolic.svg"
+          :fill-svg palette-fg)
+        (image
+          :path "${EWW_CONFIG_DIR}/assets/${
+            status == "Playing" ? "pause-symbolic.svg":
+            status == "Paused" ? "play-symbolic.svg":
+            status == "Stopped" ? "play-symbolic.svg":
+            ""}"
+          :fill-svg palette-fg)
+        ))))
 
 (defvar show_tray false)
 (defwidget tray []
@@ -105,7 +101,9 @@
       :orientation "v"
       :class "indicator"
       :space-evenly false
-      ""
+      (image
+        :path "${EWW_CONFIG_DIR}/assets/up-small-symbolic.svg"
+        :fill-svg palette-fg)
       (revealer
         :class "indicator-icon"
         :transition "slidedown"
@@ -129,9 +127,13 @@
       :onchange "brightnessctl s -e {}%")
     (eventbox
       :onscroll "brightnessctl set $( [ '{}' = up ] && echo +1% || echo 1%- )"
-      (box
-        :class "indicator-icon"
-        ""))
+      (image
+        :path "${EWW_CONFIG_DIR}/assets/${
+          bri <= 25 ? "display-brightness-low-symbolic.svg" :
+          bri <= 50 ? "display-brightness-medium-symbolic.svg" :
+          "display-brightness-high-symbolic.svg"
+        }"
+        :fill-svg palette-fg ))
     ))
 
 (defwidget volume []
@@ -149,13 +151,16 @@
       :onclick "xdg-terminal-exec wiremix"
       :onrightclick "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       :onscroll "wpctl set-volume @DEFAULT_AUDIO_SINK@ $([[ '{}' == up ]] && printf '0.01+' || printf '0.01-')"
-      (box :class "indicator-icon" {
-        vol == 0 || is_muted == "[MUTED]" ? "󰝟" :
-        vol <= 25 ? "󰕿" :
-        vol <= 50 ? "󰖀" :
-        vol <= 75 ? "󰕾" :
-        ""
-      }))))
+      (image
+        :path "${EWW_CONFIG_DIR}/assets/${
+          vol == 0 || is_muted == "[MUTED]" ? "speaker-0-symbolic.svg" :
+          vol <= 25 ? "speaker-1-symbolic.svg" :
+          vol <= 50 ? "speaker-2-symbolic.svg" :
+          vol <= 75 ? "speaker-3-symbolic.svg" :
+          "speaker-4-symbolic.svg"
+        }"
+        :fill-svg palette-fg
+      ))))
 
 (defwidget top []
   (box (niri-workspace-widget :monitor 0)))
@@ -173,6 +178,17 @@
     (brightness)
     (battery)
     (network_icon)))
+
+(defwidget bar []
+  (centerbox
+    :orientation "v"
+    :class "bar"
+    (box :valign "start"
+      (top))
+    (box :valign "center"
+      (middle))
+    (box :valign "end"
+      (bottom))))
 
 (defwindow sidebar
   :monitor "eDP-1"

@@ -20,6 +20,8 @@
         done
 
         if [ -s "$screenshot_path" ]; then
+            # TODO: rework this so the script takes the device id as an argument,
+            # to correctly handle when we have multiple connected devices
             kdeconnect-cli -d "$(kdeconnect-cli -a --id-only)" --share "$screenshot_path"
         else
             kdeconnect-cli -d "$(kdeconnect-cli -a --id-only)" --ping-msg "Screenshot timed out or was cancelled"
