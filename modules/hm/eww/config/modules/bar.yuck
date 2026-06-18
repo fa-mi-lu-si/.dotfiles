@@ -50,7 +50,7 @@
       :tooltip {EWW_BATTERY.BAT1.capacity}
       :path "${EWW_CONFIG_DIR}/assets/${
         EWW_BATTERY.BAT1.status == "Full" ? "battery-level-100-symbolic.svg" :
-        EWW_BATTERY.BAT1.status == "Charging" ? "battery-level-100-symbolic.svg" :
+        EWW_BATTERY.BAT1.status == "Charging" ? "battery-level-100-charged-symbolic.svg" :
         EWW_BATTERY.BAT1.capacity <= 10 ? "battery-action-symbolic.svg" :
         EWW_BATTERY.BAT1.capacity <= 20 ? "battery-caution-symbolic.svg" :
         EWW_BATTERY.BAT1.capacity <= 30 ? "battery-caution-symbolic.svg" :
