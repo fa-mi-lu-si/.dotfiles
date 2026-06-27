@@ -1,35 +1,31 @@
-# Abbreviations
-# https://github.com/nushell/nushell/issues/5597
-
-let abbreviations = {
-    's': 'sudo'
-    'ho': 'handlr open'
-    'hf': 'hx ...(fzf -m | lines)'
-    'fh': 'hx ...(fzf -m | lines)'
-    'h.': 'hx .'
-    'cl': 'clear'
-    'g': 'git'
-    'gp': 'git push'
-    'gu': 'git pull'
-    'gl': 'serie'
-    'ga': 'git add'
-    'ga.': 'git add .'
-    'gad': 'git add .'
-    'gap': 'git add --patch'
-    'gaa': 'git add -A'
-    'gc': 'git commit'
-    'gcm': 'git commit -m ""'
-    'gcam': 'git commit -a -m ""'
-    'gco': 'git checkout'
-    'gs': 'git status -s'
-    'gss': 'git status'
-    'gsw': 'git switch'
-    'gd': 'git diff'
-    'mp': 'mpremote'
-    'ard': 'arduino-cli'
-    'cr': 'cargo run'
-    'nr': 'nix run nixpkgs#'
-    'ns': 'nix shell nixpkgs#'
+$env.config.abbreviations = {
+    s: 'sudo'
+    h.: 'hx .'
+    hf: 'hx ...(fzf -m | lines)'
+    fh: 'hx ...(fzf -m | lines)'
+    cl: 'clear'
+    g: 'git'
+    gp: 'git push'
+    gu: 'git pull'
+    gl: 'serie'
+    ga: 'git add'
+    ga.: 'git add .'
+    gad: 'git add .'
+    gap: 'git add --patch'
+    gaa: 'git add -A'
+    gc: 'git commit'
+    gcm: 'git commit -m ""'
+    gcam: 'git commit -a -m ""'
+    gco: 'git checkout'
+    gs: 'git status -s'
+    gss: 'git status'
+    gsw: 'git switch'
+    gd: 'git diff'
+    mp: 'mpremote'
+    ard: 'arduino-cli'
+    cr: 'cargo run'
+    nr: 'nix run nixpkgs#'
+    ns: 'nix shell nixpkgs#'
 }
 
 $env.config.show_banner = false
@@ -85,55 +81,8 @@ $env.config.keybindings = [
       cmd: "y"
     }
   }
-  {
-    name: abbr_menu
-    modifier: None
-    keycode: enter
-    mode: [emacs, vi_normal, vi_insert]
-    event: [
-      { send: menu name: abbr_menu }
-      { send: enter }
-    ]
-  }
-  {
-    name: abbr_menu
-    modifier: None
-    keycode: space
-    mode: [emacs, vi_normal, vi_insert]
-    event: [
-      { send: menu name: abbr_menu }
-      { edit: insertchar value: ' '}
-    ]
-  }
 ]
 
-
-$env.config.menus = [
-  {
-    name: abbr_menu
-    only_buffer_difference: false
-    marker: none
-    type: {
-      layout: columnar
-      columns: 1
-      col_width: 20
-      col_padding: 2
-    }
-    style: {
-      text: green
-      selected_text: green_reverse
-      description_text: yellow
-    }
-    source: { |buffer, position|
-      let matches = $abbreviations | columns | where $it == $buffer
-      if ($matches | is-empty) {
-        { value: $buffer }
-      } else {
-        { value: ($abbreviations | get $matches.0) }
-      }
-    }
-  }
-]
 
 $env.TRANSIENT_PROMPT_COMMAND = {||
   match $env.LAST_EXIT_CODE {
