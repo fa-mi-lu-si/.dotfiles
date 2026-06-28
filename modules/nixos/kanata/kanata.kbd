@@ -83,7 +83,7 @@
 (deflayer navigation
   _    @qQ  @vd  @py  @vu  XX    XX   pgup up   pgdn scln   _ @kpt
    esc  @la   lmet lctl lsft XX    f9   left down rght tab  _
-     XX    XX   XX   del  XX   XX   spc  home @mnm end  XX   rsft
+     XX    XX   XX   del  spc  XX   spc  home @mnm end  XX   rsft
   _    @ml2 @nav           @rts           @col XX
 )
 
