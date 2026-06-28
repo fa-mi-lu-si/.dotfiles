@@ -85,6 +85,8 @@
     cyme
     bluetuith
     ouch
+
+    systemctl-tui
   ];
 
   programs.fastfetch = {
