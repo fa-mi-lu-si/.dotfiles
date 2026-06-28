@@ -147,6 +147,16 @@ in {
           desc = "Goto Vault";
         }
         {
+          on = "<Delete>";
+          run = "remove";
+          desc = "Trash selected files";
+        }
+        {
+          on = "<S-Delete>";
+          run = "remove --permanently";
+          desc = "Permanently delete selected files";
+        }
+        {
           on = ["g" "t"];
           run = "plugin recycle-bin open";
           desc = "Goto Trash";
