@@ -4,6 +4,7 @@
 (
     address: "127.0.0.1:6600",
     password: None,
+    lyrics_dir: "~/Music",
     theme: Some("stylix"),
     cache_dir: None,
     on_song_change: None,
@@ -14,7 +15,7 @@
     enable_mouse: true,
     enable_config_hot_reload: true,
     status_update_interval_ms: 1000,
-    rewind_to_start_sec: None,
+    rewind_to_start_sec: 10,
     select_current_song_on_change: false,
     ignore_leading_the: true,
     browser_song_sort: [Disc, Track, Artist, Title],
@@ -98,6 +99,7 @@
             "<C-s>":     Save,
             "a":         AddToPlaylist,
             "d":         Delete,
+            "<Delete>":  Delete,
             "i":         ShowInfo,
             "C":         JumpToCurrent,
         },
@@ -112,6 +114,7 @@
             (value: "album",       label: "Album"),
             (value: "albumartist", label: "Album Artist"),
             (value: "title",       label: "Title"),
+            (value: "genre",       label: "Genre"),
         ],
     ),
     artists: (
@@ -127,12 +130,8 @@
             ),
         ),
         // (
-        //     name: "Directories",
-        //     pane: Pane(Directories),
-        // ),
-        // (
-        //     name: "Artists",
-        //     pane: Pane(Artists),
+        //     name: "Lyrics",
+        //     pane: Pane(Lyrics),
         // ),
         (
             name: "Album Artists",
