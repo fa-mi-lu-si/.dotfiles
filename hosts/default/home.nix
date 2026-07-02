@@ -7,6 +7,7 @@
   imports = [
     ../../modules/hm/xdg.nix
     ../../modules/hm/cli
+    ../../modules/hm/cli/beets.nix
     ../../modules/hm/zen-browser
     ../../modules/hm/firefox
     ../../modules/hm/sops.nix
