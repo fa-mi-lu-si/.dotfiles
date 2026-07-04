@@ -2,7 +2,9 @@
   pkgs,
   config,
   ...
-}: {
+}: let
+  stylix-colors = config.lib.stylix.colors.withHashtag;
+in {
   imports = [
     ./niri-screen-time.nix
   ];
@@ -29,7 +31,7 @@
 
     prefer-no-csd = true;
     overview = {
-      zoom = 0.5;
+      zoom = 0.4;
       backdrop-color = config.lib.stylix.colors.withHashtag.base00;
       workspace-shadow.enable = false;
     };
@@ -84,7 +86,11 @@
     ];
 
     layout = {
-      border.width = 2;
+      border = {
+        width = 2;
+        active = {color = stylix-colors.base04;};
+        inactive = {color = stylix-colors.base00;};
+      };
       gaps = 4;
       always-center-single-column = true;
       empty-workspace-above-first = true;
