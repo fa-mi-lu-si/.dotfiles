@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  config,
+  ...
+}: {
   imports = [
     inputs.vicinae.homeManagerModules.default
   ];
@@ -107,7 +111,7 @@
       };
       theme = {
         dark = {
-          icon_theme = "MoreWaita";
+          icon_theme = config.stylix.icons.dark;
           name = "stylix";
         };
       };
