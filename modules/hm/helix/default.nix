@@ -10,6 +10,7 @@
       editor = {
         line-number = "relative";
         bufferline = "multiple";
+        soft-wrap.wrap-indicator = "󰌑";
 
         end-of-line-diagnostics = "hint";
         inline-diagnostics = {
