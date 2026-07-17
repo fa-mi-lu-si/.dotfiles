@@ -50,9 +50,9 @@
 
   programs.foliate.enable = true;
 
-  programs.vesktop = {
-    enable = true;
-  };
+  # programs.vesktop = {
+  #   enable = true;
+  # };
 
   programs.mpv = {
     enable = true;

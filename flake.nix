@@ -50,6 +50,7 @@
     nixosConfigurations.samy-nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
+        {nixpkgs.overlays = [(import ./pkgs/overlay.nix {inherit self inputs;})];}
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
