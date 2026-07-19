@@ -6,7 +6,6 @@
         color = "default";
         battery = true;
         show_table_scroll_position = false;
-        tree = false;
       };
 
       # Custom layout
