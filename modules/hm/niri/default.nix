@@ -2,9 +2,7 @@
   pkgs,
   config,
   ...
-}: let
-  stylix-colors = config.lib.stylix.colors.withHashtag;
-in {
+}: {
   imports = [
     ./niri-screen-time.nix
   ];
@@ -35,12 +33,14 @@ in {
       backdrop-color = config.lib.stylix.colors.withHashtag.base00;
       workspace-shadow.enable = false;
     };
+
     layer-rules = [
       {
         matches = [{namespace = "awww-daemon";}];
         place-within-backdrop = true;
       }
     ];
+
     window-rules = [
       # Rounded Corners
       {
@@ -55,6 +55,8 @@ in {
         clip-to-geometry = true;
         draw-border-with-background = false;
       }
+
+      # TODO: opacity 0.95 and blur when available
 
       {
         matches = [{title = "^Picture-in-Picture$";}];
@@ -88,8 +90,6 @@ in {
     layout = {
       border = {
         width = 2;
-        active = {color = stylix-colors.base04;};
-        inactive = {color = stylix-colors.base00;};
       };
       gaps = 4;
       always-center-single-column = true;

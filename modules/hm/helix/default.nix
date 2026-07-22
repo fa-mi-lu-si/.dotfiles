@@ -19,8 +19,8 @@
         };
 
         cursor-shape = {
-          normal = "underline";
-          select = "underline";
+          normal = "bar";
+          select = "bar";
           insert = "bar";
         };
       };
