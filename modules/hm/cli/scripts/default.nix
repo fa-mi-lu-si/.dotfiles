@@ -1,5 +1,31 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = [
+    (pkgs.writeScriptBin "timer"
+      #nu
+      ''
+        #! /usr/bin/env nu
+
+        def main [
+          time: duration,
+          --fullscreen(-f),
+          --name(-n): string,
+          --format: string = "24h"
+        ] {
+          ${lib.getExe pkgs.timer} ...(
+            []
+            | append (if $fullscreen { "--fullscreen" } else { [] })
+            | append (if ($name | is-not-empty) { ["--name" $name] } else { [] })
+            | append ["--format" $format]
+            | append (($time / 1sec) | math round)
+          )
+          pw-play ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/complete.oga
+        }
+      '')
+
     (pkgs.writeShellApplication {
       name = "send-screenshot-kdeconnect";
       text = ''
