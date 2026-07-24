@@ -9,6 +9,8 @@
     overrideFolders = true;
 
     settings = {
+      options.relaysEnabled = false;
+
       devices = {
         "samy-nix-hand" = {id = "TNZDXGR-BAXWRQG-36PTCRU-RGBYRQD-RPGL5FD-EA2IB2K-UNBRUOE-TYIYDQ5";};
       };
