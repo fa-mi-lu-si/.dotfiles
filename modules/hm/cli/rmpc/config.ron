@@ -10,7 +10,7 @@
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
-    scrolloff: 0,
+    scrolloff: 3,
     wrap_navigation: false,
     enable_mouse: true,
     enable_config_hot_reload: true,
@@ -126,7 +126,7 @@
             name: "Queue",
             pane: Split(
                 direction: Horizontal,
-                panes: [(size: "40%", pane: Pane(AlbumArt)), (size: "60%", pane: Pane(Queue))],
+                panes: [(size: "35%", pane: Pane(AlbumArt)), (size: "65%", pane: Pane(Queue))],
             ),
         ),
         // (

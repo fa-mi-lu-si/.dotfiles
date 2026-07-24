@@ -35,13 +35,13 @@
   song_table_format: [
     (
       prop: (kind: Property(Artist),
-        default: (kind: Text("Unknown"))
+        default: (kind: Text(""))
       ),
       width: "20%",
     ),
     (
       prop: (kind: Property(Title), style: (fg: "white"),
-        default: (kind: Text("Unknown"), style: (fg: "white"))
+        default: (kind: Text(""), style: (fg: "white"))
       ),
       width: "65%",
     ),
@@ -112,7 +112,7 @@
       (
         left: [
           (kind: Property(Song(Artist)),
-            default: (kind: Text("Unknown"))
+            default: (kind: Text(""))
           ),
         ],
         center: [
