@@ -25,8 +25,7 @@
       shuffle # shuffle+ (special characters are sanitized out of extension names)
       aiBandBlocker
     ];
-    enabledCustomApps = with spicePkgs.apps; [
-      newReleases
-    ];
+    # enabledCustomApps = with spicePkgs.apps; [
+    # ];
   };
 }
