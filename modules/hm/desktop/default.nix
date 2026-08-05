@@ -26,6 +26,8 @@
     euphonica
 
     authenticator
+
+    kicad-small
   ];
 
   xdg.desktopEntries."wiremix" = {

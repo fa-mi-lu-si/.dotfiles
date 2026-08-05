@@ -9,7 +9,12 @@
     overrideFolders = true;
 
     settings = {
-      options.relaysEnabled = false;
+      options = {
+        relaysEnabled = false;
+        globalAnnounceEnabled = false;
+        natEnabled = false;
+        localAnnounceEnabled = true;
+      };
 
       devices = {
         "samy-nix-hand" = {id = "TNZDXGR-BAXWRQG-36PTCRU-RGBYRQD-RPGL5FD-EA2IB2K-UNBRUOE-TYIYDQ5";};
