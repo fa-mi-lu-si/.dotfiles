@@ -58,6 +58,36 @@ in {
   programs.yazi = {
     enable = true;
 
+    settings = {
+      mgr = {
+        ratio = [0 2 3];
+      };
+      plugin = {
+        prepend_previewers = [
+          {
+            mime = "audio/*";
+            run = "exifaudio";
+          }
+          {
+            mime = "application/epub+zip";
+            run = "epub-preview";
+          }
+        ];
+        prepend_fetchers = [
+          {
+            group = "git";
+            url = "*";
+            run = "git";
+          }
+          {
+            group = "git";
+            url = "*/";
+            run = "git";
+          }
+        ];
+      };
+    };
+
     plugins = {
       starship = plugins.starship;
       git = "${plugins.yazi}/git.yazi";
@@ -65,37 +95,6 @@ in {
       epub-preview = plugins.epub-preview;
       exifaudio = plugins.exifaudio;
       recycle-bin = plugins.recycle-bin;
-    };
-    theme = {
-      indicator = {
-        padding = {
-          open = "█";
-          close = "█";
-        };
-      };
-      tabs = {
-        sep_inner = {
-          open = "";
-          close = "";
-        };
-        sep_outer = {
-          open = "";
-          close = "";
-        };
-      };
-      mgr = {
-        border_symbol = " ";
-      };
-      status = {
-        sep_left = {
-          open = "";
-          close = "";
-        };
-        sep_right = {
-          open = "";
-          close = "";
-        };
-      };
     };
 
     initLua =
@@ -234,33 +233,37 @@ in {
         }
       ];
     };
-    settings = {
-      plugin = {
-        prepend_previewers = [
-          {
-            mime = "audio/*";
-            run = "exifaudio";
-          }
-          {
-            mime = "application/epub+zip";
-            run = "epub-preview";
-          }
-        ];
-        prepend_fetchers = [
-          {
-            group = "git";
-            url = "*";
-            run = "git";
-          }
-          {
-            group = "git";
-            url = "*/";
-            run = "git";
-          }
-        ];
-      };
-    };
+
     theme = {
+      indicator = {
+        padding = {
+          open = "█";
+          close = "█";
+        };
+      };
+      tabs = {
+        sep_inner = {
+          open = "";
+          close = "";
+        };
+        sep_outer = {
+          open = "";
+          close = "";
+        };
+      };
+      mgr = {
+        border_symbol = " ";
+      };
+      status = {
+        sep_left = {
+          open = "";
+          close = "";
+        };
+        sep_right = {
+          open = "";
+          close = "";
+        };
+      };
       icon = {
         prepend_dirs = [
           {
