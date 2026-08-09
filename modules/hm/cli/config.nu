@@ -86,7 +86,7 @@ $env.config.keybindings = [
 
 $env.TRANSIENT_PROMPT_COMMAND = {||
   match $env.LAST_EXIT_CODE {
-    0 => $"(ansi green)❯(ansi reset) ",
-    _ => $"(ansi red)❯(ansi reset) "
+    0 => $"(ansi green)◇(ansi reset) ",
+    _ => $"(ansi red)◇(ansi reset) "
   }
 }
