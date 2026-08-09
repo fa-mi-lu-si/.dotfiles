@@ -11,6 +11,8 @@
       custom-shader-animation = true;
       focus-follows-mouse = true;
       mouse-hide-while-typing = true;
+      notify-on-command-finish = "unfocused";
+      notify-on-command-finish-action = "notify";
       keybind = [
         "ctrl+shift+e=toggle_command_palette"
         "ctrl+super+enter=toggle_split_zoom"
