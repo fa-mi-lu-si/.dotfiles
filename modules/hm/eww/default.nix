@@ -1,12 +1,13 @@
 {config, ...}: {
   programs.eww = {
     enable = true;
+    systemd.enable = true;
   };
 
-  xdg.configFile."eww" = {
-    source = ./config;
-    recursive = true;
-  };
+  # xdg.configFile."eww" = {
+  #   source = ./config;
+  #   recursive = true;
+  # };
 
   xdg.configFile."eww/stylix.scss".text = with config.lib.stylix.colors.withHashtag;
   #scss

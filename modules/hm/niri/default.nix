@@ -36,7 +36,10 @@
 
     layer-rules = [
       {
-        matches = [{namespace = "awww-daemon";}];
+        matches = [
+          {namespace = "awww-daemon";}
+          {namespace = "eww_background";}
+        ];
         place-within-backdrop = true;
       }
     ];
@@ -120,13 +123,7 @@
 
     spawn-at-startup = [
       {
-        command = ["eww" "daemon"];
-      }
-      {
         command = ["niri-screen-time" "-daemon"];
-      }
-      {
-        command = ["~/.config/eww/scripts/niri-watcher.nu" "${config.xdg.configHome}/eww"];
       }
     ];
 
@@ -151,7 +148,6 @@
       "Mod+L".action = spawn "swaylock";
       "Mod+A".action = toggle-column-tabbed-display;
       "Mod+F9".action = toggle-overview;
-      "Mod+Shift+F9".action = sh "eww close sidebar"; # get rid of a misbehaving sidebar
       "Mod+Shift+Q".action = quit;
       "Mod+Shift+Home".action = consume-or-expel-window-left;
       "Mod+Shift+End".action = consume-or-expel-window-right;
