@@ -53,9 +53,10 @@
         "browser.uidensity" = 1;
 
         # potatofox tweaks
-        "uc.tweak.borderless" = true;
+        # "uc.tweak.borderless" = true;
         "uc.tweak.no-panel-hint" = true;
         "uc.tweak.no-blur" = true;
+        "uc.tweak.sidebery.top-navbar" = false;
       };
       extensions.force = true;
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
@@ -134,6 +135,13 @@
     source = builtins.filterSource (path: type: baseNameOf path != "userContent.css") "${inputs.potatofox}/chrome";
     recursive = true;
   };
+  home.file.".librewolf/default/chrome/overrides.css".text =
+    #css
+    "
+      :root {
+        --uc-bg-opaque: var(--toolbar-background-color) !important;
+      }
+    ";
 
   stylix.targets.librewolf.profileNames = ["default"];
 }
