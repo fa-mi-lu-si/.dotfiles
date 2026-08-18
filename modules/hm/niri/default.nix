@@ -2,7 +2,9 @@
   pkgs,
   config,
   ...
-}: {
+}: let
+  stylix-colors = config.lib.stylix.colors.withHashtag;
+in {
   imports = [
     ./niri-screen-time.nix
   ];
@@ -92,7 +94,9 @@
 
     layout = {
       border = {
-        width = 2;
+        width = 1;
+        active = {color = stylix-colors.base04;};
+        inactive = {color = "transparent";};
       };
       gaps = 4;
       always-center-single-column = true;
