@@ -15,32 +15,32 @@
           type = "title";
         }
         {
-          format = "{2}";
+          format = "{name}";
           key = "  ";
           type = "os";
         }
         {
-          format = "{2}";
+          format = "{release}";
           key = "  ";
           type = "kernel";
         }
         {
-          format = "{1}";
+          format = "{all}";
           key = " 󰏖 ";
           type = "packages";
         }
         {
-          format = "{1}";
+          format = "{pretty-name}";
           key = "  ";
           type = "wm";
         }
         {
-          format = "{6}";
+          format = "{pretty-name}";
           key = "  ";
           type = "shell";
         }
         {
-          format = "{5}";
+          format = "{pretty-name}";
           key = "  ";
           type = "terminal";
         }

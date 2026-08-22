@@ -1,0 +1,148 @@
+input {
+    keyboard {
+        xkb {
+            layout ""
+            model ""
+            rules ""
+            variant ""
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        natural-scroll
+        accel-speed 0.400000
+    }
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="15%"
+    disable-power-key-handling
+}
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+overview {
+    zoom 0.400000
+    backdrop-color "#0f0f0f"
+    workspace-shadow { off; }
+}
+layout {
+    gaps 4
+    struts {
+        left 12
+        right 12
+        top 8
+        bottom 8
+    }
+    focus-ring { off; }
+    border {
+        width 1
+        active-color "#4c4c4c"
+        inactive-color "transparent"
+    }
+    background-color "transparent"
+    tab-indicator {
+        place-within-column
+        gap 4
+        width 4.000000
+        length total-proportion=1.000000
+        position "left"
+        gaps-between-tabs 4
+        corner-radius 4.000000
+    }
+    default-column-width
+    preset-column-widths {
+        proportion 0.333333
+        proportion 0.500000
+        proportion 0.666667
+    }
+    center-focused-column "never"
+    always-center-single-column
+    empty-workspace-above-first
+}
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 22
+}
+hotkey-overlay { skip-at-startup; }
+environment { "SDL_VIDEODRIVER" "wayland"; }
+binds {
+    Mod+A { toggle-column-tabbed-display; }
+    Mod+B { spawn "librewolf"; }
+    Mod+C { center-column; }
+    Mod+Ctrl+Semicolon { spawn "nu" "-c" "niri msg -j windows | from json\n| where workspace_id == (niri msg -j workspaces | from json | where is_focused == true | first | get id)\n| each {niri msg action toggle-window-floating --id $in.id}\n"; }
+    Mod+Down { focus-window-or-workspace-down; }
+    Mod+E { spawn "nautilus"; }
+    Mod+Equal { set-column-width "+10%"; }
+    Mod+F { fullscreen-window; }
+    Mod+F9 { toggle-overview; }
+    "Mod+KP_Divide" { spawn "sh" "/home/samy/.config/work.sh"; }
+    Mod+L { spawn "swaylock"; }
+    Mod+Left { focus-column-left; }
+    Mod+M { maximize-column; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+O { spawn "sh" "-c" "ghostty --title='Vault' --working-directory='/home/samy/Vault' -e direnv exec . hx ."; }
+    Mod+Q { close-window; }
+    Mod+R { switch-preset-column-width; }
+    Mod+Right { focus-column-right; }
+    Mod+Semicolon { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+C { center-visible-columns; }
+    Mod+Shift+Down { move-window-down-or-to-workspace-down; }
+    Mod+Shift+End { consume-or-expel-window-right; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Shift+Home { consume-or-expel-window-left; }
+    Mod+Shift+Left { move-column-left; }
+    Mod+Shift+M { set-window-height "100%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+O { spawn "obsidian"; }
+    Mod+Shift+Q { quit; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Semicolon { toggle-window-floating; }
+    Mod+Shift+T { spawn "wezterm"; }
+    Mod+Shift+Up { move-window-up-or-to-workspace-up; }
+    Mod+Space { spawn "sh" "-c" "vicinae toggle"; }
+    Mod+T { spawn "ghostty"; }
+    Mod+Up { focus-window-or-workspace-up; }
+    Mod+V { spawn "sh" "-c" "vicinae vicinae://launch/clipboard/history"; }
+    Mod+XF86AudioPlay { fullscreen-window; }
+    Mod+slash { spawn "sh" "-c" "vicinae vicinae://launch/files/search"; }
+    Print { screenshot; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "sh" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    XF86AudioMute allow-when-locked=true { spawn "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioNext allow-when-locked=true { spawn "sh" "-c" "playerctl next"; }
+    XF86AudioPause allow-when-locked=true { spawn "sh" "-c" "playerctl play-pause"; }
+    XF86AudioPlay allow-when-locked=true { spawn "sh" "-c" "playerctl play-pause"; }
+    XF86AudioPrev allow-when-locked=true { spawn "sh" "-c" "playerctl previous"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "sh" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "sh" "-c" "brightnessctl s 1%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "sh" "-c" "brightnessctl s +1%"; }
+}
+spawn-at-startup "niri-screen-time" "-daemon"
+window-rule {
+    draw-border-with-background false
+    geometry-corner-radius 4.000000 4.000000 4.000000 4.000000
+    clip-to-geometry true
+}
+window-rule {
+    match title="^Picture-in-Picture$"
+    default-column-width { proportion 0.150000; }
+    open-floating true
+    open-focused false
+    default-floating-position relative-to="bottom-left" x=10 y=10
+}
+window-rule {
+    match app-id="^com.mitchellh.ghostty$"
+    match app-id="^org.wezfurlong.wezterm$"
+    match app-id="^org.gnome.Nautilus$"
+    default-column-width { proportion 0.500000; }
+}
+window-rule {
+    match app-id="^io.bassi.Amberol$"
+    default-column-width { proportion 0.333333; }
+}
+layer-rule {
+    match namespace="awww-daemon"
+    match namespace="eww_background"
+    place-within-backdrop true
+}
+animations { slowdown 0.700000; }
