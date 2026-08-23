@@ -1,31 +1,17 @@
-input {
-    keyboard {
-        xkb {
-            layout ""
-            model ""
-            rules ""
-            variant ""
-        }
-        repeat-delay 600
-        repeat-rate 25
-        track-layout "global"
-    }
-    touchpad {
-        tap
-        natural-scroll
-        accel-speed 0.400000
-    }
-    warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="15%"
-    disable-power-key-handling
-}
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
+animations { slowdown 0.700000; }
+
+hotkey-overlay { skip-at-startup; }
+environment { "SDL_VIDEODRIVER" "wayland"; }
+spawn-at-startup "niri-screen-time" "-daemon"
+
 overview {
-    zoom 0.400000
+    zoom 0.35
     backdrop-color "#0f0f0f"
     workspace-shadow { off; }
 }
+
 layout {
     gaps 4
     struts {
@@ -64,8 +50,57 @@ cursor {
     xcursor-theme "Bibata-Modern-Ice"
     xcursor-size 22
 }
-hotkey-overlay { skip-at-startup; }
-environment { "SDL_VIDEODRIVER" "wayland"; }
+
+window-rule {
+    draw-border-with-background false
+    geometry-corner-radius 4.000000 4.000000 4.000000 4.000000
+    clip-to-geometry true
+}
+window-rule {
+    match title="^Picture-in-Picture$"
+    default-column-width { proportion 0.150000; }
+    open-floating true
+    open-focused false
+    default-floating-position relative-to="bottom-left" x=10 y=10
+}
+window-rule {
+    match app-id="^com.mitchellh.ghostty$"
+    match app-id="^org.wezfurlong.wezterm$"
+    match app-id="^org.gnome.Nautilus$"
+    default-column-width { proportion 0.500000; }
+}
+window-rule {
+    match app-id="^io.bassi.Amberol$"
+    default-column-width { proportion 0.333333; }
+}
+layer-rule {
+    match namespace="awww-daemon"
+    match namespace="eww_background"
+    place-within-backdrop true
+}
+
+input {
+    keyboard {
+        xkb {
+            layout ""
+            model ""
+            rules ""
+            variant ""
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        natural-scroll
+        accel-speed 0.400000
+    }
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="15%"
+    disable-power-key-handling
+}
+
 binds {
     Mod+A { toggle-column-tabbed-display; }
     Mod+B { spawn "librewolf"; }
@@ -117,32 +152,3 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "sh" "-c" "brightnessctl s 1%-"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "sh" "-c" "brightnessctl s +1%"; }
 }
-spawn-at-startup "niri-screen-time" "-daemon"
-window-rule {
-    draw-border-with-background false
-    geometry-corner-radius 4.000000 4.000000 4.000000 4.000000
-    clip-to-geometry true
-}
-window-rule {
-    match title="^Picture-in-Picture$"
-    default-column-width { proportion 0.150000; }
-    open-floating true
-    open-focused false
-    default-floating-position relative-to="bottom-left" x=10 y=10
-}
-window-rule {
-    match app-id="^com.mitchellh.ghostty$"
-    match app-id="^org.wezfurlong.wezterm$"
-    match app-id="^org.gnome.Nautilus$"
-    default-column-width { proportion 0.500000; }
-}
-window-rule {
-    match app-id="^io.bassi.Amberol$"
-    default-column-width { proportion 0.333333; }
-}
-layer-rule {
-    match namespace="awww-daemon"
-    match namespace="eww_background"
-    place-within-backdrop true
-}
-animations { slowdown 0.700000; }
