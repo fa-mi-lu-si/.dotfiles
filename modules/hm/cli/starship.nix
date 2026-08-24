@@ -23,7 +23,7 @@
 
         "$username"
         "$hostname"
-        "$character"
+        # "$character"
       ];
 
       right_format = lib.concatStrings [
@@ -32,10 +32,7 @@
         "$battery"
       ];
 
-      character = {
-        error_symbol = "[◆](bold red)";
-        success_symbol = "[◆](bold green)";
-      };
+      # continuation = ""
 
       battery.display = [
         {

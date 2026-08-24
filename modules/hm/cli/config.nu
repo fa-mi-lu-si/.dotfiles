@@ -33,7 +33,6 @@ $env.config.filesize.unit = 'metric'
 $env.config.history.file_format = "sqlite"
 $env.config.history.isolation = true
 $env.config.use_kitty_protocol = true
-$env.config.cursor_shape.emacs = "blink_line"
 $env.config.shell_integration = {
   osc2: true
   osc7: true
@@ -45,13 +44,17 @@ $env.config.shell_integration = {
 }
 $env.config.rm.always_trash = true
 
+$env.config.edit_mode = 'helix'
+$env.config.cursor_shape.helix_insert = "blink_line"
+$env.PROMPT_INDICATOR_VI_NORMAL = "◇ "
+$env.PROMPT_INDICATOR_VI_INSERT = "◆ "
 
 $env.config.keybindings = [
   {
     name: resume
     modifier: control
     keycode: char_z
-    mode: emacs
+    mode: [emacs helix_insert helix_normal]
     event: {
       send:executehostcommand
       cmd:"job unfreeze"
@@ -61,21 +64,21 @@ $env.config.keybindings = [
     name: exit
     modifier: control
     keycode: char_w
-    mode: emacs
+    mode: [emacs helix_insert helix_normal]
     event: {send: CtrlD}
   }
   {
     name: help
     modifier: control
     keycode: char_h
-    mode: emacs
+    mode: [emacs helix_insert helix_normal]
     event: { edit: InsertString value: '--help'}
   }
   {
     name: yazi_f9
     modifier: None
     keycode: f9
-    mode: emacs
+    mode: [emacs helix_insert helix_normal]
     event: {
       send: executehostcommand
       cmd: "y"
@@ -84,6 +87,8 @@ $env.config.keybindings = [
 ]
 
 
+$env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = ""
+$env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = ""
 $env.TRANSIENT_PROMPT_COMMAND = {||
   match $env.LAST_EXIT_CODE {
     0 => $"(ansi green)◇(ansi reset) ",
