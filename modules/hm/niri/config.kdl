@@ -65,7 +65,6 @@ window-rule {
 }
 window-rule {
     match app-id="^com.mitchellh.ghostty$"
-    match app-id="^org.wezfurlong.wezterm$"
     match app-id="^org.gnome.Nautilus$"
     default-column-width { proportion 0.500000; }
 }
@@ -133,7 +132,6 @@ binds {
     Mod+Shift+Q { quit; }
     Mod+Shift+Right { move-column-right; }
     Mod+Shift+Semicolon { toggle-window-floating; }
-    Mod+Shift+T { spawn "wezterm"; }
     Mod+Shift+Up { move-window-up-or-to-workspace-up; }
     Mod+Space { spawn "sh" "-c" "vicinae toggle"; }
     Mod+T { spawn "ghostty"; }

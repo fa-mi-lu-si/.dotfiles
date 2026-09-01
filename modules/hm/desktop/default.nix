@@ -23,9 +23,6 @@
     tuba
 
     amberol
-    euphonica
-
-    authenticator
 
     kicad-small
   ];
