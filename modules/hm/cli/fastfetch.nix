@@ -45,6 +45,25 @@
           type = "terminal";
         }
         {
+          format = "{name}";
+          key = "  ";
+          type = "cpu";
+        }
+        {
+          format = "{1} {2}";
+          key = " 󰊴 ";
+          type = "gpu";
+        }
+        {
+          format = "{1}/{2}";
+          key = "  ";
+          type = "memory";
+        }
+        {
+          key = " 󰊴 ";
+          type = "uptime";
+        }
+        {
           paddingLeft = 2;
           symbol = "circle";
           type = "colors";
