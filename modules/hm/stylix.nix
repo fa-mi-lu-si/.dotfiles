@@ -14,5 +14,7 @@
       light = "MoreWaita";
       package = pkgs.morewaita-icon-theme;
     };
+
+    targets.gtksourceview.enable = false;
   };
 }
