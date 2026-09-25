@@ -57,6 +57,7 @@
         "uc.tweak.no-panel-hint" = true;
         "uc.tweak.no-blur" = true;
         "uc.tweak.sidebery.top-navbar" = false;
+        "uc.tweak.findbar.bottom" = true;
       };
       extensions.force = true;
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
