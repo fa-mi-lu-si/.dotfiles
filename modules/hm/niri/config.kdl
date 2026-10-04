@@ -96,8 +96,6 @@ input {
         natural-scroll
         accel-speed 0.400000
     }
-    warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="15%"
     disable-power-key-handling
 }
 
@@ -134,10 +132,16 @@ binds {
     Mod+Semicolon { switch-focus-between-floating-and-tiling; }
     Mod+Shift+Semicolon { toggle-window-floating; }
 
+    Mod+WheelScrollDown { focus-workspace-down; }
+    Mod+WheelScrollUp { focus-workspace-up; }
+    Mod+WheelScrollRight { focus-column-right; }
+    Mod+WheelScrollLeft { focus-column-left; }
+
     Mod+F { fullscreen-window; }
     Mod+M { maximize-column; }
     Mod+Equal { set-column-width "+10%"; }
     Mod+Minus { set-column-width "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+M { set-window-height "100%"; }
     Mod+R { switch-preset-column-width; }

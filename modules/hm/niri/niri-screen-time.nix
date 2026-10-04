@@ -9,37 +9,42 @@
   xdg.configFile."niri-screen-time/subprograms.yaml".text =
     #yaml
     ''
-      - app_ids:
+      - alias: "edit dotfiles"
+        app_ids:
           - com.mitchellh.ghostty
         title_list:
           - "~/.dotfiles"
-        alias: "edit dotfiles"
-      - app_ids:
+          - "~/.config"
+
+      - alias: "YouTube"
+        app_ids:
           - librewolf
           - zen-beta
         title_list:
           - "YouTube"
-        alias: "YouTube"
-      - app_ids:
+
+      - alias: "Instagram"
+        app_ids:
           - librewolf
           - zen-beta
         title_list:
           - "Instagram"
-        alias: "Instagram"
-      - app_ids:
+
+      - alias: "Emails"
+        app_ids:
           - librewolf
           - zen-beta
         title_list:
           - "Outlook"
           - "Gmail"
           - "Inbox"
-        alias: "Emails"
-      - app_ids:
+
+      - alias: "Notes"
+        app_ids:
           - obsidian
           - ghostty
         title_list:
           - "Obsidian"
           - "Vault"
-        alias: "Notes"
     '';
 }
