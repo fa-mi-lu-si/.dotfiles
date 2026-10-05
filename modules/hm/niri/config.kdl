@@ -102,6 +102,7 @@ input {
 binds {
     Mod+T { spawn "ghostty"; }
     Mod+E { spawn "nautilus"; }
+    Mod+B { spawn "librewolf"; }
     Mod+O { spawn "sh" "-c" "ghostty --title='Vault' --working-directory='/home/samy/Vault' -e direnv exec . hx ."; }
     Mod+Shift+O { spawn "obsidian"; }
     Mod+Ctrl+Semicolon { spawn "nu" "-c" "niri msg -j windows | from json\n| where workspace_id == (niri msg -j workspaces | from json | where is_focused == true | first | get id)\n| each {niri msg action toggle-window-floating --id $in.id}\n"; }
