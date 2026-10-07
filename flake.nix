@@ -52,7 +52,6 @@
         {nixpkgs.overlays = [(import ./pkgs/overlay.nix {inherit self inputs;})];}
         ./hosts/samy-nixos/configuration.nix
         inputs.home-manager.nixosModules.default
-        inputs.stylix.nixosModules.stylix
       ];
     };
     nixosConfigurations.samy-nixbook = nixpkgs.lib.nixosSystem {
@@ -61,7 +60,6 @@
         # {nixpkgs.overlays = [(import ./pkgs/overlay.nix {inherit self inputs;})];}
         ./hosts/samy-nixbook/configuration.nix
         inputs.home-manager.nixosModules.default
-        # inputs.stylix.nixosModules.stylix
       ];
     };
   };

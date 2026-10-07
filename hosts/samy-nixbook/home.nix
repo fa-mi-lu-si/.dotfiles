@@ -1,12 +1,16 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../modules/hm/xdg.nix
     ../../modules/hm/cli
+    # ../../modules/hm/firefox
     ../../modules/hm/ghostty
     ../../modules/hm/helix
     ../../modules/hm/niri
+    # ../../modules/hm/stylix.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
