@@ -8,6 +8,7 @@
     ../../modules/hm/desktop
     ../../modules/hm/cli
     ../../modules/hm/firefox
+    ../../modules/hm/desktop/vivaldi.nix
     ../../modules/hm/ghostty
     ../../modules/hm/helix
     ../../modules/hm/niri
