@@ -14,12 +14,17 @@
     ../../modules/hm/desktop
     ../../modules/hm/desktop/vivaldi.nix
     ../../modules/hm/desktop/libreoffice.nix
+    ../../modules/hm/desktop/swaylock.nix
+    ../../modules/hm/desktop/scrcpy.nix
     ../../modules/hm/ghostty
     ../../modules/hm/vscode
     ../../modules/hm/helix
     ../../modules/hm/niri
     ../../modules/hm/eww
     ../../modules/hm/stylix.nix
+    ../../modules/hm/apps/kicad.nix
+    ../../modules/hm/apps/tuba.nix
+    ../../modules/hm/apps/spicetify
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

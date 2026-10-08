@@ -40,24 +40,9 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  hardware.bluetooth.enable = true;
-  # enable the A2DP audio Sink
-  hardware.bluetooth.settings = {
-    General = {
-      Enable = "Source,Sink,Media,Socket";
-    };
-  };
-
-  # Make removable storage work
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
-
   # Enable networking
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.powersave = true; # powersave on wifi
-
-  # Something the audio server needs
-  security.rtkit.enable = true;
 
   # laptop stuff
   services.power-profiles-daemon.enable = true;

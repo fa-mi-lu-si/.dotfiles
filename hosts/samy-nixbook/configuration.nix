@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
-  config,
+  # config,
   pkgs,
   inputs,
   ...
@@ -14,10 +14,10 @@
 
     ../../modules/nixos/nix.nix
     ../../modules/nixos/niri.nix
-    # ../../modules/nixos/desktop.nix
-    # ../../modules/nixos/solaar.nix
+    ../../modules/nixos/desktop.nix
+    ../../modules/nixos/solaar.nix
     ../../modules/nixos/kanata
-    # ../../modules/nixos/stylix.nix
+    ../../modules/nixos/stylix.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -41,8 +41,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  hardware.bluetooth.enable = true;
-
   # Set your time zone.
   time.timeZone = "Europe/Vilnius";
 
@@ -60,7 +58,7 @@
     isNormalUser = true;
     description = "samy";
     extraGroups = ["networkmanager" "wheel" "video" "audio" "sound" "dialout" "input" "uinput"];
-    packages = with pkgs; [];
+    # packages = with pkgs; [];
   };
 
   home-manager = {

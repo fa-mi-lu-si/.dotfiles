@@ -4,27 +4,19 @@
   ...
 }: {
   imports = [
-    ./spicetify
     ./obsidian.nix
     ./awww.nix
     ./vicinae.nix
-    ./scrcpy.nix
   ];
 
   home.packages = with pkgs; [
     libnotify
     wiremix
 
-    # phone stuff
-    android-tools
-
     nautilus
     loupe
-    tuba
 
     amberol
-
-    kicad-small
   ];
 
   xdg.desktopEntries."wiremix" = {
@@ -70,16 +62,6 @@
     enable = true;
     config = {
       should_launch_new_window = "1";
-    };
-  };
-  programs.swaylock = {
-    enable = true;
-  };
-  services.swayidle = {
-    enable = true;
-    events = {
-      "before-sleep" = "${lib.getExe pkgs.swaylock} -f";
-      "lock" = "${lib.getExe pkgs.swaylock} -f";
     };
   };
 

@@ -13,6 +13,20 @@
 
   hardware.graphics.enable = true;
 
+  # Make removable storage work
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
+  hardware.bluetooth.enable = true;
+
+  # enable the A2DP audio Sink
+  hardware.bluetooth.settings = {
+    General = {
+      Enable = "Source,Sink,Media,Socket";
+    };
+  };
+  # Something the audio server needs
+  security.rtkit.enable = true;
   services.blueman.enable = true;
 
   programs.seahorse.enable = true;
