@@ -137,8 +137,8 @@ binds {
     Mod+Semicolon { switch-focus-between-floating-and-tiling; }
     Mod+Shift+Semicolon { toggle-window-floating; }
 
-    Mod+WheelScrollDown { focus-workspace-down; }
-    Mod+WheelScrollUp { focus-workspace-up; }
+    Mod+WheelScrollDown cooldown-ms=200 { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=200 { focus-workspace-up; }
     Mod+Shift+WheelScrollDown { move-window-to-workspace-down; }
     Mod+Shift+WheelScrollUp { move-window-to-workspace-up; }
     Mod+WheelScrollRight { focus-column-right; }
