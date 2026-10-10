@@ -88,6 +88,22 @@
   # Enable automatic login for the user.
   services.getty.autologinUser = "samy";
   services.getty.autologinOnce = true;
+  # autostart niri
+  services.greetd = {
+    enable = true;
+    settings = {
+      initial_session = {
+        command = "niri-session";
+        user = "samy";
+      };
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome To NixOS' --asterisks --remember --remember-user-session --time -cmd niri-session";
+        # DO NOT CHANGE THIS USER
+        user = "greeter";
+      };
+    };
+  };
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
