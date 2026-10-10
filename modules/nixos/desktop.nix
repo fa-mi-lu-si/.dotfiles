@@ -64,19 +64,19 @@
     enableDefaultPackages = true;
   };
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      initial_session = {
-        command = "niri-session";
-        user = "samy";
-      };
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome To NixOS' --asterisks --remember --remember-user-session --time -cmd niri-session";
-        # DO NOT CHANGE THIS USER
-        user = "greeter";
-      };
-    };
-  };
-  security.pam.services.greetd.enableGnomeKeyring = true;
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     initial_session = {
+  #       command = "niri-session";
+  #       user = "samy";
+  #     };
+  #     default_session = {
+  #       command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome To NixOS' --asterisks --remember --remember-user-session --time -cmd niri-session";
+  #       # DO NOT CHANGE THIS USER
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
+  # security.pam.services.greetd.enableGnomeKeyring = true;
 }

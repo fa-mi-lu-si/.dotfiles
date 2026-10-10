@@ -14,6 +14,7 @@
 
     ../../modules/nixos/nix.nix
     ../../modules/nixos/niri.nix
+    ../../modules/nixos/plasma.nix
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/solaar.nix
     ../../modules/nixos/kanata
