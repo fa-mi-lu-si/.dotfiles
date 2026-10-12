@@ -9,6 +9,7 @@ animations { slowdown 0.700000; }
 hotkey-overlay { skip-at-startup; }
 environment { "SDL_VIDEODRIVER" "wayland"; }
 spawn-at-startup "niri-screen-time" "-daemon"
+spawn-at-startup "awww-daemon"
 
 overview {
     zoom 0.35

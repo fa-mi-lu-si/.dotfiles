@@ -1,7 +1,5 @@
-{...}: {
-  services.awww = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = [pkgs.awww];
 
   home.sessionVariables = {
     AWWW_TRANSITION = "left";
