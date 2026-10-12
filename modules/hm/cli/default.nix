@@ -45,6 +45,7 @@
     defaultOptions = [
       "--walker=file,follow"
     ];
+    historyWidget.options = ["--reverse"];
   };
 
   programs.fd = {
