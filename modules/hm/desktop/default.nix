@@ -17,6 +17,7 @@
     loupe
 
     amberol
+    authenticator
   ];
 
   xdg.desktopEntries."wiremix" = {
