@@ -9,7 +9,7 @@
     ../../modules/hm/cli
     ../../modules/hm/cli/beets.nix
     ../../modules/hm/zen-browser
-    ../../modules/hm/firefox
+    ../../modules/hm/librewolf-old
     ../../modules/hm/sops.nix
     ../../modules/hm/desktop
     ../../modules/hm/desktop/vivaldi.nix
