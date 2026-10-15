@@ -18,6 +18,7 @@
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/solaar.nix
     ../../modules/nixos/kanata
+    ../../modules/nixos/syncthing.nix
     ../../modules/nixos/stylix.nix
   ];
 

@@ -5,8 +5,8 @@
     group = "users";
     dataDir = "/home/samy";
     openDefaultPorts = true;
-    overrideDevices = true;
-    overrideFolders = true;
+    overrideDevices = false;
+    overrideFolders = false;
 
     settings = {
       options = {
