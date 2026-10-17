@@ -12,7 +12,6 @@
     ../../modules/hm/librewolf-old
     ../../modules/hm/sops.nix
     ../../modules/hm/desktop
-    ../../modules/hm/desktop/vivaldi.nix
     ../../modules/hm/desktop/libreoffice.nix
     ../../modules/hm/desktop/swaylock.nix
     ../../modules/hm/desktop/scrcpy.nix
@@ -25,6 +24,7 @@
     ../../modules/hm/apps/kicad.nix
     ../../modules/hm/apps/tuba.nix
     ../../modules/hm/apps/spicetify
+    ../../modules/hm/apps/vivaldi.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

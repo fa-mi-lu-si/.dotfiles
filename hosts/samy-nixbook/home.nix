@@ -7,8 +7,9 @@
     ../../modules/hm/xdg.nix
     ../../modules/hm/desktop
     ../../modules/hm/cli
-    ../../modules/hm/desktop/vivaldi.nix
+    ../../modules/hm/apps/vivaldi.nix
     ../../modules/hm/ghostty
+    ../../modules/hm/librewolf
     ../../modules/hm/helix
     ../../modules/hm/niri
     ../../modules/hm/stylix.nix
