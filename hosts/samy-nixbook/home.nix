@@ -7,6 +7,7 @@
     ../../modules/hm/xdg.nix
     ../../modules/hm/desktop
     ../../modules/hm/cli
+    ../../modules/hm/cli/beets.nix
     ../../modules/hm/apps/vivaldi.nix
     ../../modules/hm/ghostty
     ../../modules/hm/librewolf
