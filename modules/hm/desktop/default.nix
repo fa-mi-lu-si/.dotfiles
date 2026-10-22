@@ -31,21 +31,11 @@
     enable = true;
   };
 
-  programs.fuzzel = {
-    enable = true;
-    # settings = {
-    #   main = {
-    #     terminal = "ghostty";
-    #     layer = "top";
-    #   };
-    # };
-  };
-
   services.dunst = {
     enable = true;
     settings = {
       global = {
-        dmenu = "fuzzel -d";
+        dmenu = "vicinae dmenu";
       };
     };
   };
