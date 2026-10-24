@@ -16,7 +16,7 @@
     nautilus
     loupe
 
-    amberol
+    # amberol
     authenticator
   ];
 
