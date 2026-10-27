@@ -51,8 +51,8 @@ layout {
     empty-workspace-above-first
 }
 cursor {
-    xcursor-theme "Bibata-Modern-Ice"
-    xcursor-size 22
+    xcursor-theme "MacOS-Comic-Book"
+    xcursor-size 32
 }
 
 window-rule {

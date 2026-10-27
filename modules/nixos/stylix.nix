@@ -17,9 +17,9 @@
     image = config.lib.stylix.pixel "base00";
 
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 22;
+      package = pkgs.callPackage ../../pkgs/cursors-comic-book.nix {};
+      name = "MacOS-Comic-Book";
+      size = 32;
     };
 
     fonts = with pkgs; {
