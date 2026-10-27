@@ -32,8 +32,8 @@
         name = "DejaVu Sans";
       };
       serif = {
-        package = dejavu_fonts;
-        name = "DejaVu Serif";
+        package = pkgs.callPackage ../../pkgs/libron.nix {};
+        name = "Libron H";
       };
       emoji = {
         package = noto-fonts-color-emoji;
