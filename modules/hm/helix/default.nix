@@ -11,6 +11,7 @@
         line-number = "relative";
         bufferline = "multiple";
         soft-wrap.wrap-indicator = "󰌑";
+        scroll-lines = 1;
 
         end-of-line-diagnostics = "hint";
         inline-diagnostics = {
