@@ -48,6 +48,9 @@
   services.power-profiles-daemon.enable = true;
   services.thermald.enable = true;
 
+  # Device specific since this has hibernate
+  services.upower.criticalPowerAction = "Hibernate";
+
   # Set your time zone.
   time.timeZone = "Europe/Vilnius";
 
@@ -88,6 +91,7 @@
   # Enable automatic login for the user.
   services.getty.autologinUser = "samy";
   services.getty.autologinOnce = true;
+
   # autostart niri
   services.greetd = {
     enable = true;
