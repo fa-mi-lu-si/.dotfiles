@@ -4,7 +4,7 @@ output "AU Optronics 0xDAB2 Unknown" {
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
-animations { slowdown 0.700000; }
+animations { slowdown 0.6; }
 
 hotkey-overlay { skip-at-startup; }
 environment { "SDL_VIDEODRIVER" "wayland"; }
@@ -66,6 +66,10 @@ window-rule {
     open-floating true
     open-focused false
     default-floating-position relative-to="bottom-left" x=10 y=10
+}
+window-rule {
+    match title="^com.github.johnfactotum.Foliate$"
+    open-fullscreen true
 }
 window-rule {
     match app-id="^com.mitchellh.ghostty$"
