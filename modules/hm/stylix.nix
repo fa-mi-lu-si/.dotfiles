@@ -16,5 +16,6 @@
     };
 
     targets.gtksourceview.enable = false;
+    targets.spicetify.enable = false;
   };
 }
