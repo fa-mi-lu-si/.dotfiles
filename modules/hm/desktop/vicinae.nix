@@ -26,12 +26,6 @@
         };
       };
       pop_to_root_on_close = true;
-      theme = {
-        dark = {
-          icon_theme = config.stylix.icons.dark;
-          name = "stylix";
-        };
-      };
     };
   };
 }
