@@ -17,9 +17,9 @@
     image = config.lib.stylix.pixel "base00";
 
     cursor = {
-      package = pkgs.callPackage ../../pkgs/cursors-comic-book.nix {};
-      name = "MacOS-Comic-Book";
-      size = 32;
+      package = pkgs.simp1e-cursors;
+      name = "Simp1e";
+      size = 22;
     };
 
     fonts = with pkgs; {
