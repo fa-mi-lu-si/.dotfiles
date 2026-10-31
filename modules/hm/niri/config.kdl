@@ -57,7 +57,7 @@ cursor {
 
 window-rule {
     draw-border-with-background false
-    geometry-corner-radius 0 0 0 0
+    geometry-corner-radius 4 4 4 4
     clip-to-geometry true
 }
 window-rule {
