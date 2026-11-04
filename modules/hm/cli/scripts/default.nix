@@ -4,6 +4,11 @@
   ...
 }: {
   home.packages = [
+    (
+      pkgs.writeShellScriptBin "flowetch"
+      (builtins.readFile ./flowetch)
+    )
+
     (pkgs.writeScriptBin "timer"
       #nu
       ''

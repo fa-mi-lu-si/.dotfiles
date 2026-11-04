@@ -1,0 +1,91 @@
+#! /bin/sh
+
+# ┌─┐┬  ┌─┐ ┬ ┬┌─┐┌┬┐┌─┐┬ ┬
+# ├┤ │  │ │ │││├┤  │ │  ├─┤
+# └  ┴─┘└─┘ └┴┘└─┘ ┴ └─┘┴ ┴
+
+# User and host
+
+user="${USER-$(id -u -n)}"
+host="$(uname -n 2>/dev/null)"
+
+# Uptime
+
+uptime="$(awk '{
+    t = int($1)
+    days = int(t / 86400)
+    hours = int((t % 86400) / 3600)
+    mins = int((t % 3600) / 60)
+
+    if (days > 0) {
+        printf "%d day%s", days, (days == 1 ? "" : "s")
+        if (days <= 2 && hours > 0)
+            printf " %d h", hours
+    } else if (hours > 0) {
+        printf "%d h", hours
+        if (mins > 0)
+            printf " %d min", mins
+    } else {
+        printf "%d min", mins
+    }
+}' /proc/uptime 2>/dev/null)"
+[ "$uptime" ] || uptime="N/A"
+
+# Shell
+
+shell="$(ps -p "$PPID" -o comm= 2>/dev/null)"
+shell="${shell##*/}"
+[ "$shell" ] || shell="${SHELL##*/}"
+[ "$shell" ] || shell="N/A"
+
+# Window manager
+
+wm="${XDG_CURRENT_DESKTOP:-$DESKTOP_SESSION}"
+
+if { [ -z "$wm" ] || [ "$wm" = "LG3D" ]; } && [ -n "$DISPLAY" ] && command -v xprop >/dev/null 2>&1; then
+  wm_id="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null)"
+  wm_id="${wm_id##* }"
+  wm="$(xprop -id "$wm_id" -notype -len 100 -f _NET_WM_NAME 8t 2>/dev/null |
+    awk -F '"' '/^_NET_WM_NAME/ { print $2; exit }')"
+fi
+
+if [ -z "$wm" ] || [ "$wm" = "LG3D" ]; then
+  wm="$(ps -e -o comm= 2>/dev/null | grep -m 1 -E \
+    '^(sway|kiwmi|wayfire|sowm|catwm|fvwm|dwm|2bwm|monsterwm|tinywm|xmonad)$')"
+fi
+
+[ "$wm" ] || wm="N/A"
+
+# Colors
+
+c0='[0m'
+c1='[31m'
+c2='[32m'
+c3='[33m'
+c4='[34m'
+c5='[35m'
+c6='[36m'
+c7='[37m'
+c8='[38m'
+c9='^[[37m'
+
+# Art
+
+ARTR1="${c1}     _ _    "
+ARTR2="${c1}    (_\\_)   "
+ARTR3="${c1}   (__<__)  "
+ARTR4="${c1}    (_/_)   "
+ARTR5="${c2}    \\ |     "
+ARTR6="${c2}     \\|/    "
+
+# Main print
+
+cat <<-EOF
+
+ ${ARTR1}  ${c5}host${c0}    ${c1}•••   ${host}
+ ${ARTR2}  ${c5}user${c0}    ${c2}•••   ${user}
+ ${ARTR3}  ${c5}shell${c0}   ${c3}•••   ${shell}
+ ${ARTR4}  ${c5}wm${c0}      ${c4}•••   ${wm}
+ ${ARTR5}  ${c5}up${c0}      ${c6}•••   ${uptime}
+
+EOF
