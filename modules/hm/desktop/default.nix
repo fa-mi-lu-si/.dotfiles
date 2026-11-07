@@ -59,12 +59,7 @@
   # media buttons for bluetoth devices
   services.mpris-proxy.enable = true;
 
-  programs.sioyek = {
-    enable = true;
-    config = {
-      should_launch_new_window = "1";
-    };
-  };
+  programs.zathura.enable = true;
 
   xdg.userDirs = {
     enable = true;

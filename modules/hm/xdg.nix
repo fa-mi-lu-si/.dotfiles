@@ -26,7 +26,7 @@
       "text/plain" = ["Helix.desktop"];
 
       # Documents
-      "application/pdf" = ["sioyek.desktop"];
+      "application/pdf" = ["org.pwmt.zathura.desktop"];
 
       # Media
       "image/svg+xml" = ["org.gnome.Loupe.desktop"];
