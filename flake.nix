@@ -8,6 +8,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:epireyn/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri-screen-time.url = "github:probeldev/niri-screen-time";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";

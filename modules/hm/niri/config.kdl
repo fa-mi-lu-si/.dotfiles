@@ -97,9 +97,16 @@ input {
         dwt
     }
     disable-power-key-handling
+    
+    focus-follows-mouse max-scroll-amount="30%"
+    warp-mouse-to-focus
 }
 
 binds {
+   Mod {
+        release { toggle-overview; }
+    }
+    Mod+F9 { toggle-overview; }
     Mod+T { spawn "ghostty"; }
     Mod+E { spawn "nautilus"; }
     Mod+B { spawn "librewolf"; }
@@ -129,7 +136,6 @@ binds {
     Mod+Menu { center-column; }
     Mod+Shift+Menu { center-visible-columns; }
 
-    Mod+F9 { toggle-overview; }
     Mod+Semicolon { switch-focus-between-floating-and-tiling; }
     Mod+Shift+Semicolon { toggle-window-floating; }
 
