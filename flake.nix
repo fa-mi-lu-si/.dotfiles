@@ -54,11 +54,11 @@
         inputs.home-manager.nixosModules.default
       ];
     };
-    nixosConfigurations.samy-nixbook = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixbook = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         # {nixpkgs.overlays = [(import ./pkgs/overlay.nix {inherit self inputs;})];}
-        ./hosts/samy-nixbook/configuration.nix
+        ./hosts/nixbook/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
     };
