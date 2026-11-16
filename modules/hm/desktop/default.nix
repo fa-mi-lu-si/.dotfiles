@@ -15,6 +15,7 @@
 
     nautilus
     loupe
+    sticky-notes
 
     # amberol
     authenticator
