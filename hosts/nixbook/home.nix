@@ -13,6 +13,7 @@
     ../../modules/hm/librewolf
     ../../modules/hm/helix
     ../../modules/hm/niri
+    ../../modules/hm/eww
     ../../modules/hm/stylix.nix
     ../../modules/hm/apps/spicetify
   ];
