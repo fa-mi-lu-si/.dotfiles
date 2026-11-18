@@ -4,32 +4,30 @@
     settings = {
       format = lib.concatStrings [
         "\${env_var.YAZI_LEVEL}"
+
         "$directory"
+        "\${custom.git_host}"
+        "$git_branch$git_commit"
+        "$git_state$git_status"
+
         "$nix_shell"
         "$rust"
         "$lua"
         "\${custom.arduino}"
         "$python"
 
-        "$fill"
-
-        # "$package"
-        "\${custom.git_host}"
-        "$git_branch$git_commit"
-        "$git_state$git_status"
-        # "\${custom.git_last_commit}"
-
         "$line_break"
-
+        "\n"
         "$username"
         "$hostname"
-        # "$character"
+
+        # "$character" # I'm using the nushell prompt indicator
       ];
 
       right_format = lib.concatStrings [
         "$sudo"
         "$jobs"
-        "$battery"
+        # "$battery" # a little slow
       ];
 
       # continuation = ""
