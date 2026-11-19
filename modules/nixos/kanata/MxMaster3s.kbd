@@ -1,0 +1,19 @@
+(defsrc mfwd mlft mrgt mmid mwl mwr)
+
+(defvirtualkeys meta lmet)
+
+(defalias
+  ;; virtual "fwd held": Super down, auto-releases after last (re)trigger
+  grace (hold-for-duration 600 meta)
+
+  ;; hold = real Super; tap = grace period
+  fwd (tap-hold-press 0 170 @grace lmet)
+
+  ;; hscroll behaves normally; if the grace hold is active, it renews it
+  hscroll (switch
+    ((input virtual meta)) (multi @grace use-defsrc) break
+    ()                     use-defsrc                break
+  )
+)
+
+(deflayer base @fwd mlft mrgt mmid @hscroll @hscroll)
