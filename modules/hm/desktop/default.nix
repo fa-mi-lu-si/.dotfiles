@@ -60,7 +60,12 @@
   # media buttons for bluetoth devices
   services.mpris-proxy.enable = true;
 
-  programs.zathura.enable = true;
+  programs.zathura = {
+    enable = true;
+    options = {
+      selection-clipboard = "clipboard";
+    };
+  };
 
   xdg.userDirs = {
     enable = true;
