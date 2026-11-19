@@ -81,7 +81,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."samy" = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["networkmanager" "wheel" "video" "audio" "sound" "dialout" "input" "libvirtd" "kvm"];
     initialPassword = "changeme";
     # packages = with pkgs; [
     #   tree
