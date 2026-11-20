@@ -1,19 +1,19 @@
 (defsrc mfwd mlft mrgt mmid mwl mwr)
 
-(defvirtualkeys meta lmet)
-
-(defalias
-  ;; virtual "fwd held": Super down, auto-releases after last (re)trigger
-  grace (hold-for-duration 600 meta)
-
-  ;; hold = real Super; tap = grace period
-  fwd (tap-hold-press 0 170 @grace lmet)
-
-  ;; hscroll behaves normally; if the grace hold is active, it renews it
-  hscroll (switch
-    ((input virtual meta)) (multi @grace use-defsrc) break
-    ()                     use-defsrc                break
-  )
+(defvirtualkeys
+  meta    lmet
+  to-base (layer-switch base)
 )
 
-(deflayer base @fwd mlft mrgt mmid @hscroll @hscroll)
+(defalias
+  ;; self-releasing Super: restarts on each use, drops 1 s after the last
+  sup (hold-for-duration 800 meta)
+  ;; tap: enter layer, leave after idle
+  hs  (multi (layer-switch hs) (on-idle 800 tap-vkey to-base))
+  ;; hold: Super while held
+  msp (tap-hold-press 0 170 @hs lmet)
+)
+
+(deflayer base @msp mlft mrgt mmid use-defsrc use-defsrc)
+(deflayer hs   @msp mlft mrgt mmid
+  (multi @sup use-defsrc) (multi @sup use-defsrc))
