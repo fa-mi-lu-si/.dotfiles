@@ -98,9 +98,7 @@ input {
     }
     disable-power-key-handling
     
-    // focus-follows-mouse
     focus-follows-mouse max-scroll-amount="10%"
-    warp-mouse-to-focus
 }
 
 binds {
@@ -172,5 +170,3 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl s 1%-"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn-sh "brightnessctl s +1%"; }
 }
-
-
