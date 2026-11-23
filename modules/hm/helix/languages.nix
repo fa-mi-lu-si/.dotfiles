@@ -24,6 +24,24 @@
         # auto continue markdown lists
         comment-tokens = ["-" "+" "*" "1." ">" "- [ ]"];
       }
+      {
+        name = "nu";
+        scope = "source.nu";
+        injection-regex = "nu";
+        file-types = ["nu" "nuon"];
+        shebangs = ["nu"];
+        comment-token = "#";
+        indent = {
+          tab-width = 2;
+          unit = "  ";
+        };
+        language-servers = ["nu-lsp" "nu-lint"];
+        formatter = {
+          command = "nufmt";
+          args = ["--stdin"];
+        };
+        auto-format = false;
+      }
     ];
 
     language-server = {
@@ -41,5 +59,7 @@
   # project specific language servers should be in devshells
   programs.helix.extraPackages = with pkgs; [
     markdown-oxide
+    nufmt
+    nu-lint
   ];
 }
