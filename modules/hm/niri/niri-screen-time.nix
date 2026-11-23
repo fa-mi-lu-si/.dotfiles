@@ -6,6 +6,8 @@
   home.packages = [
     inputs.niri-screen-time.packages."${pkgs.stdenv.hostPlatform.system}".default
   ];
+  # TODO: split up browser tasks
+  # use sideberry to change window titles depending on active panel
   xdg.configFile."niri-screen-time/subprograms.yaml".text =
     #yaml
     ''
@@ -41,8 +43,8 @@
 
       - alias: "Notes"
         app_ids:
-          - obsidian
-          - ghostty
+          - md.obsidian.Obsidian
+          - com.mitchellh.ghostty
         title_list:
           - "Obsidian"
           - "Vault"
