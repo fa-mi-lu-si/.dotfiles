@@ -112,7 +112,6 @@ binds {
     Mod+O { spawn-sh "ghostty --title='Vault' --working-directory='/home/samy/Vault' -e direnv exec . hx ."; }
     Mod+Shift+O { spawn "obsidian"; }
     Mod+Ctrl+Semicolon { spawn "nu" "-c" "niri msg -j windows | from json\n| where workspace_id == (niri msg -j workspaces | from json | where is_focused == true | first | get id)\n| each {niri msg action toggle-window-floating --id $in.id}\n"; }
-    "Mod+KP_Divide" { spawn "sh" "/home/samy/.config/work.sh"; }
     Mod+L { spawn "swaylock"; }
     Mod+Space { spawn "sh" "-c" "vicinae toggle"; }
     Mod+slash { spawn "sh" "-c" "vicinae vicinae://launch/files/search"; }
