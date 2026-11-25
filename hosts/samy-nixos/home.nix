@@ -22,6 +22,7 @@
     ../../modules/hm/eww
     ../../modules/hm/stylix.nix
     ../../modules/hm/apps/kicad.nix
+    ../../modules/hm/apps/foliate.nix
     ../../modules/hm/apps/tuba.nix
     ../../modules/hm/apps/spicetify
     ../../modules/hm/apps/vivaldi.nix

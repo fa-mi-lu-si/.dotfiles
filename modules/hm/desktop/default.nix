@@ -41,8 +41,6 @@
     };
   };
 
-  programs.foliate.enable = true;
-
   # programs.vesktop = {
   #   enable = true;
   # };

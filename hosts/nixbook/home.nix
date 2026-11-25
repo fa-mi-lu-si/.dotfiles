@@ -9,6 +9,7 @@
     ../../modules/hm/cli
     ../../modules/hm/cli/beets.nix
     ../../modules/hm/apps/vivaldi.nix
+    ../../modules/hm/apps/foliate.nix
     ../../modules/hm/ghostty
     ../../modules/hm/librewolf
     ../../modules/hm/helix
